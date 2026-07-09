@@ -16,7 +16,8 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Pousada Cataratas",
-  // noindex,nofollow global cuando NEXT_PUBLIC_NOINDEX está activo (staging).
+  // noindex,nofollow global en staging (URL distinta del dominio real,
+  // según NEXT_PUBLIC_SITE_URL). Ver i18n/seo.ts.
   robots: robotsMeta,
   // Iconos y manifest. Las rutas apuntan a archivos estáticos en /public:
   // para subir de resolución en el futuro basta con reemplazar esos archivos
