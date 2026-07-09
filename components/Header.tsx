@@ -99,6 +99,64 @@ export default function Header() {
         color: "#FFFFFF",
       }}
     >
+      {/* ===== Selo Méritum Hotéis (painel do canto esquerdo) =====
+          Renderizado de forma ABSOLUTA sobre o <header> (largura total), por isso
+          fica colado à borda esquerda real da tela em qualquer largura, com o
+          corte diagonal (clip-path). Altura = TODO o header (--pch-h = 118px:
+          faixa de contato + nav), então o painel branco cobre as duas linhas.
+          Logo A CORES (fica sobre branco), centrado H+V. O logo da Pousada é
+          deslocado para a direita (.pch-pousada) para não ficar sob o painel. */}
+      <div
+        className="pch-meritum"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: 3,
+          height: "var(--pch-h)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#FFFFFF",
+          // Bloco largo e "cheio", com a diagonal acentuada (offset 32px). O topo
+          // e a base foram alargados mais um pouco (padding direito 34px): a borda
+          // direita fica em ~101px na altura do logo da Pousada (x≈104px) → ~3px
+          // de separação, no limite sem tapar. O logo da Pousada NÃO se move.
+          padding: "0 34px 0 18px",
+          clipPath: "polygon(0 0, 100% 0, calc(100% - 32px) 100%, 0 100%)",
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/meritum-hoteis-logo.webp"
+          alt={dict.header.meritumAlt}
+          title={dict.header.meritumTitle}
+          style={{ height: "56px", width: "auto", display: "block" }}
+        />
+      </div>
+
+      {/* ===== FILA 1: faixa superior com os dados de contato =====
+          O contato fica à direita e some no mobile (sobra só o selo Méritum).
+          Dados fixos (iguais nos 3 idiomas): endereço + telefone (tel:) + email
+          (mailto:). Ícones reaproveitados do próprio site. */}
+      <div className="pch-topbar">
+        <div className="pch-topbar-inner">
+          <div className="pch-contact">
+            <span className="pch-ci">
+              <svg viewBox="0 0 24 24" aria-hidden><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" /></svg>
+              <span>R. Parigot de Souza, 180 — Foz do Iguaçu, PR</span>
+            </span>
+            <a href="tel:+554535237841">
+              <svg viewBox="0 0 24 24" aria-hidden><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.5-1 1-1h3.5c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1l-2.2 2.3Z" /></svg>
+              <span>+55 45 3523-7841</span>
+            </a>
+            <a href="mailto:reservas@pousadacataratas.com.br">
+              <svg viewBox="0 0 24 24" aria-hidden><path d="M3 6.5C3 5.7 3.7 5 4.5 5h15c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm2.2.5 6.8 5 6.8-5H5.2Z" /></svg>
+              <span>reservas@pousadacataratas.com.br</span>
+            </a>
+          </div>
+        </div>
+      </div>
       <div
         className="pch-bar"
         style={{
@@ -113,6 +171,7 @@ export default function Header() {
       >
         <a
           href={localePath(routeLang, "/")}
+          className="pch-pousada"
           style={{ textDecoration: "none", lineHeight: 1, flex: "none", display: "block" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -122,18 +181,6 @@ export default function Header() {
             style={{ height: "38px", width: "auto", display: "block" }}
           />
         </a>
-
-        {/* Marca do grupo: a Pousada Cataratas faz parte do grupo Méritum Hotéis */}
-        <div style={{ display: "flex", alignItems: "center", gap: "11px", flex: "none" }}>
-          <span aria-hidden style={{ width: "1px", height: "26px", background: "rgba(255,255,255,.28)" }} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/meritum-hoteis-logo-branco.webp"
-            alt={dict.header.meritumAlt}
-            title={dict.header.meritumTitle}
-            style={{ height: "34px", width: "auto", display: "block" }}
-          />
-        </div>
 
         <nav
           className="pch-nav"

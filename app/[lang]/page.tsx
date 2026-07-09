@@ -74,7 +74,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="pc-hero-wrap" style={{ padding: 0, display: "flex", flexDirection: "column" }}>
         <div
           className="pc-hero"
-          style={{ position: "relative", borderRadius: 0, overflow: "hidden", height: "calc(100vh - 70px)", minHeight: "520px", background: "#143C7A" }}
+          style={{ position: "relative", borderRadius: 0, overflow: "hidden", height: "calc(100vh - var(--pch-h))", minHeight: "520px", background: "#143C7A" }}
         >
           <SlotImg src="/images/real/home/pousada-cataratas-foz-do-iguacu-fachada.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu, perto das Cataratas do Iguaçu" priority />
           <div

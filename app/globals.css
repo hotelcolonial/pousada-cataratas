@@ -37,6 +37,23 @@ html,body{overflow-x:clip}
 .pch-nav a{padding:6px 0;margin:0 14px;border-radius:0;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:color .15s}
 .pch-nav a:hover{color:#FFFFFF}
 .pch-desktop{display:none}
+/* ===== Faixa superior do header (fila de contato) =====
+   Altura total do header = 48 (faixa) + 70 (nav) = 118px. --pch-h é usada pelo
+   hero da home para manter header+hero = 100vh. */
+:root{--pch-h:118px}
+.pch-topbar{height:48px;background:#143C7A;border-bottom:1px solid rgba(255,255,255,.14)}
+.pch-topbar-inner{height:48px;max-width:1760px;margin:0 auto;padding:0 20px;display:flex;align-items:center}
+.pch-contact{margin-left:auto;display:flex;align-items:center;gap:26px}
+.pch-contact a,.pch-contact .pch-ci{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.82);text-decoration:none;font-size:12px;letter-spacing:.03em;white-space:nowrap;transition:color .15s}
+.pch-contact a:hover{color:#FFFFFF}
+.pch-contact svg{width:15px;height:15px;fill:currentColor;opacity:.9;flex:none}
+/* Mobile: some o contato — sobra só o selo Méritum na faixa superior */
+@media(max-width:1159px){.pch-contact{display:none}}
+/* O painel branco do Méritum cobre toda a altura do header e a esquina esquerda;
+   o logo da Pousada é deslocado para a direita para ficar ao lado do painel e
+   não desaparecer sobre o branco (mesmo tamanho/estilo). Valor base = mobile
+   (nav com padding 20px); no desktop (nav padding 40px) o deslocamento é menor. */
+.pch-pousada{margin-left:84px}
 /* hovers recreados 1:1 del atributo style-hover del runtime (Header.dc.html).
    Llevan !important porque el estilo base va inline y, sin él, no ganarían al
    inline (misma técnica que el export usa en .pch-bar / .pcf-wa responsive). */
@@ -48,6 +65,8 @@ html,body{overflow-x:clip}
   .pch-mobile{display:none!important}
   .pch-desktop{display:flex!important}
   .pch-bar{padding:0 40px!important;height:70px!important}
+  .pch-topbar-inner{padding:0 40px!important}
+  .pch-pousada{margin-left:64px}
 }
 
 /* ===== Footer (.pcf-*) — de "Footer.dc.html" <helmet> ===== */
