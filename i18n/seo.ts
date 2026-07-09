@@ -9,18 +9,20 @@ export const siteUrl = (
 
 export const siteName = "Pousada Cataratas";
 
-// Bloqueo de indexación decidido por la URL del site (NEXT_PUBLIC_SITE_URL),
-// que SÍ está disponible en el build (a diferencia de una variable que Hostinger
-// solo pasa a runtime). El site es indexable SOLO cuando corre en el dominio
-// real; en cualquier otra URL (staging de Hostinger *.hostingersite.com,
-// previews, localhost…) se emite <meta robots noindex,nofollow> y robots.txt
-// bloquea todo. Al migrar al dominio real, basta con que NEXT_PUBLIC_SITE_URL
-// sea el dominio definitivo y el site vuelve a ser indexable — sin tocar código.
-const REAL_DOMAIN = "pousadacataratas.com.br";
-export const noindex = !siteUrl.toLowerCase().includes(REAL_DOMAIN);
+// ============================================================================
+// ⚠️  QUITAR ESTO AL PASAR AL DOMINIO REAL — HACE EL SITE NO INDEXABLE  ⚠️
+// ----------------------------------------------------------------------------
+// Mientras el site está en la URL temporal de Hostinger, forzamos noindex en
+// TODAS las páginas: <meta name="robots" content="noindex, nofollow"> y
+// robots.txt con "Disallow: /". Está HARDCODEADO a propósito, sin depender de
+// ninguna variable de entorno ni de la URL (Hostinger no pasaba la variable al
+// build, por eso el enfoque anterior no funcionaba).
+//
+// 👉 PARA REACTIVAR LA INDEXACIÓN EN EL DOMINIO REAL: cambiar `true` por `false`.
+// ============================================================================
+export const noindex: boolean = true; // ⚠️ QUITAR AL PASAR AL DOMINIO REAL
 
-// Valor para metadata.robots: noindex,nofollow en staging; undefined (indexable
-// por defecto) en el dominio real.
+// Valor para metadata.robots: noindex,nofollow mientras `noindex` sea true.
 export const robotsMeta: Metadata["robots"] = noindex
   ? { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } }
   : undefined;
