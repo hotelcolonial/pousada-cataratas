@@ -31,13 +31,13 @@
     @media(min-width:900px){
       .qd-wrap{padding:0 40px}
       .qd-grid{grid-template-columns:1.5fr 1fr!important;gap:60px!important;align-items:start}
-      .qd-info{position:sticky;top:88px}
+      .qd-info{position:sticky;top:calc(var(--pch-h) + 18px)}
       .qd-amen{grid-template-columns:repeat(3,1fr)!important}
       .qd-detail{grid-template-columns:1.9fr 1fr!important;gap:70px!important}
       .qd-specs{grid-template-columns:repeat(3,1fr)!important}
       .qd-serv{grid-template-columns:repeat(3,1fr)!important}
       .qd-around{grid-template-columns:repeat(3,1fr)!important}
-      .qd-sidebar{position:sticky;top:88px}
+      .qd-sidebar{position:sticky;top:calc(var(--pch-h) + 18px)}
       .qd-herorow{flex-direction:row!important;align-items:flex-end!important;justify-content:space-between!important}
       .qd-tabs{gap:42px!important}
       .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}

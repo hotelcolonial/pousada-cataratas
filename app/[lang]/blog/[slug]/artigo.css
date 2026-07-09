@@ -32,7 +32,7 @@
     .ar-author{flex-direction:row!important;align-items:center!important;gap:28px!important}
     .ar-rel{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
     .ar-relt{font-size:25px!important}
-    .ar-side-sticky{position:sticky;top:88px}
+    .ar-side-sticky{position:sticky;top:calc(var(--pch-h) + 18px)}
     .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
   }
 

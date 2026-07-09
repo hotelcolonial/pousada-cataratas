@@ -37,7 +37,7 @@
     .bl-layout{grid-template-columns:65fr 30fr!important;gap:5%!important}
     .bl-cards2{grid-template-columns:1fr 1fr!important}
     .bl-cardtitle{font-size:26px!important}
-    .bl-side-sticky{position:sticky;top:88px}
+    .bl-side-sticky{position:sticky;top:calc(var(--pch-h) + 18px)}
   }
 
   /* footer columns: stack on mobile, 3-up on tablet+ */

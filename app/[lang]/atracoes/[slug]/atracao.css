@@ -31,7 +31,7 @@
     .ad-body{grid-template-columns:65fr 30fr!important;gap:5%!important;margin-top:120px!important}
     .ad-do{grid-template-columns:1fr 1fr!important}
     .ad-rel{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
-    .ad-sidebar-sticky{position:sticky;top:88px}
+    .ad-sidebar-sticky{position:sticky;top:calc(var(--pch-h) + 18px)}
     .ad-two{grid-template-columns:60fr 35fr!important;gap:5%!important;margin-top:56px!important}
     .ad-bigtitle{font-size:74px!important}
     .ad-locstrip{grid-template-columns:65fr 35fr!important;min-height:520px}
