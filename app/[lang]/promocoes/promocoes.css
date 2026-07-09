@@ -1,0 +1,23 @@
+/* ============================================================================
+   promocoes.css — bloque <style> del helmet de "Promocoes.dc.html", copiado TAL
+   CUAL (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya
+   en globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .pr-sec{max-width:1280px;margin:0 auto;padding:80px 22px;display:grid;grid-template-columns:1fr;gap:48px;align-items:stretch}
+  .pr-paras{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+  .pr-resv-links a{display:block;font-size:16px;color:#FFFFFF;text-decoration:none;padding:2px 0;transition:opacity .2s}
+  .pr-resv-links a:hover{opacity:.7}
+  .pr-cards{max-width:1280px;margin:0 auto;padding:0 22px 100px;display:grid;grid-template-columns:1fr;gap:30px}
+  @media(min-width:960px){
+    .pr-sec{grid-template-columns:2.1fr 1fr!important;gap:60px!important;padding:120px 40px!important}
+    .pr-paras{grid-template-columns:1fr 1fr!important;gap:42px!important}
+    .pr-cards{grid-template-columns:repeat(3,1fr)!important;gap:30px!important;padding:0 40px 130px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+    .pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}

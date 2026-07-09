@@ -1,0 +1,45 @@
+/* ============================================================================
+   blog.css — bloque <style> del helmet de "Blog.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .in-wrap{max-width:1760px;margin:0 auto;padding:0 22px}
+  .in-h1{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.02;font-size:42px;margin:0}
+  .bl-feat2{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+  .bl-feat2-title{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.04;font-size:38px;margin:0;letter-spacing:-.01em}
+  .bl-layout{display:grid;grid-template-columns:1fr;gap:48px;align-items:start}
+  .bl-cards2{display:grid;grid-template-columns:1fr;gap:30px}
+  .bl-cardtitle{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.1;font-size:24px;margin:14px 0 0;letter-spacing:-.01em}
+  .bl-side-sticky{}
+  .in-h2{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.06;font-size:30px;margin:0}
+  .bl-intro{display:grid;grid-template-columns:1fr;gap:30px;align-items:end}
+  .bl-feat{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+  .bl-featimg{position:relative;border-radius:26px;overflow:hidden;height:280px;background:#143C7A}
+  .bl-grid{display:grid;grid-template-columns:1fr;gap:30px}
+  .bl-sec{margin-top:64px}
+  .bl-link{color:#9AA3AD;text-decoration:none;transition:color .15s ease}
+  .bl-link:hover{color:#143C7A}
+  @media(min-width:760px){.bl-grid{grid-template-columns:repeat(2,1fr)!important;gap:36px 32px!important}}
+  @media(min-width:900px){
+    .in-wrap{padding:0 40px}
+    .in-h1{font-size:60px}
+    .in-h2{font-size:42px}
+    .bl-intro{grid-template-columns:1.2fr .8fr!important;gap:56px!important}
+    .bl-feat{grid-template-columns:1.15fr .85fr!important;gap:48px!important}
+    .bl-featimg{height:420px!important}
+    .bl-grid{grid-template-columns:repeat(3,1fr)!important;gap:44px 32px!important}
+    .bl-sec{margin-top:110px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+    .bl-feat2{grid-template-columns:55fr 40fr!important;gap:5%!important}
+    .bl-feat2-title{font-size:46px!important}
+    .bl-layout{grid-template-columns:65fr 30fr!important;gap:5%!important}
+    .bl-cards2{grid-template-columns:1fr 1fr!important}
+    .bl-cardtitle{font-size:26px!important}
+    .bl-side-sticky{position:sticky;top:88px}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}

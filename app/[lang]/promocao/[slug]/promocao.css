@@ -1,0 +1,28 @@
+/* ============================================================================
+   produto.css — bloque <style> del helmet de "Produto.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .pp-prod{max-width:1240px;margin:0 auto;padding:72px 22px;display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+  .pp-rel{max-width:1240px;margin:0 auto;padding:0 22px 96px}
+  .pp-rel-grid{display:grid;grid-template-columns:1fr;gap:26px}
+  @media(min-width:640px){.pp-rel-grid{grid-template-columns:1fr 1fr!important}}
+  @media(min-width:900px){
+    .pp-banner-h1{font-size:66px!important}
+    .pp-prod{grid-template-columns:1fr 0.9fr!important;gap:64px!important;padding:104px 40px!important}
+    .pp-rel{padding:0 40px 120px!important}
+    .pp-rel-grid{grid-template-columns:repeat(4,1fr)!important;gap:30px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}
+
+/* hovers recreados 1:1 del style-hover del runtime. Ninguno tiene filter inline
+   en base -> ganan sin !important. */
+.pp-wa:hover{filter:brightness(1.12)}
+.pp-resv:hover{filter:brightness(1.07)}
+.pp-vq:hover{filter:brightness(1.12)}

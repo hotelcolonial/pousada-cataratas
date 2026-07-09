@@ -1,0 +1,696 @@
+import type { LocaleContent } from "./types";
+
+// English (first draft) translation overrides. Keys match the pt base in
+// lib/data.ts (id/slug/label/name/href). Only translatable text fields are
+// provided; invariant fields (img, slug, etc.) come from the pt base.
+export const en: LocaleContent = {
+  // ============================ Home ============================
+  rgCards: {
+    "rg-1": { name: "Double Room", guests: "2 guests", price: "On request" },
+    "rg-2": { name: "Triple Room", guests: "3 guests", price: "On request" },
+    "rg-3": { name: "Quadruple Room", guests: "4 guests", price: "On request" },
+    "rg-4": { name: "Quintuple Room", guests: "5 guests", price: "On request" },
+  },
+
+  testi: [
+    {
+      text: "I run an inbound tourism company in Foz do Iguaçu and I have been staying at Pousada Cataratas for about 4 years. I have noticed that the property is always undergoing some improvement — it is not static like most lodgings.",
+      name: "Shiroagente",
+      loc: "",
+    },
+    {
+      text: "A super cozy guesthouse, super attentive staff, spotlessly clean! Breakfast is simple but delicious, it doesn't disappoint. There is parking for the car and the pool is simply wonderful — my daughter didn't want to get out. Complimentary coffee at the front desk 24 hours a day. Not to mention the location. I'll be back soon!",
+      name: "R2562BHleandrod",
+      loc: "",
+    },
+    {
+      text: "Very happy with the value for money, the team is very competent, a family-friendly place, clean and organized. Some of the mattresses could use attention, but I will definitely be back. Oh, and the location is very good, in a quiet, safe neighborhood.",
+      name: "Sérgio Naves",
+      loc: "",
+    },
+    {
+      text: "Excellent guesthouse, family-style service, very cozy, very clean. Highly recommend!",
+      name: "David Felicio",
+      loc: "",
+    },
+    {
+      text: "An excellent place to enjoy with family and friends. Delicious breakfast, which you can have by the poolside, pleasant atmosphere, great shower, comfortable bed, spacious room, cozy and clean. Very good for staying with the family.",
+      name: "verapH5637GU",
+      loc: "",
+    },
+  ],
+
+  // ============================ Quartos (listado) ============================
+  quartosCards: {
+    "rc-card-1": {
+      name: "Double Room",
+      guests: "2 guests",
+      desc: "Cozy and ideal for couples, with a double bed, air conditioning and everything you need for a peaceful rest.",
+      ph: "Photo — Double Room",
+    },
+    "rc-card-2": {
+      name: "Triple Room",
+      guests: "3 guests",
+      desc: "More space for those traveling in a trio or in small families, without giving up comfort.",
+      ph: "Photo — Triple Room",
+    },
+    "rc-card-3": {
+      name: "Quadruple Room",
+      guests: "4 guests",
+      desc: "Comfort for the whole family to enjoy Foz do Iguaçu together, with plenty of space.",
+      ph: "Photo — Quadruple Room",
+    },
+    "rc-card-4": {
+      name: "Quintuple Room",
+      guests: "5 guests",
+      desc: "The most spacious room in the guesthouse, perfect for larger families seeking privacy.",
+      ph: "Photo — Family Suite",
+    },
+  },
+
+  // ============================ Galería ============================
+  galeriaShots: {
+    g1: { alt: "Front facade of Pousada Cataratas in Foz do Iguaçu" },
+    g2: { alt: "Pool at Pousada Cataratas in Foz do Iguaçu" },
+    g3: { alt: "Double Room at Pousada Cataratas in Foz do Iguaçu" },
+    g4: { alt: "Breakfast at Pousada Cataratas in Foz do Iguaçu" },
+    g5: { alt: "Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g6: { alt: "Pool area at Pousada Cataratas in Foz do Iguaçu" },
+    g7: { alt: "Entrance to Pousada Cataratas in Foz do Iguaçu" },
+    g8: { alt: "Quadruple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g9: { alt: "Garden and pool at Pousada Cataratas in Foz do Iguaçu" },
+    g10: { alt: "Quintuple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g11: { alt: "Outdoor area at Pousada Cataratas in Foz do Iguaçu" },
+    g12: { alt: "Wide view of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
+    g13: { alt: "Pool and garden at Pousada Cataratas in Foz do Iguaçu" },
+    g14: { alt: "Breakfast buffet at Pousada Cataratas in Foz do Iguaçu" },
+    g15: { alt: "Beds in the Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g16: { alt: "Facade of Pousada Cataratas in Foz do Iguaçu" },
+    g17: { alt: "Beds in the Quadruple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g18: { alt: "Parking at Pousada Cataratas in Foz do Iguaçu" },
+    g19: { alt: "Beds in the Quintuple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g20: { alt: "Double bed and wardrobe of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
+    g21: { alt: "Balcony and bathroom of the Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g22: { alt: "TV and bathroom of the Quadruple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g23: { alt: "Wardrobe and bathroom of the Quintuple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g24: { alt: "TV and bathroom of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
+    g25: { alt: "TV and wardrobe of the Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g26: { alt: "Wide view of the Quadruple Room at Pousada Cataratas in Foz do Iguaçu" },
+    g27: { alt: "Wide view of the Quintuple Room at Pousada Cataratas in Foz do Iguaçu" },
+  },
+
+  galeriaTabs: {
+    todos: { label: "All" },
+    quartos: { label: "Rooms" },
+    comuns: { label: "Common areas" },
+    piscina: { label: "Pool" },
+  },
+
+  // ============================ Atrações (listado) ============================
+  atracoesFeatured: {
+    "at-feat-1": {
+      eyebrow: "Natural heritage",
+      name: "Iguaçu Falls",
+      distLabel: "min by car",
+      desc: "One of the Seven Natural Wonders of the World, with more than 270 waterfalls surrounded by Atlantic Forest. Trails, walkways and the famous Devil's Throat lookout just minutes from the guesthouse.",
+    },
+    "at-feat-2": {
+      eyebrow: "Wildlife",
+      name: "Bird Park",
+      distLabel: "min by car",
+      desc: "The largest bird park in Latin America, with immersive aviaries where toucans, macaws and flamingos live right next to you. A perfect outing for all ages, right beside the Falls.",
+    },
+    "at-feat-3": {
+      eyebrow: "Triple frontier",
+      name: "Landmark of the Three Borders",
+      distLabel: "min by car",
+      desc: "The point where Brazil, Argentina and Paraguay meet, on the banks of the Iguaçu and Paraná Rivers. A lookout, dining and a light show at dusk.",
+    },
+    "at-feat-4": {
+      eyebrow: "Engineering & nature",
+      name: "Itaipu Dam",
+      distLabel: "min by car",
+      desc: "One of the largest hydroelectric plants in the world, with guided tours, nighttime lighting and the Biological Refuge. An experience that combines technology and environmental preservation.",
+    },
+    "at-feat-5": {
+      eyebrow: "Aquatic life",
+      name: "AquaFoz",
+      distLabel: "min by car",
+      desc: "One of the largest aquariums in South America: a 750-meter circuit across three floors that recreates the path of the waters of the Iguaçu and Paraná Rivers, with more than 300 freshwater and saltwater species, from the Upper Iguaçu to the Ocean.",
+    },
+  },
+
+  atracoesCards: {
+    "at-card-1": { meta: "5 min · Adventure", badge: "Fun" },
+    "at-card-2": { meta: "12 min · Dining", badge: "Night" },
+    "at-card-3": { meta: "14 min · Shopping", badge: "Shopping" },
+  },
+
+  atracoesNearby: {
+    "Cataratas do Iguaçu": { name: "Iguaçu Falls" },
+    "Parque das Aves": { name: "Bird Park" },
+    "Marco das Três Fronteiras": { name: "Landmark of the Three Borders" },
+    "Usina de Itaipu": { name: "Itaipu Dam" },
+  },
+
+  // ============================ Blog (listado) ============================
+  blogPosts: {
+    "bl-1": {
+      cat: "Itineraries",
+      title: "What to do in Foz do Iguaçu in 3 days: a complete itinerary to make the most of every hour",
+      excerpt: "A 3-day itinerary in Foz do Iguaçu with the best attractions, local tips and everything you need to know to make the most of every hour.",
+      ph: "Photo — 3-day itinerary in Foz",
+    },
+    "bl-2": {
+      cat: "Travel tips",
+      title: "How to get to Iguaçu Falls from the guesthouse: a practical guide to save time",
+      excerpt: "Leaving the guesthouse, getting to Iguaçu Falls is easier than it seems. See the best transport options and save time.",
+      ph: "Photo — How to get to the Falls",
+    },
+    "bl-3": {
+      cat: "Lodging",
+      title: "Where to stay near the Falls with great value for money in Foz do Iguaçu",
+      excerpt: "Find out where to stay near the Falls with great value for money in Foz do Iguaçu and enjoy every moment of your trip in comfort while saving money.",
+      ph: "Photo — Where to stay in Foz",
+    },
+    "bl-4": {
+      cat: "Attractions",
+      title: "What to do in Foz do Iguaçu beyond the Falls: 7 attractions worth every extra day",
+      excerpt: "Foz do Iguaçu has much more than the Falls. Discover 7 attractions worth every extra day in the city and plan your visit with local tips.",
+      ph: "Photo — Attractions beyond the Falls",
+    },
+  },
+
+  blogCategories: {
+    "Roteiros": { name: "Itineraries" },
+    "Dicas de viagem": { name: "Travel tips" },
+    "Hospedagem": { name: "Lodging" },
+    "Atrações": { name: "Attractions" },
+  },
+
+  blogRecent: {
+    "bl-rec-1": { title: "What to do in Foz do Iguaçu in 3 days" },
+    "bl-rec-2": { title: "How to get to Iguaçu Falls from the guesthouse" },
+    "bl-rec-3": { title: "Where to stay near the Falls with great value for money" },
+    "bl-rec-4": { title: "What to do in Foz do Iguaçu beyond the Falls" },
+  },
+
+  blogTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Foz do Iguaçu"],
+
+  // ============================ Detalle Quarto ============================
+  rooms: {
+    "quarto-duplo": {
+      name: "Double Room",
+      guests: "2 guests",
+      longDesc: "Cozy and ideal for couples or trips for two, the Double Room brings together everything you need for a peaceful rest between one outing and another around the Falls.",
+      longDesc2: "A comfortable double bed, air conditioning, free Wi-Fi and a well-equipped private bathroom, in a quiet and well-kept setting.",
+      photos: [
+        { src: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Double Room at Pousada Cataratas in Foz do Iguaçu with a double bed" },
+        { src: "/images/real/quartos/quarto-duplo-cama-armario-pousada-cataratas-foz-do-iguacu.webp", alt: "Double bed, wardrobe and minibar of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-duplo-tv-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "TV, mirror and granite countertop of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-duplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Wide view of the Double Room at Pousada Cataratas in Foz do Iguaçu, close to the Falls" },
+      ],
+    },
+    "quarto-triplo": {
+      name: "Triple Room",
+      guests: "3 guests",
+      longDesc: "More space for those traveling in a trio or in small families, the Triple Room offers extra comfort without giving up peace and quiet.",
+      longDesc2: "Comfortable beds, air conditioning, free Wi-Fi and a private bathroom, in a setting designed for everyone to rest well.",
+      photos: [
+        { src: "/images/real/quartos/quarto-triplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Triple Room at Pousada Cataratas in Foz do Iguaçu with a double bed and a single bed" },
+        { src: "/images/real/quartos/quarto-triplo-camas-pousada-cataratas-foz-do-iguacu.webp", alt: "Double bed and single bed of the Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-triplo-varanda-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "Triple Room at Pousada Cataratas with balcony, countertop and mirror in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-triplo-tv-armario-pousada-cataratas-foz-do-iguacu.webp", alt: "TV, wardrobe and minibar of the Triple Room at Pousada Cataratas in Foz do Iguaçu" },
+      ],
+    },
+    "quarto-quadruplo": {
+      name: "Quadruple Room",
+      guests: "4 guests",
+      longDesc: "Comfort for the whole family to enjoy Foz do Iguaçu together. The Quadruple Room has plenty of space so everyone can rest well between outings.",
+      longDesc2: "Comfortable beds, air conditioning, free Wi-Fi and a private bathroom, in a spacious, well-lit setting.",
+      photos: [
+        { src: "/images/real/quartos/quarto-quadruplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Quadruple Room at Pousada Cataratas in Foz do Iguaçu with a double bed and single beds" },
+        { src: "/images/real/quartos/quarto-quadruplo-camas-pousada-cataratas-foz-do-iguacu.webp", alt: "Beds of the Quadruple Room at Pousada Cataratas in Foz do Iguaçu, ideal for families" },
+        { src: "/images/real/quartos/quarto-quadruplo-tv-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "Quadruple Room at Pousada Cataratas with TV, wardrobe and private bathroom in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-quadruplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Wide view of the Quadruple Room at Pousada Cataratas in Foz do Iguaçu" },
+      ],
+    },
+    "quarto-quintuplo": {
+      name: "Quintuple Room",
+      guests: "5 guests",
+      longDesc: "The most spacious room in the guesthouse, perfect for larger families seeking privacy and comfort during their stay in Foz do Iguaçu.",
+      longDesc2: "Several beds, air conditioning, free Wi-Fi and a private bathroom, in a spacious setting designed for groups.",
+      photos: [
+        { src: "/images/real/quartos/quarto-quintuplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Quintuple Room at Pousada Cataratas in Foz do Iguaçu, spacious and for families" },
+        { src: "/images/real/quartos/quarto-quintuplo-camas-pousada-cataratas-foz-do-iguacu.webp", alt: "Beds of the Quintuple Room at Pousada Cataratas in Foz do Iguaçu, ideal for groups" },
+        { src: "/images/real/quartos/quarto-quintuplo-armario-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "Quintuple Room at Pousada Cataratas with wardrobe and private bathroom in Foz do Iguaçu" },
+        { src: "/images/real/quartos/quarto-quintuplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Wide view of the Quintuple Room at Pousada Cataratas in Foz do Iguaçu" },
+      ],
+    },
+  },
+
+  quartoAmenities: {
+    "Ar-condicionado": { label: "Air conditioning" },
+    "Frigobar": { label: "Minibar" },
+    "TV": { label: "TV" },
+    "Wi-Fi grátis": { label: "Free Wi-Fi" },
+    "Banheiro privativo": { label: "Private bathroom" },
+    "Cofre": { label: "Safe" },
+    "Secador de cabelo": { label: "Hair dryer" },
+    "Café da manhã": { label: "Breakfast" },
+    "Roupa de cama e toalhas": { label: "Bed linen and towels" },
+  },
+
+  quartoAround: {
+    "cataratas": { title: "Iguaçu Falls" },
+    "parque-das-aves": { title: "Bird Park" },
+    "marco-tres-fronteiras": { title: "Landmark of the Three Borders" },
+  },
+
+  // ============================ Detalle Atração ============================
+  atracoes: {
+    "cataratas": {
+      eyebrow: "Natural heritage",
+      kicker: "Foz do Iguaçu",
+      name: "Iguaçu Falls",
+      desc1: "One of the Seven Natural Wonders of the World, formed by more than 270 waterfalls surrounded by the Atlantic Forest of Iguaçu National Park. The walkways lead to the imposing Devil's Throat, where the force of the water impresses up close.",
+      desc2: "The visit combines light trails, lookouts and plenty of nature. Set aside a few hours to enjoy it at your leisure — and be ready to get wet near the falls.",
+      specs: [
+        { label: "Distance", value: "20 min" },
+        { label: "Duration", value: "3–4 h" },
+        { label: "Best time", value: "Morning" },
+        { label: "Ticket", value: "Paid" },
+      ],
+    },
+    "parque-das-aves": {
+      eyebrow: "Wildlife",
+      kicker: "Foz do Iguaçu",
+      name: "Bird Park",
+      desc1: "The largest bird park in Latin America, with immersive aviaries where you walk side by side with toucans, macaws and flamingos. A dive into the biodiversity of the Atlantic Forest, right beside the Falls.",
+      desc2: "The route is calm and accessible, perfect for all ages. Set aside about two hours to enjoy each aviary at your leisure.",
+      specs: [
+        { label: "Distance", value: "15 min" },
+        { label: "Duration", value: "2 h" },
+        { label: "Best time", value: "Morning" },
+        { label: "Ticket", value: "Paid" },
+      ],
+    },
+    "marco-tres-fronteiras": {
+      eyebrow: "Triple frontier",
+      kicker: "Foz do Iguaçu",
+      name: "Landmark of the Three Borders",
+      desc1: "The point where Brazil, Argentina and Paraguay meet, on the banks of the Iguaçu and Paraná Rivers. A historic landmark with a lookout, dining and a light show at dusk.",
+      desc2: "Go in the late afternoon to see the sunset over the three countries and stay for the light and sound show. A relaxed outing full of scenery.",
+      specs: [
+        { label: "Distance", value: "25 min" },
+        { label: "Duration", value: "2 h" },
+        { label: "Best time", value: "Dusk" },
+        { label: "Ticket", value: "Paid" },
+      ],
+    },
+    "itaipu": {
+      eyebrow: "Engineering & nature",
+      kicker: "Foz do Iguaçu",
+      name: "Itaipu Dam",
+      desc1: "One of the largest hydroelectric plants in the world, with guided tours that reveal the impressive scale of the dam. At night, special lighting turns the structure into a spectacle of its own.",
+      desc2: "There is also the Biological Refuge and the eco-museum, which combine technology and environmental preservation. Choose between the panoramic and special tours depending on the time you have available.",
+      specs: [
+        { label: "Distance", value: "35 min" },
+        { label: "Duration", value: "2–3 h" },
+        { label: "Best time", value: "Afternoon" },
+        { label: "Ticket", value: "Paid" },
+      ],
+    },
+    "compras-paraguai": {
+      eyebrow: "Shopping & border",
+      kicker: "Ciudad del Este",
+      name: "Shopping in Paraguay",
+      desc1: "On the other side of the border, in Ciudad del Este, lies one of the largest shopping hubs in South America. Electronics, perfumes, toys and new arrivals at prices that make crossing the Friendship Bridge worthwhile.",
+      desc2: "Go in the morning to make the most of it and bring a photo ID. Our team helps arrange transport and advise on the purchase allowance when returning to Brazil.",
+      specs: [
+        { label: "Distance", value: "25 min" },
+        { label: "Duration", value: "3–4 h" },
+        { label: "Best time", value: "Morning" },
+        { label: "Ticket", value: "Free" },
+      ],
+    },
+    "aquafoz": {
+      eyebrow: "Aquatic life",
+      kicker: "Foz do Iguaçu",
+      name: "AquaFoz",
+      desc1: "One of the largest aquariums in South America. With 23,000 m² and around 3.3 million liters of water, AquaFoz recreates the path of the waters of the Iguaçu and Paraná Rivers in a 750-meter circuit spread across three floors.",
+      desc2: "There are more than 300 freshwater and saltwater species — from the Upper Iguaçu to the Flooded Forest, from the Amazon to the Ocean. An immersive journey that combines wonder and environmental education, perfect for all ages, on Av. das Cataratas.",
+      specs: [
+        { label: "Distance", value: "15 min" },
+        { label: "Duration", value: "2–3 h" },
+        { label: "Best time", value: "Morning" },
+        { label: "Ticket", value: "Paid" },
+      ],
+    },
+  },
+
+  atracaoDoItems: {
+    "cataratas": [
+      "Falls walkway",
+      "Devil's Throat",
+      "Trails through the Atlantic Forest",
+      "Panoramic lookouts",
+      "Photographing the falls",
+      "Cafés and snack bars at Porto Canoas",
+    ],
+    "parque-das-aves": [
+      "Immersive Atlantic Forest aviaries",
+      "See toucans, macaws and flamingos up close",
+      "Butterfly house and hummingbird aviary",
+      "Encounter with macaws",
+      "Photography with the birds",
+      "Park shop and café",
+    ],
+    "marco-tres-fronteiras": [
+      "Three borders lookout",
+      "Light show at dusk",
+      "Food village",
+      "Cultural performances",
+      "Photographing the obelisk",
+      "Sunset on the banks of the Paraná River",
+    ],
+    "itaipu": [
+      "Panoramic visit to the dam",
+      "See the spillway in operation",
+      "Nighttime lighting of the plant",
+      "Bela Vista Biological Refuge",
+      "Itaipu eco-museum",
+      "Special guided tour",
+    ],
+    "aquafoz": [
+      "Immersive 750-meter circuit",
+      "Large aquarium and main tank",
+      "See more than 300 species",
+      "Underwater tunnel",
+      "Interactive experiences",
+      "Environmental education for all ages",
+    ],
+    "compras-paraguai": [
+      "Crossing the Friendship Bridge",
+      "Electronics, perfumes and new arrivals",
+      "Malls in Ciudad del Este",
+      "Toys and gifts",
+      "Currency exchange and great bargains",
+      "Dining at the border",
+    ],
+  },
+
+  atracaoSteps: {
+    "cataratas": [
+      "Leave the guesthouse and take Av. das Cataratas (BR-469) toward the National Park",
+      "Follow the highway for about 10 km, going straight ahead",
+      "Enter through the gateway of Iguaçu National Park",
+      "Park at the Visitor Center and head to the Falls walkways",
+    ],
+    "parque-das-aves": [
+      "Leave the guesthouse and take Av. das Cataratas (BR-469) toward the National Park",
+      "Continue for a few minutes toward the National Park gateway",
+      "The Bird Park is on the right, just before the park entrance",
+      "Park in front of the Bird Park",
+    ],
+    "marco-tres-fronteiras": [
+      "Leave the guesthouse toward downtown Foz do Iguaçu",
+      "Follow Av. General Meira toward Jardim Eldorado",
+      "Continue to the banks of the Paraná River",
+      "Arrive at the Landmark of the Three Borders",
+    ],
+    "itaipu": [
+      "Leave the guesthouse toward downtown Foz do Iguaçu",
+      "Take Av. Tancredo Neves toward the Itaipu district (north)",
+      "Follow the avenue for about 6 km",
+      "Arrive at the Visitor Reception Center (Av. Tancredo Neves, 6702)",
+    ],
+    "compras-paraguai": [
+      "Leave the guesthouse toward downtown Foz do Iguaçu",
+      "Head toward the Friendship Bridge, over the Paraná River",
+      "Cross the bridge toward Ciudad del Este, in Paraguay",
+      "Bring a photo ID and mind the purchase allowance on the way back",
+    ],
+    "aquafoz": [
+      "Leave the guesthouse and take Av. das Cataratas (BR-469) toward the National Park",
+      "Follow the highway to KM 18 of Av. das Cataratas",
+      "AquaFoz is on the side of the avenue, well signposted",
+      "Park and start the circuit at the Iguaçu River, heading toward the Ocean",
+    ],
+  },
+
+  // ============================ Detalle Promoção ============================
+  promocoes: {
+    "longa-estadia": {
+      name: "Long stay package",
+      sub: "From 5 nights",
+      validity: "Valid for stays of 5 nights or more",
+      desc: "Stay more days and pay less. Ideal for those who want to explore Foz do Iguaçu at a leisurely pace, enjoying every attraction without rushing and with the comfort of the guesthouse as a base.",
+      desc2: "The more nights, the better the rate. Talk to our team and put together the perfect stay for your trip.",
+      conditions: [
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Best rate guaranteed",
+      ],
+    },
+    "morador": {
+      name: "Resident rate",
+      sub: "For local residents",
+      validity: "Upon proof of residence",
+      desc: "A special deal for those who are from the region and want to enjoy a getaway close to home, with all the facilities and the warm service of the guesthouse.",
+      desc2: "Present your proof of residence when booking and secure the exclusive rate for residents.",
+      conditions: [
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Proof of residence",
+      ],
+    },
+    "antecipada": {
+      name: "Early booking",
+      sub: "By booking in advance",
+      validity: "Bookings made 30 days in advance",
+      desc: "Plan your trip in advance and save. Those who book ahead secure the best rate and the peace of mind of having everything ready for the trip.",
+      desc2: "Book at least 30 days in advance and enjoy the exclusive discount.",
+      conditions: [
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Flexible cancellation",
+      ],
+    },
+  },
+
+  // ============================ Detalle Produto ============================
+  produtos: {
+    "longa-estadia": {
+      name: "Long stay package",
+      desc1: "Stay more days and pay less. Ideal for those who want to explore Foz do Iguaçu at a leisurely pace, enjoying every attraction without rushing and with the comfort of the guesthouse as a base to visit the Falls, the Bird Park and the surroundings.",
+      desc2: "From 5 nights you get up to 15% off. The nightly rate already includes breakfast, free Wi-Fi and private parking — the more nights, the better the rate.",
+    },
+    "morador": {
+      name: "Resident rate",
+      desc1: "A special deal for residents of the Foz do Iguaçu region and surroundings. Enjoy the guesthouse as your retreat close to home, with all the facilities and the usual comfort.",
+      desc2: "Residents of the region get 10% off the nightly rate upon proof of residence. Breakfast, free Wi-Fi and parking included.",
+    },
+    "antecipada": {
+      name: "Early booking",
+      desc1: "Plan your trip in advance and pay less. By booking with plenty of time, you secure the best rate and the peace of mind to organize every detail of the trip.",
+      desc2: "By booking in advance, you get 12% off the nightly rate. The deal includes breakfast, free Wi-Fi and private parking.",
+    },
+    "day-use": {
+      name: "Day Use",
+      desc1: "Enjoy the facilities of Pousada Cataratas for a day, without needing to stay overnight. Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
+      desc2: "Day Use costs R$ 90 per person and gives access to the guesthouse's leisure areas during the day, from 9 am to 6 pm. Check availability with our team.",
+    },
+    "agosto-encantador": {
+      name: "Agosto Encantador",
+      desc1: "A special promotion to make your August unforgettable in Foz do Iguaçu. Stay with us and get two tickets to Ecopark, one of the most enchanting outings in the region.",
+      desc2: "Enjoy the comfort of the guesthouse and experience nature up close, with two tickets to Ecopark included in your stay. Talk to our team and secure your booking.",
+    },
+  },
+
+  produtoRelated: {
+    "quarto-duplo": { name: "Double Room" },
+    "quarto-triplo": { name: "Triple Room" },
+    "quarto-quadruplo": { name: "Quadruple Room" },
+    "quarto-quintuplo": { name: "Quintuple Room" },
+  },
+
+  // ============================ Detalle Artigo ============================
+  artigos: {
+    "o-que-fazer-em-foz-do-iguacu-em-3-dias": {
+      category: "Itineraries",
+      title: "What to do in Foz do Iguaçu in 3 days: a complete itinerary to make the most of every hour",
+      date: "July 7, 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "4 min read",
+      body: [
+        { type: "p", text: "Three days seem like little until you realize that Foz do Iguaçu concentrates some of the most impressive landscapes on the planet just a few kilometers from one another. If you want to know what to do in Foz do Iguaçu in 3 days without wasting time or money, you've come to the right place. This itinerary was designed by people who know every corner of the city and welcome visitors all year round." },
+        { type: "h2", text: "Day 1: Iguaçu Falls and the Bird Park early in the morning" },
+        { type: "p", text: "Start with the grandest of all: Iguaçu Falls. Arrive before 9 am to catch the trail with fewer people and good light for photos. The main walk is about 1.2 km and ends at the walkway of the Brazilian Devil's Throat, with the spray of the water hitting your face. Set aside at least two hours here." },
+        { type: "p", text: "Right at the exit of the national park, the Bird Park is worth the stop. In less than an hour you cross aviaries with macaws, toucans and herons up close, in a relaxed visit that works well for children and couples. Have lunch nearby and rest in the afternoon, because the second day demands stamina." },
+        { type: "h3", text: "What to bring to the Falls" },
+        { type: "list", items: [
+          "Quick-drying clothes, because you will get wet on the final walkway",
+          "Sunscreen and insect repellent, the trail passes through open areas",
+          "Closed, non-slip footwear for the wet floor",
+          "A camera or phone well protected in a waterproof bag",
+        ] },
+        { type: "h2", text: "Day 2: Itaipu in the morning and the Triple Frontier at dusk" },
+        { type: "p", text: "The Itaipu Dam opens at 8 am and offers guided tours with different levels of depth. The panoramic tour is already quite impressive and lasts about an hour. For those who want to see the turbines from the inside, the special tour requires advance booking. It's worth the investment. In the afternoon, the Landmark of the Three Borders brings together Brazil, Argentina and Paraguay in a single lookout on the banks of the Paraná River. The sunset from there, with the waters meeting, is a perfect way to close the day." },
+        { type: "h2", text: "Day 3: nature, shopping and a more relaxed pace" },
+        { type: "p", text: "The third day is the moment to breathe deeply and enjoy what's left on the list. Many people use this morning to revisit a favorite spot or explore the National Park at a calmer pace, without the rush of the first day. If you haven't yet done the Poço Preto Trail, this is the right time: it's almost eight kilometers through dense forest, with bird watching and stops on the riverbank. It's the wild, quiet side of Foz that few tourists discover." },
+        { type: "p", text: "In the afternoon, the Ciudad del Este market, on the Paraguayan side, draws those who want electronics, perfumes and clothes at competitive prices. Crossing the Friendship Bridge is simple: bring an ID, keep an eye on the purchase limit allowed by the Federal Revenue, and that's it. No visa is needed. If the border isn't your thing, downtown Foz has shops, small markets and a surprising Arab food scene, a legacy of the Lebanese community that has lived in the city for decades." },
+        { type: "h3", text: "Tips for enjoying Ciudad del Este stress-free" },
+        { type: "list", items: [
+          "Go early, preferably before 10 am: the crowds grow a lot in the late morning.",
+          "Bring reais and dollars. Local exchange accepts both, but compare before paying.",
+          "Keep the receipts for everything you buy to make it easier at customs on the way back.",
+          "Avoid Saturday if you can: it's the busiest day on the bridge and in the shops.",
+        ] },
+        { type: "h2", text: "Where to stay to enjoy all of this without wasting time" },
+        { type: "p", text: "Knowing what to do in Foz do Iguaçu in 3 days is half the battle. The other half is having a well-located base, where you arrive rested, eat well in the morning and still leave without getting stuck in traffic. Our guesthouse is just minutes from the Falls, with easy access both to the Brazilian side and to the Triple Frontier and Itaipu. No car, no hassle: many of our guests do everything by taxi or ride-hailing app and spend far less than they imagined." },
+        { type: "p", text: "If you're planning this trip, book directly with us. Here you'll find service from people who know every corner of the city and want to help you make the most of every hour of your three days in Foz. Send a message, tell us your itinerary and we'll give you a hand to adjust whatever you need." },
+      ],
+    },
+    "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": {
+      category: "Travel tips",
+      title: "How to get to Iguaçu Falls from the guesthouse: a practical guide to save time",
+      date: "July 7, 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "4 min read",
+      body: [
+        { type: "p", text: "You wake up, have a warm coffee and already smell the forest. You know that Iguaçu Falls are right there, just minutes away. But how do you get to Iguaçu Falls from our guesthouse in the fastest and most relaxed way possible? That's the most common question from those about to book, and we answer it with everything you need to know even before you pack your backpack." },
+        { type: "h2", text: "The distance that makes all the difference" },
+        { type: "p", text: "The guesthouse is approximately 100 meters from Avenida das Cataratas, the main road that connects Foz do Iguaçu to the entrance of the National Park. This means that, while other guests are still in the car leaving the city center, you're already on your way. That's no small thing when you consider that the park opens early and the entrance line grows quickly on weekends and holidays." },
+        { type: "p", text: "This location places you in the natural access corridor to the park, with easy access to whatever mode of transport you prefer. Below, we detail each option so you can choose the one that makes the most sense for your itinerary." },
+        { type: "h2", text: "Going on foot: yes, it's possible and quite simple" },
+        { type: "p", text: "For those who enjoy a morning walk, the main entrance to Iguaçu National Park is about 3 km from the guesthouse, always following Avenida das Cataratas. The route has a sidewalk for much of the way and passes greenery on both sides of the road. On sunny days, it's a very pleasant start to the morning. It takes around 35 to 40 minutes at a relaxed pace." },
+        { type: "h3", text: "What to bring if going on foot" },
+        { type: "list", items: [
+          "Sunscreen applied before leaving, because the stretch has sections without shade",
+          "A water bottle, since inside the park the places to buy are concentrated at specific points",
+          "Closed, comfortable footwear, as the ground on the trails inside the park is uneven in some sections",
+          "The ticket purchased in advance through the official ICMBio website, so you don't waste time at the box office",
+        ] },
+        { type: "h2", text: "By your own or rented car: fast and hassle-free" },
+        { type: "p", text: "If you came by car or rented one in Foz, leaving the guesthouse takes you straight onto Avenida das Cataratas. It's less than a 5-minute drive to the park's parking lot, which charges a fee separate from the ticket. Arriving early pays off, because the spots near the entrance fill up during high season." },
+        { type: "h2", text: "Public transport: the line that goes straight to the park" },
+        { type: "p", text: "Those who prefer not to drive have a practical and cheap option: the line 120 bus, known as 'Cataratas', runs along Avenida das Cataratas and goes to the park entrance. The trip takes between 15 and 25 minutes depending on traffic, and the stop closest to the guesthouse is less than two minutes' walk away. The fare is very affordable, and you can find the updated schedule directly in the TCFOZ app or by asking at the front desk." },
+        { type: "p", text: "A real tip: avoid taking the bus between 9 and 10 am on high-season weekends. The vehicle tends to get crowded, and waiting for the next one can cost 20 precious minutes. Leaving at 8 am, you arrive before the line gets long and still enjoy the morning light on the trails." },
+        { type: "h2", text: "Taxi and apps: when it's worth paying a little more" },
+        { type: "p", text: "Apps like 99 and Uber work well in Foz do Iguaçu. The ride from the guesthouse to the park gate costs around 10 to 15 reais, depending on the time of day. It's nothing outrageous if you have a small child, a lot of luggage for the day, or simply want door-to-door service without thinking about parking. Conventional taxis also circulate along the avenue and can be called at the front desk." },
+        { type: "h3", text: "Park hours: don't arrive without checking" },
+        { type: "list", items: [
+          "Iguaçu National Park opens at 9 am and closes at 5 pm for most of the year, with seasonal variations.",
+          "The ticket must be purchased in advance through the ICMBio website; it's not possible to buy at the physical box office.",
+          "The last entry allowed is usually until 4 pm, so plan to arrive with time to spare.",
+          "Sundays and holidays have much heavier traffic, so it's worth leaving the guesthouse earlier.",
+        ] },
+        { type: "h2", text: "A summary for those already close to deciding" },
+        { type: "p", text: "Knowing how to get to Iguaçu Falls from the guesthouse is simpler than it seems, precisely because the location solves much of the problem. On foot, by car, by bus or by app, the way is short and straightforward. What changes is your pace during the day: those who go on foot choose calm, those who go by car choose flexibility, those who go by bus choose a lighter wallet." },
+        { type: "p", text: "If you have any questions about departure times, how to buy the ticket or what to bring in your backpack, feel free to ask at the front desk before going to sleep. Here we know every detail of the way, and we love helping you make the most of every minute at the Falls." },
+      ],
+    },
+    "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": {
+      category: "Lodging",
+      title: "Where to stay near the Falls with great value for money in Foz do Iguaçu",
+      date: "July 7, 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "4 min read",
+      body: [
+        { type: "p", text: "You searched, compared, opened dozens of tabs and still don't know where to stay near the Falls with great value for money. Foz do Iguaçu has options for every taste, but the difference between arriving rested and ready to enjoy or losing hours in traffic starts with your choice of lodging. And that choice matters more than it seems." },
+        { type: "h2", text: "What makes lodging worth every cent you pay" },
+        { type: "p", text: "A low price is not synonymous with value for money. Anyone who has stayed at a distant hotel knows: what you save on the nightly rate, you spend on taxis, on lost time and on the exhaustion of reaching the attractions after an hour on the road. The equation changes when the guesthouse is just minutes from Iguaçu Falls and also delivers impeccable cleanliness, service from people who truly know the city and secure parking so you can leave the car without worry." },
+        { type: "p", text: "The reviews of those who have stayed in Foz always point to the same things: the good bed, the hearty breakfast, the pool that's a lifesaver in the Paraná heat and the care of those who host. It's these details that make the trip worthwhile." },
+        { type: "figure", img: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp", caption: "Pousada Cataratas is just minutes from Iguaçu Falls, with a pool, breakfast included and secure parking." },
+        { type: "h3", text: "What guests praise most about guesthouses in Foz" },
+        { type: "list", items: [
+          "Cleanliness and organization of the rooms and common areas",
+          "Close, personal service and local tips that don't appear in any guidebook",
+          "Secure parking included, with no surprise fee at checkout",
+          "A pool available to unwind after a day at the Falls",
+          "A location that puts you minutes from the main attractions",
+        ] },
+        { type: "p", text: "In practice, a well-located guesthouse in Foz do Iguaçu solves the problem of commuting, safety and comfort all at once. You wake up, have breakfast and you're already close to everything, whether the Falls or the triple frontier with Argentina and Paraguay. It's exactly this combination that turns ordinary lodging into a starting point that makes sense for your trip." },
+        { type: "h2", text: "Guesthouse or hotel: where your money goes further in Foz do Iguaçu" },
+        { type: "p", text: "Anyone researching where to stay near the Falls with great value for money quickly runs into a real question: is it worth paying more for a large hotel, or does a guesthouse deliver the same comfort with more advantage? The answer, most of the time, leans toward the guesthouse. Not because it's 'cheaper' in a generic sense, but because what you get in return is richer: service that recognizes your name, parking with no hidden extra fee at checkout and that pool that shows up as a bonus in the middle of the Foz heat." },
+        { type: "p", text: "Larger hotels charge for facilities you may never use — a convention hall, a full spa, a gourmet restaurant. In a well-run guesthouse, on the other hand, every cent goes straight to what matters: a good bed, a clean bathroom, a hearty breakfast and a front desk that tells you the best time to enter the Falls without facing a line." },
+        { type: "h3", text: "What to look at beyond price when comparing" },
+        { type: "list", items: [
+          "The real distance to the Falls: calculate it in minutes by car, not just in kilometers on the map.",
+          "Parking that is included and secure, especially if you come by car or rented one on arrival.",
+          "A pool available without restricted hours, great for resting after a long day at the National Park.",
+          "Breakfast included: it saves a whole meal and gets you on the road already fed.",
+          "Recent reviews about cleanliness and service, not just about the physical facilities.",
+        ] },
+        { type: "h2", text: "Why location decides more than anything else" },
+        { type: "p", text: "Foz do Iguaçu is not a large city, but the traffic in high season is surprising. Being at a strategic point means reaching the Falls before the peak of visitors, enjoying an afternoon at the triple frontier without rushing and still having energy for a relaxed dinner on the way back. Every minute saved commuting is a minute more inside the Park, or simply resting at the guesthouse." },
+        { type: "h2", text: "Secure your stay before the best rooms are off the map" },
+        { type: "p", text: "Foz do Iguaçu fills up quickly on holidays and in the summer. Those who leave it to the last minute end up choosing from what's left, paying more for less comfort or staying far from everything they planned. If your trip already has a date, don't put off the booking. Choose a guesthouse with a good location, parking, a pool and service from people who truly know the city. Then just arrive, open the window and let the sound of the waterfalls do the rest." },
+      ],
+    },
+    "o-que-fazer-em-foz-do-iguacu-alem-das-cataratas": {
+      category: "Attractions",
+      title: "What to do in Foz do Iguaçu beyond the Falls: 7 attractions worth every extra day",
+      date: "July 7, 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "3 min read",
+      body: [
+        { type: "p", text: "You arrived in Foz do Iguaçu, stood in awe at the Falls and thought: 'now what?' The good news is that the city has much more than that already unforgettable landscape. Knowing what to do in Foz do Iguaçu beyond the Falls is the secret to turning a quick visit into some of the best travel days you've ever had." },
+        { type: "h2", text: "Foz holds surprises for those who stay more than a day" },
+        { type: "p", text: "Those who book only one night often leave with the feeling that they missed something. And they did. The triple frontier region, where Brazil, Argentina and Paraguay meet, concentrates parks, dining, nighttime shows and enough adrenaline to fill a whole week without repeating a single activity." },
+        { type: "p", text: "The distance between the main points is short, which makes everything easier. With a good base, you set out early, enjoy the whole day and come back stress-free. It's exactly this comfort that our guesthouse offers: a strategic location, a carefully prepared breakfast and a team ready to point you the right way." },
+        { type: "h2", text: "Bird Park: colors that no photo does justice to" },
+        { type: "p", text: "A few meters from the entrance to the Falls, the Bird Park brings together more than 1,400 species in a preserved Atlantic Forest setting. You walk inside huge aviaries, with toucans, macaws and parrots flying around you. Set aside at least two hours and bring insect repellent." },
+        { type: "h3", text: "What to look for to make the most of the visit" },
+        { type: "list", items: [
+          "Arrive early: the birds are most active in the first hours of the morning.",
+          "Keep an eye on the parakeet aviary, where they land on your shoulder.",
+          "Combine the visit with the Falls on the same day, since both are on the same avenue.",
+          "Children pay half price or enter for free depending on age, confirm on the spot.",
+        ] },
+        { type: "p", text: "And this is just the beginning. Foz also has speed at the go-kart track, flavors from the border and shows that liven up the whole night. In the next topics, we'll tell you everything so you arrive prepared and don't miss a thing." },
+        { type: "h2", text: "Adrena Kart: real adrenaline just minutes from the Falls" },
+        { type: "p", text: "If you think Foz is only nature, the Adrena Kart go-kart track will surprise you. With professional tracks and fast karts, it's a must-stop for those who want to break the rhythm between one outing and another. Perfect for couples, friends or that competitive relative who shows up on every trip." },
+        { type: "h2", text: "Flavors of the triple frontier: eating well is also part of the trip" },
+        { type: "p", text: "The cuisine of Foz mixes Brazilian, Argentine and Paraguayan accents on the same plate. Hearty steakhouses, typical snacks at the market and restaurants that combine seasonings from the three countries form an itinerary of their own for those who enjoy eating well without spending much." },
+        { type: "list", items: [
+          "Try the chilled tereré, a typical drink that locals love on hot days",
+          "Don't leave without trying the Argentine empanada at one of the places near the border",
+          "The markets on the Paraguayan side have quick, cheap snacks to refuel between outings",
+        ] },
+        { type: "h2", text: "Rafain and IPORÃ: the night in Foz has a guaranteed show" },
+        { type: "p", text: "When the sun goes down, Foz lights another flame. The Rafain Show brings together folk dances from various South American countries in a colorful and lively spectacle. IPORÃ, on the other hand, takes a more contemporary reading of local culture, with live music and performances that hold your attention from start to finish. Planning at least one night for these shows is the right decision." },
+        { type: "h3", text: "A tip from those in the know: book the show in advance" },
+        { type: "p", text: "On weekends and holidays, the sessions sell out quickly. Securing your ticket beforehand avoids frustration and also makes the rest of the day more relaxed, without that last-minute rush." },
+        { type: "p", text: "Now you already know what to do in Foz do Iguaçu beyond the Falls, and you've realized that the city calls for more days than most people book. Our guesthouse is right near all these attractions, with the warmth of hosts who welcome you like a guest at home. Choose your dates, make your booking and let us take care of the rest." },
+      ],
+    },
+  },
+
+  artigoTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Foz do Iguaçu"],
+
+  artigoCategories: {
+    "Roteiros": { name: "Itineraries" },
+    "Dicas de viagem": { name: "Travel tips" },
+    "Hospedagem": { name: "Lodging" },
+    "Atrações": { name: "Attractions" },
+  },
+
+  artigoRecent: {
+    "o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
+    "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
+    "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Where to stay near the Falls with great value for money" },
+    "o-que-fazer-em-foz-do-iguacu-alem-das-cataratas": { title: "What to do in Foz do Iguaçu beyond the Falls" },
+  },
+
+  artigoRelated: {
+    "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
+    "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
+    "/blog/onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Where to stay near the Falls with great value for money" },
+    "/blog/o-que-fazer-em-foz-do-iguacu-alem-das-cataratas": { title: "What to do in Foz do Iguaçu beyond the Falls" },
+  },
+};

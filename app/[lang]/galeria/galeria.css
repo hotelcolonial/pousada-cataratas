@@ -1,0 +1,62 @@
+/* ============================================================================
+   galeria.css — bloque <style> del helmet de "Galeria.dc.html", copiado TAL CUAL
+   (clases, keyframes y media queries sin cambios). Se omiten reset/body/@font-face
+   (ya en globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   Mapeo de fuentes -> variables next/font.
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  @keyframes gfIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+  a{color:inherit}
+  .in-wrap{max-width:1760px;margin:0 auto;padding:0 22px}
+  .in-h1{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.02;font-size:42px;margin:0}
+  .in-h2{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.06;font-size:30px;margin:0}
+  .g-intro{display:grid;grid-template-columns:1fr;gap:30px;align-items:end}
+  .g-mosaic{display:grid;grid-template-columns:1fr;grid-auto-rows:240px;gap:14px}
+  .g-cell{position:relative;border-radius:24px;overflow:hidden;background:#143C7A}
+  .g-cap{position:absolute;left:16px;bottom:14px;color:#FFFFFF;font-size:14px;letter-spacing:.01em;z-index:2}
+  .g-sec{margin-top:64px}
+  .gp-row{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .gp-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .gf-tabs{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;margin-bottom:38px}
+  .gf-tab{background:none;border:0;padding:0 0 8px;cursor:pointer;font-family:inherit;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9AA3AD;position:relative;transition:color .2s}
+  .gf-tab[data-on="1"]{color:#1E90C8}
+  .gf-tab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#F0871F;transform:scaleX(0);transform-origin:center;transition:transform .3s ease}
+  .gf-tab[data-on="1"]::after{transform:scaleX(1)}
+  .gf-grid{display:grid;grid-template-columns:1fr;gap:4px}
+  .gf-cell{position:relative;aspect-ratio:1/1;overflow:hidden;background:#143C7A;cursor:zoom-in;transition:opacity .35s ease,transform .35s ease}
+  .gf-cell::after{content:"";position:absolute;inset:0;background:rgba(20,60,122,0);transition:background .25s ease;z-index:2;pointer-events:none}
+  .gf-cell:hover::after{background:rgba(20,60,122,.18)}
+  .gf-lb{position:fixed;inset:0;z-index:120;background:rgba(9,18,38,.93);display:flex;align-items:center;justify-content:center;padding:38px;cursor:zoom-out;animation:lbIn .24s ease}
+  .gf-lb img{max-width:92vw;max-height:86vh;object-fit:contain;box-shadow:0 34px 90px rgba(0,0,0,.55);background:#143C7A}
+  .gf-lb-x{position:fixed;top:22px;right:26px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#FFFFFF;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .gf-lb-x:hover{background:rgba(255,255,255,.24)}
+  @keyframes lbIn{from{opacity:0}to{opacity:1}}
+  @media(min-width:760px){
+    .g-mosaic{grid-template-columns:repeat(4,1fr)!important;grid-auto-rows:220px!important;gap:16px!important}
+    .g-a{grid-column:1 / 3!important;grid-row:1 / 3!important}
+    .g-d{grid-column:3 / 5!important}
+    .g-g{grid-column:2 / 4!important}
+  }
+  @media(min-width:900px){
+    .in-wrap{padding:0 40px}
+    .in-h1{font-size:60px}
+    .in-h2{font-size:42px}
+    .g-intro{grid-template-columns:1.2fr .8fr!important;gap:56px!important}
+    .g-mosaic{grid-auto-rows:250px!important}
+    .g-sec{margin-top:110px!important}
+  }
+  @media(min-width:760px){
+    .gf-grid{grid-template-columns:repeat(4,1fr)!important;gap:4px!important}
+  }
+  @media(min-width:520px) and (max-width:759px){
+    .gf-grid{grid-template-columns:repeat(2,1fr)!important}
+  }
+  @media(min-width:960px){
+    .gp-row{grid-template-columns:40% 1fr!important;gap:64px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+    .pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}

@@ -1,0 +1,54 @@
+/* ============================================================================
+   quarto.css — bloque <style> del helmet de "Quarto.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+    ::selection{background:#F0871F;color:#FFFFFF}
+    a{color:inherit}
+    .qd-wrap{max-width:1280px;margin:0 auto;padding:0 22px}
+    .qd-grid{display:grid;grid-template-columns:1fr;gap:40px}
+    .qd-gal-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .qd-amen{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+    .qd-herorow{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+    .qd-tabs{display:flex;flex-wrap:wrap;gap:26px}
+    .qd-tab{position:relative;display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none;padding-bottom:10px;white-space:nowrap;transition:color .15s ease}
+    .qd-tab:hover{color:#FFFFFF}
+    .qd-tab.is-active{color:#FFFFFF}
+    .qd-tab.is-active::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#C79A6A}
+    .qbk{background:#FFFFFF;box-shadow:0 26px 60px -30px rgba(20,39,51,.4);display:grid;grid-template-columns:1fr 1fr}
+    .qbk-col{padding:26px 18px;text-align:center;position:relative}
+    .qbk-lab{display:block;font-family:var(--font-hnc),sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6B7785}
+    .qbk-field{margin-top:10px}
+    .qbk-val{font-family:var(--font-hnc),sans-serif;font-weight:300;font-size:46px;line-height:1;color:#1B2733}
+    .qbk-mon{font-size:12px;color:#1E90C8}
+    .qbk-cta{grid-column:1 / -1;display:flex;align-items:center;justify-content:center;text-align:center;background:#143C7A;color:#FFFFFF;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;padding:22px 20px;border-top:1px solid rgba(31,30,27,.12);transition:background .15s}
+    .qbk-cta:hover{background:#0f2e5e}
+    .qd-detail{display:grid;grid-template-columns:1fr;gap:44px;margin-top:84px;align-items:start}
+    .qd-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 0;border-top:1px solid rgba(31,30,27,.12);border-bottom:1px solid rgba(31,30,27,.12);padding:30px 0}
+    .qd-serv{display:grid;grid-template-columns:1fr;gap:20px 30px}
+    .qd-around{display:grid;grid-template-columns:1fr;gap:24px}
+    .qd-actions{display:flex;flex-direction:column;gap:14px}
+    @media(min-width:900px){
+      .qd-wrap{padding:0 40px}
+      .qd-grid{grid-template-columns:1.5fr 1fr!important;gap:60px!important;align-items:start}
+      .qd-info{position:sticky;top:88px}
+      .qd-amen{grid-template-columns:repeat(3,1fr)!important}
+      .qd-detail{grid-template-columns:1.9fr 1fr!important;gap:70px!important}
+      .qd-specs{grid-template-columns:repeat(3,1fr)!important}
+      .qd-serv{grid-template-columns:repeat(3,1fr)!important}
+      .qd-around{grid-template-columns:repeat(3,1fr)!important}
+      .qd-sidebar{position:sticky;top:88px}
+      .qd-herorow{flex-direction:row!important;align-items:flex-end!important;justify-content:space-between!important}
+      .qd-tabs{gap:42px!important}
+      .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+    }
+  
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}
+
+/* hovers recreados 1:1 del style-hover del runtime (botones de acción del sidebar).
+   qd-act-1: no hay filter inline -> gana sin !important.
+   qd-act-2: background base va inline -> el :hover necesita !important. */
+.qd-act-1:hover{filter:brightness(1.08)}
+.qd-act-2:hover{background:#0f2e5e!important}

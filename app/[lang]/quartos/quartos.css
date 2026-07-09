@@ -1,0 +1,33 @@
+/* ============================================================================
+   quartos.css — bloque <style> del helmet de "Quartos.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio de esta pagina
+   (naranja #F0871F, distinto del global). Mapeo de fuentes -> variables next/font.
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  .in-wrap{max-width:1760px;margin:0 auto;padding:0 22px}
+  .in-h1{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.02;font-size:42px;margin:0}
+  .in-h2{font-family:var(--font-hnc),sans-serif;font-weight:400;color:#143C7A;letter-spacing:-.04em;line-height:1.06;font-size:30px;margin:0}
+  .q-intro{display:block;max-width:1280px;margin-left:auto;margin-right:auto}
+  .q-about{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+  .q-dc::first-letter{float:left;font-family:var(--font-gilda),Georgia,serif;font-weight:600;font-size:92px;line-height:.72;color:#143C7A;margin:8px 16px 0 0}
+  .q-feat{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+  .q-grid{display:grid;grid-template-columns:1fr;gap:22px}
+  .rc-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  .q-sec{margin-top:64px}
+  @media(min-width:900px){
+    .in-wrap{padding:0 40px}
+    .in-h1{font-size:60px}
+    .in-h2{font-size:42px}
+    .q-about{grid-template-columns:1.6fr 1fr!important;gap:36px!important}
+    .q-about>div:last-child{justify-self:end;max-width:380px;width:100%}
+    .q-feat{grid-template-columns:repeat(3,1fr)!important;gap:26px 40px!important}
+    .q-grid{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
+    .rc-grid{grid-template-columns:1fr 1fr!important;gap:30px!important}
+    .q-sec{margin-top:110px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}

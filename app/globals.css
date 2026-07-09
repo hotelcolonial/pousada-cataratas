@@ -1,0 +1,66 @@
+/* ============================================================================
+   globals.css — CSS global copiado TAL CUAL desde los bloques <style> de los
+   <helmet> del export (.dc.html). Sin cambiar valores, breakpoints ni nada.
+
+   Única adaptación intencional: en el body, la familia 'Helvetica Neue Cyr' se
+   referencia mediante la variable var(--font-hnc) que genera next/font/local
+   (el @font-face lo declara next/font, replicando unicode-range/display/pesos).
+   El resto del stack de fallback y todas las demás propiedades se conservan.
+   ============================================================================ */
+
+/* ===== Archivo (fuente variable local) — respaldo para los ACENTOS de Helvetica
+   Neue Cyr, que carece de glifos acentuados. Al ser variable (100–900) los acentos
+   conservan el mismo peso que el texto base, incluso en los títulos Light (300). El
+   export ya listaba 'Archivo' en varios stacks; esta @font-face la hace resolver. ===== */
+@font-face{
+  font-family:'Archivo';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/fonts/archivo-latin.woff2') format('woff2');
+}
+
+/* ===== Reset / base global (de "Home Pousada Cataratas.dc.html" <helmet>) ===== */
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#FFFFFF;font-family:var(--font-hnc);-webkit-font-smoothing:antialiased;color:#1B2733;font-synthesis:none}
+::selection{background:#C79A6A;color:#FFFFFF}
+a{color:inherit}
+/* ===== responsive fixes (mobile/tablet) — desktop unchanged =====
+   overflow-x:clip (no 'hidden') para recortar el desborde horizontal SIN crear un
+   scroll-container en html/body — de lo contrario 'hidden' rompe el position:sticky
+   del header (que es hijo directo de body). 'clip' recorta igual pero no scrollea. */
+html,body{overflow-x:clip}
+
+/* ===== Header (.pch-*) — de "Header.dc.html" <helmet> ===== */
+.pch *{box-sizing:border-box}
+.pch-nav a{padding:6px 0;margin:0 14px;border-radius:0;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:color .15s}
+.pch-nav a:hover{color:#FFFFFF}
+.pch-desktop{display:none}
+/* hovers recreados 1:1 del atributo style-hover del runtime (Header.dc.html).
+   Llevan !important porque el estilo base va inline y, sin él, no ganarían al
+   inline (misma técnica que el export usa en .pch-bar / .pcf-wa responsive). */
+.pch-reserve-m:hover{background:#FFFFFF!important;color:#143C7A!important;border-color:#FFFFFF!important}
+.pch-menu-btn:hover{background:rgba(255,255,255,.12)!important}
+.pch-reserve-d:hover{background:#FFFFFF!important;border-color:#FFFFFF!important;color:#143C7A!important}
+@media(min-width:1160px){
+  .pch-nav{display:flex!important}
+  .pch-mobile{display:none!important}
+  .pch-desktop{display:flex!important}
+  .pch-bar{padding:0 40px!important;height:70px!important}
+}
+
+/* ===== Footer (.pcf-*) — de "Footer.dc.html" <helmet> ===== */
+.pcf *{box-sizing:border-box}
+.pcf-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px 16px}
+@media(min-width:900px){
+  .pcf-grid{grid-template-columns:2.4fr 1fr 1fr 1fr!important;gap:0 36px!important}
+  .pcf-brand{grid-column:1!important}
+  .pcf-c1{grid-column:2!important}
+  .pcf-c2{grid-column:3!important}
+  .pcf-c3{grid-column:4!important}
+  .pcf-bottom{padding-top:0!important}
+  .pcf-wa{right:24px!important;width:62px!important;height:62px!important}
+}
+.pcf-link{color:#9AA3AD;text-decoration:none;transition:color .15s ease}
+.pcf-link:hover{color:#143C7A}

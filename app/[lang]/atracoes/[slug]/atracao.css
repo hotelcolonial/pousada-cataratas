@@ -1,0 +1,59 @@
+/* ============================================================================
+   atracao.css — bloque <style> del helmet de "Atracao.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .in-wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+  .ad-intro{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;padding:72px 0 0}
+  .ad-introtitle{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.04;font-size:38px;margin:14px 0 0}
+  .ad-specs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px;border-top:1px solid #E7E0D6;border-bottom:1px solid #E7E0D6}
+  .ad-spec{padding:26px 22px;border-bottom:1px solid #E7E0D6}
+  .ad-gal{display:grid;grid-template-columns:1fr;gap:14px;margin-top:64px}
+  .ad-rel{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  .ad-sec{margin-top:80px}
+  .ad-herorow{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+  .ad-tabs{display:flex;flex-wrap:wrap;gap:24px}
+  .ad-tab{position:relative;display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);text-decoration:none;padding-bottom:10px;white-space:nowrap;transition:color .15s ease}
+  .ad-tab:hover{color:#FFFFFF}
+  .ad-tab.is-active{color:#FFFFFF}
+  .ad-tab.is-active::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#C79A6A}
+  .ad-locstrip{display:grid;grid-template-columns:1fr}
+  .ad-two{display:grid;grid-template-columns:1fr;gap:28px;margin-top:40px;align-items:start}
+  .ad-bigtitle{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.0;font-size:46px;margin:0;letter-spacing:-.01em}
+  .ad-body{display:grid;grid-template-columns:1fr;gap:40px;margin-top:88px;align-items:start}
+  .ad-drop::first-letter{font-family:var(--font-gilda),Georgia,serif;font-size:66px;line-height:.78;float:left;color:#143C7A;padding:4px 12px 0 0;font-weight:500}
+  .ad-do{display:grid;grid-template-columns:1fr;gap:22px 28px;margin-top:30px}
+  .ad-rel{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  .ad-sidebar-sticky{}
+  @media(min-width:900px){
+    .ad-body{grid-template-columns:65fr 30fr!important;gap:5%!important;margin-top:120px!important}
+    .ad-do{grid-template-columns:1fr 1fr!important}
+    .ad-rel{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
+    .ad-sidebar-sticky{position:sticky;top:88px}
+    .ad-two{grid-template-columns:60fr 35fr!important;gap:5%!important;margin-top:56px!important}
+    .ad-bigtitle{font-size:74px!important}
+    .ad-locstrip{grid-template-columns:65fr 35fr!important;min-height:520px}
+    .ad-banner-h1{font-size:62px!important}
+    .ad-intro{grid-template-columns:1.05fr 0.95fr!important;gap:7%!important;padding:104px 0 0!important}
+    .ad-introtitle{font-size:54px!important}
+    .ad-specs{grid-template-columns:repeat(4,1fr)!important;border-bottom:none!important}
+    .ad-spec{border-bottom:none!important;border-right:1px solid #E7E0D6}
+    .ad-spec:last-child{border-right:none!important}
+    .ad-gal{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+    .ad-rel{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
+    .ad-sec{margin-top:120px!important}
+    .ad-herorow{flex-direction:row!important;align-items:flex-end!important;justify-content:space-between!important}
+    .ad-tabs{gap:42px!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}
+
+/* hovers recreados 1:1 del style-hover del runtime. Ninguno tiene filter/base
+   inline conflictiva -> ganan sin !important. */
+.ad-card-cta:hover{filter:brightness(1.07)}
+.ad-side-1:hover{filter:brightness(1.07)}
+.ad-side-2:hover{filter:brightness(1.12)}

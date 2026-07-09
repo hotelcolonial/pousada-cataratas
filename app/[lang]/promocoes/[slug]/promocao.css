@@ -1,0 +1,25 @@
+/* ============================================================================
+   promocao.css — bloque <style> del helmet de "Promocao.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .pd-body{max-width:1280px;margin:0 auto;padding:80px 22px;display:grid;grid-template-columns:1fr;gap:48px;align-items:start}
+  .pd-cond{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:960px){
+    .pd-body{grid-template-columns:1.7fr 1fr!important;gap:64px!important;padding:110px 40px!important}
+    .pd-cond{grid-template-columns:1fr 1fr!important;gap:18px 40px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+    .pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}
+
+/* hovers recreados 1:1 del style-hover del runtime (botones da card).
+   pd-resv: sin filter inline -> gana sin !important.
+   pd-wa: background base va inline (transparent) -> el :hover necesita !important. */
+.pd-resv:hover{filter:brightness(1.08)}
+.pd-wa:hover{background:rgba(255,255,255,.1)!important}

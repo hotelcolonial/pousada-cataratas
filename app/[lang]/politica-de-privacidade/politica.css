@@ -1,0 +1,71 @@
+/* Página de Política de Privacidad — prosa legible dentro del layout interior. */
+
+.pp-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 84px 30px 96px;
+  font-family: var(--font-hnc), system-ui, sans-serif;
+}
+
+.pp-updated {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9aa3ad;
+}
+
+.pp-intro {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #3a4654;
+  margin: 20px 0 0;
+}
+
+.pp-sec {
+  margin-top: 48px;
+}
+
+.pp-sec h2 {
+  font-family: var(--font-gilda), Georgia, serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.12;
+  color: #143c7a;
+  margin: 0 0 18px;
+}
+
+.pp-sec p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #3a4654;
+  margin: 0 0 14px;
+}
+
+.pp-sec ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.pp-sec li {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #3a4654;
+  margin-bottom: 8px;
+}
+
+.pp-sec a {
+  color: #143c7a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Placeholder resaltado: dato que el cliente debe completar antes de publicar. */
+.pp-ph {
+  background: #fbf1df;
+  border: 1px dashed #c79a6a;
+  color: #8a6a3a;
+  padding: 1px 7px;
+  border-radius: 2px;
+  font-weight: 600;
+  white-space: nowrap;
+}

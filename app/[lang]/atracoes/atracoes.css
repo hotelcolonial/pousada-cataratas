@@ -1,0 +1,63 @@
+/* ============================================================================
+   atracoes.css — bloque <style> del helmet de "Atracoes.dc.html", copiado TAL CUAL
+   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
+   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .in-wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+  .at-eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#1E90C8}
+  .at-h2{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.04;font-size:34px;margin:0}
+  .at-intro{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+  .at-introtitle{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.05;font-size:38px;margin:18px 0 0}
+  .at-introcols{display:grid;grid-template-columns:1fr;gap:28px}
+  .at-grid{display:grid;grid-template-columns:1fr;grid-auto-rows:220px;gap:14px}
+  .at-list{display:grid;grid-template-columns:1fr}
+  .at-sec{margin-top:64px}
+  .at-feat{display:flex;flex-direction:column;gap:64px}
+  .at-frow{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+  .at-imgbox{position:relative;width:100%;height:300px;overflow:hidden;background:#143C7A}
+  .at-fimg{position:relative}
+  .at-badge{position:absolute;bottom:-24px;right:-18px;width:130px;height:130px;background:#C79A6A;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px}
+  .at-badge.left{right:auto;left:-18px}
+  .at-fnum{font-family:var(--font-gilda),Georgia,serif;font-size:28px;line-height:1}
+  .at-flab{font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-top:9px;color:rgba(255,255,255,.92);line-height:1.35;white-space:normal}
+  .at-fname{font-family:var(--font-gilda),Georgia,serif;font-weight:500;color:#143C7A;line-height:1.04;font-size:34px;margin:14px 0 0}
+  .at-flink{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#143C7A;text-decoration:none;transition:gap .15s ease}
+  .at-cards{display:grid;grid-template-columns:1fr;gap:16px}
+  .at-card{position:relative;height:420px;overflow:hidden;background:#143C7A}
+  .at-locstrip{display:grid;grid-template-columns:1fr}
+  @media(min-width:900px){
+    .at-locstrip{grid-template-columns:65fr 35fr!important;min-height:520px}
+  }
+  .pc-mapstrip{display:grid;grid-template-columns:1fr}
+  @media(min-width:900px){
+    .at-h2{font-size:44px}
+    .at-introtitle{font-size:56px}
+    .at-intro{grid-template-columns:45fr 50fr!important;gap:5%!important}
+    .at-introcols{grid-template-columns:1fr 1fr!important;gap:36px!important}
+    .at-grid{grid-template-columns:2fr 1fr 1fr!important;grid-auto-rows:230px!important;gap:16px!important}
+    .at-big{grid-column:1 / 2!important;grid-row:1 / span 2!important}
+    .at-list{grid-template-columns:repeat(2,1fr)!important;column-gap:48px}
+    .at-sec{margin-top:110px!important}
+    .at-feat{gap:104px!important}
+    .at-frow{grid-template-columns:52fr 48fr!important;gap:7%!important}
+    .at-imgbox{height:430px!important}
+    .at-frow.rev .at-fimg{order:2!important}
+    .at-fname{font-size:46px!important}
+    .at-cards{grid-template-columns:repeat(3,1fr)!important;gap:18px!important}
+    .at-card{height:480px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+  }
+
+  /* footer columns: stack on mobile, 3-up on tablet+ */
+  .pc-footd-grid{grid-template-columns:1fr!important;gap:40px!important;padding:56px 26px!important}
+  @media(min-width:760px){.pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important;gap:46px!important;padding:52px 30px!important}}
+
+/* hovers recreados 1:1 del atributo style-hover del runtime (contenido).
+   at-flink: base gap va en la clase CSS, el :hover gana sin !important.
+   at-cta-primary: no hay filter inline, gana sin !important.
+   at-cta-ghost: background base va inline -> el :hover necesita !important. */
+.at-flink:hover{gap:14px}
+.at-cta-primary:hover{filter:brightness(1.08)}
+.at-cta-ghost:hover{background:rgba(199,154,106,.16)!important}
