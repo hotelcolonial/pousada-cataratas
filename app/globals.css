@@ -49,11 +49,27 @@ html,body{overflow-x:clip}
 .pch-contact svg{width:15px;height:15px;fill:currentColor;opacity:.9;flex:none}
 /* Mobile: some o contato — sobra só o selo Méritum na faixa superior */
 @media(max-width:1159px){.pch-contact{display:none}}
-/* O painel branco do Méritum cobre toda a altura do header e a esquina esquerda;
-   o logo da Pousada é deslocado para a direita para ficar ao lado do painel e
-   não desaparecer sobre o branco (mesmo tamanho/estilo). Valor base = mobile
-   (nav com padding 20px); no desktop (nav padding 40px) o deslocamento é menor. */
-.pch-pousada{margin-left:84px}
+/* O painel branco do Méritum é ABSOLUTO em relação ao <header> e fica colado à
+   borda esquerda REAL da tela (left:0) em qualquer largura, com tamanho fixo
+   (logo 56px + paddings) → borda direita ~101px na altura do logo da Pousada.
+   Por isso o logo da Pousada TAMBÉM é ancorado ao mesmo referencial (absoluto,
+   left fixo a partir da borda esquerda da tela), e NÃO ao container central
+   (.pch-bar, max-width:1760px centrado). Assim a separação painel↔logo é
+   IDÊNTICA em 1280, 1366, 1920, 2560px — antes o logo ficava dentro do container
+   centrado e "se afastava" do painel nas telas largas. left:100px = a diagonal
+   termina logo antes do logo (sem tapá-lo), com um respiro pequeno e constante.
+   z-index:2 → abaixo do painel branco (z-index:3), então qualquer sobra fica
+   escondida sob o branco em vez de aparecer por cima. Centrado na faixa inferior
+   (top:48px = altura da faixa de contato; height:70px = altura da barra do nav). */
+.pch-pousada{
+  position:absolute;
+  top:48px;
+  left:110px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  z-index:2;
+}
 /* hovers recreados 1:1 del atributo style-hover del runtime (Header.dc.html).
    Llevan !important porque el estilo base va inline y, sin él, no ganarían al
    inline (misma técnica que el export usa en .pch-bar / .pcf-wa responsive). */
@@ -66,7 +82,8 @@ html,body{overflow-x:clip}
   .pch-desktop{display:flex!important}
   .pch-bar{padding:0 40px!important;height:70px!important}
   .pch-topbar-inner{padding:0 40px!important}
-  .pch-pousada{margin-left:64px}
+  /* .pch-pousada já é absoluto e ancorado à borda esquerda (left:100px fixo),
+     então NÃO muda entre breakpoints — a separação painel↔logo é constante. */
 }
 
 /* ===== Footer (.pcf-*) — de "Footer.dc.html" <helmet> ===== */

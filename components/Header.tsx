@@ -172,7 +172,7 @@ export default function Header() {
         <a
           href={localePath(routeLang, "/")}
           className="pch-pousada"
-          style={{ textDecoration: "none", lineHeight: 1, flex: "none", display: "block" }}
+          style={{ textDecoration: "none", lineHeight: 1 }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
