@@ -9,6 +9,22 @@ export const siteUrl = (
 
 export const siteName = "Pousada Cataratas";
 
+// Bloqueo de indexación controlado por entorno.
+// Mientras el site esté en una URL temporal (staging/Hostinger), pon
+// NEXT_PUBLIC_NOINDEX=true: se emite <meta name="robots" content="noindex,nofollow">
+// en todas las páginas y robots.txt bloquea todo. Al pasar al dominio real,
+// quita la variable (o ponla en false) y el site vuelve a ser indexable —
+// sin tocar código. (Se hornea en el build: cambiar el valor requiere redeploy.)
+export const noindex = ["true", "1", "yes", "on"].includes(
+  (process.env.NEXT_PUBLIC_NOINDEX ?? "").trim().toLowerCase(),
+);
+
+// Valor para metadata.robots: noindex,nofollow cuando el flag está activo;
+// undefined (indexable por defecto) cuando no lo está.
+export const robotsMeta: Metadata["robots"] = noindex
+  ? { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } }
+  : undefined;
+
 // Imagen social por defecto (fachada de la pousada) para Open Graph / Twitter
 // cuando la página no aporta una propia.
 export const defaultOgImage =
@@ -88,6 +104,7 @@ export function pageMeta(opts: {
     metadataBase: new URL(siteUrl),
     title,
     description,
+    robots: robotsMeta,
     alternates: { canonical, languages: languageAlternates(path) },
     openGraph,
     twitter: {

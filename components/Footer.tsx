@@ -106,13 +106,13 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
                 fontSize: "14.5px",
               }}
             >
-              <a href="https://wa.me/55[número]" target="_blank" rel="noopener" className="pcf-link">
+              <a href="https://wa.me/5545991377708" target="_blank" rel="noopener noreferrer" className="pcf-link">
                 {f.linkWhatsapp}
               </a>
-              <a href="#" className="pcf-link">
+              <a href="https://www.instagram.com/pousadacataratas/" target="_blank" rel="noopener noreferrer" className="pcf-link">
                 {f.linkInstagram}
               </a>
-              <a href="#" className="pcf-link">
+              <a href="https://www.facebook.com/pousadacataratasfoz" target="_blank" rel="noopener noreferrer" className="pcf-link">
                 {f.linkFacebook}
               </a>
             </div>
@@ -146,7 +146,9 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
       </footer>
 
       <a
-        href="#"
+        href="https://wa.me/5545991377708"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label={f.ariaWhatsapp}
         className="pcf-wa"
         style={{

@@ -29,7 +29,7 @@ export default function ContatoStrip({ dict, style }: { dict: Dictionary; style?
           </div>
           <div style={{ marginTop: "26px" }}>
             <div style={{ fontSize: "12.5px", letterSpacing: ".05em", color: "rgba(255,255,255,.55)" }}>{c.whatsappLabel}</div>
-            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 45 99000-0000</div>
+            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 45 99137-7708</div>
           </div>
         </div>
         <div style={{ background: "#C79A6A", color: "#FFFFFF", padding: "42px 44px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>

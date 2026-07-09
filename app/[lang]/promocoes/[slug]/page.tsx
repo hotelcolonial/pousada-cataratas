@@ -85,7 +85,7 @@ export default async function Promocao({ params }: { params: Promise<{ lang: str
           <div style={{ fontSize: "13px", color: "rgba(255,255,255,.72)", marginTop: "14px" }}>{p.validity}</div>
           <div style={{ width: "46px", height: "1px", background: "rgba(199,154,106,.8)", margin: "26px 0" }} />
           <a href="#" className="pd-resv" style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: "16px 22px", background: "#C79A6A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}>{dict.promocaoOffer.reservarAgora}</a>
-          <a href="#" className="pd-wa" style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px", marginTop: "12px", padding: "16px 22px", background: "transparent", border: "1px solid rgba(255,255,255,.4)", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "background .15s ease" }}>{dict.promocaoOffer.falarWhatsapp}</a>
+          <a href="https://wa.me/5545991377708" target="_blank" rel="noopener noreferrer" className="pd-wa" style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px", marginTop: "12px", padding: "16px 22px", background: "transparent", border: "1px solid rgba(255,255,255,.4)", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "background .15s ease" }}>{dict.promocaoOffer.falarWhatsapp}</a>
         </div>
       </section>
 

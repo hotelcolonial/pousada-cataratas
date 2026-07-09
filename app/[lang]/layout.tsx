@@ -10,11 +10,14 @@ import CookieConsent from "@/components/cookies/CookieConsent";
 import { GtmConsentInit, GtmScript, GtmNoScript } from "@/components/GoogleTagManager";
 import { lodgingBusinessLd } from "@/lib/jsonld";
 import { getDictionary } from "@/i18n/getDictionary";
+import { robotsMeta } from "@/i18n/seo";
 import { locales, isLocale, htmlLang } from "@/i18n/config";
 import "../globals.css";
 
 export const metadata: Metadata = {
   title: "Pousada Cataratas",
+  // noindex,nofollow global cuando NEXT_PUBLIC_NOINDEX está activo (staging).
+  robots: robotsMeta,
   // Iconos y manifest. Las rutas apuntan a archivos estáticos en /public:
   // para subir de resolución en el futuro basta con reemplazar esos archivos
   // (mismos nombres) sin tocar este código. Ver public/icons/README.md.
