@@ -165,8 +165,6 @@ export default function Header() {
           gap: "18px",
           height: "70px",
           padding: "0 20px",
-          maxWidth: "1760px",
-          margin: "0 auto",
         }}
       >
         <a
