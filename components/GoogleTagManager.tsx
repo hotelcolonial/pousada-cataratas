@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 // ID del contenedor de Google Tag Manager.
-export const GTM_ID = "GTM-P27LJTQ5";
+export const GTM_ID = "GTM-NHZJTX2P";
 
 /**
  * Inicialización de Google Consent Mode v2, previa a GTM.
