@@ -2,6 +2,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import CookiePreferencesLink from "@/components/cookies/CookiePreferencesLink";
 import { privacyPolicy } from "@/lib/legal";
+import { WHATSAPP_HREF } from "@/lib/whatsapp";
 
 // Icono de WhatsApp — mismo path del export (Footer.dc.html).
 const WA_PATH =
@@ -106,7 +107,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
                 fontSize: "14.5px",
               }}
             >
-              <a href="https://wa.me/5545991377708" target="_blank" rel="noopener noreferrer" className="pcf-link">
+              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="pcf-link">
                 {f.linkWhatsapp}
               </a>
               <a href="https://www.instagram.com/pousadacataratas/" target="_blank" rel="noopener noreferrer" className="pcf-link">
@@ -146,7 +147,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
       </footer>
 
       <a
-        href="https://wa.me/5545991377708"
+        href={WHATSAPP_HREF}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={f.ariaWhatsapp}

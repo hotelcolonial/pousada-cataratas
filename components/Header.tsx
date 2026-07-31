@@ -4,6 +4,8 @@ import { useState, type CSSProperties } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useDict } from "@/components/i18n/LocaleProvider";
 import { locales, localePath, type Locale } from "@/i18n/config";
+import { BOOKING_BASE } from "@/lib/booking";
+import { WHATSAPP_HREF } from "@/lib/whatsapp";
 
 // Enlaces de navegación — mismos labels que el export (Header.dc.html).
 // Los href apuntan a las rutas de Next (antes eran *.dc.html).
@@ -50,8 +52,8 @@ export default function Header() {
                 ? "blog"
                 : "inicio";
 
-  const reserveHref = "#";
-  const waHref = "#";
+  const reserveHref = BOOKING_BASE;
+  const waHref = WHATSAPP_HREF;
   // Selector de idioma: PT · ES · EN. Al elegir, guarda la preferencia en la
   // cookie NEXT_LOCALE y navega a la MISMA página en el idioma elegido
   // (mismo slug, solo cambia el prefijo de locale).
@@ -213,6 +215,8 @@ export default function Header() {
         >
           <a
             href={reserveHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="pch-reserve-m"
             style={{
               display: "inline-flex",
@@ -316,6 +320,8 @@ export default function Header() {
           </div>
           <a
             href={reserveHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="pch-reserve-d"
             style={{
               display: "inline-flex",
@@ -428,6 +434,8 @@ export default function Header() {
             <div style={{ marginTop: "30px", display: "flex", flexDirection: "column", gap: "14px" }}>
               <a
                 href={reserveHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: "flex",
                   alignItems: "center",

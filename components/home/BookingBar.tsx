@@ -2,6 +2,7 @@
 
 import { useState, type CSSProperties } from "react";
 import { useDict } from "@/components/i18n/LocaleProvider";
+import { buildBookingUrl } from "@/lib/booking";
 
 // Lógica de calendario/hóspedes portada 1:1 del script de la Home.
 // Los nombres de meses (MES/MESES) ahora vienen del diccionario (i18n).
@@ -243,7 +244,13 @@ export default function BookingBar() {
           </div>
         </div>
 
-        <a href="#" className="pc-bk-cta">
+        <a
+          href={buildBookingUrl(checkin, checkout, guests)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pc-bk-cta"
+          suppressHydrationWarning
+        >
           {dict.booking.verificarLinha1}
           <br />
           {dict.booking.verificarLinha2}

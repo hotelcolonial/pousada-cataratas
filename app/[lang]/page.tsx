@@ -8,6 +8,7 @@ import { isLocale, localePath } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
+import { BOOKING_BASE } from "@/lib/booking";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -97,7 +98,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {dict.home.heroTitleB}
             </h1>
             <a
-              href="#"
+              href={BOOKING_BASE}
+              target="_blank"
+              rel="noopener noreferrer"
               className="pc-hero-cta"
               style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "36px", padding: "16px 44px", border: "1px solid #1E90C8", background: "#1E90C8", color: "#FFFFFF", textDecoration: "none", fontSize: "16px", letterSpacing: ".18em", textTransform: "uppercase", boxShadow: "0 16px 30px -14px rgba(30,144,200,.7)", transition: "background .18s,border-color .18s,transform .16s ease" }}
             >
@@ -377,7 +380,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <div className="pc-pay-chip">{dict.home.bnrPix}</div>
             </div>
             <a
-              href="#"
+              href={BOOKING_BASE}
+              target="_blank"
+              rel="noopener noreferrer"
               className="pc-bnr-cta"
               style={{ display: "inline-block", marginTop: "32px", background: "#C79A6A", color: "#FFFFFF", fontSize: "16px", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", padding: "20px 46px", textDecoration: "none", boxShadow: "0 14px 30px rgba(199,154,106,.42)", transition: "transform .15s ease,box-shadow .15s ease,background .15s ease" }}
             >

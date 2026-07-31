@@ -8,6 +8,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
+import { WHATSAPP_HREF } from "@/lib/whatsapp";
 import { productLd, breadcrumbLd } from "@/lib/jsonld";
 import type { Metadata } from "next";
 
@@ -143,7 +144,7 @@ export default async function Quarto({ params }: { params: Promise<{ lang: strin
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2" /><path d="M3 9h18M8 3v3M16 3v3" /></svg>
                   {dict.quartoDetail.actReservar}
                 </a>
-                <a href="https://wa.me/5545991377708" target="_blank" rel="noopener noreferrer" className="qd-act-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "20px 22px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "13px", letterSpacing: ".18em", textTransform: "uppercase", transition: "background .15s ease" }}>
+                <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="qd-act-2" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "20px 22px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "13px", letterSpacing: ".18em", textTransform: "uppercase", transition: "background .15s ease" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9.94 9.94 0 0 0-8.5 15.16L2 22l4.96-1.46A10 10 0 1 0 12 2Zm0 18.13a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.05.9.92-2.98-.2-.31A8.13 8.13 0 1 1 12 20.13Zm4.46-6.1c-.24-.12-1.44-.71-1.66-.79s-.39-.12-.55.12-.63.79-.77.95-.28.18-.52.06a6.66 6.66 0 0 1-1.96-1.21 7.4 7.4 0 0 1-1.36-1.69c-.14-.24 0-.37.11-.49s.24-.28.37-.42a1.6 1.6 0 0 0 .24-.41.45.45 0 0 0 0-.43c-.06-.12-.55-1.32-.75-1.81s-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.85 2.03 4.74 4.74 0 0 0 1 2.52 10.9 10.9 0 0 0 4.17 3.68c.58.25 1.04.4 1.39.51a3.35 3.35 0 0 0 1.54.1 2.51 2.51 0 0 0 1.65-1.17 2.04 2.04 0 0 0 .14-1.16c-.06-.1-.22-.16-.46-.28Z" /></svg>
                   {dict.quartoDetail.actWhatsapp}
                 </a>
