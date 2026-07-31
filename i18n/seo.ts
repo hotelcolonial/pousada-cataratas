@@ -4,7 +4,7 @@ import { locales, defaultLocale, localePath } from "./config";
 // URL base del sitio (para metadataBase, canonical, hreflang y sitemap).
 // Configurable por entorno; por defecto el dominio de la pousada.
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pousadacataratas.com.br"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://pousadacataratas.com.br"
 ).replace(/\/$/, "");
 
 export const siteName = "Pousada Cataratas";
@@ -20,7 +20,7 @@ export const siteName = "Pousada Cataratas";
 //
 // 👉 PARA REACTIVAR LA INDEXACIÓN EN EL DOMINIO REAL: cambiar `true` por `false`.
 // ============================================================================
-export const noindex: boolean = true; // ⚠️ QUITAR AL PASAR AL DOMINIO REAL
+export const noindex: boolean = false; // ✅ Dominio real: site indexable
 
 // Valor para metadata.robots: noindex,nofollow mientras `noindex` sea true.
 export const robotsMeta: Metadata["robots"] = noindex
