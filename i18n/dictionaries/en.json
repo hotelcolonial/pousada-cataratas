@@ -300,7 +300,7 @@
   },
   "cookies": {
     "bannerTitle": "We use cookies",
-    "bannerText": "We use cookies to make the site work, understand how it's used and show relevant content. You can accept all, reject non-essential ones or choose by category.",
+    "bannerText": "We use cookies for the site to work, to understand how it's used and to show relevant content.",
     "privacyText": "Learn more in our {link}.",
     "privacyLinkLabel": "Privacy Policy",
     "privacyPath": "/politica-de-privacidade",
@@ -318,6 +318,14 @@
     "marketingTitle": "Marketing",
     "marketingDesc": "Used to show ads and content that are more relevant to you.",
     "footerLink": "Cookie preferences",
-    "close": "Close"
+    "close": "Close",
+    "understood": "Got it",
+    "manageTitle": "Manage cookies",
+    "manageIntro": "By default, cookies are on for the site to work, to measure usage and to show relevant content. You can reject non-essential cookies at any time; your preference is saved in this browser.",
+    "manageAllow": "Allow all cookies",
+    "manageDeny": "Reject non-essential cookies",
+    "manageStatusAllowed": "Current status: cookies allowed.",
+    "manageStatusDenied": "Current status: non-essential cookies rejected.",
+    "manageSaved": "Preference saved."
   }
 }

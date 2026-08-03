@@ -11,6 +11,7 @@ import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { privacyPolicy } from "@/lib/legal";
+import CookieManage from "@/components/cookies/CookieManage";
 import type { Metadata } from "next";
 
 const HERO_IMG = "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp";
@@ -110,6 +111,9 @@ export default async function PoliticaDePrivacidade({ params }: { params: Promis
             )}
           </div>
         ))}
+
+        {/* Gestión de cookies (opt-out) — cliente */}
+        <CookieManage />
       </section>
 
       {/* LOCALIZAÇÃO (mesmo rodapé de conteúdo das páginas interiores) */}

@@ -138,7 +138,10 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
             <a href={localePath(lang, "/politica-de-privacidade")} className="pcf-link" style={{ fontSize: "13px", color: "#9AA3AD" }}>
               {privacyPolicy[lang].title}
             </a>
-            <CookiePreferencesLink label={dict.cookies.footerLink} />
+            <CookiePreferencesLink
+              href={localePath(lang, "/politica-de-privacidade") + "#gerenciar-cookies"}
+              label={dict.cookies.footerLink}
+            />
           </div>
           <div style={{ fontSize: "13px", color: "#9AA3AD" }}>
             {f.tagline}

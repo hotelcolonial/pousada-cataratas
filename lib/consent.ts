@@ -1,24 +1,27 @@
 // Lógica compartida del consentimiento de cookies + Google Consent Mode v2.
 //
-// Categorías del banner:
-//   - necessary  → siempre activa (functionality_storage / security_storage)
-//   - analytics  → analytics_storage
-//   - marketing  → ad_storage + ad_user_data + ad_personalization
+// MODELO: opt-out / informativo.
+//   - Por defecto TODOS los permisos van en 'granted' (se fija en el script
+//     beforeInteractive de components/GoogleTagManager.tsx, ANTES de gtm.js).
+//   - El banner es meramente informativo: "Entendi" solo lo cierra y persiste
+//     que ya fue visto.
+//   - El visitante puede RECHAZAR (opt-out) desde la Política de Privacidade;
+//     eso envía un consent 'update' a 'denied' y lo guarda en la cookie.
 //
-// El estado por defecto (denegado) se fija en el script beforeInteractive de
-// components/GoogleTagManager.tsx, ANTES de que cargue gtm.js. Aquí solo se
-// envían las actualizaciones (consent 'update') cuando el visitante elige, y se
-// persiste la elección para no volver a preguntar.
+// PERSISTENCIA: una única cookie de DOMINIO (.pousadacataratas.com.br) para que
+// la preferencia se comparta con el motor de reservas (reservar.pousada...).
+//   valor "granted" -> banner visto / cookies permitidas
+//   valor "denied"  -> el visitante rechazó las no esenciales
+//   ausente         -> primera visita (se muestra el banner; por defecto granted)
 
-export const CONSENT_KEY = "pc_cookie_consent";
-export const CONSENT_VERSION = 1;
+// ⚠️ CONTRATO ENTRE SUBDOMINIOS: este nombre debe coincidir con el que lee el
+// motor de reservas en reservar.pousadacataratas.com.br.
+export const CONSENT_COOKIE = "CookieActived";
 
-// Evento DOM para abrir el panel de preferencias desde cualquier parte
-// (p. ej. el enlace del footer).
-export const OPEN_PREFERENCES_EVENT = "pc:open-cookie-preferences";
+// 180 días.
+const CONSENT_MAX_AGE = 60 * 60 * 24 * 180;
 
-export type ConsentCategories = { analytics: boolean; marketing: boolean };
-export type StoredConsent = { v: number; categories: ConsentCategories; ts: number };
+export type ConsentValue = "granted" | "denied";
 
 declare global {
   interface Window {
@@ -27,35 +30,61 @@ declare global {
   }
 }
 
-// Lee la elección guardada; null si no hay (primera visita) o si es inválida.
-export function loadConsent(): StoredConsent | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = window.localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as StoredConsent;
-    if (!parsed || parsed.v !== CONSENT_VERSION || !parsed.categories) return null;
-    return parsed;
-  } catch {
-    return null;
-  }
+// Señales de Consent Mode v2 que se ponen en 'denied' al rechazar (opt-out).
+// functionality_storage, personalization_storage y security_storage permanecen
+// en 'granted' (no dependen del consentimiento publicitario/analítico).
+const OPTOUT_DENIED = {
+  ad_storage: "denied",
+  ad_user_data: "denied",
+  ad_personalization: "denied",
+  analytics_storage: "denied",
+} as const;
+
+const OPTIN_GRANTED = {
+  ad_storage: "granted",
+  ad_user_data: "granted",
+  ad_personalization: "granted",
+  analytics_storage: "granted",
+} as const;
+
+// Dominio de la cookie: en producción, compartida por todos los subdominios
+// (.pousadacataratas.com.br). En localhost/preview no se fija domain (fallaría).
+function cookieDomainAttr(): string {
+  if (typeof window === "undefined") return "";
+  return window.location.hostname.endsWith("pousadacataratas.com.br")
+    ? "; domain=.pousadacataratas.com.br"
+    : "";
 }
 
-// Traduce las categorías del banner a señales de Google Consent Mode.
-function toSignals(c: ConsentCategories) {
-  return {
-    analytics_storage: c.analytics ? "granted" : "denied",
-    ad_storage: c.marketing ? "granted" : "denied",
-    ad_user_data: c.marketing ? "granted" : "denied",
-    ad_personalization: c.marketing ? "granted" : "denied",
-  };
+// Lee la cookie de consentimiento; null si no existe o el valor no es válido.
+export function readConsentCookie(): ConsentValue | null {
+  if (typeof document === "undefined") return null;
+  const m = document.cookie.match(
+    new RegExp("(?:^|;\\s*)" + CONSENT_COOKIE + "=([^;]+)"),
+  );
+  if (!m) return null;
+  const v = decodeURIComponent(m[1]);
+  return v === "denied" ? "denied" : v === "granted" ? "granted" : null;
 }
 
-// Actualiza el consentimiento en Consent Mode y (por defecto) lo persiste.
-// Usa el gtag() global definido por el script beforeInteractive; si no existe,
-// lo recrea con la misma forma (push del objeto arguments) para que GTM lo lea.
-export function applyConsent(categories: ConsentCategories, persist = true) {
-  if (typeof window === "undefined") return;
+function writeConsentCookie(value: ConsentValue) {
+  if (typeof document === "undefined") return;
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie =
+    CONSENT_COOKIE +
+    "=" +
+    value +
+    "; path=/" +
+    cookieDomainAttr() +
+    "; max-age=" +
+    CONSENT_MAX_AGE +
+    "; SameSite=Lax" +
+    secure;
+}
+
+// Asegura un gtag() utilizable (el real lo define el script beforeInteractive;
+// si aún no existe, se recrea con la misma forma para que GTM lo lea).
+function ensureGtag(): (...args: unknown[]) => void {
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== "function") {
     window.gtag = function gtag() {
@@ -63,24 +92,24 @@ export function applyConsent(categories: ConsentCategories, persist = true) {
       window.dataLayer.push(arguments);
     };
   }
-  window.gtag("consent", "update", toSignals(categories));
-  // Evento propio para que GTM pueda disparar/actualizar etiquetas al cambiar.
-  window.dataLayer.push({
-    event: "cookie_consent_update",
-    consent: { necessary: true, ...categories },
-  });
-  if (persist) {
-    try {
-      const payload: StoredConsent = { v: CONSENT_VERSION, categories, ts: Date.now() };
-      window.localStorage.setItem(CONSENT_KEY, JSON.stringify(payload));
-    } catch {
-      /* localStorage no disponible: se mantiene solo en memoria */
-    }
-  }
+  return window.gtag;
 }
 
-// Dispara la apertura del panel de preferencias (para el enlace del footer).
-export function openCookiePreferences() {
+// Banner "Entendi": no cambia el consentimiento (ya está todo granted por
+// defecto), solo persiste que el banner fue visto para no volver a mostrarlo.
+export function acknowledgeConsent() {
+  writeConsentCookie("granted");
+}
+
+// Opt-out / opt-in desde la Política de Privacidade. Envía el consent 'update'
+// correspondiente y guarda la preferencia en la cookie de dominio.
+export function applyConsentChoice(allow: boolean) {
   if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event(OPEN_PREFERENCES_EVENT));
+  const gtag = ensureGtag();
+  gtag("consent", "update", allow ? OPTIN_GRANTED : OPTOUT_DENIED);
+  window.dataLayer.push({
+    event: "cookie_consent_update",
+    consent: { necessary: true, analytics: allow, marketing: allow },
+  });
+  writeConsentCookie(allow ? "granted" : "denied");
 }

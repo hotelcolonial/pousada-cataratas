@@ -300,7 +300,7 @@
   },
   "cookies": {
     "bannerTitle": "Nós usamos cookies",
-    "bannerText": "Usamos cookies para fazer o site funcionar, entender como ele é usado e mostrar conteúdos relevantes. Você pode aceitar tudo, recusar o que não for essencial ou escolher por categoria.",
+    "bannerText": "Utilizamos cookies para o funcionamento do site, para entender como ele é usado e para mostrar conteúdos relevantes.",
     "privacyText": "Saiba mais na nossa {link}.",
     "privacyLinkLabel": "Política de Privacidade",
     "privacyPath": "/politica-de-privacidade",
@@ -318,6 +318,14 @@
     "marketingTitle": "Marketing",
     "marketingDesc": "Usadas para mostrar anúncios e conteúdos mais relevantes para você.",
     "footerLink": "Preferências de cookies",
-    "close": "Fechar"
+    "close": "Fechar",
+    "understood": "Entendi",
+    "manageTitle": "Gerenciar cookies",
+    "manageIntro": "Por padrão, os cookies ficam ativos para o funcionamento do site, para medir o uso e mostrar conteúdos relevantes. Você pode recusar os cookies não essenciais a qualquer momento; a preferência é salva neste navegador.",
+    "manageAllow": "Permitir todos os cookies",
+    "manageDeny": "Recusar cookies não essenciais",
+    "manageStatusAllowed": "Estado atual: cookies permitidas.",
+    "manageStatusDenied": "Estado atual: cookies não essenciais recusadas.",
+    "manageSaved": "Preferência salva."
   }
 }

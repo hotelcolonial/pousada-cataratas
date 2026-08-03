@@ -4,16 +4,18 @@ import Script from "next/script";
 export const GTM_ID = "GTM-NHZJTX2P";
 
 /**
- * Inicialización de Google Consent Mode v2, previa a GTM.
+ * Inicialización de Google Consent Mode v2, previa a GTM (modelo opt-out).
  *
  * Estrategia `beforeInteractive`: se ejecuta ANTES de que se cargue `gtm.js`,
- * que es justo el orden que exige Consent Mode. Fija el estado por defecto en
- * DENEGADO para analytics y publicidad, de modo que GTM y sus etiquetas no
- * rastrean hasta que el visitante consienta. Si ya hay una elección guardada
- * (visitante que regresa), aplica de inmediato el `update` correspondiente.
+ * que es justo el orden que exige Consent Mode (si corriera después, no tendría
+ * efecto). Fija el estado por defecto con TODOS los permisos en 'granted'.
  *
- * El banner (components/cookies/CookieConsent.tsx) envía los `update` cuando el
- * visitante acepta/rechaza; ver lib/consent.ts.
+ * Si el visitante rechazó antes (opt-out), la cookie de dominio `CookieActived`
+ * vale 'denied'; en ese caso se envía de inmediato un `update` a 'denied' para
+ * publicidad y analytics, también ANTES de gtm.js. Ver lib/consent.ts.
+ *
+ * NOTA: url_passthrough y ads_data_redaction NO se configuran aquí a propósito;
+ * ya están definidos en el contenedor de Google Tag Manager.
  */
 export function GtmConsentInit() {
   return (
@@ -21,26 +23,23 @@ export function GtmConsentInit() {
       {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', {
-  ad_storage: 'denied',
-  analytics_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
+  ad_storage: 'granted',
+  ad_user_data: 'granted',
+  ad_personalization: 'granted',
+  analytics_storage: 'granted',
   functionality_storage: 'granted',
-  security_storage: 'granted',
-  wait_for_update: 500
+  personalization_storage: 'granted',
+  security_storage: 'granted'
 });
 try {
-  var s = localStorage.getItem('pc_cookie_consent');
-  if (s) {
-    var c = JSON.parse(s);
-    if (c && c.categories) {
-      gtag('consent', 'update', {
-        analytics_storage: c.categories.analytics ? 'granted' : 'denied',
-        ad_storage: c.categories.marketing ? 'granted' : 'denied',
-        ad_user_data: c.categories.marketing ? 'granted' : 'denied',
-        ad_personalization: c.categories.marketing ? 'granted' : 'denied'
-      });
-    }
+  var m = document.cookie.match(/(?:^|;\\s*)CookieActived=([^;]+)/);
+  if (m && decodeURIComponent(m[1]) === 'denied') {
+    gtag('consent', 'update', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
   }
 } catch (e) {}`}
     </Script>
