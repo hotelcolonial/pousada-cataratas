@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { useDict } from "@/components/i18n/LocaleProvider";
 
 // Calendario/hóspedes/noites portado 1:1 del script de Quarto.dc.html.
@@ -40,6 +40,16 @@ export default function QuartoBooking() {
   const dict = useDict();
   const MES = dict.booking.mesShort;
   const MESES = dict.booking.mesLong;
+
+  // Página estática (SSG): sin esto, el HTML servido congela la fecha del build
+  // y el suppressHydrationWarning impide corregirla al hidratar. Recalculamos
+  // hoy/hoy+1 en el cliente al montar.
+  useEffect(() => {
+    const now = new Date();
+    setCheckin(iso(now));
+    setCheckout(iso(new Date(now.getTime() + 86400000)));
+    setPk({ y: now.getFullYear(), m: now.getMonth() });
+  }, []);
 
   const ci = checkin.split("-");
   const co = checkout.split("-");

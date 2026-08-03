@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { useDict } from "@/components/i18n/LocaleProvider";
 import { buildBookingUrl } from "@/lib/booking";
 
@@ -41,6 +41,17 @@ export default function BookingBar() {
   const dict = useDict();
   const MES = dict.booking.mesShort;
   const MESES = dict.booking.mesLong;
+
+  // La Home es estática (SSG): el estado inicial de arriba se evalúa en el BUILD,
+  // así que el HTML servido congela la fecha del día en que se compiló y, por el
+  // suppressHydrationWarning, no se corrige al hidratar. Recalculamos hoy/hoy+1
+  // en el cliente al montar para que las fechas sean siempre las del navegador.
+  useEffect(() => {
+    const now = new Date();
+    setCheckin(iso(now));
+    setCheckout(iso(new Date(now.getTime() + 86400000)));
+    setPk({ y: now.getFullYear(), m: now.getMonth() });
+  }, []);
 
   const ci = checkin.split("-");
   const co = checkout.split("-");
