@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import { useDict } from "@/components/i18n/LocaleProvider";
-import { buildBookingUrl } from "@/lib/booking";
+import { BOOKING_BASE, buildBookingUrl } from "@/lib/booking";
 
 // Lógica de calendario/hóspedes portada 1:1 del script de la Home.
 // Los nombres de meses (MES/MESES) ahora vienen del diccionario (i18n).
@@ -38,19 +38,21 @@ export default function BookingBar() {
     const t = new Date();
     return { y: t.getFullYear(), m: t.getMonth() };
   });
+  // La Home es estática (SSG): el HTML servido congela la fecha del BUILD. Hasta
+  // montar en el cliente mostramos un placeholder neutro (mismo valor en server
+  // y cliente → hidratación limpia) y recién al montar pintamos la fecha REAL del
+  // navegador. Sin esto, React conserva la fecha del build y no la corrige.
+  const [mounted, setMounted] = useState(false);
   const dict = useDict();
   const MES = dict.booking.mesShort;
   const MESES = dict.booking.mesLong;
 
-  // La Home es estática (SSG): el estado inicial de arriba se evalúa en el BUILD,
-  // así que el HTML servido congela la fecha del día en que se compiló y, por el
-  // suppressHydrationWarning, no se corrige al hidratar. Recalculamos hoy/hoy+1
-  // en el cliente al montar para que las fechas sean siempre las del navegador.
   useEffect(() => {
     const now = new Date();
     setCheckin(iso(now));
     setCheckout(iso(new Date(now.getTime() + 86400000)));
     setPk({ y: now.getFullYear(), m: now.getMonth() });
+    setMounted(true);
   }, []);
 
   const ci = checkin.split("-");
@@ -188,9 +190,9 @@ export default function BookingBar() {
             onClick={() => openCal("checkin")}
             style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px" }}
           >
-            <span className="pc-bk-val" suppressHydrationWarning>{checkinDay}</span>
+            <span className="pc-bk-val">{mounted ? checkinDay : "—"}</span>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "5px" }}>
-              <span className="pc-bk-mon" suppressHydrationWarning>{checkinMon}</span>
+              <span className="pc-bk-mon">{mounted ? checkinMon : ""}</span>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M4 6l4 4 4-4" stroke="#8A97A6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -206,9 +208,9 @@ export default function BookingBar() {
             onClick={() => openCal("checkout")}
             style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px" }}
           >
-            <span className="pc-bk-val" suppressHydrationWarning>{checkoutDay}</span>
+            <span className="pc-bk-val">{mounted ? checkoutDay : "—"}</span>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "5px" }}>
-              <span className="pc-bk-mon" suppressHydrationWarning>{checkoutMon}</span>
+              <span className="pc-bk-mon">{mounted ? checkoutMon : ""}</span>
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M4 6l4 4 4-4" stroke="#8A97A6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -256,11 +258,10 @@ export default function BookingBar() {
         </div>
 
         <a
-          href={buildBookingUrl(checkin, checkout, guests)}
+          href={mounted ? buildBookingUrl(checkin, checkout, guests) : BOOKING_BASE}
           target="_blank"
           rel="noopener noreferrer"
           className="pc-bk-cta"
-          suppressHydrationWarning
         >
           {dict.booking.verificarLinha1}
           <br />

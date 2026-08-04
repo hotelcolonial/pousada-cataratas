@@ -37,18 +37,20 @@ export default function QuartoBooking() {
     const t = new Date();
     return { y: t.getFullYear(), m: t.getMonth() };
   });
+  // Página estática (SSG): el HTML servido congela la fecha del BUILD. Hasta
+  // montar en el cliente mostramos un placeholder neutro (server y cliente
+  // coinciden → hidratación limpia) y recién al montar pintamos la fecha REAL.
+  const [mounted, setMounted] = useState(false);
   const dict = useDict();
   const MES = dict.booking.mesShort;
   const MESES = dict.booking.mesLong;
 
-  // Página estática (SSG): sin esto, el HTML servido congela la fecha del build
-  // y el suppressHydrationWarning impide corregirla al hidratar. Recalculamos
-  // hoy/hoy+1 en el cliente al montar.
   useEffect(() => {
     const now = new Date();
     setCheckin(iso(now));
     setCheckout(iso(new Date(now.getTime() + 86400000)));
     setPk({ y: now.getFullYear(), m: now.getMonth() });
+    setMounted(true);
   }, []);
 
   const ci = checkin.split("-");
@@ -148,9 +150,9 @@ export default function QuartoBooking() {
       <div className="qbk-col" style={{ borderRight: "1px solid rgba(31,30,27,.12)", borderBottom: "1px solid rgba(31,30,27,.12)" }}>
         <label className="qbk-lab">{dict.booking.entrada}</label>
         <div className="qbk-field" onClick={() => openCal("checkin")} style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px" }}>
-          <span className="qbk-val" suppressHydrationWarning>{ciDay}</span>
+          <span className="qbk-val">{mounted ? ciDay : "—"}</span>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "5px" }}>
-            <span className="qbk-mon" suppressHydrationWarning>{ciMon}</span>
+            <span className="qbk-mon">{mounted ? ciMon : ""}</span>
             {chevron}
           </div>
         </div>
@@ -168,9 +170,9 @@ export default function QuartoBooking() {
       <div className="qbk-col" style={{ borderBottom: "1px solid rgba(31,30,27,.12)" }}>
         <label className="qbk-lab">{dict.booking.saida}</label>
         <div className="qbk-field" onClick={() => openCal("checkout")} style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "9px" }}>
-          <span className="qbk-val" suppressHydrationWarning>{coDay}</span>
+          <span className="qbk-val">{mounted ? coDay : "—"}</span>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "5px" }}>
-            <span className="qbk-mon" suppressHydrationWarning>{coMon}</span>
+            <span className="qbk-mon">{mounted ? coMon : ""}</span>
             {chevron}
           </div>
         </div>
@@ -204,7 +206,7 @@ export default function QuartoBooking() {
       <div className="qbk-col">
         <label className="qbk-lab">{dict.booking.noites}</label>
         <div className="qbk-field">
-          <span className="qbk-val" suppressHydrationWarning>{nights}</span>
+          <span className="qbk-val">{mounted ? nights : "—"}</span>
         </div>
       </div>
 
