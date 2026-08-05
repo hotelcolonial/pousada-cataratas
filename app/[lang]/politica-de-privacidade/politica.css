@@ -60,12 +60,8 @@
 }
 
 /* Placeholder resaltado: dato que el cliente debe completar antes de publicar. */
+/* Datos del responsable ya completados (razão social/CNPJ, e-mail, fecha):
+   se muestran como texto normal. Solo se resalta el nombre/entidad en negrita. */
 .pp-ph {
-  background: #fbf1df;
-  border: 1px dashed #c79a6a;
-  color: #8a6a3a;
-  padding: 1px 7px;
-  border-radius: 2px;
   font-weight: 600;
-  white-space: nowrap;
 }

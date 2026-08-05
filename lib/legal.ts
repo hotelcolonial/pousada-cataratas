@@ -39,9 +39,9 @@ export const privacyPolicy: Record<Locale, PrivacyContent> = {
     intro:
       "Esta Política explica como a Pousada Cataratas coleta, usa, compartilha e protege os seus dados pessoais quando você visita este site ou entra em contato conosco, em conformidade com a Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018).",
     ph: {
-      responsavel: "[COMPLETAR: nome/razão social do responsável]",
-      email: "[COMPLETAR: e-mail de contato para privacidade]",
-      data: "[COMPLETAR: data da última atualização]",
+      responsavel: "Pousada Bella Foz LTDA, inscrita no CNPJ 67.758.473/0001-23",
+      email: "gerencia@pousadacataratas.com.br",
+      data: "5 de agosto de 2026",
     },
     sections: [
       {
@@ -173,9 +173,9 @@ export const privacyPolicy: Record<Locale, PrivacyContent> = {
     intro:
       "Esta Política explica cómo Pousada Cataratas recoge, usa, comparte y protege tus datos personales cuando visitas este sitio o te pones en contacto con nosotros, conforme a la Ley General de Protección de Datos de Brasil (LGPD – Ley nº 13.709/2018).",
     ph: {
-      responsavel: "[COMPLETAR: nombre/razón social del responsable]",
-      email: "[COMPLETAR: e-mail de contacto para privacidad]",
-      data: "[COMPLETAR: fecha de última actualización]",
+      responsavel: "Pousada Bella Foz LTDA, inscrita en el CNPJ 67.758.473/0001-23",
+      email: "gerencia@pousadacataratas.com.br",
+      data: "5 de agosto de 2026",
     },
     sections: [
       {
@@ -307,9 +307,9 @@ export const privacyPolicy: Record<Locale, PrivacyContent> = {
     intro:
       "This Policy explains how Pousada Cataratas collects, uses, shares and protects your personal data when you visit this site or contact us, in accordance with Brazil's General Data Protection Law (LGPD – Law No. 13,709/2018).",
     ph: {
-      responsavel: "[TO COMPLETE: controller name / legal entity]",
-      email: "[TO COMPLETE: privacy contact e-mail]",
-      data: "[TO COMPLETE: last updated date]",
+      responsavel: "Pousada Bella Foz LTDA, registered under CNPJ 67.758.473/0001-23",
+      email: "gerencia@pousadacataratas.com.br",
+      data: "August 5, 2026",
     },
     sections: [
       {
