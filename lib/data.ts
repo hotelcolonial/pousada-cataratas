@@ -206,6 +206,28 @@ export const galeriaShots: GaleriaShot[] = [
   { id: "g25", cat: "quartos", img: "/images/real/quartos/quarto-triplo-tv-armario-pousada-cataratas-foz-do-iguacu.webp", alt: "TV e armário do Quarto Triplo da Pousada Cataratas em Foz do Iguaçu" },
   { id: "g26", cat: "quartos", img: "/images/real/quartos/quarto-quadruplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Vista ampla do Quarto Quádruplo da Pousada Cataratas em Foz do Iguaçu" },
   { id: "g27", cat: "quartos", img: "/images/real/quartos/quarto-quintuplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Vista ampla do Quarto Quíntuplo da Pousada Cataratas em Foz do Iguaçu" },
+  // Novas fotos reais (2026): quartos, áreas comuns (brinquedoteca, café da manhã, fachada) e piscina.
+  { id: "g28", cat: "quartos", img: "/images/real/home/quarto-familia-quatro-camas-pousada-cataratas-foz-do-iguacu.webp", alt: "Quarto família com quatro camas, ar-condicionado e TV na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g29", cat: "quartos", img: "/images/real/home/quarto-amplo-varias-camas-pousada-cataratas-foz-do-iguacu.webp", alt: "Quarto amplo com várias camas na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g30", cat: "comuns", img: "/images/real/home/brinquedoteca-espaco-kids-pousada-cataratas-foz-do-iguacu.webp", alt: "Brinquedoteca com brinquedos e tapete colorido na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g31", cat: "comuns", img: "/images/real/home/brinquedoteca-brinquedos-quadros-pousada-cataratas-foz-do-iguacu.webp", alt: "Brinquedoteca com brinquedos e quadros de animais na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g32", cat: "comuns", img: "/images/real/home/espaco-kids-mesa-infantil-pousada-cataratas-foz-do-iguacu.webp", alt: "Espaço kids com mesa infantil e poltronas na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g33", cat: "comuns", img: "/images/real/home/salao-cafe-da-manha-mesas-pousada-cataratas-foz-do-iguacu.webp", alt: "Salão de café da manhã com mesas de madeira na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g34", cat: "comuns", img: "/images/real/home/cafe-da-manha-frios-frutas-pousada-cataratas-foz-do-iguacu.webp", alt: "Frios e frutas no café da manhã da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g35", cat: "comuns", img: "/images/real/home/cafe-da-manha-pratos-quentes-pousada-cataratas-foz-do-iguacu.webp", alt: "Pratos quentes e ovos mexidos no café da manhã da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g36", cat: "comuns", img: "/images/real/home/cafe-da-manha-bolos-paes-doces-pousada-cataratas-foz-do-iguacu.webp", alt: "Bolos, pães e doces no café da manhã da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g37", cat: "comuns", img: "/images/real/home/cafe-da-manha-estacao-cafe-pousada-cataratas-foz-do-iguacu.webp", alt: "Estação de café e chá do café da manhã da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g38", cat: "comuns", img: "/images/real/home/cafe-da-manha-beira-piscina-pousada-cataratas-foz-do-iguacu.webp", alt: "Café da manhã servido à beira da piscina na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g39", cat: "comuns", img: "/images/real/home/fachada-vista-rua-pousada-cataratas-foz-do-iguacu.webp", alt: "Fachada da Pousada Cataratas vista da rua em Foz do Iguaçu" },
+  { id: "g40", cat: "comuns", img: "/images/real/home/fachada-entrada-arborizada-pousada-cataratas-foz-do-iguacu.webp", alt: "Entrada arborizada da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g41", cat: "comuns", img: "/images/real/home/placa-entrada-pousada-cataratas-foz-do-iguacu.webp", alt: "Placa e entrada da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g42", cat: "piscina", img: "/images/real/home/piscina-vista-espreguicadeiras-guarda-sois-pousada-cataratas-foz-do-iguacu.webp", alt: "Vista da piscina com espreguiçadeiras e guarda-sóis na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g43", cat: "piscina", img: "/images/real/home/piscina-area-descanso-ar-livre-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina e área de descanso ao ar livre da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g44", cat: "piscina", img: "/images/real/home/piscina-jardim-espreguicadeiras-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina cercada por jardim com espreguiçadeiras na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g45", cat: "piscina", img: "/images/real/home/piscina-area-convivencia-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina e área de convivência ao ar livre da Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g46", cat: "piscina", img: "/images/real/home/piscina-guarda-sois-sombra-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina com guarda-sóis e espreguiçadeiras à sombra na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g47", cat: "piscina", img: "/images/real/home/piscina-espreguicadeiras-arvores-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina com espreguiçadeiras à sombra das árvores na Pousada Cataratas em Foz do Iguaçu" },
+  { id: "g48", cat: "piscina", img: "/images/real/home/piscina-guarda-sol-vegetacao-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina e guarda-sol cercados de vegetação na Pousada Cataratas em Foz do Iguaçu" },
 ];
 
 export type GaleriaTab = { id: string; label: string };
