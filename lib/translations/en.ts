@@ -506,8 +506,9 @@ export const en: LocaleContent = {
     },
     "agosto-encantador": {
       name: "Agosto Encantador",
-      desc1: "A special promotion to make your August unforgettable in Foz do Iguaçu. Stay with us and get two tickets to Ecopark, one of the most enchanting outings in the region.",
-      desc2: "Enjoy the comfort of the guesthouse and experience nature up close, with two tickets to Ecopark included in your stay. Talk to our team and secure your booking.",
+      fotoAlt: "Children feeding goats at the Zoopark in Foz do Iguaçu — Agosto Encantador offer at Pousada Cataratas",
+      desc1: "A special promotion to make your August unforgettable in Foz do Iguaçu. Stay with us and get two tickets to Zoopark, one of the most enchanting outings in the region.",
+      desc2: "Enjoy the comfort of the guesthouse and experience nature up close, with two tickets to Zoopark included in your stay. Talk to our team and secure your booking.",
     },
   },
 

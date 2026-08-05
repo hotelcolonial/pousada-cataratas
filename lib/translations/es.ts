@@ -513,8 +513,9 @@ export const es: LocaleContent = {
     },
     "agosto-encantador": {
       name: "Agosto Encantador",
-      desc1: "Una promoción especial para hacer tu agosto inolvidable en Foz do Iguaçu. Alójate con nosotros y gana dos entradas para el Ecopark, uno de los paseos más encantadores de la región.",
-      desc2: "Aprovecha la comodidad de la posada y vive la naturaleza de cerca, con dos entradas al Ecopark incluidas en tu estancia. Habla con nuestro equipo y garantiza tu reserva.",
+      fotoAlt: "Niños alimentando cabras en el Zoopark de Foz do Iguaçu — promoción Agosto Encantador de Pousada Cataratas",
+      desc1: "Una promoción especial para hacer tu agosto inolvidable en Foz do Iguaçu. Alójate con nosotros y gana dos entradas para el Zoopark, uno de los paseos más encantadores de la región.",
+      desc2: "Aprovecha la comodidad de la posada y vive la naturaleza de cerca, con dos entradas al Zoopark incluidas en tu estancia. Habla con nuestro equipo y garantiza tu reserva.",
     },
   },
 

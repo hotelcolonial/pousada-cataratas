@@ -713,6 +713,9 @@ export type ProdutoDetail = {
   name: string;
   banner: string;
   foto: string;
+  // Alt/título SEO específico de la foto (opcional). Si no se define, se usa el
+  // texto genérico dict.alt.produtoFoto.
+  fotoAlt?: string;
   desc1: string;
   desc2: string;
 };
@@ -750,9 +753,10 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
   "agosto-encantador": {
     name: "Agosto Encantador",
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
-    foto: "/images/real/home/cafe-da-manha-buffet-pousada-cataratas-foz-do-iguacu.webp",
-    desc1: "Uma promoção especial para tornar o seu agosto inesquecível em Foz do Iguaçu. Hospede-se com a gente e ganhe dois ingressos para o Ecopark, um dos passeios mais encantadores da região.",
-    desc2: "Aproveite o conforto da pousada e viva a natureza de perto, com dois ingressos ao Ecopark inclusos na sua estadia. Fale com a nossa equipe e garanta a sua reserva.",
+    foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
+    fotoAlt: "Crianças alimentando cabras no Zoopark em Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas",
+    desc1: "Uma promoção especial para tornar o seu agosto inesquecível em Foz do Iguaçu. Hospede-se com a gente e ganhe dois ingressos para o Zoopark, um dos passeios mais encantadores da região.",
+    desc2: "Aproveite o conforto da pousada e viva a natureza de perto, com dois ingressos ao Zoopark inclusos na sua estadia. Fale com a nossa equipe e garanta a sua reserva.",
   },
 };
 

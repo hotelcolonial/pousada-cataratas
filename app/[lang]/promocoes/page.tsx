@@ -106,7 +106,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
 
         <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/fachada-palmeiras-pousada-cataratas-foz-do-iguacu.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu com palmeiras imperiais" />
+            <SlotImg src="/images/real/home/zoopark-menino-cabra-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp" alt="Menino acariciando uma cabra no Zoopark de Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas" />
           </div>
           <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card2Name}</h3>
