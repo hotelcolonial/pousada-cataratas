@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import "./home.css";
 import BookingBar from "@/components/home/BookingBar";
+import PromoPopup from "@/components/home/PromoPopup";
 import Testimonials from "@/components/home/Testimonials";
 import ContatoStrip from "@/components/ContatoStrip";
 import { getRgCards, getTesti, tagAccent, tagDark } from "@/lib/data";
@@ -71,6 +72,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         paddingBottom: 0,
       }}
     >
+      {/* Pop-up promocional (solo Home), aparece al entrar */}
+      <PromoPopup />
       {/* ============ HERO + BOOKING (100vh) ============ */}
       <section className="pc-hero-wrap" style={{ padding: 0, display: "flex", flexDirection: "column" }}>
         <div
