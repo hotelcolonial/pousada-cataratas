@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import { useDict } from "@/components/i18n/LocaleProvider";
+import { BOOKING_BASE, buildBookingUrl } from "@/lib/booking";
 
 // Calendario/hóspedes/noites portado 1:1 del script de Quarto.dc.html.
 // Los nombres de meses (MES/MESES) ahora vienen del diccionario (i18n).
@@ -210,7 +211,14 @@ export default function QuartoBooking() {
         </div>
       </div>
 
-      <a href="#" className="qbk-cta">{dict.booking.reservar}</a>
+      <a
+        href={mounted ? buildBookingUrl(checkin, checkout, guests) : BOOKING_BASE}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="qbk-cta"
+      >
+        {dict.booking.reservar}
+      </a>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
 import { WHATSAPP_HREF } from "@/lib/whatsapp";
+import { BOOKING_BASE } from "@/lib/booking";
 import { productLd, breadcrumbLd } from "@/lib/jsonld";
 import type { Metadata } from "next";
 
@@ -140,7 +141,7 @@ export default async function Quarto({ params }: { params: Promise<{ lang: strin
             {/* RIGHT: ações sticky */}
             <aside className="qd-sidebar">
               <div className="qd-actions">
-                <a href="#" className="qd-act-1" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "20px 22px", background: "#C79A6A", color: "#FFFFFF", textDecoration: "none", fontSize: "13px", letterSpacing: ".18em", textTransform: "uppercase", transition: "filter .15s ease" }}>
+                <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" className="qd-act-1" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", padding: "20px 22px", background: "#C79A6A", color: "#FFFFFF", textDecoration: "none", fontSize: "13px", letterSpacing: ".18em", textTransform: "uppercase", transition: "filter .15s ease" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2" /><path d="M3 9h18M8 3v3M16 3v3" /></svg>
                   {dict.quartoDetail.actReservar}
                 </a>

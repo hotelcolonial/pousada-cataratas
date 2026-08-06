@@ -7,6 +7,7 @@ import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
+import { BOOKING_BASE } from "@/lib/booking";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -138,7 +139,7 @@ export default async function Quartos({ params }: { params: Promise<{ lang: stri
                     </span>
                   </div>
                   <p style={{ fontSize: "14px", lineHeight: 1.65, color: "#8A94A0", margin: "18px 0 26px" }}>{c.desc}</p>
-                  <a href="#" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "50px", marginTop: "auto", border: "2px solid #1E90C8", color: "#1E90C8", textDecoration: "none", fontSize: "11.5px", letterSpacing: ".2em", textTransform: "uppercase" }}>
+                  <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "50px", marginTop: "auto", border: "2px solid #1E90C8", color: "#1E90C8", textDecoration: "none", fontSize: "11.5px", letterSpacing: ".2em", textTransform: "uppercase" }}>
                     {dict.quartosList.cardReservar}
                   </a>
                 </div>
