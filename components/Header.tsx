@@ -148,9 +148,9 @@ export default function Header() {
               <svg viewBox="0 0 24 24" aria-hidden><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" /></svg>
               <span>R. Parigot de Souza, 180 — Foz do Iguaçu, PR</span>
             </span>
-            <a href="tel:+554535237841">
+            <a href="tel:+5508000029215">
               <svg viewBox="0 0 24 24" aria-hidden><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.5-1 1-1h3.5c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1l-2.2 2.3Z" /></svg>
-              <span>+55 45 3523-7841</span>
+              <span>+55 0800 002 9215</span>
             </a>
             <a href="mailto:reservas@pousadacataratas.com.br">
               <svg viewBox="0 0 24 24" aria-hidden><path d="M3 6.5C3 5.7 3.7 5 4.5 5h15c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm2.2.5 6.8 5 6.8-5H5.2Z" /></svg>

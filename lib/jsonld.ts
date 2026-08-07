@@ -69,7 +69,7 @@ export function lodgingBusinessLd(lang: string, description: string) {
     description,
     url: abs(localePath(lang, "/")),
     image: abs(defaultOgImage),
-    telephone: "+5545991377708",
+    telephone: "+55 0800 002 9215",
     priceRange: "R$320–R$620",
     address: ADDRESS,
     geo: {

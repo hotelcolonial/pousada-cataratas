@@ -25,11 +25,11 @@ export default function ContatoStrip({ dict, style }: { dict: Dictionary; style?
           <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "33px", lineHeight: 1.04, color: "#FFFFFF", margin: "22px 0 0" }}>{c.faleConosco}</h3>
           <div style={{ marginTop: "32px" }}>
             <div style={{ fontSize: "12.5px", letterSpacing: ".05em", color: "rgba(255,255,255,.55)" }}>{c.reservasLabel}</div>
-            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 45 3523-7841</div>
+            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 0800 002 9215</div>
           </div>
           <div style={{ marginTop: "26px" }}>
             <div style={{ fontSize: "12.5px", letterSpacing: ".05em", color: "rgba(255,255,255,.55)" }}>{c.whatsappLabel}</div>
-            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 45 99137-7708</div>
+            <div style={{ fontSize: "14px", color: "#FFFFFF", marginTop: "8px" }}>+55 0800 002 9215</div>
           </div>
         </div>
         <div style={{ background: "#C79A6A", color: "#FFFFFF", padding: "42px 44px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
