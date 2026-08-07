@@ -208,7 +208,7 @@ export const en: LocaleContent = {
         { src: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Double Room at Pousada Cataratas in Foz do Iguaçu with a double bed" },
         { src: "/images/real/quartos/quarto-duplo-cama-armario-pousada-cataratas-foz-do-iguacu.webp", alt: "Double bed, wardrobe and minibar of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
         { src: "/images/real/quartos/quarto-duplo-tv-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "TV, mirror and granite countertop of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
-        { src: "/images/real/quartos/quarto-duplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Wide view of the Double Room at Pousada Cataratas in Foz do Iguaçu, close to the Falls" },
+        { src: "/images/real/quartos/quarto-duplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Wide view of the Double Room at Pousada Cataratas in Foz do Iguaçu" },
       ],
     },
     "quarto-triplo": {

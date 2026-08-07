@@ -255,7 +255,7 @@ export type AtracaoFeatured = {
 
 // featured — destaques da página Atrações. Valores sin cambios.
 export const atracoesFeatured: AtracaoFeatured[] = [
-  { id: "at-feat-1", revClass: "", badgeSide: "", href: "Atracao.dc.html?atracao=cataratas", eyebrow: "Patrimônio natural", name: "Cataratas do Iguaçu", dist: "20", distLabel: "min de carro", img: "/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp", desc: "Uma das Sete Maravilhas da Natureza, com mais de 270 quedas dágua cercadas por mata atlântica. Trilhas, passarelas e o famoso mirante da Garganta do Diabo a poucos minutos da pousada." },
+  { id: "at-feat-1", revClass: "", badgeSide: "", href: "Atracao.dc.html?atracao=cataratas", eyebrow: "Patrimônio natural", name: "Cataratas do Iguaçu", dist: "20", distLabel: "min de carro", img: "/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp", desc: "Uma das Sete Maravilhas da Natureza, com mais de 270 quedas d'água cercadas por mata atlântica. Trilhas, passarelas e o famoso mirante da Garganta do Diabo, com fácil acesso a partir da pousada." },
   { id: "at-feat-2", revClass: "rev", badgeSide: "left", href: "Atracao.dc.html?atracao=parque-das-aves", eyebrow: "Vida selvagem", name: "Parque das Aves", dist: "15", distLabel: "min de carro", img: "/images/real/atracoes/parque-das-aves-jandaia-foz-do-iguacu.webp", desc: "O maior parque de aves da América Latina, com viveiros imersivos onde tucanos, araras e flamingos vivem pertinho de você. Um passeio perfeito para todas as idades, ao lado das Cataratas." },
   { id: "at-feat-3", revClass: "", badgeSide: "", href: "Atracao.dc.html?atracao=marco-tres-fronteiras", eyebrow: "Tríplice fronteira", name: "Marco das Três Fronteiras", dist: "25", distLabel: "min de carro", img: "/images/real/atracoes/marco-das-tres-fronteiras-obelisco-foz-do-iguacu.webp", desc: "O ponto onde Brasil, Argentina e Paraguai se encontram, às margens dos rios Iguaçu e Paraná. Mirante, gastronomia e um espetáculo de luzes ao entardecer." },
   { id: "at-feat-4", revClass: "rev", badgeSide: "left", href: "Atracao.dc.html?atracao=itaipu", eyebrow: "Engenharia & natureza", name: "Usina de Itaipu", dist: "35", distLabel: "min de carro", img: "/images/real/atracoes/usina-de-itaipu-barragem-foz-do-iguacu.webp", desc: "Uma das maiores hidrelétricas do mundo, com visitas guiadas, iluminação noturna e o Refúgio Biológico. Uma experiência que une tecnologia e preservação ambiental." },
@@ -354,7 +354,7 @@ export const quartoRooms: Record<string, QuartoDetail> = {
       { src: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp", alt: "Quarto Duplo da Pousada Cataratas em Foz do Iguaçu com cama de casal" },
       { src: "/images/real/quartos/quarto-duplo-cama-armario-pousada-cataratas-foz-do-iguacu.webp", alt: "Cama de casal, armário e frigobar do Quarto Duplo da Pousada Cataratas em Foz do Iguaçu" },
       { src: "/images/real/quartos/quarto-duplo-tv-banheiro-pousada-cataratas-foz-do-iguacu.webp", alt: "TV, espelho e bancada de granito do Quarto Duplo da Pousada Cataratas em Foz do Iguaçu" },
-      { src: "/images/real/quartos/quarto-duplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Vista ampla do Quarto Duplo da Pousada Cataratas em Foz do Iguaçu, próximo às Cataratas" },
+      { src: "/images/real/quartos/quarto-duplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp", alt: "Vista ampla do Quarto Duplo da Pousada Cataratas em Foz do Iguaçu" },
     ],
   },
   "quarto-triplo": {

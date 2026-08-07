@@ -215,7 +215,7 @@ export const es: LocaleContent = {
         "Habitación Doble de la Pousada Cataratas en Foz do Iguaçu con cama de matrimonio",
         "Cama de matrimonio, armario y frigobar de la Habitación Doble de la Pousada Cataratas en Foz do Iguaçu",
         "TV, espejo y encimera de granito de la Habitación Doble de la Pousada Cataratas en Foz do Iguaçu",
-        "Vista amplia de la Habitación Doble de la Pousada Cataratas en Foz do Iguaçu, cerca de las Cataratas",
+        "Vista amplia de la Habitación Doble de la Pousada Cataratas en Foz do Iguaçu",
       ]),
     },
     "quarto-triplo": {

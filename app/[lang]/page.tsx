@@ -53,6 +53,24 @@ const strFeatTitle: CSSProperties = {
 const strFeatDesc: CSSProperties = { fontSize: "12px", color: "#9AA3AD", marginTop: "4px" };
 const newsDate: CSSProperties = {}; // .pc-news-date viene de home.css
 
+// Ícones lineares do Espaço Kids — mesmo estilo dos ícones da seção "A estrutura"
+// (Atendimento 24h / Confirmação Rápida): traço fino azul de marca (#143C7A),
+// sem fundo. A ordem segue dict.home.kidsList: brinquedoteca, mesa de atividades,
+// tapete, brinquedos, climatização, segurança. O texto muda por idioma; os ícones não.
+const kidsIco = (d: React.ReactNode) => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#143C7A" strokeWidth={1.3} strokeLinecap="round" strokeLinejoin="round">
+    {d}
+  </svg>
+);
+const KIDS_ICONS: React.ReactNode[] = [
+  kidsIco(<><rect x="3" y="3" width="7.5" height="7.5" rx="1" /><rect x="13.5" y="3" width="7.5" height="7.5" rx="1" /><rect x="8.25" y="13.5" width="7.5" height="7.5" rx="1" /></>),
+  kidsIco(<><path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" /></>),
+  kidsIco(<><rect x="3" y="4" width="18" height="16" rx="1.5" /><path d="M3 10h18M3 15h18M9 4v16M15 4v16" /></>),
+  kidsIco(<path d="M12 3.2l2.5 5.1 5.6.8-4.05 3.95.96 5.58L12 16.98l-5.02 2.63.96-5.58L3.9 9.1l5.6-.8L12 3.2z" />),
+  kidsIco(<path d="M12 2v20M2.5 12h19M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />),
+  kidsIco(<><path d="M12 3l7 3v5c0 4.4-3 7.9-7 9.5-4-1.6-7-5.1-7-9.5V6l7-3z" /><path d="M9.2 11.6l1.9 1.9 3.7-3.7" /></>),
+];
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
@@ -80,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           className="pc-hero"
           style={{ position: "relative", borderRadius: 0, overflow: "hidden", height: "calc(100vh - var(--pch-h))", minHeight: "520px", background: "#143C7A" }}
         >
-          <SlotImg src="/images/real/home/pousada-cataratas-foz-do-iguacu-fachada.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu, perto das Cataratas do Iguaçu" priority />
+          <SlotImg src="/images/real/home/pousada-cataratas-foz-do-iguacu-fachada.webp" alt="Fachada da Pousada Cataratas no coração de Foz do Iguaçu" priority />
           <div
             style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(14,34,70,.5),rgba(9,22,46,.6))", pointerEvents: "none" }}
           />
@@ -171,6 +189,37 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
           </a>
         ))}
+      </section>
+
+      {/* ============ ESPAÇO KIDS ============ */}
+      <section id="espaco-kids" className="pc-kids">
+        {/* MÍDIA: imagem principal + 2 acentos sobrepostos (3 fotos no total) */}
+        <div className="pc-kids-media">
+          <div className="pc-kids-main">
+            <SlotImg src="/images/real/home/espaco-kids-brinquedoteca-pousada-cataratas-foz-do-iguacu.webp" alt={dict.home.kidsAltMain} />
+          </div>
+          <div className="pc-kids-acc pc-kids-acc-1">
+            <SlotImg src="/images/real/home/espaco-kids-mesa-atividades-pousada-cataratas-foz-do-iguacu.webp" alt={dict.home.kidsAlt3} />
+          </div>
+          <div className="pc-kids-acc pc-kids-acc-2">
+            <SlotImg src="/images/real/home/espaco-kids-area-descanso-pousada-cataratas-foz-do-iguacu.webp" alt={dict.home.kidsAlt2} />
+          </div>
+        </div>
+
+        {/* TEXTO */}
+        <div className="pc-kids-body">
+          <div className="pc-kids-eyebrow">{dict.home.kidsEyebrow}</div>
+          <h2 className="pc-kids-h">{dict.home.kidsTitle}</h2>
+          <p className="pc-kids-p">{dict.home.kidsP}</p>
+          <ul className="pc-kids-list">
+            {dict.home.kidsList.map((item, i) => (
+              <li key={i} className="pc-kids-item">
+                <span className="pc-kids-ico">{KIDS_ICONS[i]}</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* ============ PROMOÇÕES ============ */}
@@ -413,7 +462,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="pc-news">
           <a href={localePath(lang, "/atracoes/cataratas")} className="pc-news-card pc-n-a" style={{ textDecoration: "none", color: "inherit" }}>
             <div style={{ position: "relative", flex: 1, minHeight: "120px", background: "#143C7A" }}>
-              <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-foz.webp" alt="Cataratas do Iguaçu com arco-íris, a poucos minutos da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-foz.webp" alt="Cataratas do Iguaçu com arco-íris, um dos principais passeios de Foz do Iguaçu" />
             </div>
             <div style={{ background: "#FFFFFF", boxShadow: "0 16px 40px rgba(20,33,51,.08)", padding: "22px 26px 26px", flex: "none" }}>
               <div className="pc-news-date" style={newsDate}>{dict.home.newsCard1Date}</div>
