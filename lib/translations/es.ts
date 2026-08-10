@@ -463,15 +463,15 @@ export const es: LocaleContent = {
     },
     morador: {
       name: "Tarifa residente",
-      sub: "Para residentes de la región",
-      validity: "Mediante comprobante de residencia",
-      desc: "Condición especial para quienes son de la región y quieren disfrutar de un descanso cerca de casa, con toda la estructura y la atención cálida de la posada.",
-      desc2: "Presenta el comprobante de residencia en la reserva y garantiza la tarifa exclusiva para residentes.",
+      sub: "Para residentes de Foz y región",
+      validity: "Mediante comprobante de domicilio",
+      desc: "Condición especial para quienes son de Foz do Iguaçu y región y quieren disfrutar de un descanso cerca de casa, con toda la estructura y la atención cálida de la posada.",
+      desc2: "Presenta el comprobante de domicilio en la reserva y obtén un 25% de descuento en la tarifa, exclusivo para residentes de Foz do Iguaçu y región. 1 niño de hasta 5 años es cortesía.",
       conditions: [
         "Desayuno incluido",
         "Wi-Fi gratis en toda la posada",
         "Estacionamiento privado",
-        "Comprobante de residencia",
+        "Comprobante de domicilio",
       ],
     },
     antecipada: {
@@ -499,7 +499,7 @@ export const es: LocaleContent = {
     morador: {
       name: "Tarifa residente",
       desc1: "Condición especial para residentes de la región de Foz do Iguaçu y alrededores. Aprovecha la posada como tu refugio cerca de casa, con toda la estructura y la comodidad de siempre.",
-      desc2: "Los residentes de la región tienen un 10% de descuento en la tarifa mediante comprobante de residencia. Desayuno, Wi-Fi gratis y estacionamiento incluidos.",
+      desc2: "Los residentes de Foz do Iguaçu y región tienen un 25% de descuento en la tarifa mediante comprobante de domicilio. 1 niño de hasta 5 años es cortesía. Desayuno, Wi-Fi gratis y estacionamiento incluidos.",
     },
     antecipada: {
       name: "Reserva anticipada",
@@ -509,7 +509,7 @@ export const es: LocaleContent = {
     "day-use": {
       name: "Day Use",
       desc1: "Aprovecha la estructura de la Pousada Cataratas por un día, sin necesidad de alojarte. Perfecto para quienes están de paso por Foz do Iguaçu y quieren relajarse entre un paseo y otro.",
-      desc2: "El Day Use cuesta R$ 90 por persona y da acceso a las áreas de ocio de la posada durante el día, de 9h a 18h. Consulta la disponibilidad con nuestro equipo.",
+      desc2: "El Day Use cuesta R$ 90 por persona y da acceso a las áreas de ocio de la posada durante el día, de 9h a 18h. 1 niño de hasta 5 años es cortesía. A partir de 3 pagantes, incluimos un apartamento. Consulta la disponibilidad con nuestro equipo.",
     },
     "agosto-encantador": {
       name: "Agosto Encantador",

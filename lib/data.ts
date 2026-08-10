@@ -705,14 +705,14 @@ export const promocaoDetails: Record<string, PromocaoDetail> = {
   },
   "morador": {
     name: "Tarifa morador",
-    sub: "Para moradores da região",
-    discount: "10%",
-    validity: "Mediante comprovante de residência",
+    sub: "Para moradores de Foz e região",
+    discount: "25%",
+    validity: "Mediante comprovante de endereço",
     img: "/images/pexels/pexels-271624-w1600.jpg",
     heroSlot: "promo-hero-2",
-    desc: "Condição especial para quem é da região e quer aproveitar um descanso pertinho de casa, com toda a estrutura e o atendimento caloroso da pousada.",
-    desc2: "Apresente o comprovante de residência na reserva e garanta a tarifa exclusiva para moradores.",
-    conditions: ["Café da manhã incluso", "Wi-Fi grátis em toda a pousada", "Estacionamento privativo", "Comprovante de residência"],
+    desc: "Condição especial para quem é de Foz do Iguaçu e região e quer aproveitar um descanso pertinho de casa, com toda a estrutura e o atendimento caloroso da pousada.",
+    desc2: "Apresente o comprovante de endereço na reserva e garanta 25% de desconto na diária, exclusivo para moradores de Foz do Iguaçu e região. 1 criança de até 5 anos tem cortesia.",
+    conditions: ["Café da manhã incluso", "Wi-Fi grátis em toda a pousada", "Estacionamento privativo", "Comprovante de endereço"],
   },
   "antecipada": {
     name: "Reserva antecipada",
@@ -740,6 +740,9 @@ export type ProdutoDetail = {
   fotoAlt?: string;
   desc1: string;
   desc2: string;
+  // Mensaje de WhatsApp específico de esta oferta (opcional, siempre en PT).
+  // Si no se define, el botón usa el mensaje genérico (WHATSAPP_HREF).
+  waMessage?: string;
 };
 
 export const produtoDetails: Record<string, ProdutoDetail> = {
@@ -755,7 +758,7 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     banner: "/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp",
     desc1: "Condição especial para moradores da região de Foz do Iguaçu e arredores. Aproveite a pousada como seu refúgio perto de casa, com toda a estrutura e o conforto de sempre.",
-    desc2: "Moradores da região têm 10% de desconto na diária mediante comprovante de residência. Café da manhã, Wi-Fi grátis e estacionamento inclusos.",
+    desc2: "Moradores de Foz do Iguaçu e região têm 25% de desconto na diária mediante comprovante de endereço. 1 criança de até 5 anos tem cortesia. Café da manhã, Wi-Fi grátis e estacionamento inclusos.",
   },
   "antecipada": {
     name: "Reserva antecipada",
@@ -770,7 +773,8 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     banner: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp",
     desc1: "Aproveite a estrutura da Pousada Cataratas por um dia, sem precisar se hospedar. Perfeito para quem está de passagem por Foz do Iguaçu e quer relaxar entre um passeio e outro.",
-    desc2: "O Day Use custa R$ 90 por pessoa e dá acesso às áreas de lazer da pousada durante o dia, das 9h às 18h. Consulte a disponibilidade com a nossa equipe.",
+    desc2: "O Day Use custa R$ 90 por pessoa e dá acesso às áreas de lazer da pousada durante o dia, das 9h às 18h. 1 criança de até 5 anos tem cortesia. A partir de 3 pagantes, incluímos um apartamento. Consulte a disponibilidade com a nossa equipe.",
+    waMessage: "Olá, vim do site e tenho interesse no Day Use",
   },
   "agosto-encantador": {
     name: "Agosto Encantador",

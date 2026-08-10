@@ -456,15 +456,15 @@ export const en: LocaleContent = {
     },
     "morador": {
       name: "Resident rate",
-      sub: "For local residents",
-      validity: "Upon proof of residence",
-      desc: "A special deal for those who are from the region and want to enjoy a getaway close to home, with all the facilities and the warm service of the guesthouse.",
-      desc2: "Present your proof of residence when booking and secure the exclusive rate for residents.",
+      sub: "For residents of Foz and region",
+      validity: "Upon proof of address",
+      desc: "A special deal for those who live in Foz do Iguaçu and the region and want to enjoy a getaway close to home, with all the facilities and the warm service of the guesthouse.",
+      desc2: "Present your proof of address when booking and get 25% off the rate, exclusive for residents of Foz do Iguaçu and the region. 1 child up to 5 years old is free.",
       conditions: [
         "Breakfast included",
         "Free Wi-Fi throughout the guesthouse",
         "Private parking",
-        "Proof of residence",
+        "Proof of address",
       ],
     },
     "antecipada": {
@@ -492,7 +492,7 @@ export const en: LocaleContent = {
     "morador": {
       name: "Resident rate",
       desc1: "A special deal for residents of the Foz do Iguaçu region and surroundings. Enjoy the guesthouse as your retreat close to home, with all the facilities and the usual comfort.",
-      desc2: "Residents of the region get 10% off the nightly rate upon proof of residence. Breakfast, free Wi-Fi and parking included.",
+      desc2: "Residents of Foz do Iguaçu and the region get 25% off the nightly rate upon proof of address. 1 child up to 5 years old is free. Breakfast, free Wi-Fi and parking included.",
     },
     "antecipada": {
       name: "Early booking",
@@ -502,7 +502,7 @@ export const en: LocaleContent = {
     "day-use": {
       name: "Day Use",
       desc1: "Enjoy the facilities of Pousada Cataratas for a day, without needing to stay overnight. Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
-      desc2: "Day Use costs R$ 90 per person and gives access to the guesthouse's leisure areas during the day, from 9 am to 6 pm. Check availability with our team.",
+      desc2: "Day Use costs R$ 90 per person and gives access to the guesthouse's leisure areas during the day, from 9 am to 6 pm. 1 child up to 5 years old is free. From 3 paying guests, a room is included. Check availability with our team.",
     },
     "agosto-encantador": {
       name: "Agosto Encantador",

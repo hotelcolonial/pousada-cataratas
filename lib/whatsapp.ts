@@ -8,6 +8,9 @@ const WHATSAPP_NUMBER = "5508000029215";
 const WHATSAPP_MESSAGE =
   "Olá, venho do site e tenho interesse em me hospedar na Pousada Cataratas";
 
-export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE,
-)}`;
+// Construye el link de WhatsApp con un mensaje dado (para ofertas específicas).
+export const whatsappHref = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+// Link por defecto (mensaje genérico de hospedaje).
+export const WHATSAPP_HREF = whatsappHref(WHATSAPP_MESSAGE);
