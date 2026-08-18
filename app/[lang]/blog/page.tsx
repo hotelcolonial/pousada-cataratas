@@ -52,15 +52,15 @@ export default async function Blog({ params }: { params: Promise<{ lang: string 
 
       {/* POST DESTAQUE */}
       <section className="in-wrap" style={{ paddingTop: "96px", paddingBottom: "96px" }}>
-        <a href={localePath(lang, "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias")} style={{ textDecoration: "none", display: "block" }}>
+        <a href={localePath(lang, `/blog/${feat.href.split("post=")[1]}`)} style={{ textDecoration: "none", display: "block" }}>
           <div className="bl-feat2">
             {/* ESQUERDA: imagem */}
             <div style={{ position: "relative", aspectRatio: "16/10", overflow: "hidden", background: "#143C7A" }}>
-              <SlotImg src="/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp" alt={feat.title} />
+              <SlotImg src={feat.img} alt={feat.title} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(9,22,46,.62))" }} />
               <div style={{ position: "absolute", left: "26px", bottom: "26px", display: "flex", alignItems: "center", gap: "12px" }}>
                 <span style={{ width: "3px", height: "18px", background: "#C79A6A", display: "block" }} />
-                <span style={{ fontSize: "11px", letterSpacing: ".22em", textTransform: "uppercase", color: "#FFFFFF" }}>{dict.blogList.featDate}</span>
+                <span style={{ fontSize: "11px", letterSpacing: ".22em", textTransform: "uppercase", color: "#FFFFFF" }}>{feat.date}</span>
               </div>
             </div>
             {/* DIREITA: texto */}

@@ -1,4 +1,5 @@
 import type { LocaleContent } from "./types";
+import { MARATONA_2026_BOOKING_URL } from "@/lib/booking";
 
 // English (first draft) translation overrides. Keys match the pt base in
 // lib/data.ts (id/slug/label/name/href). Only translatable text fields are
@@ -155,6 +156,12 @@ export const en: LocaleContent = {
 
   // ============================ Blog (listado) ============================
   blogPosts: {
+    "bl-5": {
+      cat: "Events",
+      title: "Foz do Iguaçu International Marathon 2026: full race guide and where to stay",
+      excerpt: "The 16th Foz do Iguaçu International Marathon runs on September 27, 2026, from Itaipu to the Falls. Courses, start times, entries and where to stay 100 m from Avenida das Cataratas.",
+      ph: "Photo — Start of the Foz do Iguaçu International Marathon",
+    },
     "bl-1": {
       cat: "Itineraries",
       title: "What to do in Foz do Iguaçu in 3 days: a complete itinerary to make the most of every hour",
@@ -182,6 +189,7 @@ export const en: LocaleContent = {
   },
 
   blogCategories: {
+    "Eventos": { name: "Events" },
     "Roteiros": { name: "Itineraries" },
     "Dicas de viagem": { name: "Travel tips" },
     "Hospedagem": { name: "Lodging" },
@@ -189,13 +197,14 @@ export const en: LocaleContent = {
   },
 
   blogRecent: {
+    "bl-rec-5": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "bl-rec-1": { title: "What to do in Foz do Iguaçu in 3 days" },
     "bl-rec-2": { title: "How to get to Iguaçu Falls from the guesthouse" },
     "bl-rec-3": { title: "Where to stay near the Falls with great value for money" },
     "bl-rec-4": { title: "What to do in Foz do Iguaçu beyond the Falls" },
   },
 
-  blogTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Foz do Iguaçu"],
+  blogTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Marathon", "Foz do Iguaçu"],
 
   // ============================ Detalle Quarto ============================
   rooms: {
@@ -504,6 +513,12 @@ export const en: LocaleContent = {
       desc1: "Enjoy the facilities of Pousada Cataratas for a day, without needing to stay overnight. Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
       desc2: "Day Use costs R$ 90 per person and gives access to the guesthouse's leisure areas during the day, from 9 am to 6 pm. 1 child up to 5 years old is free. From 3 paying guests, a room is included. Check availability with our team.",
     },
+    "maratona-2026": {
+      name: "Foz International Marathon 2026",
+      fotoAlt: "Room at Pousada Cataratas in Foz do Iguaçu, your base for the Foz do Iguaçu International Marathon 2026",
+      desc1: "Your base for the Foz do Iguaçu International Marathon 2026. In the heart of Foz, close to everything and away from the noise: the ideal starting point for your best race. 100m from Avenida das Cataratas, with free on-site parking.",
+      desc2: "Breakfast from 4 am on race day and, booking 2 nights, late check-out until 2 pm. Use the coupon **CORRIDA26** and get 10% OFF your stay. Limited spots for race week.",
+    },
     "agosto-encantador": {
       name: "Agosto Encantador",
       fotoAlt: "Children feeding goats at the Zoopark in Foz do Iguaçu — Agosto Encantador offer at Pousada Cataratas",
@@ -521,6 +536,66 @@ export const en: LocaleContent = {
 
   // ============================ Detalle Artigo ============================
   artigos: {
+    "maratona-internacional-de-foz-do-iguacu-2026": {
+      category: "Events",
+      title: "Foz do Iguaçu International Marathon 2026: full race guide and where to stay",
+      date: "August 18, 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "6 min read",
+      body: [
+        { type: "p", text: "Running between the largest hydroelectric plant in the world and one of the Seven Natural Wonders: that is what the Foz do Iguaçu International Marathon Sesc-PR delivers every year. In 2026 the race reaches its 16th edition, on Sunday, September 27, starting at the Mirante do Vertedouro inside Itaipu Binacional and finishing at Porto Canoas, already inside Iguaçu National Park. Whether you are already registered or still deciding, here is everything that matters: courses, start times, entry fees, packet pickup and the detail that decides many races before the starting gun: where you sleep." },
+        { type: "h2", text: "The race: September 27, 2026, from Itaipu to the Falls" },
+        { type: "p", text: "The marathon course is one of the most beautiful on the Brazilian calendar. The race starts at the Itaipu dam, crosses the city's commercial corridor and ends inside Iguaçu National Park, with hydration points, portable toilets and medical support along the way. Few races in the world have you crossing the finish line a short walk from the falls themselves." },
+        { type: "p", text: "There are four official distances plus the children's race, and each one has its own start point. It is worth checking carefully: not everyone starts from the same place, and showing up at the wrong spot at 5 am is the kind of mistake nobody wants to make." },
+        { type: "h3", text: "Distances, start times and start locations" },
+        { type: "list", items: [
+          "Marathon 42k — Mirante do Vertedouro (Itaipu): 6:00 am wheelchair, 6:05 am para-athletes, 6:10 am elite women, 6:30 am elite men and 6:35 am age groups. Six-hour cut-off.",
+          "Relay 42/2 (2x21k) — the first runner starts at 6:35 am at the Mirante do Vertedouro; the second takes over in front of Shopping Catuaí, at km 21.097.",
+          "10k race — starts at the entrance of Iguaçu National Park: 6:10 am wheelchair and 6:15 am general.",
+          "5k race — Mirante do Vertedouro: 6:45 am wheelchair and para-athletes, 6:50 am general start.",
+          "Mini Maratoninha — for children aged 4 to 12, at Shopping Catuaí Palladium, with a symbolic kit, T-shirt and finisher medal.",
+        ] },
+        { type: "figure", img: "/images/blog/maratona-internacional-foz-do-iguacu-portico-largada-elite.webp", caption: "The start of the Foz do Iguaçu International Marathon Sesc-PR, one of the most traditional road races in southern Brazil." },
+        { type: "h2", text: "Entries, fees and packet pickup" },
+        { type: "p", text: "Entries for the 16th Foz do Iguaçu International Marathon are open from June 18 to September 14, 2026, capped at 4,500 athletes. In recent editions the spots sold out before the deadline, so do not leave it to the last week." },
+        { type: "list", items: [
+          "Marathon 42k: R$ 130 (general public) and R$ 80 (retail workers)",
+          "Relay 42/2: R$ 200 (general public) and R$ 140 (retail workers)",
+          "10k race: R$ 90 (general public) and R$ 55 (retail workers)",
+          "5k race: R$ 60 (general public) and R$ 45 (retail workers)",
+          "Para-athletes: free entry",
+        ] },
+        { type: "p", text: "Packet pickup — race number, biodegradable T-shirt and timing chip — takes place on Friday, September 25, from 2 pm to 8 pm, and on Saturday, September 26, from 9 am to 4 pm. Confirm the exact location for your race in the official rules published on the Sesc-PR website. Minimum ages also vary: 20 for the individual marathon, 18 for the relay and the 10k, and 16 for the 5k." },
+        { type: "h2", text: "Why Pousada Cataratas is the right base for your race" },
+        { type: "p", text: "After months of training, race-weekend logistics matter more than you think. Pousada Cataratas sits 100 metres from Avenida das Cataratas, the road that connects the city to the National Park entrance. That changes three things for a runner: you are on the direct corridor to the 10k start, minutes from the Porto Canoas finish, and completely clear of downtown traffic in the pre-dawn hours. While many runners are still in a taxi coming from far away, you will already be warming up." },
+        { type: "p", text: "Add a quiet neighbourhood, a silent room and air conditioning: the kind of night's sleep that actually prepares your body for 42 kilometres. And the next day, everything you need to recover is already here." },
+        { type: "h3", text: "What is included and truly makes a difference on race day" },
+        { type: "list", items: [
+          "Breakfast served from 4 am on race day — you start fuelled, not relying on an energy bar and good luck.",
+          "Late check-out until 2 pm for two-night stays: time to race, come back, shower without rushing and rest.",
+          "Free private parking on site, with no surprise fee at check-out.",
+          "A pool to loosen your legs after the race, far better than any improvised ice bath.",
+          "Rooms from double to quintuple, ideal for running teams, training groups and families travelling together.",
+          "Free Wi-Fi, air conditioning, a safe, 24-hour reception and laundry (extra charge) for your training kit.",
+          "Kids Space for those bringing the little ones running the Mini Maratoninha.",
+        ] },
+        { type: "p", text: "And then there is the rate: use the coupon CORRIDA26 on your booking and get 10% off your stay during race week. Rooms for marathon weekend are limited — it is Foz do Iguaçu's unofficial holiday, and the city fills up." },
+        { type: "h2", text: "How to plan your week in Foz do Iguaçu" },
+        { type: "p", text: "The marathon is on Sunday, but runners who arrive at the last minute race worse and see less. This is the plan we suggest to guests coming for the race:" },
+        { type: "list", items: [
+          "Friday, Sept 25 — arrival and packet pickup, unhurried and with no risk of missing the window.",
+          "Saturday, Sept 26 — an easy day: a short visit to the Bird Park or the Three Borders Landmark, legs up in the afternoon and an early dinner.",
+          "Sunday, Sept 27 — race day: breakfast at 4 am, start and finish at Porto Canoas, inside the National Park.",
+          "Monday, Sept 28 — recovery with the medal on: Iguaçu Falls at a slow pace, in the best light of the day.",
+          "Tuesday, Sept 29 — an unhurried check-out, with a trip that counted twice: the race and all of Foz.",
+        ] },
+        { type: "figure", img: "/images/blog/maratona-internacional-foz-do-iguacu-atletas-camiseta-oficial.webp", caption: "Thousands of runners at the start of the Foz do Iguaçu International Marathon, a race that draws athletes from all over Brazil and abroad." },
+        { type: "quote", text: "You trained for months for those 42 kilometres. Do not let the last 3 to the start line ruin your race." },
+        { type: "h2", text: "Book your room before the city fills up" },
+        { type: "p", text: "It is the same story every year: entries sell out, and well-located rooms disappear right after. Booking early means picking the room you want, paying the best rate and arriving in Foz do Iguaçu with one less thing on your mind. Message our team on WhatsApp to arrange breakfast timing, a room for the whole group or any detail of your race routine — we have hosted plenty of runners and we know exactly what makes the difference." },
+        { type: "cta", title: "Book with the coupon CORRIDA26", text: "10% off during Foz do Iguaçu International Marathon 2026 week, with breakfast from 4 am on race day, late check-out until 2 pm and free parking. 100 m from Avenida das Cataratas.", btn: "Book Sept 25 to 29", href: MARATONA_2026_BOOKING_URL },
+      ],
+    },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": {
       category: "Itineraries",
       title: "What to do in Foz do Iguaçu in 3 days: a complete itinerary to make the most of every hour",
@@ -672,9 +747,10 @@ export const en: LocaleContent = {
     },
   },
 
-  artigoTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Foz do Iguaçu"],
+  artigoTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Marathon", "Foz do Iguaçu"],
 
   artigoCategories: {
+    "Eventos": { name: "Events" },
     "Roteiros": { name: "Itineraries" },
     "Dicas de viagem": { name: "Travel tips" },
     "Hospedagem": { name: "Lodging" },
@@ -682,6 +758,7 @@ export const en: LocaleContent = {
   },
 
   artigoRecent: {
+    "maratona-internacional-de-foz-do-iguacu-2026": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
     "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
     "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Where to stay near the Falls with great value for money" },
@@ -689,6 +766,7 @@ export const en: LocaleContent = {
   },
 
   artigoRelated: {
+    "/blog/maratona-internacional-de-foz-do-iguacu-2026": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
     "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
     "/blog/onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Where to stay near the Falls with great value for money" },

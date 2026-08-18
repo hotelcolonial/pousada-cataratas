@@ -125,6 +125,17 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
             <a href={localePath(lang, "/promocao/day-use")} style={{ marginTop: "auto", display: "inline-block", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
           </div>
         </div>
+
+        <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
+            <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026" />
+          </div>
+          <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
+            <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card4Name}</h3>
+            <div style={{ fontSize: "14px", color: "#7A8694", margin: "14px 0 24px" }}>{dict.promocoesList.card4Sub}</div>
+            <a href={localePath(lang, "/promocao/maratona-2026")} style={{ marginTop: "auto", display: "inline-block", background: "#C79A6A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
+          </div>
+        </div>
       </section>
 
       {/* ============ LOCALIZAÇÃO ============ */}

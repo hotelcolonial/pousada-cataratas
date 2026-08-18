@@ -13,7 +13,7 @@
   @media(min-width:960px){
     .pr-sec{grid-template-columns:2.1fr 1fr!important;gap:60px!important;padding:120px 40px!important}
     .pr-paras{grid-template-columns:1fr 1fr!important;gap:42px!important}
-    .pr-cards{grid-template-columns:repeat(3,1fr)!important;gap:30px!important;padding:0 40px 130px!important}
+    .pr-cards{grid-template-columns:repeat(4,1fr)!important;gap:24px!important;padding:0 40px 130px!important}
     .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
     .pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important}
   }

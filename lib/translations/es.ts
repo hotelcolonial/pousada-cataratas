@@ -7,7 +7,7 @@ import type { ArtigoBlock, QuartoDetail } from "@/lib/data";
 const photos = (alts: string[]) =>
   alts.map((alt) => ({ alt })) as unknown as QuartoDetail["photos"];
 
-type BodyDraft = { text?: string; items?: string[]; caption?: string };
+type BodyDraft = { text?: string; items?: string[]; caption?: string; title?: string; btn?: string };
 const body = (blocks: BodyDraft[]) => blocks as unknown as ArtigoBlock[];
 
 export const es: LocaleContent = {
@@ -162,6 +162,12 @@ export const es: LocaleContent = {
 
   // ============================ Blog (listado) ============================
   blogPosts: {
+    "bl-5": {
+      cat: "Eventos",
+      title: "Maratón Internacional de Foz do Iguaçu 2026: guía completa de la prueba y dónde alojarse",
+      excerpt: "El 16º Maratón Internacional de Foz do Iguaçu se corre el 27 de septiembre de 2026, de Itaipú a las Cataratas. Recorridos, horarios, inscripciones y dónde alojarte a 100 m de la Avenida das Cataratas.",
+      ph: "Foto — Largada del Maratón Internacional de Foz do Iguaçu",
+    },
     "bl-1": {
       cat: "Rutas",
       title: "Qué hacer en Foz do Iguaçu en 3 días: guía completa para aprovechar cada hora",
@@ -189,6 +195,7 @@ export const es: LocaleContent = {
   },
 
   blogCategories: {
+    "Eventos": { name: "Eventos" },
     "Roteiros": { name: "Rutas" },
     "Dicas de viagem": { name: "Consejos de viaje" },
     "Hospedagem": { name: "Alojamiento" },
@@ -196,13 +203,14 @@ export const es: LocaleContent = {
   },
 
   blogRecent: {
+    "bl-rec-5": { title: "Maratón Internacional de Foz do Iguaçu 2026: guía completa" },
     "bl-rec-1": { title: "Qué hacer en Foz do Iguaçu en 3 días" },
     "bl-rec-2": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
     "bl-rec-3": { title: "Dónde alojarse cerca de las Cataratas con buena relación calidad-precio" },
     "bl-rec-4": { title: "Qué hacer en Foz do Iguaçu además de las Cataratas" },
   },
 
-  blogTags: ["Cataratas", "Rutas", "Transporte", "Alojamiento", "Atracciones", "Gastronomía", "Foz do Iguaçu"],
+  blogTags: ["Cataratas", "Rutas", "Transporte", "Alojamiento", "Atracciones", "Gastronomía", "Maratón", "Foz do Iguaçu"],
 
   // ============================ Detalle Quarto ============================
   rooms: {
@@ -511,6 +519,12 @@ export const es: LocaleContent = {
       desc1: "Aprovecha la estructura de la Pousada Cataratas por un día, sin necesidad de alojarte. Perfecto para quienes están de paso por Foz do Iguaçu y quieren relajarse entre un paseo y otro.",
       desc2: "El Day Use cuesta R$ 90 por persona y da acceso a las áreas de ocio de la posada durante el día, de 9h a 18h. 1 niño de hasta 5 años es cortesía. A partir de 3 pagantes, incluimos un apartamento. Consulta la disponibilidad con nuestro equipo.",
     },
+    "maratona-2026": {
+      name: "Maratón Internacional de Foz 2026",
+      fotoAlt: "Habitación de la Pousada Cataratas en Foz do Iguaçu, tu base para el Maratón Internacional de Foz do Iguaçu 2026",
+      desc1: "Tu base para el Maratón Internacional de Foz do Iguaçu 2026. En el corazón de Foz, cerca de todo y lejos del ruido: el punto de partida ideal para tu mejor carrera. A 100m de la Avenida das Cataratas, con estacionamiento gratuito en el lugar.",
+      desc2: "Desayuno a partir de las 04h el día de la carrera y, reservando 02 noches, late check-out hasta las 14h. Usa el cupón **CORRIDA26** y obtén un 10% OFF en tu hospedaje. Cupos limitados para la semana de la prueba.",
+    },
     "agosto-encantador": {
       name: "Agosto Encantador",
       fotoAlt: "Niños alimentando cabras en el Zoopark de Foz do Iguaçu — promoción Agosto Encantador de Pousada Cataratas",
@@ -528,6 +542,66 @@ export const es: LocaleContent = {
 
   // ============================ Detalle Artigo (blog) ============================
   artigos: {
+    "maratona-internacional-de-foz-do-iguacu-2026": {
+      category: "Eventos",
+      title: "Maratón Internacional de Foz do Iguaçu 2026: guía completa de la prueba y dónde alojarse",
+      date: "18 de agosto de 2026",
+      author: "Equipo Pousada Cataratas",
+      readTime: "6 min de lectura",
+      body: body([
+        { text: "Correr entre la mayor hidroeléctrica del mundo y una de las Siete Maravillas Naturales: eso es lo que entrega cada edición del Maratón Internacional de Foz do Iguaçu Sesc-PR. En 2026 la prueba llega a su 16ª edición, el domingo 27 de septiembre, con largada en el Mirante do Vertedouro, dentro de Itaipú Binacional, y llegada en Porto Canoas, ya dentro del Parque Nacional do Iguaçu. Si vas a correr —o todavía lo estás decidiendo—, aquí reunimos todo lo que importa: recorridos, horarios, valores, retiro del kit y el detalle que define muchas carreras antes del disparo de largada: dónde dormir." },
+        { text: "La prueba: 27 de septiembre de 2026, de Itaipú a las Cataratas" },
+        { text: "El trazado del maratón es uno de los más bonitos del calendario brasileño. La prueba empieza en la represa de Itaipú, atraviesa el corredor comercial de la ciudad y termina en el Parque Nacional do Iguaçu, con hidratación, sanitarios químicos y apoyo médico distribuidos a lo largo del recorrido. Pocas pruebas en el mundo te hacen cruzar la meta a pocos minutos a pie de las cataratas." },
+        { text: "Son cuatro distancias oficiales más la prueba de los niños, y cada una tiene su punto de largada. Conviene revisarlo con atención: no todos salen del mismo lugar, y llegar al punto equivocado a las 5 de la mañana es el tipo de error que nadie quiere cometer." },
+        { text: "Distancias, horarios y lugares de largada" },
+        { items: [
+          "Maratón 42k — Mirante do Vertedouro (Itaipú): 6h00 silla de ruedas, 6h05 AcD, 6h10 élite femenina, 6h30 élite masculina y 6h35 por categoría de edad. Tiempo límite de 6 horas.",
+          "Relevo 42/2 (2x21k) — el 1er atleta larga a las 6h35 en el Mirante do Vertedouro; el 2º toma la posta frente al Shopping Catuaí, en el km 21,097.",
+          "Carrera 10k — largada en la entrada del Parque Nacional do Iguaçu: 6h10 silla de ruedas y 6h15 general.",
+          "Carrera 5k — Mirante do Vertedouro: 6h45 silla de ruedas y AcD, 6h50 largada general.",
+          "Mini Maratoninha — para niños de 4 a 12 años, en el Shopping Catuaí Palladium, con kit simbólico, camiseta y medalla de participación.",
+        ] },
+        { caption: "Largada del Maratón Internacional de Foz do Iguaçu Sesc-PR, una de las carreras de calle más tradicionales del sur de Brasil." },
+        { text: "Inscripciones, valores y retiro del kit" },
+        { text: "Las inscripciones del 16º Maratón Internacional de Foz do Iguaçu están abiertas del 18 de junio al 14 de septiembre de 2026, limitadas a 4.500 atletas. En las últimas ediciones los cupos se agotaron antes del plazo, así que no lo dejes para la última semana." },
+        { items: [
+          "Maratón 42k: R$ 130 (público general) y R$ 80 (trabajador del comercio)",
+          "Relevo 42/2: R$ 200 (público general) y R$ 140 (trabajador del comercio)",
+          "Carrera 10k: R$ 90 (público general) y R$ 55 (trabajador del comercio)",
+          "Carrera 5k: R$ 60 (público general) y R$ 45 (trabajador del comercio)",
+          "Atletas con discapacidad (AcD): inscripción gratuita",
+        ] },
+        { text: "El retiro del kit —número de pecho, camiseta biodegradable y chip de cronometraje— es el viernes 25/09, de 14h a 20h, y el sábado 26/09, de 9h a 16h. Confirma el lugar exacto de tu prueba en el reglamento publicado en el sitio del Sesc-PR. Las edades mínimas también varían: 20 años para el maratón individual, 18 para el relevo y los 10k, y 16 para los 5k." },
+        { text: "Por qué la Pousada Cataratas es la base correcta para tu carrera" },
+        { text: "Después de meses de entrenamiento, la logística del fin de semana pesa más de lo que parece. La Pousada Cataratas está a 100 metros de la Avenida das Cataratas, la vía que conecta la ciudad con la entrada del Parque Nacional. Eso cambia tres cosas para quien va a correr: estás en el corredor directo hacia la largada de los 10k, a pocos minutos de la llegada en Porto Canoas y completamente fuera del tránsito del centro en la madrugada de la prueba. Mientras muchos todavía estarán en un taxi viniendo de lejos, vos ya estarás entrando en calor." },
+        { text: "Sumale un barrio tranquilo, habitación silenciosa y aire acondicionado: la noche de sueño que realmente prepara el cuerpo para 42 kilómetros. Y, al día siguiente, todo lo que necesitás para recuperarte ya está acá adentro." },
+        { text: "Qué está incluido y realmente hace la diferencia el día de la carrera" },
+        { items: [
+          "Desayuno servido a partir de las 04h el día de la prueba: largás alimentado, sin depender de una barrita y de la suerte.",
+          "Late check-out hasta las 14h para quien reserva 2 noches: alcanza para correr, volver, ducharte con calma y descansar.",
+          "Estacionamiento privado gratuito en el lugar, sin cargos sorpresa en el checkout.",
+          "Piscina para soltar las piernas después de la carrera, mucho mejor que cualquier hielo improvisado.",
+          "Habitaciones de doble a quíntuple, ideales para asesorías deportivas, grupos de entrenamiento y familias que viajan juntas.",
+          "Wi-Fi gratis, aire acondicionado, caja fuerte, recepción 24h y lavandería (con costo aparte) para el uniforme de entrenamiento.",
+          "Espacio Kids para quienes traen a los chicos de la Mini Maratoninha.",
+        ] },
+        { text: "Y está la tarifa: usando el cupón CORRIDA26 en tu reserva, obtenés un 10% de descuento en el alojamiento de la semana de la prueba. Los cupos del fin de semana del maratón son limitados: es el feriado no oficial de Foz do Iguaçu, y la ciudad se llena." },
+        { text: "Cómo armar tu semana en Foz do Iguaçu" },
+        { text: "El maratón es el domingo, pero quien llega sobre la hora corre peor y disfruta menos. Este es el plan que sugerimos a los huéspedes que vienen por la prueba:" },
+        { items: [
+          "Viernes 25/09 — llegada y retiro del kit, sin apuro y sin riesgo de perder el horario.",
+          "Sábado 26/09 — día liviano: un paseo corto por el Parque das Aves o el Hito de las Tres Fronteras, piernas en alto por la tarde y cena temprano.",
+          "Domingo 27/09 — día de la prueba: desayuno a las 04h, largada y llegada en Porto Canoas, dentro del Parque Nacional.",
+          "Lunes 28/09 — recuperación con la medalla puesta, visitando las Cataratas del Iguazú con calma y con la mejor luz del día.",
+          "Martes 29/09 — check-out sin apuro, con un viaje que valió por dos: la carrera y Foz entera.",
+        ] },
+        { caption: "Miles de corredores en la largada del Maratón Internacional de Foz do Iguaçu, una prueba que reúne atletas de todo Brasil y del exterior." },
+        { text: "Entrenaste meses por los 42 kilómetros. No dejes que los últimos 3 hasta la largada te arruinen la prueba." },
+        { text: "Asegurá tu lugar antes de que la ciudad se llene" },
+        { text: "Todos los años pasa lo mismo: se agotan las inscripciones y enseguida desaparece el alojamiento bien ubicado. Quien reserva temprano elige la habitación que quiere, paga la mejor tarifa y llega a Foz do Iguaçu con una preocupación menos. Escribinos por WhatsApp si querés coordinar el horario del desayuno, una habitación para todo el grupo o cualquier detalle de tu rutina de competencia: ya recibimos a muchos corredores y sabemos exactamente qué hace la diferencia." },
+        { title: "Reservá con el cupón CORRIDA26", text: "10% de descuento en la semana del Maratón Internacional de Foz do Iguaçu 2026, con desayuno a partir de las 04h el día de la prueba, late check-out hasta las 14h y estacionamiento gratuito. A 100 m de la Avenida das Cataratas.", btn: "Reservar del 25 al 29/09" },
+      ]),
+    },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": {
       category: "Rutas",
       title: "Qué hacer en Foz do Iguaçu en 3 días: guía completa para aprovechar cada hora",
@@ -679,9 +753,10 @@ export const es: LocaleContent = {
     },
   },
 
-  artigoTags: ["Cataratas", "Rutas", "Transporte", "Alojamiento", "Atracciones", "Gastronomía", "Foz do Iguaçu"],
+  artigoTags: ["Cataratas", "Rutas", "Transporte", "Alojamiento", "Atracciones", "Gastronomía", "Maratón", "Foz do Iguaçu"],
 
   artigoCategories: {
+    "Eventos": { name: "Eventos" },
     "Roteiros": { name: "Rutas" },
     "Dicas de viagem": { name: "Consejos de viaje" },
     "Hospedagem": { name: "Alojamiento" },
@@ -689,6 +764,7 @@ export const es: LocaleContent = {
   },
 
   artigoRecent: {
+    "maratona-internacional-de-foz-do-iguacu-2026": { title: "Maratón Internacional de Foz do Iguaçu 2026: guía completa" },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "Qué hacer en Foz do Iguaçu en 3 días" },
     "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
     "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Dónde alojarse cerca de las Cataratas con buena relación calidad-precio" },
@@ -696,6 +772,7 @@ export const es: LocaleContent = {
   },
 
   artigoRelated: {
+    "/blog/maratona-internacional-de-foz-do-iguacu-2026": { title: "Maratón Internacional de Foz do Iguaçu 2026: guía completa" },
     "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "Qué hacer en Foz do Iguaçu en 3 días" },
     "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
     "/blog/onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio": { title: "Dónde alojarse cerca de las Cataratas con buena relación calidad-precio" },

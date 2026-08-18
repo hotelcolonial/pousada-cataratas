@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Locale } from "@/i18n/config";
 import { mergeRecord, mergeList, pickText } from "./merge";
+import { MARATONA_2026_OFFER, MARATONA_2026_BOOKING_URL } from "./booking";
 import { es as esText } from "./translations/es";
 import { en as enText } from "./translations/en";
 
@@ -295,6 +296,7 @@ export type BlogPost = {
 
 // posts — grid de artigos do Blog. Valores sin cambios.
 export const blogPosts: BlogPost[] = [
+  { id: "bl-5", cat: "Eventos", read: "6 min", date: "18 Ago 2026", href: "Artigo.dc.html?post=maratona-internacional-de-foz-do-iguacu-2026", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo da prova e onde ficar", excerpt: "A 16ª Maratona Internacional de Foz do Iguaçu acontece em 27 de setembro de 2026, da Itaipu às Cataratas. Veja percursos, horários, inscrições e onde se hospedar a 100 m da Avenida das Cataratas.", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", ph: "Foto — Largada da Maratona Internacional de Foz do Iguaçu" },
   { id: "bl-1", cat: "Roteiros", read: "4 min", date: "7 Jul 2026", href: "Artigo.dc.html?post=o-que-fazer-em-foz-do-iguacu-em-3-dias", title: "O que fazer em Foz do Iguaçu em 3 dias: roteiro completo para aproveitar cada hora", excerpt: "Roteiro de 3 dias em Foz do Iguaçu com as melhores atrações, dicas locais e tudo que você precisa saber para aproveitar cada hora.", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", ph: "Foto — Roteiro 3 dias em Foz" },
   { id: "bl-2", cat: "Dicas de viagem", read: "4 min", date: "7 Jul 2026", href: "Artigo.dc.html?post=como-chegar-as-cataratas-do-iguacu-saindo-da-pousada", title: "Como chegar às Cataratas do Iguaçu saindo da pousada: guia prático para não perder tempo", excerpt: "Saindo da pousada, chegar às Cataratas do Iguaçu é mais fácil do que parece. Veja as melhores opções de transporte e economize tempo.", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", ph: "Foto — Como chegar às Cataratas" },
   { id: "bl-3", cat: "Hospedagem", read: "4 min", date: "7 Jul 2026", href: "Artigo.dc.html?post=onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio", title: "Onde se hospedar perto das Cataratas com bom custo-benefício em Foz do Iguaçu", excerpt: "Saiba onde se hospedar perto das Cataratas com bom custo-benefício em Foz do Iguaçu e aproveite cada momento da sua viagem com conforto e economia.", img: "/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp", ph: "Foto — Onde se hospedar em Foz" },
@@ -304,6 +306,7 @@ export const blogPosts: BlogPost[] = [
 export type BlogCategory = { name: string; count: number };
 
 export const blogCategories: BlogCategory[] = [
+  { name: "Eventos", count: 1 },
   { name: "Roteiros", count: 1 },
   { name: "Dicas de viagem", count: 1 },
   { name: "Hospedagem", count: 1 },
@@ -313,13 +316,14 @@ export const blogCategories: BlogCategory[] = [
 export type BlogRecent = { id: string; title: string; date: string; img: string; slug: string };
 
 export const blogRecent: BlogRecent[] = [
+  { id: "bl-rec-5", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", slug: "maratona-internacional-de-foz-do-iguacu-2026" },
   { id: "bl-rec-1", title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", slug: "o-que-fazer-em-foz-do-iguacu-em-3-dias" },
   { id: "bl-rec-2", title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", slug: "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada" },
   { id: "bl-rec-3", title: "Onde se hospedar perto das Cataratas com bom custo-benefício", date: "7 Jul 2026", img: "/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp", slug: "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio" },
   { id: "bl-rec-4", title: "O que fazer em Foz do Iguaçu além das Cataratas", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-alem-das-cataratas.webp", slug: "o-que-fazer-em-foz-do-iguacu-alem-das-cataratas" },
 ];
 
-export const blogTags: string[] = ["Cataratas", "Roteiros", "Transporte", "Hospedagem", "Atrações", "Gastronomia", "Foz do Iguaçu"];
+export const blogTags: string[] = ["Cataratas", "Roteiros", "Transporte", "Hospedagem", "Atrações", "Gastronomia", "Maratona", "Foz do Iguaçu"];
 
 // ============ DETALLE: QUARTO (Quarto.dc.html) — indexado por slug ============
 
@@ -743,6 +747,10 @@ export type ProdutoDetail = {
   // Mensaje de WhatsApp específico de esta oferta (opcional, siempre en PT).
   // Si no se define, el botón usa el mensaje genérico (WHATSAPP_HREF).
   waMessage?: string;
+  // Datos con los que el botón "Reservar agora" abre el motor (opcional):
+  // fechas sugeridas de la oferta (ISO) y cupón ya aplicado. Sin esto el botón
+  // abre el motor sin parámetros.
+  booking?: { checkin?: string; checkout?: string; promoCode?: string };
 };
 
 export const produtoDetails: Record<string, ProdutoDetail> = {
@@ -775,6 +783,16 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     desc1: "Aproveite a estrutura da Pousada Cataratas por um dia, sem precisar se hospedar. Perfeito para quem está de passagem por Foz do Iguaçu e quer relaxar entre um passeio e outro.",
     desc2: "O Day Use custa R$ 90 por pessoa e dá acesso às áreas de lazer da pousada durante o dia, das 9h às 18h. 1 criança de até 5 anos tem cortesia. A partir de 3 pagantes, incluímos um apartamento. Consulte a disponibilidade com a nossa equipe.",
     waMessage: "Olá, vim do site e tenho interesse no Day Use",
+  },
+  "maratona-2026": {
+    name: "Maratona Internacional de Foz 2026",
+    banner: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
+    foto: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp",
+    fotoAlt: "Quarto da Pousada Cataratas em Foz do Iguaçu, sua base para a Maratona Internacional de Foz do Iguaçu 2026",
+    desc1: "Sua base para a Maratona Internacional de Foz do Iguaçu 2026. No coração de Foz, perto de tudo e longe do barulho: o ponto de partida ideal para a sua melhor prova. A 100m da Avenida das Cataratas, com estacionamento gratuito no local.",
+    desc2: "Café da manhã a partir das 04h no dia da corrida e, reservando 02 noites, late check-out até às 14h. Use o cupom **CORRIDA26** e garanta 10% OFF na sua hospedagem. Vagas limitadas para a semana da prova.",
+    waMessage: "Olá, vim do site e tenho interesse na promoção da Maratona de Foz 2026",
+    booking: MARATONA_2026_OFFER,
   },
   "agosto-encantador": {
     name: "Agosto Encantador",
@@ -809,7 +827,10 @@ export type ArtigoBlock =
   | { type: "h3"; text: string }
   | { type: "quote"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "figure"; img: string; caption: string };
+  | { type: "figure"; img: string; caption: string }
+  // Bloque de llamada a la acción dentro del cuerpo (caja destacada + botón).
+  // `href` sale siempre de la base pt; el locale solo traduce title/text/btn.
+  | { type: "cta"; title: string; text: string; btn: string; href: string };
 
 export type ArtigoDetail = {
   category: string;
@@ -822,6 +843,67 @@ export type ArtigoDetail = {
 };
 
 export const artigoDetails: Record<string, ArtigoDetail> = {
+  "maratona-internacional-de-foz-do-iguacu-2026": {
+    category: "Eventos",
+    title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo da prova e onde ficar",
+    cover: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp",
+    date: "18 de Agosto, 2026",
+    author: "Equipe Pousada Cataratas",
+    readTime: "6 min de leitura",
+    body: [
+      { type: "p", text: "Correr entre a maior hidrelétrica do mundo e uma das Sete Maravilhas da Natureza: é isso que a Maratona Internacional de Foz do Iguaçu Sesc-PR entrega a cada edição. Em 2026 a prova chega à 16ª edição, no domingo, 27 de setembro, com largada no Mirante do Vertedouro, dentro da Itaipu Binacional, e chegada no Porto Canoas, já dentro do Parque Nacional do Iguaçu. Se você vai correr — ou ainda está decidindo —, reunimos aqui tudo o que importa: percursos, horários, valores, retirada de kit e o detalhe que decide muita prova antes do tiro de largada: onde dormir." },
+      { type: "h2", text: "A prova: 27 de setembro de 2026, da Itaipu às Cataratas" },
+      { type: "p", text: "O traçado da maratona é um dos mais bonitos do calendário brasileiro. A prova começa na barragem de Itaipu, atravessa o corredor comercial da cidade e termina no Parque Nacional do Iguaçu, com hidratação, sanitários químicos e apoio médico distribuídos ao longo do percurso. Poucas provas no mundo colocam você cruzando a linha de chegada a poucos minutos de caminhada das Cataratas." },
+      { type: "p", text: "São quatro distâncias oficiais mais a prova das crianças, cada uma com seu ponto de largada. Vale conferir com atenção: nem todo mundo sai do mesmo lugar, e chegar no ponto errado às 5h da manhã é o tipo de erro que ninguém quer cometer." },
+      { type: "h3", text: "Distâncias, horários e locais de largada" },
+      { type: "list", items: [
+        "Maratona 42k — Mirante do Vertedouro (Itaipu): 6h00 cadeirante, 6h05 AcD, 6h10 elite feminina, 6h30 elite masculina e 6h35 faixa etária. Tempo limite de 6 horas.",
+        "Revezamento 42/2 (2x21k) — o 1º atleta larga às 6h35 no Mirante do Vertedouro; o 2º assume em frente ao Shopping Catuaí, no km 21,097.",
+        "Corrida 10k — largada na entrada do Parque Nacional do Iguaçu: 6h10 cadeirante e 6h15 geral.",
+        "Corrida 5k — Mirante do Vertedouro: 6h45 cadeirante e AcD, 6h50 largada geral.",
+        "Mini Maratoninha — para crianças de 4 a 12 anos, no Shopping Catuaí Palladium, com kit simbólico, camiseta e medalha de participação.",
+      ] },
+      { type: "figure", img: "/images/blog/maratona-internacional-foz-do-iguacu-portico-largada-elite.webp", caption: "Largada da Maratona Internacional de Foz do Iguaçu Sesc-PR, uma das provas de rua mais tradicionais do Sul do Brasil." },
+      { type: "h2", text: "Inscrições, valores e retirada do kit" },
+      { type: "p", text: "As inscrições da 16ª Maratona Internacional de Foz do Iguaçu ficam abertas de 18 de junho a 14 de setembro de 2026, limitadas a 4.500 atletas — nas últimas edições as vagas acabaram antes do prazo, então não deixe para a última semana." },
+      { type: "list", items: [
+        "Maratona 42k: R$ 130 (público geral) e R$ 80 (trabalhador do comércio)",
+        "Revezamento 42/2: R$ 200 (público geral) e R$ 140 (trabalhador do comércio)",
+        "Corrida 10k: R$ 90 (público geral) e R$ 55 (trabalhador do comércio)",
+        "Corrida 5k: R$ 60 (público geral) e R$ 45 (trabalhador do comércio)",
+        "Atletas com deficiência (AcD): inscrição gratuita",
+      ] },
+      { type: "p", text: "A retirada do kit — número de peito, camiseta biodegradável e chip de cronometragem — acontece na sexta-feira, 25/09, das 14h às 20h, e no sábado, 26/09, das 9h às 16h. Confirme o local exato da sua prova no regulamento publicado no site do Sesc-PR. As idades mínimas também variam: 20 anos para a maratona individual, 18 anos para o revezamento e para os 10k, e 16 anos para os 5k." },
+      { type: "h2", text: "Por que a Pousada Cataratas é a base certa para a sua prova" },
+      { type: "p", text: "Depois de meses de treino, a logística do fim de semana pesa mais do que parece. A Pousada Cataratas fica a 100 metros da Avenida das Cataratas, a via que liga a cidade à entrada do Parque Nacional — e isso muda três coisas para quem vai correr: você está no corredor direto de acesso à largada dos 10k, a poucos minutos da chegada em Porto Canoas e completamente fora do trânsito do centro na madrugada da prova. Enquanto muita gente ainda estará em um táxi vindo de longe, você já estará aquecendo." },
+      { type: "p", text: "Some a isso um bairro tranquilo, quarto silencioso e ar-condicionado: a noite de sono que realmente prepara o corpo para 42 quilômetros. E, no dia seguinte, tudo o que você precisa para se recuperar já está aqui dentro." },
+      { type: "h3", text: "O que está incluso e faz diferença de verdade no dia da corrida" },
+      { type: "list", items: [
+        "Café da manhã servido a partir das 04h no dia da prova — você larga alimentado, sem depender de barrinha e sorte.",
+        "Late check-out até às 14h para quem reserva 2 noites: dá tempo de correr, voltar, tomar banho com calma e descansar.",
+        "Estacionamento privativo gratuito no local, sem taxa surpresa no checkout.",
+        "Piscina para soltar as pernas depois da prova, muito melhor que qualquer gelo improvisado.",
+        "Quartos de duplo a quíntuplo, ideais para assessorias esportivas, grupos de treino e famílias que viajam juntas.",
+        "Wi-Fi grátis, ar-condicionado, cofre, recepção 24h e lavanderia (com custo à parte) para o uniforme de treino.",
+        "Espaço Kids para quem traz a criançada da Mini Maratoninha junto.",
+      ] },
+      { type: "p", text: "E tem a tarifa: usando o cupom CORRIDA26 na sua reserva, você garante 10% de desconto na hospedagem da semana da prova. As vagas do fim de semana da maratona são limitadas — é o feriado não oficial de Foz do Iguaçu, e a cidade lota." },
+      { type: "h2", text: "Como montar a sua semana em Foz do Iguaçu" },
+      { type: "p", text: "A maratona é no domingo, mas quem chega em cima da hora corre pior e aproveita menos. Este é o roteiro que a gente sugere para os hóspedes que vêm pela prova:" },
+      { type: "list", items: [
+        "Sexta, 25/09 — chegada e retirada do kit, sem correria e sem risco de perder o horário.",
+        "Sábado, 26/09 — dia leve: um passeio curto pelo Parque das Aves ou pelo Marco das Três Fronteiras, pernas para cima à tarde e jantar cedo.",
+        "Domingo, 27/09 — dia da prova: café da manhã às 04h, largada e chegada no Porto Canoas, dentro do Parque Nacional.",
+        "Segunda, 28/09 — recuperação com a medalha no peito, visitando as Cataratas do Iguaçu com calma e na melhor luz do dia.",
+        "Terça, 29/09 — check-out sem pressa, com a viagem valendo por duas: a prova e Foz inteira.",
+      ] },
+      { type: "figure", img: "/images/blog/maratona-internacional-foz-do-iguacu-atletas-camiseta-oficial.webp", caption: "Milhares de corredores na largada da Maratona Internacional de Foz do Iguaçu, prova que reúne atletas de todo o Brasil e do exterior." },
+      { type: "quote", text: "Você treinou meses pelos 42 quilômetros. Não deixe que os últimos 3 até a largada estraguem a sua prova." },
+      { type: "h2", text: "Garanta a sua vaga antes que a cidade lote" },
+      { type: "p", text: "Todo ano é a mesma história: as inscrições esgotam, e logo depois some a hospedagem bem localizada. Quem reserva cedo escolhe o quarto que quer, paga a melhor tarifa e chega em Foz do Iguaçu com uma preocupação a menos na cabeça. Fale com a nossa equipe pelo WhatsApp se quiser combinar horário de café, quarto para o grupo todo ou qualquer detalhe da sua rotina de prova — a gente já recebeu muitos corredores e sabe exatamente o que faz diferença." },
+      { type: "cta", title: "Reserve com o cupom CORRIDA26", text: "10% de desconto na semana da Maratona Internacional de Foz do Iguaçu 2026, com café da manhã a partir das 04h no dia da prova, late check-out até às 14h e estacionamento gratuito. A 100 m da Avenida das Cataratas.", btn: "Reservar de 25 a 29/09", href: MARATONA_2026_BOOKING_URL },
+    ],
+  },
   "o-que-fazer-em-foz-do-iguacu-em-3-dias": {
     category: "Roteiros",
     title: "O que fazer em Foz do Iguaçu em 3 dias: roteiro completo para aproveitar cada hora",
@@ -978,9 +1060,10 @@ export const artigoDetails: Record<string, ArtigoDetail> = {
 };
 
 // Listas fijas del sidebar/artículo (sin cambios respecto al export).
-export const artigoTags: string[] = ["Cataratas", "Roteiros", "Transporte", "Hospedagem", "Atrações", "Gastronomia", "Foz do Iguaçu"];
+export const artigoTags: string[] = ["Cataratas", "Roteiros", "Transporte", "Hospedagem", "Atrações", "Gastronomia", "Maratona", "Foz do Iguaçu"];
 
 export const artigoCategories: { name: string; count: number }[] = [
+  { name: "Eventos", count: 1 },
   { name: "Roteiros", count: 1 },
   { name: "Dicas de viagem", count: 1 },
   { name: "Hospedagem", count: 1 },
@@ -988,6 +1071,7 @@ export const artigoCategories: { name: string; count: number }[] = [
 ];
 
 export const artigoRecent: { title: string; date: string; img: string; slug: string }[] = [
+  { title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", slug: "maratona-internacional-de-foz-do-iguacu-2026" },
   { title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", slug: "o-que-fazer-em-foz-do-iguacu-em-3-dias" },
   { title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", slug: "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada" },
   { title: "Onde se hospedar perto das Cataratas com bom custo-benefício", date: "7 Jul 2026", img: "/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp", slug: "onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio" },
@@ -996,6 +1080,7 @@ export const artigoRecent: { title: string; date: string; img: string; slug: str
 
 // related: se filtra o post atual na página e mostra até 3.
 export const artigoRelated: { href: string; title: string; date: string; img: string }[] = [
+  { href: "/blog/maratona-internacional-de-foz-do-iguacu-2026", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp" },
   { href: "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias", title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp" },
   { href: "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada", title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp" },
   { href: "/blog/onde-se-hospedar-perto-das-cataratas-com-bom-custo-beneficio", title: "Onde se hospedar perto das Cataratas com bom custo-benefício", date: "7 Jul 2026", img: "/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp" },

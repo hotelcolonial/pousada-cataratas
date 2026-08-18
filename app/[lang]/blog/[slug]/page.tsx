@@ -5,6 +5,7 @@ import { isLocale, locales, localePath } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
+import { BOOKING_BASE } from "@/lib/booking";
 import { articleLd, breadcrumbLd, ptDateToISO } from "@/lib/jsonld";
 import type { Metadata } from "next";
 
@@ -112,6 +113,14 @@ export default async function Artigo({ params }: { params: Promise<{ lang: strin
                     <p style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontSize: "26px", lineHeight: 1.4, color: "#143C7A", margin: 0 }}>{b.text}</p>
                   </blockquote>
                 );
+              if (b.type === "cta")
+                return (
+                  <div key={i} style={{ background: "#C79A6A", color: "#FFFFFF", padding: "38px 34px", marginTop: "48px" }}>
+                    <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.12, color: "#FFFFFF", margin: 0 }}>{b.title}</h3>
+                    <p style={{ fontSize: "15px", lineHeight: 1.7, color: "rgba(255,255,255,.9)", margin: "14px 0 0" }}>{b.text}</p>
+                    <a href={b.href} target="_blank" rel="noopener noreferrer" className="ar-cta" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", height: "54px", padding: "0 34px", marginTop: "26px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}>{b.btn}</a>
+                  </div>
+                );
               if (b.type === "figure")
                 return (
                   <figure key={i} style={{ margin: "44px 0 0" }}>
@@ -186,7 +195,7 @@ export default async function Artigo({ params }: { params: Promise<{ lang: strin
               <div style={{ background: "#C79A6A", color: "#FFFFFF", padding: "38px 32px" }}>
                 <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "28px", lineHeight: 1.15, color: "#FFFFFF", margin: 0 }}>{dict.artigo.ctaTitle}</h3>
                 <p style={{ fontSize: "14px", lineHeight: 1.6, color: "rgba(255,255,255,.86)", margin: "14px 0 0" }}>{dict.artigo.ctaP}</p>
-                <a href="#" className="ar-cta" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "52px", marginTop: "24px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}>{dict.artigo.ctaBtn}</a>
+                <a href={BOOKING_BASE} target="_blank" rel="noopener noreferrer" className="ar-cta" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "52px", marginTop: "24px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}>{dict.artigo.ctaBtn}</a>
               </div>
             </div>
           </aside>
