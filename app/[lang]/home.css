@@ -285,7 +285,7 @@
    ============================================================================ */
 /* margin-top: separa a faixa da barra de reservas, que sobe -150px sobre o hero
    e termina rente (.pc-book não tem padding inferior). */
-.pc-rec{margin-top:48px;background:#F4F1EC;color:#1B2733;position:relative;overflow:hidden}
+.pc-rec{margin-top:48px;background:#FBFAF8;color:#1B2733;position:relative;overflow:hidden}
 /* Brilho dourado muito sutil ao fundo, para a faixa não ficar chapada.
    Sobre claro precisa de bem menos opacidade que sobre azul. */
 .pc-rec::before{content:"";position:absolute;top:-130px;left:50%;transform:translateX(-50%);width:620px;height:320px;background:radial-gradient(50% 50% at 50% 50%,rgba(199,154,106,.16),rgba(199,154,106,0) 70%);pointer-events:none}
@@ -299,20 +299,30 @@
 .pc-rec-intro{font-size:13.5px;line-height:1.65;color:#5C6B7A;margin:12px 0 0;max-width:58ch}
 
 /* ---- Selo PRÓPRIO (peça única, centrada) ----
-   Sem reproduzir a marca TripAdvisor. Disposição horizontal: agrupa emblema e
-   dados perto, sem ar sobrando. Branco puro + fio dourado + sombra suave para
-   destacar-se do off-white da faixa em vez de se fundir com ele. */
-.pc-rec-selo{margin-top:26px;display:flex;flex-direction:row;align-items:center;gap:18px;padding:20px 24px;text-align:left;background:#FFFFFF;border:1px solid rgba(199,154,106,.38);border-radius:14px;box-shadow:0 16px 36px -22px rgba(20,39,51,.4)}
+   Sem reproduzir a marca TripAdvisor. Sem contorno nem sombra: o cartão
+   separa-se do off-white da faixa só pela diferença de tom do branco puro.
+
+   Uma FILA de quatro blocos (emblema | posição | nota | avaliações) separados
+   por filetes. O mesmo marcado serve nas duas direções: a base é a coluna do
+   telemóvel — onde a fila não cabe — e a partir de 900px vira linha. O cartão
+   não tem largura fixa: em linha encolhe ao conteúdo (width:auto) e o equilíbrio
+   vem dos max-width em ch dos dois blocos de texto, que os fazem quebrar em duas
+   linhas e igualar a altura do emblema. */
+.pc-rec-selo{margin-top:26px;width:100%;max-width:330px;display:flex;flex-direction:column;align-items:center;gap:16px;padding:22px 24px;text-align:center;background:#FFFFFF}
 .pc-rec-emblema{flex:none;position:relative;display:flex;align-items:center;justify-content:center;width:96px;height:96px}
 .pc-rec-laurel{position:absolute;inset:0;width:100%;height:100%}
 .pc-rec-emblema-txt{position:relative;font-family:var(--font-gilda),Georgia,serif;font-weight:600;font-size:23px;line-height:1;color:#C79A6A;transform:translateY(2px)}
-/* Separador vertical: divide as duas metades sem somar altura. */
-.pc-rec-sep{flex:none;align-self:stretch;width:1px;margin:6px 0;background:rgba(20,33,51,.13)}
-.pc-rec-selo-info{display:flex;flex-direction:column;align-items:flex-start}
-.pc-rec-rank{font-size:11px;letter-spacing:.18em;text-transform:uppercase;line-height:1.6;color:#143C7A;max-width:22ch}
-.pc-rec-nota{display:flex;align-items:center;gap:10px;margin-top:10px}
+/* Filete entre blocos. Empilhado: fio horizontal de bordo a bordo (align-self
+   stretch sobre a coluna). Em linha (900px+) passa a vertical. Nos dois casos
+   fica a 1px e não soma altura própria. */
+.pc-rec-sep{flex:none;align-self:stretch;height:1px;width:auto;background:rgba(20,33,51,.13)}
+/* Os dois blocos de texto quebram em duas linhas por max-width em ch, e o
+   text-wrap:balance reparte-as por igual. Sem ele sobra um órfão de uma palavra
+   na segunda linha, e onde cai o corte muda com o idioma. */
+.pc-rec-rank{flex:none;font-size:11px;letter-spacing:.18em;text-transform:uppercase;line-height:1.7;color:#143C7A;max-width:32ch;text-wrap:balance}
+.pc-rec-nota{flex:none;display:flex;align-items:center;gap:10px}
 .pc-rec-nota-num{font-family:var(--font-gilda),Georgia,serif;font-weight:600;font-size:27px;line-height:1;color:#143C7A}
-.pc-rec-meta{font-size:12px;letter-spacing:.04em;color:#5C6B7A;margin-top:6px}
+.pc-rec-meta{flex:none;font-size:12px;line-height:1.7;letter-spacing:.04em;color:#5C6B7A;max-width:26ch;text-wrap:balance}
 .pc-rec-cat{font-size:11px;line-height:1.6;color:#5C6B7A;margin:18px 0 0;max-width:62ch}
 
 /* Estrelas parciais: fila apagada + fila dourada recortada por width (4,5 → 90%). */
@@ -321,15 +331,43 @@
 .pc-rec-stars-bg{color:rgba(20,33,51,.15)}
 .pc-rec-stars-fg{position:absolute;top:0;left:0;overflow:hidden;color:#C79A6A}
 
-/* ---- Link final ---- */
-.pc-rec-link{display:inline-flex;align-items:center;gap:9px;margin-top:18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#143C7A;text-decoration:none;border-bottom:1px solid rgba(199,154,106,.6);padding-bottom:5px;transition:color .15s,border-color .15s}
-.pc-rec-link:hover{color:#C79A6A;border-color:#C79A6A}
+/* ---- Link final ----
+   O mesmo controlo do RESERVAR do cabeçalho (.pch-reserve-d), passado para
+   fundo claro: retângulo de canto reto, fio de 1px, e a inversão das cores no
+   hover. É o vocabulário do sítio para "link que abre fora" — o sublinhado
+   dourado com seta horizontal que estava aqui não existia em mais nenhum sítio.
+   Ao contrário do cabeçalho, aqui o estado de repouso é o CHEIO e o hover é o
+   contorno. O azul do preenchimento é o #143C7A da marca clareado um pouco
+   (#194A9A), para o retângulo não pesar demais nesta faixa clara.
+   Sem white-space:nowrap (o cabeçalho tem-no): a etiqueta é comprida e a
+   390px não caberia numa linha, por isso deixa-se quebrar e centra-se.
+   E por isso mesmo o miolo é inline, não flex: em flex a seta seria um item
+   à parte e ficaria pendurada ao centro da direita quando o texto passa a
+   duas linhas. Inline, acompanha a última palavra. */
+.pc-rec-link{display:inline-block;margin-top:22px;padding:12px 24px;border:1px solid #194A9A;background:#194A9A;color:#FFFFFF;text-decoration:none;font-size:12px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;text-align:center;transition:background .15s,color .15s,border-color .15s}
+.pc-rec-link svg{vertical-align:-2px;margin-left:9px}
+.pc-rec-link:hover{background:transparent;border-color:rgba(25,74,154,.45);color:#194A9A}
 
 @media(min-width:900px){
   .pc-rec{margin-top:72px}
   .pc-rec-inner{padding:58px 40px 62px}
   .pc-rec-h{font-size:36px;max-width:26ch}
-  .pc-rec-selo{margin-top:30px;gap:22px;padding:22px 28px}
+  .pc-rec-selo{margin-top:30px}
   .pc-rec-emblema{width:104px;height:104px}
   .pc-rec-emblema-txt{font-size:25px}
+}
+
+/* ---- A fila ----
+   A partir daqui os quatro blocos ficam lado a lado. width:auto para o cartão
+   encolher ao conteúdo em vez de esticar-se aos 1180px do inner — é o que o
+   mantém centrado e equilibrado.
+
+   O gap é apertado (18px) porque a 900px o inner só oferece 820px e a fila
+   folgada não caberia; a 1100px, já com espaço de sobra, abre para 24px. */
+@media(min-width:900px){
+  .pc-rec-selo{width:auto;max-width:100%;flex-direction:row;align-items:center;gap:18px;padding:20px 24px;text-align:left}
+  .pc-rec-sep{align-self:stretch;width:1px;height:auto;margin:6px 0}
+}
+@media(min-width:1100px){
+  .pc-rec-selo{gap:24px;padding:20px 30px}
 }

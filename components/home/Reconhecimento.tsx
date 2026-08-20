@@ -69,10 +69,15 @@ function Stars({ percent, label }: { percent: number; label: string }) {
 }
 
 /**
- * Franja de reconocimiento de la Home: fondo azul de marca a todo el ancho (mismo
- * registro que la franja de contacto y el footer), con todo centrado — sobretítulo,
- * titular y una única pieza: el sello PROPIO en dorado/claro, en horizontal
- * (emblema de laurel | separador | posición, nota y reseñas).
+ * Franja de reconocimiento de la Home: faixa clara a todo el ancho, con todo
+ * centrado — sobretítulo, titular y una única pieza: el sello PROPIO en
+ * dorado/claro, en UNA SOLA FILA de cuatro bloques separados por filetes:
+ * emblema de laurel | posición | nota | reseñas.
+ *
+ * Los cuatro bloques son hermanos directos de .pc-rec-selo (sin envoltorio
+ * intermedio) justamente para que el mismo marcado sirva en las dos
+ * direcciones: en móvil el flex pasa a columna y los filetes se vuelven
+ * horizontales, sin duplicar nodos ni ocultar nada.
  *
  * NO reproduce la marca de TripAdvisor: solo la cita como fuente en texto y enlaza
  * a la ficha. El widget oficial vive en el pie (components/TripAdvisorBadge.tsx).
@@ -99,34 +104,42 @@ export default function Reconhecimento() {
           <p className="pc-rec-intro">{format(t.intro, vars)}</p>
         </header>
 
-        {/* Sello propio: emblema | separador | posición, nota y reseñas */}
+        {/* Sello propio: emblema | posición | nota | reseñas.
+            Los .pc-rec-sep son filetes decorativos: verticales en escritorio y
+            horizontales en móvil, siempre sin sumar altura al bloque. */}
         <div className="pc-rec-selo">
           <div className="pc-rec-emblema">
             <Laurel />
             <span className="pc-rec-emblema-txt">{format(t.rankKicker, vars)}</span>
           </div>
 
-          {/* separador vertical: divide sin sumar altura */}
           <div className="pc-rec-sep" />
 
-          <div className="pc-rec-selo-info">
-            <div className="pc-rec-rank">{format(t.rankDesc, vars)}</div>
-            <div className="pc-rec-nota">
-              <Stars percent={ratingPercent()} label={format(t.estrelasAria, vars)} />
-              <span className="pc-rec-nota-num">{vars.rating}</span>
-            </div>
-            <div className="pc-rec-meta">
-              {format(t.avaliacoes, vars)} · {t.fonte}
-            </div>
+          <div className="pc-rec-rank">{format(t.rankDesc, vars)}</div>
+
+          <div className="pc-rec-sep" />
+
+          <div className="pc-rec-nota">
+            <Stars percent={ratingPercent()} label={format(t.estrelasAria, vars)} />
+            <span className="pc-rec-nota-num">{vars.rating}</span>
+          </div>
+
+          <div className="pc-rec-sep" />
+
+          <div className="pc-rec-meta">
+            {format(t.avaliacoes, vars)} · {t.fonte}
           </div>
         </div>
 
         <p className="pc-rec-cat">{t.categoriaNota}</p>
 
+        {/* Mesmo controlo que o RESERVAR do cabeçalho, virado para fundo claro.
+            A seta é a diagonal desse botão — a marca do sítio para "isto abre
+            fora"; a horizontal que estava aqui não existe em mais lado nenhum. */}
         <a className="pc-rec-link" href={TRIPADVISOR.reviewUrl} target="_blank" rel="noopener noreferrer">
           {t.verTudo}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M5 12h13M12 6l6 6-6 6" />
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3.5 10.5 10.5 3.5M10.5 3.5H5M10.5 3.5V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
       </div>

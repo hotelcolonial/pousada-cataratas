@@ -106,7 +106,7 @@ html,body{overflow-x:clip}
    à direita no desktop e centrado no mobile. O cartão branco é só a moldura que
    contém o verde corporativo do widget para não brigar com o fundo do rodapé. */
 .pcf-ta{display:flex;justify-content:center;margin-top:40px}
-.pcf-ta-card{background:#FFFFFF;border:1px solid rgba(20,33,51,.1);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:center}
+.pcf-ta-card{background:#FFFFFF;border:1px solid rgba(20,33,51,.1);border-radius:0;padding:12px 14px;display:flex;align-items:center;justify-content:center}
 /* Reserva o ESPAÇO do badge nos dois eixos: 148x86 mais 1px de borda de cada
    lado = 150x88 (a margem própria dele fica zerada logo abaixo). Sem estas
    reservas o cartão nasceria do tamanho do gif de reserva (31x20) e daria um
