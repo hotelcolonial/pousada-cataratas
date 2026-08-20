@@ -229,9 +229,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* ============ PROMOÇÕES ============ */}
       <section id="promocoes" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 30px 100px", scrollMarginTop: "90px" }}>
         <div className="pc-promo">
-          <div style={{ display: "flex", flexDirection: "column", paddingRight: "24px" }}>
+          <div className="pc-promo-head" style={{ display: "flex", flexDirection: "column", paddingRight: "24px" }}>
             <span style={{ fontFamily: "var(--font-hnc), sans-serif", fontSize: "12px", letterSpacing: ".32em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoEyebrow}</span>
-            <h2 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 300, fontSize: "62px", lineHeight: 1.0, letterSpacing: 0, color: "#143C7A", margin: "18px 0 0" }}>
+            <h2 className="pc-promo-h" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 300, fontSize: "62px", lineHeight: 1.0, letterSpacing: 0, color: "#143C7A", margin: "18px 0 0" }}>
               {dict.home.promoHA}<br />{dict.home.promoHB}
             </h2>
             <p style={{ fontSize: "15px", lineHeight: 1.66, color: "#7A8694", margin: "28px 0 0", maxWidth: "330px" }}>{dict.home.promoP}</p>
@@ -250,9 +250,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem1Eyebrow}</span>
-                <span style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem1Name}</span>
+                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem1Name}</span>
               </div>
-              <a href={localePath(lang, "/promocao/morador")} style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
+              <a href={localePath(lang, "/promocao/morador")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
             </div>
 
             <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />
@@ -263,9 +263,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem2Eyebrow}</span>
-                <span style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem2Name}</span>
+                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem2Name}</span>
               </div>
-              <a href={localePath(lang, "/promocao/agosto-encantador")} style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#C79A6A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
+              <a href={localePath(lang, "/promocao/agosto-encantador")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#C79A6A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
             </div>
 
             <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />
@@ -276,9 +276,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem3Eyebrow}</span>
-                <span style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem3Name}</span>
+                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem3Name}</span>
               </div>
-              <a href={localePath(lang, "/promocao/day-use")} style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
+              <a href={localePath(lang, "/promocao/day-use")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
             </div>
           </div>
         </div>

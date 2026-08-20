@@ -13,6 +13,16 @@
     .pc-str-imgs .pc-str-stat{position:static;transform:none;left:auto;top:auto;width:auto;margin-top:18px;flex-direction:row;justify-content:space-between;padding:22px 18px;box-shadow:0 16px 40px rgba(20,33,51,.12);grid-column:1 / -1}
     .pc-str .pc-str-imgs{align-items:stretch}
   }
+  /* Abaixo de 480px a fila de quatro deixa de caber e o "1 Piscina" saía do
+     retângulo branco. As colunas já estavam no seu min-content (o rótulo mais
+     comprido, "Avaliação", a 9px com .24em de entreletra) — somam 243px, mais
+     3 gaps de 20px e 36px de padding dá 339px de cartão, ou seja ~400px de
+     viewport. Como não há mais nada a encolher sem espremer os rótulos,
+     passa-se a 2x2. O ponto de corte é 479px e não 400px para as duas linhas
+     terem folga, em vez de entrarem à justa. */
+  @media(max-width:479px){
+    .pc-str-imgs .pc-str-stat{display:grid;grid-template-columns:1fr 1fr;gap:22px 12px}
+  }
   @media(max-width:600px){
     .pc-bnr-txt h2{font-size:40px!important}
     .pc-relax-h{font-size:40px}
@@ -146,6 +156,27 @@
   .pc-promo-list{display:flex;flex-direction:column;gap:0}
   .pc-promo-item{display:flex;align-items:center;gap:22px;padding:22px 0}
   .pc-promo-thumb{flex:none;width:96px;height:70px;overflow:hidden;background:#143C7A;position:relative}
+  /* Telemóvel: o "Ver mais" saía do ecrã, cortado pelo overflow-x:hidden do
+     .pc-page — dava a impressão de estar apenas colado à direita.
+     Quem estourava a largura era a COLUNA da grelha, não a linha do item. O
+     track é 1fr, ou seja minmax(auto,1fr), e o seu mínimo é o maior
+     min-content da coluna: o h2 a 62px dá 301px, mais 24px de padding-right
+     do bloco = 325px, para 300px disponíveis. Tudo o que vive na coluna
+     herdava esses 325px, a lista incluída, e empurrava o botão para fora.
+     Daí a ordem das regras abaixo: primeiro devolve-se o track ao espaço real
+     (título menor, sem o padding que numa coluna única não separa de nada);
+     depois o min-width:0 permite à lista acompanhar o track; e só então as
+     medidas da linha, que a 300px também não cabia com 96px de miniatura e
+     26px de display. */
+  @media(max-width:599px){
+    .pc-promo-head{padding-right:0!important}
+    .pc-promo-h{font-size:48px!important}
+    .pc-promo-list{min-width:0}
+    .pc-promo-item{gap:14px}
+    .pc-promo-thumb{width:76px;height:56px}
+    .pc-promo-name{font-size:21px!important}
+    .pc-promo-btn{padding:8px 12px!important}
+  }
   @media(min-width:980px){
     .pc-promo{grid-template-columns:30% 30% 40%!important;gap:0!important;align-items:center!important}
     .pc-promo-mid{display:block!important;position:relative;z-index:1}
