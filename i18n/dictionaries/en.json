@@ -66,6 +66,19 @@
     "proximo": "Next",
     "irAoDepoimento": "Go to review"
   },
+  "reconhecimento": {
+    "eyebrow": "Recognition",
+    "titulo": "The highest-rated guesthouse in Foz do Iguaçu",
+    "intro": "No. {rank} in the Foz do Iguaçu guesthouse ranking, out of {total} guesthouses rated by travellers.",
+    "rankKicker": "No. {rank}",
+    "rankDesc": "out of {total} guesthouses in Foz do Iguaçu",
+    "categoriaNota": "Ranking within the guesthouse category — hotels and resorts not included.",
+    "notaLabel": "Average rating",
+    "avaliacoes": "{reviews} reviews",
+    "fonte": "according to TripAdvisor",
+    "estrelasAria": "{rating} out of 5 stars",
+    "verTudo": "See all reviews on TripAdvisor"
+  },
   "alt": {
     "quarto": "{name} at Pousada Cataratas in Foz do Iguaçu",
     "atracao": "{name} in Foz do Iguaçu",

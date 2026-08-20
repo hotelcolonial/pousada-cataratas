@@ -100,3 +100,22 @@ html,body{overflow-x:clip}
 }
 .pcf-link{color:#9AA3AD;text-decoration:none;transition:color .15s ease}
 .pcf-link:hover{color:#143C7A}
+
+/* ===== Selo TripAdvisor no rodapé (components/TripAdvisorBadge.tsx) =====
+   Sello de respaldo discreto: fica numa linha própria acima da barra inferior,
+   à direita no desktop e centrado no mobile. O cartão branco é só a moldura que
+   contém o verde corporativo do widget para não brigar com o fundo do rodapé. */
+.pcf-ta{display:flex;justify-content:center;margin-top:40px}
+.pcf-ta-card{background:#FFFFFF;border:1px solid rgba(20,33,51,.1);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:center}
+/* Reserva o ESPAÇO do badge nos dois eixos: 148x86 mais 1px de borda de cada
+   lado = 150x88 (a margem própria dele fica zerada logo abaixo). Sem estas
+   reservas o cartão nasceria do tamanho do gif de reserva (31x20) e daria um
+   salto ao aparecer o badge. Com elas a troca não mexe no layout (CLS ~0).
+   Os seletores levam a classe na frente para ganhar do CSS do próprio widget. */
+.pcf-ta-card .TA_rated{width:150px;min-height:88px;display:flex;align-items:center;justify-content:center;margin:0}
+.pcf-ta-card .TA_rated ul{list-style:none;margin:0;padding:0}
+.pcf-ta-card #CDSWIDFRR{margin:0 auto;max-width:100%}
+.pcf-ta-card img{max-width:100%;height:auto;display:block;margin:0 auto}
+@media(min-width:900px){
+  .pcf-ta{justify-content:flex-end;margin-top:48px}
+}

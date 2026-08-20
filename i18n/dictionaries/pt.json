@@ -66,6 +66,19 @@
     "proximo": "Próximo",
     "irAoDepoimento": "Ir ao depoimento"
   },
+  "reconhecimento": {
+    "eyebrow": "Reconhecimento",
+    "titulo": "A pousada mais bem avaliada de Foz do Iguaçu",
+    "intro": "Nº {rank} no ranking de pousadas de Foz do Iguaçu, entre {total} pousadas avaliadas pelos viajantes.",
+    "rankKicker": "Nº {rank}",
+    "rankDesc": "entre as {total} pousadas de Foz do Iguaçu",
+    "categoriaNota": "Posição na categoria pousadas — não inclui hotéis nem resorts.",
+    "notaLabel": "Nota média",
+    "avaliacoes": "{reviews} avaliações",
+    "fonte": "segundo o TripAdvisor",
+    "estrelasAria": "{rating} de 5 estrelas",
+    "verTudo": "Ver todas as avaliações no TripAdvisor"
+  },
   "alt": {
     "quarto": "{name} da Pousada Cataratas em Foz do Iguaçu",
     "atracao": "{name} em Foz do Iguaçu",

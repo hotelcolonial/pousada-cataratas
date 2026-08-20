@@ -3,6 +3,7 @@ import "./home.css";
 import BookingBar from "@/components/home/BookingBar";
 import PromoPopup from "@/components/home/PromoPopup";
 import Testimonials from "@/components/home/Testimonials";
+import Reconhecimento from "@/components/home/Reconhecimento";
 import ContatoStrip from "@/components/ContatoStrip";
 import { getRgCards, getTesti, tagAccent, tagDark } from "@/lib/data";
 import { isLocale, localePath } from "@/i18n/config";
@@ -136,6 +137,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
         <BookingBar />
       </section>
+
+      {/* ============ RECONHECIMENTO (TRIPADVISOR) ============ */}
+      <Reconhecimento />
 
       {/* ============ A POUSADA / RELAX ============ */}
       <section className="pc-relax">

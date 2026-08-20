@@ -1,6 +1,7 @@
 import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/getDictionary";
 import CookiePreferencesLink from "@/components/cookies/CookiePreferencesLink";
+import TripAdvisorBadge from "@/components/TripAdvisorBadge";
 import { privacyPolicy } from "@/lib/legal";
 import { WHATSAPP_HREF } from "@/lib/whatsapp";
 
@@ -120,10 +121,17 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
           </div>
         </div>
 
+        {/* Selo oficial de TripAdvisor — respaldo discreto, sin protagonismo.
+            Su margen inferior negativo lo acerca a la barra de copyright para
+            que lea como parte de ella y no como una sección más. */}
+        <div className="pcf-ta">
+          <TripAdvisorBadge />
+        </div>
+
         <div
           className="pcf-bottom"
           style={{
-            marginTop: "72px",
+            marginTop: "28px",
             display: "flex",
             flexWrap: "wrap",
             gap: "16px",
