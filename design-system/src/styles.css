@@ -1,0 +1,6 @@
+/* Entrada única da folha de estilos do design system.
+   A ordem importa: tokens antes de tudo (os componentes leem var(--pc-*)),
+   fontes a seguir, componentes no fim. */
+@import "./tokens.css";
+@import "./fonts.css";
+@import "./components.css";

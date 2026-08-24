@@ -1,0 +1,35 @@
+/* Fontes da marca.
+   Gilda Display vem do Google Fonts (é assim que o sítio a carrega, via
+   next/font/google) — daí o @import remoto. As outras duas são ficheiros locais
+   do repositório, em public/fonts/, copiados para dist/fonts/ pelo build. */
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+
+/* Archivo: variável (100–900). Existe sobretudo para os ACENTOS — a Helvetica
+   Neue Cyr não tem glifos acentuados, e por ser variável os acentos mantêm o
+   mesmo peso do texto à volta, mesmo nos títulos Light. */
+@font-face{
+  font-family:'Archivo';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('../../public/fonts/archivo-latin.woff2') format('woff2');
+}
+
+/* Helvetica Neue Cyr: a sem-serifa do sítio. O unicode-range limita-a ao ASCII
+   estendido justamente para deixar os acentos caírem na Archivo. */
+@font-face{
+  font-family:'Helvetica Neue Cyr';
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  unicode-range:U+0000-00BF;
+  src:url('../../public/fonts/HelveticaNeueCyr-Light.ttf') format('truetype');
+}
+@font-face{
+  font-family:'Helvetica Neue Cyr';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  unicode-range:U+0000-00BF;
+  src:url('../../public/fonts/HelveticaNeueCyr-Roman.ttf') format('truetype');
+}

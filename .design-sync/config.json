@@ -1,0 +1,36 @@
+{
+  "pkg": "@pousada-cataratas/design-system",
+  "globalName": "PousadaCataratasDS",
+  "projectId": "65130486-6bee-43ce-b64c-e086cefc2299",
+  "shape": "package",
+  "buildCmd": "npm run build --prefix design-system",
+  "srcDir": "src",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": "./dist/styles.css",
+  "tokensGlob": "src/*tokens*.css",
+  "componentSrcMap": {
+    "Band": "src/Surfaces.tsx",
+    "Card": "src/Surfaces.tsx",
+    "Eyebrow": "src/Typography.tsx",
+    "Rule": "src/Typography.tsx",
+    "SectionHeader": "src/Typography.tsx",
+    "Stars": "src/Rating.tsx",
+    "Stat": "src/Stats.tsx",
+    "StatGroup": "src/Stats.tsx"
+  },
+  "provider": {
+    "component": "Brand"
+  },
+  "overrides": {
+    "Band": {
+      "cardMode": "column"
+    },
+    "Card": {
+      "cardMode": "column"
+    },
+    "Stat": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}

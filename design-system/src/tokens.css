@@ -1,0 +1,71 @@
+/* ============================================================================
+   Tokens da Pousada Cataratas.
+   Extraídos do site em produção (app/globals.css, app/[lang]/*.css e os estilos
+   inline de app/[lang]/page.tsx) — os valores são os que já estavam em uso, não
+   uma paleta nova. A contagem de ocorrências de cada cor guiou o que é núcleo e
+   o que é acessório.
+   ============================================================================ */
+:root{
+  /* ---- Marca ----
+     O azul é a cor dominante do sítio (186 ocorrências); o dourado é o acento
+     (57). As variantes -dark são os hovers que já existiam no CSS. */
+  --pc-navy:#143C7A;
+  --pc-navy-dark:#0F2E5E;   /* hover de .pc-bk-cta */
+  --pc-navy-light:#194A9A;  /* mesmo azul clareado, para preenchimentos grandes em faixa clara */
+  --pc-gold:#C79A6A;
+  --pc-gold-dark:#B8895A;   /* hover de .pc-bnr-cta */
+  --pc-blue:#1E90C8;        /* CTA do hero — o azul mais vivo, reservado à reserva */
+  --pc-blue-dark:#1577A8;   /* hover de .pc-hero-cta */
+
+  /* ---- Texto ----
+     Uma rampa de cinza-ardósia, do corpo ao rótulo mais apagado. */
+  --pc-ink:#1B2733;         /* cor do body */
+  --pc-text:#3A4654;
+  --pc-text-muted:#5C6B7A;
+  --pc-text-soft:#7A8694;
+  --pc-text-faint:#8A97A6;
+  --pc-text-label:#9AA3AD;  /* eyebrows e rótulos de estatística */
+
+  /* ---- Superfícies ----
+     A família creme do sítio, do mais marcado ao quase branco. */
+  --pc-surface:#FFFFFF;
+  --pc-cream-deep:#EDE6DA;
+  --pc-cream:#F4F1EC;
+  --pc-cream-soft:#F7F3EC;
+  --pc-cream-light:#FBFAF8;
+  --pc-slate:#EEF1F4;       /* fundo das barras de progresso */
+
+  /* ---- Fios ----
+     Nunca cores sólidas: sempre a tinta ou o dourado em opacidade baixa. */
+  --pc-line:rgba(20,33,51,.13);
+  --pc-line-soft:rgba(20,33,51,.06);
+  --pc-line-navy:rgba(20,60,122,.1);
+  --pc-line-gold:rgba(199,154,106,.6);
+
+  /* ---- Tipografia ----
+     Duas famílias: a serifada para títulos e números de destaque, a sem-serifa
+     para tudo o resto. Archivo entra pelos acentos (a Helvetica Neue Cyr não
+     tem glifos acentuados). */
+  --pc-font-serif:'Gilda Display',Georgia,serif;
+  --pc-font-sans:'Helvetica Neue Cyr','Archivo','Helvetica Neue',Arial,sans-serif;
+
+  /* ---- Entreletra ----
+     O sítio distingue-se por versais muito espaçadas; estes são os três valores
+     que aparecem de facto. */
+  --pc-track-eyebrow:.24em;  /* rótulos pequenos */
+  --pc-track-wide:.32em;     /* sobretítulos de secção */
+  --pc-track-btn:.14em;      /* botões */
+
+  /* ---- Espaçamento ---- */
+  --pc-space-1:6px;
+  --pc-space-2:12px;
+  --pc-space-3:18px;
+  --pc-space-4:24px;
+  --pc-space-5:34px;
+  --pc-space-6:48px;
+
+  /* ---- Sombras ----
+     Sempre baixas e muito difusas; o sítio não usa elevação forte. */
+  --pc-shadow-soft:0 16px 40px rgba(20,33,51,.12);
+  --pc-shadow:0 24px 54px rgba(20,33,51,.18);
+}

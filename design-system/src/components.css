@@ -1,0 +1,139 @@
+/* ============================================================================
+   Estilos dos componentes. Prefixo pcds- para não colidir com os pc-* do sítio,
+   que continuam a existir enquanto as páginas não migram.
+   Regra que atravessa tudo: CANTO RETO. O sítio não usa cantos arredondados em
+   superfícies de conteúdo — só em peças com forma própria (círculos, carrosséis).
+   ============================================================================ */
+
+/* ---- Raiz ----
+   .pcds é o que liga as famílias tipográficas e a cor de tinta base. Sem esta
+   raiz à volta, os componentes herdam a fonte do agente e deixam de ser da marca. */
+.pcds{font-family:var(--pc-font-sans);color:var(--pc-ink);-webkit-font-smoothing:antialiased;font-synthesis:none}
+.pcds *{box-sizing:border-box}
+
+/* ---- Faixa de secção ---- */
+.pcds-band{width:100%;position:relative}
+.pcds-band--surface{background:var(--pc-surface)}
+.pcds-band--cream{background:var(--pc-cream)}
+.pcds-band--cream-light{background:var(--pc-cream-light)}
+.pcds-band--navy{background:var(--pc-navy);color:var(--pc-surface)}
+.pcds-band-inner{max-width:1180px;margin:0 auto;padding:48px 24px}
+@media(min-width:900px){.pcds-band-inner{padding:58px 40px}}
+
+/* ---- Eyebrow ----
+   O rótulo em versais espaçadas que abre quase todas as secções. */
+.pcds-eyebrow{display:block;font-size:11px;line-height:1.4;text-transform:uppercase;letter-spacing:var(--pc-track-eyebrow);color:var(--pc-text-label);margin:0}
+.pcds-eyebrow--wide{letter-spacing:var(--pc-track-wide);font-size:12px}
+.pcds-eyebrow--navy{color:var(--pc-navy)}
+.pcds-eyebrow--gold{color:var(--pc-gold)}
+
+/* ---- Fio ---- */
+.pcds-rule{border:0;height:1px;width:44px;background:var(--pc-line-gold);margin:14px 0 0}
+.pcds-rule--full{width:100%;background:var(--pc-line-navy)}
+
+/* ---- Cabeçalho de secção ---- */
+.pcds-sh{display:flex;flex-direction:column}
+.pcds-sh--center{align-items:center;text-align:center}
+.pcds-sh-title{font-family:var(--pc-font-serif);font-weight:600;font-size:28px;line-height:1.1;color:var(--pc-navy);margin:16px 0 0;max-width:22ch}
+.pcds-sh--center .pcds-sh-title{max-width:19ch}
+.pcds-sh-intro{font-size:13.5px;line-height:1.65;color:var(--pc-text-muted);margin:12px 0 0;max-width:58ch}
+@media(min-width:900px){
+  .pcds-sh-title{font-size:36px;max-width:26ch}
+}
+
+/* ---- Botão ----
+   Três formas, todas de canto reto, tal como no sítio: cheia (CTA), contorno
+   (o RESERVAR do cabeçalho) e chip (o "Ver mais" das promoções). */
+.pcds-btn{display:inline-block;border:1px solid transparent;background:transparent;text-align:center;text-decoration:none;cursor:pointer;font-family:inherit;text-transform:uppercase;letter-spacing:var(--pc-track-btn);line-height:1.5;transition:background .15s,color .15s,border-color .15s}
+.pcds-btn:disabled,.pcds-btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
+.pcds-btn svg{vertical-align:-2px;margin-left:9px}
+
+.pcds-btn--sm{font-size:11px;padding:9px 18px}
+.pcds-btn--md{font-size:12px;padding:12px 24px}
+.pcds-btn--lg{font-size:16px;padding:16px 44px}
+
+/* cheio */
+.pcds-btn--solid.pcds-btn--navy{background:var(--pc-navy);border-color:var(--pc-navy);color:var(--pc-surface)}
+.pcds-btn--solid.pcds-btn--navy:hover{background:var(--pc-navy-dark);border-color:var(--pc-navy-dark)}
+.pcds-btn--solid.pcds-btn--gold{background:var(--pc-gold);border-color:var(--pc-gold);color:var(--pc-surface)}
+.pcds-btn--solid.pcds-btn--gold:hover{background:var(--pc-gold-dark);border-color:var(--pc-gold-dark)}
+.pcds-btn--solid.pcds-btn--blue{background:var(--pc-blue);border-color:var(--pc-blue);color:var(--pc-surface)}
+.pcds-btn--solid.pcds-btn--blue:hover{background:var(--pc-blue-dark);border-color:var(--pc-blue-dark)}
+
+/* contorno — enche-se no hover, invertendo (é o gesto do cabeçalho) */
+.pcds-btn--outline.pcds-btn--navy{border-color:rgba(20,60,122,.35);color:var(--pc-navy)}
+.pcds-btn--outline.pcds-btn--navy:hover{background:var(--pc-navy);border-color:var(--pc-navy);color:var(--pc-surface)}
+.pcds-btn--outline.pcds-btn--gold{border-color:var(--pc-line-gold);color:var(--pc-gold)}
+.pcds-btn--outline.pcds-btn--gold:hover{background:var(--pc-gold);border-color:var(--pc-gold);color:var(--pc-surface)}
+.pcds-btn--outline.pcds-btn--blue{border-color:rgba(30,144,200,.45);color:var(--pc-blue)}
+.pcds-btn--outline.pcds-btn--blue:hover{background:var(--pc-blue);border-color:var(--pc-blue);color:var(--pc-surface)}
+/* sobre fundo escuro o contorno é branco */
+.pcds-band--navy .pcds-btn--outline{border-color:rgba(255,255,255,.5);color:var(--pc-surface)}
+.pcds-band--navy .pcds-btn--outline:hover{background:var(--pc-surface);border-color:var(--pc-surface);color:var(--pc-navy)}
+
+/* ---- Inversão sobre a faixa azul ----
+   O título, o sobretítulo e a entrada estão fixados em azul/cinza porque é o
+   que servem em 90% dos casos. Dentro da faixa azul isso dava azul sobre azul —
+   texto invisível. Aqui invertem-se, tal como o botão de contorno acima.
+   Mantém-se a hierarquia: o título a branco cheio, o resto em opacidade. */
+.pcds-band--navy .pcds-sh-title{color:var(--pc-surface)}
+.pcds-band--navy .pcds-eyebrow{color:rgba(255,255,255,.72)}
+.pcds-band--navy .pcds-sh-intro{color:rgba(255,255,255,.78)}
+.pcds-band--navy .pcds-rule{background:rgba(255,255,255,.4)}
+.pcds-band--navy .pcds-stat-value{color:var(--pc-surface)}
+.pcds-band--navy .pcds-stat-label{color:rgba(255,255,255,.7)}
+
+/* chip — pequeno, sem versais, para acções em lista */
+.pcds-btn--chip{text-transform:none;letter-spacing:.04em;font-size:13px;font-weight:600;padding:9px 16px;min-width:78px;white-space:nowrap}
+.pcds-btn--chip.pcds-btn--navy{background:var(--pc-navy);border-color:var(--pc-navy);color:var(--pc-surface)}
+.pcds-btn--chip.pcds-btn--navy:hover{background:var(--pc-navy-dark);border-color:var(--pc-navy-dark)}
+.pcds-btn--chip.pcds-btn--gold{background:var(--pc-gold);border-color:var(--pc-gold);color:var(--pc-surface)}
+.pcds-btn--chip.pcds-btn--gold:hover{background:var(--pc-gold-dark);border-color:var(--pc-gold-dark)}
+.pcds-btn--chip.pcds-btn--blue{background:var(--pc-blue);border-color:var(--pc-blue);color:var(--pc-surface)}
+.pcds-btn--chip.pcds-btn--blue:hover{background:var(--pc-blue-dark);border-color:var(--pc-blue-dark)}
+
+/* ---- Cartão ---- */
+.pcds-card{background:var(--pc-surface);border-radius:0;padding:var(--pc-space-5) 30px}
+.pcds-card--bordered{border:1px solid var(--pc-line-soft)}
+.pcds-card--raised{box-shadow:var(--pc-shadow-soft)}
+.pcds-card--flat{padding:0}
+
+/* ---- Estatística ---- */
+.pcds-stat{text-align:center}
+.pcds-stat-value{font-family:var(--pc-font-sans);font-weight:300;font-size:40px;line-height:.95;color:var(--pc-navy)}
+.pcds-stat-label{font-size:9px;letter-spacing:var(--pc-track-eyebrow);text-transform:uppercase;color:var(--pc-text-label);margin-top:6px;font-weight:500}
+
+/* ---- Grupo de estatísticas ----
+   Fila quando cabe, 2x2 quando não. O corte é 480px porque abaixo disso os
+   rótulos mais compridos deixam de caber lado a lado — foi medido, não estimado. */
+.pcds-statgroup{container-type:inline-size;background:var(--pc-surface);box-shadow:var(--pc-shadow-soft);padding:22px 18px}
+.pcds-statgroup-inner{display:flex;flex-direction:row;justify-content:space-between;gap:20px}
+@container (max-width:479px){
+  .pcds-statgroup-inner{display:grid;grid-template-columns:1fr 1fr;gap:22px 12px}
+}
+
+/* ---- Estrelas ----
+   Duas filas sobrepostas: a apagada por baixo, a dourada por cima recortada à
+   percentagem. Sem truques de id, por isso pode repetir-se na mesma página. */
+.pcds-stars{position:relative;display:inline-block;line-height:0;white-space:nowrap}
+.pcds-stars-bg,.pcds-stars-fg{display:block;line-height:0;white-space:nowrap}
+.pcds-stars-bg{color:var(--pc-line)}
+.pcds-stars-fg{position:absolute;top:0;left:0;overflow:hidden;color:var(--pc-gold)}
+.pcds-rating{display:inline-flex;align-items:center;gap:10px}
+.pcds-rating-value{font-family:var(--pc-font-serif);font-weight:600;font-size:27px;line-height:1;color:var(--pc-navy)}
+
+/* ---- Linha de lista ----
+   Miniatura + texto + acção. As medidas apertam em telemóvel porque a 300px de
+   largura útil a versão folgada não cabe. */
+.pcds-row{container-type:inline-size;padding:22px 0}
+.pcds-row-inner{display:flex;align-items:center;gap:22px}
+.pcds-row-thumb{flex:none;width:96px;height:70px;overflow:hidden;background:var(--pc-navy);position:relative}
+.pcds-row-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pcds-row-body{flex:1;display:flex;flex-direction:column;gap:5px;min-width:0}
+.pcds-row-title{font-family:var(--pc-font-serif);font-weight:500;font-size:26px;line-height:1.05;letter-spacing:-.01em;color:var(--pc-navy)}
+.pcds-row-action{flex:none;align-self:center}
+@container (max-width:599px){
+  .pcds-row-inner{gap:14px}
+  .pcds-row-thumb{width:76px;height:56px}
+  .pcds-row-title{font-size:21px}
+}
