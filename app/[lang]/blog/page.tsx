@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  return pageMeta({ lang: loc, path: "/blog", title: dict.blogList.bannerTitle + dict.meta.titleSuffix, description: dict.meta.descBlog, image: "/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp" });
+  return pageMeta({ lang: loc, path: "/blog", title: dict.meta.titleBlog, description: dict.meta.descBlog, image: "/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp" });
 }
 
 // Reemplazo del <image-slot fit="cover"> del export.
@@ -43,9 +43,9 @@ export default async function Blog({ params }: { params: Promise<{ lang: string 
       <section
         style={{ position: "relative", width: "100%", height: "40vh", minHeight: "300px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#143C7A" }}
       >
-        <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp" alt="Cataratas do Iguaçu vistas de um mirante em Foz do Iguaçu" />
+        <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-mirante-foz-do-iguacu.webp" alt={dict.alts.blogBanner} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,60,122,.46)" }} />
-        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "46px", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
+        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "clamp(30px, 7vw, 46px)", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
           {dict.blogList.bannerTitle}
         </h1>
       </section>

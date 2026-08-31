@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  return pageMeta({ lang: loc, path: "/promocoes", title: dict.promocoesList.bannerTitle + dict.meta.titleSuffix, description: dict.meta.descPromocoes, image: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" });
+  return pageMeta({ lang: loc, path: "/promocoes", title: dict.meta.titlePromocoes, description: dict.meta.descPromocoes, image: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" });
 }
 
 // Reemplazo del <image-slot fit="cover"> del export.
@@ -37,9 +37,9 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
       <section
         style={{ position: "relative", width: "100%", height: "40vh", minHeight: "300px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#143C7A" }}
       >
-        <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Área da piscina da Pousada Cataratas em Foz do Iguaçu" />
+        <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesBanner} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,60,122,.46)" }} />
-        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "66px", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
+        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "clamp(32px, 8vw, 66px)", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
           {dict.promocoesList.bannerTitle}
         </h1>
       </section>
@@ -58,7 +58,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
           {/* BANNER HORIZONTAL */}
           <div style={{ position: "relative", marginTop: "auto", paddingTop: "44px" }}>
             <div style={{ position: "relative", width: "100%", height: "112px", overflow: "hidden", background: "#143C7A", display: "flex", alignItems: "center" }}>
-              <SlotImg src="/images/real/home/jardim-piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Jardim e piscina da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/jardim-piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesJardimPiscina} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,rgba(20,33,51,.82) 0%,rgba(20,33,51,.55) 60%,rgba(20,33,51,.7) 100%)" }} />
               <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", padding: "0 30px", gap: "20px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "22px" }}>
@@ -78,7 +78,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
 
         {/* DIREITA */}
         <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden", background: "#C79A6A", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "48px 36px", textAlign: "center" }}>
-          <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt="Fachada frontal da Pousada Cataratas em Foz do Iguaçu" />
+          <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesFachadaFrontal} />
           <div style={{ position: "absolute", inset: 0, background: "rgba(199,154,106,.82)" }} />
           <div style={{ position: "relative", width: "100%" }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "38px", lineHeight: 1, color: "#FFFFFF", margin: 0 }}>{dict.promocoesList.reservasTitle}</h3>
@@ -95,7 +95,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
       <section id="ofertas" className="pr-cards" style={{ scrollMarginTop: "90px" }}>
         <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp" alt="Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu" />
+            <SlotImg src="/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesPiscinaGuardaSol} />
           </div>
           <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card1Name}</h3>
@@ -106,7 +106,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
 
         <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/zoopark-menino-cabra-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp" alt="Menino acariciando uma cabra no Zoopark de Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas" />
+            <SlotImg src="/images/real/home/zoopark-menino-cabra-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesZoopark} />
           </div>
           <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card2Name}</h3>
@@ -117,7 +117,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
 
         <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp" alt="Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu" />
+            <SlotImg src="/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesPiscinaLazer} />
           </div>
           <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card3Name}</h3>
@@ -128,7 +128,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
 
         <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
           <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026" />
+            <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesMaratona} />
           </div>
           <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
             <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card4Name}</h3>

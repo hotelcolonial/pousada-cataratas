@@ -15,7 +15,8 @@
     "reservarDireto": "Book direct",
     "falarWhatsapp": "Chat on WhatsApp",
     "ariaMenu": "Menu",
-    "ariaFechar": "Close"
+    "ariaFechar": "Close",
+    "endereco": "R. Parigot de Souza, 180 — Foz do Iguaçu, PR"
   },
   "footer": {
     "pousadaLogoAlt": "Pousada Cataratas",
@@ -245,7 +246,8 @@
     "comoChegarTitle": "Getting there",
     "comoChegarP": "From the guesthouse, see the route to the attraction, step by step.",
     "outrasTitle": "Other attractions",
-    "mapaTitle": "Route to the attraction"
+    "mapaTitle": "Route to the attraction",
+    "cidade": "Foz do Iguaçu"
   },
   "promocaoProduct": {
     "falarWhatsapp": "Chat on WhatsApp",
@@ -312,6 +314,11 @@
   },
   "meta": {
     "titleSuffix": " | Pousada Cataratas",
+    "titleQuartos": "Rooms | Pousada Cataratas",
+    "titleGaleria": "Gallery | Pousada Cataratas",
+    "titleAtracoes": "Attractions | Pousada Cataratas",
+    "titlePromocoes": "Special Offers | Pousada Cataratas",
+    "titleBlog": "Blog | Pousada Cataratas",
     "homeTitle": "Pousada Cataratas — Stay in Foz do Iguaçu",
     "description": "In the heart of Foz do Iguaçu, Pousada Cataratas is a cozy and charming retreat, close to the main tourist spots and the Triple Frontier, with breakfast and the best rates when you book direct.",
     "descQuartos": "Explore the rooms at Pousada Cataratas in Foz do Iguaçu: double, triple, quadruple and quintuple, with air conditioning, free Wi-Fi and breakfast.",

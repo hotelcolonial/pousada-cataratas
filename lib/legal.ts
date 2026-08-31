@@ -181,7 +181,7 @@ export const privacyPolicy: Record<Locale, PrivacyContent> = {
       {
         heading: "1. Responsable del tratamiento",
         blocks: [
-          { type: "p", text: "El responsable del tratamiento de tus datos personales es {RESPONSAVEL}, con domicilio en R. Parigot de Souza, 180 – Vila Yolanda, Foz do Iguaçu – PR, 85853-270, Brasil." },
+          { type: "p", text: "El responsable del tratamiento de tus datos personales es {RESPONSAVEL}, con domicilio en R. Parigot de Souza, 180 – Vila Yolanda, Foz de Iguazú – PR, 85853-270, Brasil." },
           { type: "p", text: "Para asuntos relacionados con la privacidad y la protección de datos, escríbenos a {EMAIL}." },
         ],
       },

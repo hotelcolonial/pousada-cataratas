@@ -15,7 +15,8 @@
     "reservarDireto": "Reservar direto",
     "falarWhatsapp": "Falar no WhatsApp",
     "ariaMenu": "Menu",
-    "ariaFechar": "Fechar"
+    "ariaFechar": "Fechar",
+    "endereco": "R. Parigot de Souza, 180 — Foz do Iguaçu, PR"
   },
   "footer": {
     "pousadaLogoAlt": "Pousada Cataratas",
@@ -245,7 +246,8 @@
     "comoChegarTitle": "Como chegar",
     "comoChegarP": "A partir da pousada, veja o caminho até a atração, passo a passo.",
     "outrasTitle": "Outras atrações",
-    "mapaTitle": "Rota até a atração"
+    "mapaTitle": "Rota até a atração",
+    "cidade": "Foz do Iguaçu"
   },
   "promocaoProduct": {
     "falarWhatsapp": "Falar por WhatsApp",
@@ -312,6 +314,11 @@
   },
   "meta": {
     "titleSuffix": " | Pousada Cataratas",
+    "titleQuartos": "Acomodações | Pousada Cataratas",
+    "titleGaleria": "Galeria | Pousada Cataratas",
+    "titleAtracoes": "Atrações | Pousada Cataratas",
+    "titlePromocoes": "Promoções | Pousada Cataratas",
+    "titleBlog": "Blog | Pousada Cataratas",
     "homeTitle": "Pousada Cataratas — Hospedagem em Foz do Iguaçu",
     "description": "No coração de Foz do Iguaçu, a Pousada Cataratas é um refúgio aconchegante e encantador, perto dos principais pontos turísticos e da Tríplice Fronteira, com café da manhã e as melhores tarifas reservando direto.",
     "descQuartos": "Conheça os quartos da Pousada Cataratas em Foz do Iguaçu: duplo, triplo, quádruplo e quíntuplo, com ar-condicionado, Wi-Fi grátis e café da manhã.",
@@ -349,5 +356,36 @@
     "manageStatusAllowed": "Estado atual: cookies permitidas.",
     "manageStatusDenied": "Estado atual: cookies não essenciais recusadas.",
     "manageSaved": "Preferência salva."
+  },
+  "alts": {
+    "homeHero": "Fachada da Pousada Cataratas no coração de Foz do Iguaçu",
+    "homePiscina": "Piscina da Pousada Cataratas em Foz do Iguaçu, com espreguiçadeiras e área de descanso",
+    "homePiscinaJardim": "Área da piscina e jardim da Pousada Cataratas em Foz do Iguaçu",
+    "homeEntrada": "Entrada da Pousada Cataratas em Foz do Iguaçu",
+    "homeAreaExterna": "Área externa e jardim da Pousada Cataratas em Foz do Iguaçu",
+    "homeCafe": "Café da manhã da Pousada Cataratas em Foz do Iguaçu",
+    "homeCafeBuffet": "Café da manhã com pães, frios, frutas e sucos na Pousada Cataratas em Foz do Iguaçu",
+    "homeEstacionamento": "Estacionamento privativo da Pousada Cataratas em Foz do Iguaçu",
+    "homeAreaPiscina": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
+    "homeFachada": "Fachada da Pousada Cataratas em Foz do Iguaçu",
+    "homeJardimPiscina": "Jardim tropical e piscina da Pousada Cataratas em Foz do Iguaçu",
+    "homeCataratas": "Cataratas do Iguaçu com arco-íris, um dos principais passeios de Foz do Iguaçu",
+    "homeParqueAves": "Entrada do Parque das Aves em Foz do Iguaçu",
+    "homeCiudadEste": "Compras em Ciudad del Este, no Paraguai, perto de Foz do Iguaçu",
+    "homeMarcoFronteiras": "Marco das Três Fronteiras entre Brasil, Argentina e Paraguai em Foz do Iguaçu",
+    "atracoesBanner": "Cataratas do Iguaçu em Foz do Iguaçu",
+    "atracoesPiscina": "Piscina da Pousada Cataratas em Foz do Iguaçu",
+    "blogBanner": "Cataratas do Iguaçu vistas de um mirante em Foz do Iguaçu",
+    "galeriaBanner": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu",
+    "galeriaAreaPiscina": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
+    "galeriaQuartoDuplo": "Quarto Duplo da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesBanner": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesJardimPiscina": "Jardim e piscina da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesFachadaFrontal": "Fachada frontal da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesPiscinaGuardaSol": "Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesZoopark": "Menino acariciando uma cabra no Zoopark de Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas",
+    "promocoesPiscinaLazer": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu",
+    "promocoesMaratona": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026",
+    "quartosBanner": "Quartos da Pousada Cataratas em Foz do Iguaçu"
   }
 }

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  return pageMeta({ lang: loc, path: "/quartos", title: dict.quartosList.bannerTitle + dict.meta.titleSuffix, description: dict.meta.descQuartos, image: "/images/real/quartos/quarto-triplo-pousada-cataratas-foz-do-iguacu.webp" });
+  return pageMeta({ lang: loc, path: "/quartos", title: dict.meta.titleQuartos, description: dict.meta.descQuartos, image: "/images/real/quartos/quarto-triplo-pousada-cataratas-foz-do-iguacu.webp" });
 }
 
 // Reemplazo del <image-slot fit="cover"> del export.
@@ -41,9 +41,9 @@ export default async function Quartos({ params }: { params: Promise<{ lang: stri
       <section
         style={{ position: "relative", width: "100%", height: "40vh", minHeight: "300px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#143C7A" }}
       >
-        <SlotImg src="/images/real/quartos/quarto-triplo-pousada-cataratas-foz-do-iguacu.webp" alt="Quartos da Pousada Cataratas em Foz do Iguaçu" />
+        <SlotImg src="/images/real/quartos/quarto-triplo-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.quartosBanner} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,60,122,.46)" }} />
-        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "66px", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
+        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "clamp(32px, 8vw, 66px)", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
           {dict.quartosList.bannerTitle}
         </h1>
       </section>

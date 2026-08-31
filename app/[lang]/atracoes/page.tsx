@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  return pageMeta({ lang: loc, path: "/atracoes", title: dict.atracoesList.bannerTitle + dict.meta.titleSuffix, description: dict.meta.descAtracoes, image: "/images/real/atracoes/cataratas-do-iguacu-vista-aerea-foz-do-iguacu.webp" });
+  return pageMeta({ lang: loc, path: "/atracoes", title: dict.meta.titleAtracoes, description: dict.meta.descAtracoes, image: "/images/real/atracoes/cataratas-do-iguacu-vista-aerea-foz-do-iguacu.webp" });
 }
 
 // Reemplazo del <image-slot fit="cover"> del export.
@@ -41,9 +41,9 @@ export default async function Atracoes({ params }: { params: Promise<{ lang: str
       <section
         style={{ position: "relative", width: "100%", height: "40vh", minHeight: "300px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#143C7A" }}
       >
-        <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-vista-aerea-foz-do-iguacu.webp" alt="Cataratas do Iguaçu em Foz do Iguaçu" />
+        <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-vista-aerea-foz-do-iguacu.webp" alt={dict.alts.atracoesBanner} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,60,122,.46)" }} />
-        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "46px", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
+        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "clamp(30px, 7vw, 46px)", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
           {dict.atracoesList.bannerTitle}
         </h1>
       </section>
@@ -148,7 +148,7 @@ export default async function Atracoes({ params }: { params: Promise<{ lang: str
       {/* CTA BANNER */}
       <section style={{ margin: 0, padding: 0 }}>
         <div style={{ position: "relative", minHeight: "420px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-          <SlotImg src="/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp" alt="Piscina da Pousada Cataratas em Foz do Iguaçu" />
+          <SlotImg src="/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.atracoesPiscina} />
           <div style={{ position: "absolute", inset: 0, background: "rgba(11,24,46,.62)" }} />
           <div style={{ position: "relative", textAlign: "center", padding: "84px 24px", maxWidth: "760px", display: "flex", flexDirection: "column", alignItems: "center" }}>
             <span style={{ fontSize: "12px", letterSpacing: ".26em", textTransform: "uppercase", color: "rgba(255,255,255,.78)" }}>{dict.atracoesList.ctaEyebrow}</span>

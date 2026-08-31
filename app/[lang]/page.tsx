@@ -99,7 +99,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           className="pc-hero"
           style={{ position: "relative", borderRadius: 0, overflow: "hidden", height: "calc(100vh - var(--pch-h))", minHeight: "520px", background: "#143C7A" }}
         >
-          <SlotImg src="/images/real/home/pousada-cataratas-foz-do-iguacu-fachada.webp" alt="Fachada da Pousada Cataratas no coração de Foz do Iguaçu" priority />
+          <SlotImg src="/images/real/home/pousada-cataratas-foz-do-iguacu-fachada.webp" alt={dict.alts.homeHero} priority />
           <div
             style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(14,34,70,.5),rgba(9,22,46,.6))", pointerEvents: "none" }}
           />
@@ -145,7 +145,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="pc-relax">
         <div style={{ position: "relative", alignSelf: "start" }}>
           <div className="pc-relax-img">
-            <SlotImg src="/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Piscina da Pousada Cataratas em Foz do Iguaçu, com espreguiçadeiras e área de descanso" />
+            <SlotImg src="/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homePiscina} />
           </div>
           <div className="pc-relax-stat">
             <div style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 600, fontSize: "64px", lineHeight: 1 }}>{dict.home.relaxStatNum}</div>
@@ -239,14 +239,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
           <div className="pc-promo-mid">
             <div style={{ position: "relative", width: "100%", height: "100%", minHeight: "520px", overflow: "hidden", background: "#143C7A" }}>
-              <SlotImg src="/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp" alt="Área da piscina e jardim da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/piscina-jardim-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homePiscinaJardim} />
             </div>
           </div>
 
           <div className="pc-promo-right pc-promo-list">
             <div className="pc-promo-item">
               <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/entrada-pousada-cataratas-foz-do-iguacu.webp" alt="Entrada da Pousada Cataratas em Foz do Iguaçu" />
+                <SlotImg src="/images/real/home/entrada-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeEntrada} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem1Eyebrow}</span>
@@ -259,7 +259,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             <div className="pc-promo-item">
               <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp" alt="Área externa e jardim da Pousada Cataratas em Foz do Iguaçu" />
+                <SlotImg src="/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeAreaExterna} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem2Eyebrow}</span>
@@ -272,7 +272,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             <div className="pc-promo-item">
               <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/cafe-da-manha-pousada-cataratas-foz-do-iguacu.webp" alt="Café da manhã da Pousada Cataratas em Foz do Iguaçu" />
+                <SlotImg src="/images/real/home/cafe-da-manha-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeCafe} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
                 <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem3Eyebrow}</span>
@@ -289,7 +289,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="pc-feat2">
           <div className="pc-feat-card">
             <div className="pc-feat-ph">
-              <SlotImg src="/images/real/home/cafe-da-manha-buffet-pousada-cataratas-foz-do-iguacu.webp" alt="Café da manhã com pães, frios, frutas e sucos na Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/cafe-da-manha-buffet-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeCafeBuffet} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <span style={featTitle}>{dict.home.feat1Title}</span>
@@ -298,7 +298,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </div>
           <div className="pc-feat-card">
             <div className="pc-feat-ph">
-              <SlotImg src="/images/real/home/estacionamento-pousada-cataratas-foz-do-iguacu.webp" alt="Estacionamento privativo da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/estacionamento-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeEstacionamento} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <span style={featTitle}>{dict.home.feat2Title}</span>
@@ -313,10 +313,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="pc-str">
           <div className="pc-str-imgs">
             <div className="pc-str-imgA">
-              <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Área da piscina da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeAreaPiscina} />
             </div>
             <div className="pc-str-imgB">
-              <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt="Fachada da Pousada Cataratas em Foz do Iguaçu" />
+              <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeFachada} />
             </div>
             <div className="pc-str-stat">
               <div>
@@ -407,7 +407,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* ============ BANNER PROMO ============ */}
       <section className="pc-bnr">
         <div className="pc-bnr-img">
-          <SlotImg src="/images/real/home/jardim-piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Jardim tropical e piscina da Pousada Cataratas em Foz do Iguaçu" />
+          <SlotImg src="/images/real/home/jardim-piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeJardimPiscina} />
         </div>
         <div className="pc-bnr-ov" />
         <div className="pc-bnr-in">
@@ -466,7 +466,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="pc-news">
           <a href={localePath(lang, "/atracoes/cataratas")} className="pc-news-card pc-n-a" style={{ textDecoration: "none", color: "inherit" }}>
             <div style={{ position: "relative", flex: 1, minHeight: "120px", background: "#143C7A" }}>
-              <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-foz.webp" alt="Cataratas do Iguaçu com arco-íris, um dos principais passeios de Foz do Iguaçu" />
+              <SlotImg src="/images/real/atracoes/cataratas-do-iguacu-foz.webp" alt={dict.alts.homeCataratas} />
             </div>
             <div style={{ background: "#FFFFFF", boxShadow: "0 16px 40px rgba(20,33,51,.08)", padding: "22px 26px 26px", flex: "none" }}>
               <div className="pc-news-date" style={newsDate}>{dict.home.newsCard1Date}</div>
@@ -483,7 +483,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </svg>
           </div>
           <a href={localePath(lang, "/atracoes/parque-das-aves")} className="pc-news-card pc-n-relax" style={{ position: "relative", background: "#143C7A", minHeight: "160px", textDecoration: "none", color: "inherit" }}>
-            <SlotImg src="/images/real/atracoes/parque-das-aves-foz-do-iguacu.webp" alt="Entrada do Parque das Aves em Foz do Iguaçu" />
+            <SlotImg src="/images/real/atracoes/parque-das-aves-foz-do-iguacu.webp" alt={dict.alts.homeParqueAves} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(9,22,46,.78))", pointerEvents: "none" }} />
             <div style={{ position: "absolute", left: "24px", right: "24px", bottom: "24px" }}>
               <div className="pc-news-date" style={{ color: "#EDE6DA" }}>{dict.home.newsCard2Date}</div>
@@ -492,7 +492,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </a>
           <a href={localePath(lang, "/atracoes/compras-paraguai")} className="pc-news-card pc-n-around" style={{ textDecoration: "none", color: "inherit" }}>
             <div style={{ position: "relative", flex: 1, minHeight: "120px", background: "#143C7A" }}>
-              <SlotImg src="/images/real/atracoes/compras-ciudad-del-este-paraguai.webp" alt="Compras em Ciudad del Este, no Paraguai, perto de Foz do Iguaçu" />
+              <SlotImg src="/images/real/atracoes/compras-ciudad-del-este-paraguai.webp" alt={dict.alts.homeCiudadEste} />
             </div>
             <div style={{ background: "#FFFFFF", boxShadow: "0 16px 40px rgba(20,33,51,.08)", padding: "22px 26px 26px", flex: "none" }}>
               <div className="pc-news-date" style={newsDate}>{dict.home.newsCard3Date}</div>
@@ -508,7 +508,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </svg>
           </div>
           <a href={localePath(lang, "/atracoes/marco-tres-fronteiras")} className="pc-news-card pc-n-daily" style={{ position: "relative", background: "#143C7A", minHeight: "160px", textDecoration: "none", color: "inherit" }}>
-            <SlotImg src="/images/real/atracoes/marco-das-tres-fronteiras-foz-do-iguacu.webp" alt="Marco das Três Fronteiras entre Brasil, Argentina e Paraguai em Foz do Iguaçu" />
+            <SlotImg src="/images/real/atracoes/marco-das-tres-fronteiras-foz-do-iguacu.webp" alt={dict.alts.homeMarcoFronteiras} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(9,22,46,.78))", pointerEvents: "none" }} />
             <div style={{ position: "absolute", left: "24px", right: "24px", bottom: "24px" }}>
               <div className="pc-news-date" style={{ color: "#EDE6DA" }}>{dict.home.newsCard4Date}</div>

@@ -139,14 +139,14 @@ export default function Header() {
 
       {/* ===== FILA 1: faixa superior com os dados de contato =====
           O contato fica à direita e some no mobile (sobra só o selo Méritum).
-          Dados fixos (iguais nos 3 idiomas): endereço + telefone (tel:) + email
-          (mailto:). Ícones reaproveitados do próprio site. */}
+          Endereço vem do dicionário (o nome da cidade muda em es); telefone
+          (tel:) + email (mailto:) são fixos. Ícones reaproveitados do site. */}
       <div className="pch-topbar">
         <div className="pch-topbar-inner">
           <div className="pch-contact">
             <span className="pch-ci">
               <svg viewBox="0 0 24 24" aria-hidden><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" /></svg>
-              <span>R. Parigot de Souza, 180 — Foz do Iguaçu, PR</span>
+              <span>{dict.header.endereco}</span>
             </span>
             <a href="tel:+5508000029215">
               <svg viewBox="0 0 24 24" aria-hidden><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.5-1 1-1h3.5c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1l-2.2 2.3Z" /></svg>

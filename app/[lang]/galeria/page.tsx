@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  return pageMeta({ lang: loc, path: "/galeria", title: dict.galeria.bannerTitle + dict.meta.titleSuffix, description: dict.meta.descGaleria, image: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" });
+  return pageMeta({ lang: loc, path: "/galeria", title: dict.meta.titleGaleria, description: dict.meta.descGaleria, image: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" });
 }
 
 // Reemplazo del <image-slot fit="cover"> del export.
@@ -39,9 +39,9 @@ export default async function Galeria({ params }: { params: Promise<{ lang: stri
       <section
         style={{ position: "relative", width: "100%", height: "40vh", minHeight: "300px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#143C7A" }}
       >
-        <SlotImg src="/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu" />
+        <SlotImg src="/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.galeriaBanner} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(20,60,122,.46)" }} />
-        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "66px", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
+        <h1 style={{ position: "relative", fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "clamp(32px, 8vw, 66px)", lineHeight: 1, color: "#FFFFFF", textAlign: "center", margin: 0, padding: "0 22px" }}>
           {dict.galeria.bannerTitle}
         </h1>
       </section>
@@ -55,7 +55,7 @@ export default async function Galeria({ params }: { params: Promise<{ lang: stri
             </h2>
             <div className="gp-cards">
               <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden", background: "#143C7A" }}>
-                <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt="Área da piscina da Pousada Cataratas em Foz do Iguaçu" />
+                <SlotImg src="/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.galeriaAreaPiscina} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(9,22,46,.7))" }} />
                 <div style={{ position: "absolute", left: 0, right: 0, bottom: "22px", textAlign: "center", color: "#FFFFFF" }}>
                   <div style={{ fontSize: "22px", lineHeight: 1.1 }}>{dict.galeria.card1Title}</div>
@@ -63,7 +63,7 @@ export default async function Galeria({ params }: { params: Promise<{ lang: stri
                 </div>
               </div>
               <div style={{ position: "relative", aspectRatio: "1/1", overflow: "hidden", background: "#143C7A" }}>
-                <SlotImg src="/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp" alt="Quarto Duplo da Pousada Cataratas em Foz do Iguaçu" />
+                <SlotImg src="/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.galeriaQuartoDuplo} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(9,22,46,.7))" }} />
                 <div style={{ position: "absolute", left: 0, right: 0, bottom: "22px", textAlign: "center", color: "#FFFFFF" }}>
                   <div style={{ fontSize: "22px", lineHeight: 1.1 }}>{dict.galeria.card2Title}</div>

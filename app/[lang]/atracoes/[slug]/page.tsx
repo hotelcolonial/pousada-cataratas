@@ -105,7 +105,7 @@ export default async function Atracao({ params }: { params: Promise<{ lang: stri
             <span style={{ display: "inline-flex", color: "#C79A6A" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z" /><circle cx="12" cy="10" r="2.4" /></svg>
             </span>
-            <span style={{ fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", color: "#5C6B7A" }}>{a.eyebrow} · Foz do Iguaçu</span>
+            <span style={{ fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", color: "#5C6B7A" }}>{a.eyebrow} · {dict.atracaoDetail.cidade}</span>
           </div>
         </header>
 

@@ -21,7 +21,7 @@ const PROMO: Record<string, Promo> = {
   },
   es: {
     src: `${BASE}-es.webp`,
-    alt: "Promoción de agosto: hospédate en Pousada Cataratas en Foz do Iguaçu y gana 2 entradas gratis al Zoopark",
+    alt: "Promoción de agosto: hospédate en Pousada Cataratas en Foz de Iguazú y gana 2 entradas gratis al Zoopark",
     close: "Cerrar",
   },
   en: {
