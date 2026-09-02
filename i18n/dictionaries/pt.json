@@ -387,5 +387,19 @@
     "promocoesPiscinaLazer": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu",
     "promocoesMaratona": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026",
     "quartosBanner": "Quartos da Pousada Cataratas em Foz do Iguaçu"
+  },
+  "promoSazonal": {
+    "eyebrow": "Desfrute",
+    "name": "Setembro Encantador",
+    "sub": "02 ingressos ao Zoopark grátis · 10% OFF",
+    "altHome": "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
+    "altCard": "Menino acariciando uma cabra no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas"
+  },
+  "promoPerene": {
+    "eyebrow": "Planeje",
+    "name": "Reserva antecipada",
+    "sub": "Reservando com antecedência · 12% OFF",
+    "altHome": "Fachada da Pousada Cataratas vista da rua em Foz do Iguaçu",
+    "altCard": "Fachada com palmeiras da Pousada Cataratas em Foz do Iguaçu"
   }
 }

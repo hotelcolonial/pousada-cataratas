@@ -11,6 +11,7 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
 import { BOOKING_BASE } from "@/lib/booking";
+import { PROMO_SAZONAL, promoSlot, PROMO_BTN_BG } from "@/lib/promos";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -76,6 +77,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
+  // Slot sazonal da home: promo de temporada ou promo perene (ver lib/promos.ts).
+  const slotTxt = PROMO_SAZONAL.ativa ? dict.promoSazonal : dict.promoPerene;
   const rgCards = getRgCards(loc);
   return (
     <div
@@ -259,13 +262,13 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
             <div className="pc-promo-item">
               <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeAreaExterna} />
+                <SlotImg src={promoSlot.imgHome} alt={slotTxt.altHome} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
-                <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem2Eyebrow}</span>
-                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem2Name}</span>
+                <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{slotTxt.eyebrow}</span>
+                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{slotTxt.name}</span>
               </div>
-              <a href={localePath(lang, "/promocao/agosto-encantador")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#C79A6A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
+              <a href={localePath(lang, "/promocao/" + promoSlot.slug)} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: PROMO_BTN_BG[promoSlot.cor], whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
             </div>
 
             <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />

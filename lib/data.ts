@@ -794,6 +794,15 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     waMessage: "Olá, vim do site e tenho interesse na promoção da Maratona de Foz 2026",
     booking: MARATONA_2026_OFFER,
   },
+  "setembro-encantador": {
+    name: "Setembro Encantador",
+    banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
+    foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
+    fotoAlt: "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
+    desc1: "Setembro é o mês de respirar fundo em Foz do Iguaçu: dias mais leves, o verde da região no ponto e a cidade sem a correria da alta temporada. Hospede-se com a gente e ganhe dois ingressos para o Zoopark, além de 10% de desconto na diária.",
+    desc2: "Os dois ingressos ao Zoopark são cortesia, sem estadia mínima: valem para qualquer reserva feita entre 01 e 30 de setembro de 2026. A diária já inclui café da manhã, Wi-Fi grátis e estacionamento gratuito. Fale com a nossa equipe e garanta a sua reserva.",
+    waMessage: "Olá, vim do site e tenho interesse na promoção Setembro Encantador",
+  },
   "agosto-encantador": {
     name: "Agosto Encantador",
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",

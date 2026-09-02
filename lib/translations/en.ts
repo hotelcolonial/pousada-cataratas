@@ -519,6 +519,12 @@ export const en: LocaleContent = {
       desc1: "Your base for the Foz do Iguaçu International Marathon 2026. In the heart of Foz, close to everything and away from the noise: the ideal starting point for your best race. 100m from Avenida das Cataratas, with free on-site parking.",
       desc2: "Breakfast from 4 am on race day and, booking 2 nights, late check-out until 2 pm. Use the coupon **CORRIDA26** and get 10% OFF your stay. Limited spots for race week.",
     },
+    "setembro-encantador": {
+      name: "Enchanting September",
+      fotoAlt: "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
+      desc1: "September is the month to breathe out in Foz do Iguaçu: milder days, the region at its greenest and the city without the high-season rush. Stay with us and get two tickets to Zoopark, plus 10% off your nightly rate.",
+      desc2: "The two Zoopark tickets are on us, with no minimum stay: they apply to any booking made between 1 and 30 September 2026. The rate already includes breakfast, free Wi-Fi and free parking. Talk to our team and secure your booking.",
+    },
     "agosto-encantador": {
       name: "Agosto Encantador",
       fotoAlt: "Children feeding goats at the Zoopark in Foz do Iguaçu — Agosto Encantador offer at Pousada Cataratas",

@@ -3,13 +3,17 @@
 import { useEffect, useState } from "react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { BOOKING_BASE } from "@/lib/booking";
+import { PROMO_POPUP } from "@/lib/promos";
 
-// Pop-up promocional de la Home ("hospede-se em agosto e ganhe 2 entradas ao
-// Zoopark"). Imagen localizada (pt/es/en), con título/alt SEO semántico. Al
-// hacer click lleva al motor de reservas. Se muestra SIEMPRE que se carga la
-// Home (primera visita y cada refresh).
+// Pop-up promocional de la Home. Imagen localizada (pt/es/en), con título/alt
+// SEO semántico. Al hacer click lleva al motor de reservas. Se muestra SIEMPRE
+// que se carga la Home (primera visita y cada refresh).
+//
+// El interruptor y la ruta de la imagen viven en lib/promos.ts (PROMO_POPUP),
+// junto al resto de la configuración de promociones: la arte lleva el mes y el
+// parque impresos, así que caduca con la promoción.
 
-const BASE = "/images/real/home/promo-agosto-zoopark-entradas-gratis-pousada-cataratas-foz-do-iguacu";
+const BASE = PROMO_POPUP.base;
 
 type Promo = { src: string; alt: string; close: string };
 
@@ -37,7 +41,9 @@ export default function PromoPopup() {
   const [open, setOpen] = useState(false);
 
   // Al entrar/refrescar la Home: mostrar tras un breve retraso, siempre.
+  // Con PROMO_POPUP.ativo en false no se programa nada y el pop-up no aparece.
   useEffect(() => {
+    if (!PROMO_POPUP.ativo) return;
     const t = setTimeout(() => setOpen(true), 700);
     return () => clearTimeout(t);
   }, []);

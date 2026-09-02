@@ -546,6 +546,12 @@ export const es: LocaleContent = {
       desc1: "Tu base para el Maratón Internacional de Foz de Iguazú 2026. En el corazón de Foz, cerca de todo y lejos del ruido: el punto de partida ideal para tu mejor carrera. A 100m de la Avenida das Cataratas, con estacionamiento gratuito en el lugar.",
       desc2: "Desayuno a partir de las 04h el día de la carrera y, reservando 02 noches, late check-out hasta las 14h. Usa el cupón **CORRIDA26** y obtén un 10% OFF en tu hospedaje. Cupos limitados para la semana de la prueba.",
     },
+    "setembro-encantador": {
+      name: "Septiembre Encantador",
+      fotoAlt: "Niños con animales en el Zoopark de Foz de Iguazú — promoción Septiembre Encantador de la Pousada Cataratas",
+      desc1: "Septiembre es el mes de respirar hondo en Foz de Iguazú: días más templados, el verde de la región en su punto y la ciudad sin el ajetreo de la temporada alta. Alójate con nosotros y gana dos entradas al Zoopark, además de un 10% de descuento en la tarifa.",
+      desc2: "Las dos entradas al Zoopark son cortesía, sin estadía mínima: valen para cualquier reserva hecha entre el 01 y el 30 de septiembre de 2026. La tarifa ya incluye desayuno, Wi-Fi gratis y estacionamiento gratis. Habla con nuestro equipo y garantiza tu reserva.",
+    },
     "agosto-encantador": {
       name: "Agosto Encantador",
       fotoAlt: "Niños alimentando cabras en el Zoopark de Foz de Iguazú — promoción Agosto Encantador de Pousada Cataratas",

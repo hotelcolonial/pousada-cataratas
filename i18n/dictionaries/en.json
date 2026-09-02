@@ -356,5 +356,19 @@
     "manageStatusAllowed": "Current status: cookies allowed.",
     "manageStatusDenied": "Current status: non-essential cookies rejected.",
     "manageSaved": "Preference saved."
+  },
+  "promoSazonal": {
+    "eyebrow": "Enjoy",
+    "name": "Enchanting September",
+    "sub": "2 free Zoopark tickets · 10% OFF",
+    "altHome": "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
+    "altCard": "Boy petting a goat at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas"
+  },
+  "promoPerene": {
+    "eyebrow": "Plan ahead",
+    "name": "Early booking",
+    "sub": "Booking in advance · 12% OFF",
+    "altHome": "Facade of Pousada Cataratas seen from the street in Foz do Iguaçu",
+    "altCard": "Palm-lined facade of Pousada Cataratas in Foz do Iguaçu"
   }
 }
