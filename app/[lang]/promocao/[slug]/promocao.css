@@ -1,18 +1,76 @@
 /* ============================================================================
-   produto.css — bloque <style> del helmet de "Produto.dc.html", copiado TAL CUAL
-   (clases y media queries sin cambios). Se omiten reset/body/@font-face (ya en
-   globals.css / next/font). Se conserva el ::selection propio (#F0871F).
+   promocao.css — plantilla de detalhe de promoção. Uma só folha para todas as
+   promos: banner → destaque + foto → benefícios → descrição/botões → galeria.
+   Cores de marca: azul #143C7A, dourado #C79A6A, fundo quente #FBFAF8.
    ============================================================================ */
   ::selection{background:#F0871F;color:#FFFFFF}
   a{color:inherit}
-  .pp-prod{max-width:1240px;margin:0 auto;padding:72px 22px;display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
-  .pp-rel{max-width:1240px;margin:0 auto;padding:0 22px 96px}
+
+  /* ---------- BANNER ---------- */
+  .pp-banner{position:relative;width:100%;min-height:340px;height:44vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#143C7A}
+  .pp-banner-hook{font-family:var(--font-gilda),Georgia,serif;font-style:italic}
+
+  /* ---------- DESTAQUE + IMAGEM PROTAGONISTA ----------
+     Em telemóvel a foto vem primeiro e a caixa do destaque encaixa por baixo,
+     sobrepondo-se um pouco. Em desktop ficam lado a lado, com a caixa a
+     avançar sobre a foto — o número grande é o primeiro ponto de fixação. */
+  .pp-destaque{max-width:1240px;margin:0 auto;padding:56px 22px 0;display:grid;grid-template-columns:1fr;gap:0}
+  .pp-destaque-foto{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#143C7A}
+  .pp-destaque-caixa{position:relative;z-index:2;margin:-40px 16px 0;padding:36px 28px;background:#143C7A;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 26px 60px -34px rgba(20,33,51,.75)}
+  .pp-destaque-label{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.66)}
+  .pp-destaque-valor{font-family:var(--font-hnc),'Helvetica Neue',sans-serif;font-weight:300;font-size:76px;line-height:.9;color:#C79A6A;margin:14px 0 0}
+  .pp-destaque-nota{font-size:14px;line-height:1.5;color:rgba(255,255,255,.82);margin:16px 0 0;max-width:290px}
+  /* filete dourado curto por cima da nota */
+  .pp-destaque-nota::before{content:"";display:block;width:38px;height:1px;background:rgba(199,154,106,.9);margin:0 auto 16px}
+
+  /* ---------- BENEFÍCIOS ---------- */
+  .pp-benef{background:#FBFAF8;margin-top:56px;padding:62px 22px}
+  .pp-benef-h{font-size:30px}
+  .pp-benef-grid{max-width:1240px;margin:40px auto 0;display:grid;grid-template-columns:1fr;gap:16px}
+  .pp-benef-card{display:flex;align-items:center;gap:16px;background:#FFFFFF;border:1px solid rgba(20,60,122,.09);padding:22px 22px;transition:border-color .18s,box-shadow .18s,transform .18s}
+  .pp-benef-card:hover{border-color:rgba(199,154,106,.55);box-shadow:0 16px 34px -26px rgba(20,33,51,.5);transform:translateY(-2px)}
+
+  /* ---------- DESCRIÇÃO + BOTÕES + LETRA MIÚDA ---------- */
+  .pp-cta{max-width:720px;margin:0 auto;padding:62px 22px 8px;text-align:center}
+  .pp-cta-desc{font-family:var(--font-gilda),Georgia,serif;font-size:22px;line-height:1.6;color:#3A4654;margin:0}
+  .pp-cta-botoes{display:grid;grid-template-columns:1fr;gap:14px;margin-top:38px}
+  .pp-wa{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;background:#143C7A;color:#FFFFFF;text-decoration:none;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:filter .15s ease}
+  .pp-resv{display:flex;align-items:center;justify-content:center;height:56px;background:#C79A6A;color:#FFFFFF;text-decoration:none;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:filter .15s ease}
+  .pp-cta-obs{font-size:12px;line-height:1.6;color:#9AA3AD;margin:22px 0 0}
+
+  /* ---------- GALERIA + RELACIONADOS ---------- */
+  .pp-galeria{max-width:1240px;margin:56px auto 0;padding:0 22px;display:grid;grid-template-columns:1fr;gap:26px}
+  .pp-rel{max-width:1240px;margin:0 auto;padding:62px 22px 96px}
   .pp-rel-grid{display:grid;grid-template-columns:1fr;gap:26px}
-  @media(min-width:640px){.pp-rel-grid{grid-template-columns:1fr 1fr!important}}
+
+  @media(min-width:640px){
+    .pp-benef-grid{grid-template-columns:1fr 1fr!important}
+    .pp-cta-botoes{grid-template-columns:1fr 1fr!important}
+    .pp-galeria{grid-template-columns:1fr 1fr!important}
+    .pp-rel-grid{grid-template-columns:1fr 1fr!important}
+  }
+
   @media(min-width:900px){
+    .pp-banner{height:52vh;min-height:420px}
     .pp-banner-h1{font-size:66px!important}
-    .pp-prod{grid-template-columns:1fr 0.9fr!important;gap:64px!important;padding:104px 40px!important}
-    .pp-rel{padding:0 40px 120px!important}
+    .pp-banner-hook{font-size:20px!important}
+
+    /* foto larga à esquerda, caixa do destaque a avançar por cima dela */
+    .pp-destaque{grid-template-columns:1fr 380px!important;align-items:center;gap:0!important;padding:96px 40px 0!important}
+    .pp-destaque-foto{aspect-ratio:16/11!important}
+    .pp-destaque-caixa{margin:0 0 0 -80px!important;padding:56px 40px!important}
+    .pp-destaque-valor{font-size:104px!important}
+
+    .pp-benef{margin-top:96px!important;padding:96px 40px!important}
+    .pp-benef-h{font-size:42px!important}
+    .pp-benef-grid{grid-template-columns:repeat(3,1fr)!important;gap:20px!important;margin-top:54px!important}
+    .pp-benef-card{padding:26px 24px!important}
+
+    .pp-cta{padding:96px 40px 8px!important}
+    .pp-cta-desc{font-size:26px!important}
+
+    .pp-galeria{margin-top:88px!important;padding:0 40px!important;gap:30px!important}
+    .pp-rel{padding:96px 40px 120px!important}
     .pp-rel-grid{grid-template-columns:repeat(4,1fr)!important;gap:30px!important}
     .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
   }

@@ -5,7 +5,7 @@ import {
   quartoRooms,
   atracaoDetails,
   artigoDetails,
-  promocaoDetails,
+  PROMOCOES_SLUG_LEGADO,
   produtoDetails,
 } from "@/lib/data";
 
@@ -26,7 +26,7 @@ function allPaths(): string[] {
   Object.keys(quartoRooms).forEach((s) => paths.push(`/quartos/${s}`));
   Object.keys(atracaoDetails).forEach((s) => paths.push(`/atracoes/${s}`));
   Object.keys(artigoDetails).forEach((s) => paths.push(`/blog/${s}`));
-  Object.keys(promocaoDetails).forEach((s) => paths.push(`/promocoes/${s}`));
+  PROMOCOES_SLUG_LEGADO.forEach((s) => paths.push(`/promocoes/${s}`));
   Object.keys(produtoDetails).forEach((s) => paths.push(`/promocao/${s}`));
   return paths;
 }

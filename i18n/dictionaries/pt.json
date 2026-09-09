@@ -97,6 +97,9 @@
     "mapaTitle": "Mapa Pousada Cataratas"
   },
   "home": {
+    "ofertasEyebrow": "Ofertas especiais",
+    "ofertasTitle": "Aproveite nossas ofertas",
+    "ofertasVerTodas": "Ver todas as ofertas",
     "heroEyebrow": "ACONCHEGO E CONFORTO · PERTO DOS PRINCIPAIS ATRATIVOS",
     "heroTitleA": "Sua estadia perfeita",
     "heroTitleB": "em Foz do Iguaçu",
@@ -122,12 +125,6 @@
     "promoHA": "Confira as",
     "promoHB": "Promoções",
     "promoP": "Falando diretamente conosco, você garante tarifas especiais, café da manhã incluso e a comodidade de estar perto de tudo que Foz do Iguaçu tem para oferecer.",
-    "promoItem1Eyebrow": "Promoção",
-    "promoItem1Name": "Tarifa Morador",
-    "promoItem2Eyebrow": "Desfrute",
-    "promoItem2Name": "Agosto Encantador",
-    "promoItem3Eyebrow": "Aproveite",
-    "promoItem3Name": "Day Use",
     "verMais": "Ver mais",
     "feat1Title": "Café da Manhã",
     "feat1Desc": "Frutas frescas, pães caseiros e sabores típicos da região servidos todas as manhãs com vista para o jardim.",
@@ -250,6 +247,7 @@
     "cidade": "Foz do Iguaçu"
   },
   "promocaoProduct": {
+    "inclusoEyebrow": "Tudo o que vem junto",
     "falarWhatsapp": "Falar por WhatsApp",
     "reservarAgora": "Reservar agora",
     "relTitle": "Você também pode gostar",
@@ -302,14 +300,6 @@
     "link1": "Termos e condições",
     "link2": "Tarifas e cancelamento",
     "link3": "Todas as promoções",
-    "card1Name": "Tarifa Morador",
-    "card1Sub": "Para moradores de Foz e região · 25% off",
-    "card2Name": "Agosto Encantador",
-    "card2Sub": "Com dois ingressos ao Zoopark",
-    "card3Name": "Day Use",
-    "card3Sub": "Aproveite a pousada por um dia · R$ 90",
-    "card4Name": "Maratona de Foz 2026",
-    "card4Sub": "Cupom CORRIDA26 · 10% off",
     "cardCta": "Reservar"
   },
   "meta": {
@@ -361,9 +351,7 @@
     "homeHero": "Fachada da Pousada Cataratas no coração de Foz do Iguaçu",
     "homePiscina": "Piscina da Pousada Cataratas em Foz do Iguaçu, com espreguiçadeiras e área de descanso",
     "homePiscinaJardim": "Área da piscina e jardim da Pousada Cataratas em Foz do Iguaçu",
-    "homeEntrada": "Entrada da Pousada Cataratas em Foz do Iguaçu",
     "homeAreaExterna": "Área externa e jardim da Pousada Cataratas em Foz do Iguaçu",
-    "homeCafe": "Café da manhã da Pousada Cataratas em Foz do Iguaçu",
     "homeCafeBuffet": "Café da manhã com pães, frios, frutas e sucos na Pousada Cataratas em Foz do Iguaçu",
     "homeEstacionamento": "Estacionamento privativo da Pousada Cataratas em Foz do Iguaçu",
     "homeAreaPiscina": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
@@ -382,24 +370,50 @@
     "promocoesBanner": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
     "promocoesJardimPiscina": "Jardim e piscina da Pousada Cataratas em Foz do Iguaçu",
     "promocoesFachadaFrontal": "Fachada frontal da Pousada Cataratas em Foz do Iguaçu",
-    "promocoesPiscinaGuardaSol": "Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu",
-    "promocoesZoopark": "Menino acariciando uma cabra no Zoopark de Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas",
-    "promocoesPiscinaLazer": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu",
-    "promocoesMaratona": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026",
     "quartosBanner": "Quartos da Pousada Cataratas em Foz do Iguaçu"
   },
-  "promoSazonal": {
-    "eyebrow": "Desfrute",
-    "name": "Setembro Encantador",
-    "sub": "02 ingressos ao Zoopark grátis · 10% OFF",
-    "altHome": "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
-    "altCard": "Menino acariciando uma cabra no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas"
-  },
-  "promoPerene": {
-    "eyebrow": "Planeje",
-    "name": "Reserva antecipada",
-    "sub": "Reservando com antecedência · 12% OFF",
-    "altHome": "Fachada da Pousada Cataratas vista da rua em Foz do Iguaçu",
-    "altCard": "Fachada com palmeiras da Pousada Cataratas em Foz do Iguaçu"
+  "promos": {
+    "morador": {
+      "eyebrow": "Promoção",
+      "name": "Tarifa Morador",
+      "sub": "Para moradores de Foz e região · 25% OFF",
+      "altHome": "Entrada da Pousada Cataratas em Foz do Iguaçu",
+      "altCard": "Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu"
+    },
+    "sazonal": {
+      "eyebrow": "Desfrute",
+      "name": "Setembro Encantador",
+      "sub": "02 ingressos ao Zoopark grátis · 10% OFF",
+      "altHome": "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
+      "altCard": "Menino acariciando uma cabra no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas"
+    },
+    "perene": {
+      "eyebrow": "Planeje",
+      "name": "Reserva antecipada",
+      "sub": "Reservando com antecedência · 12% OFF",
+      "altHome": "Fachada da Pousada Cataratas vista da rua em Foz do Iguaçu",
+      "altCard": "Fachada com palmeiras da Pousada Cataratas em Foz do Iguaçu"
+    },
+    "day-use": {
+      "eyebrow": "Aproveite",
+      "name": "Day Use",
+      "sub": "Aproveite a pousada por um dia · R$ 90",
+      "altHome": "Café da manhã da Pousada Cataratas em Foz do Iguaçu",
+      "altCard": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu"
+    },
+    "maratona-2026": {
+      "eyebrow": "Prepare-se",
+      "name": "Maratona de Foz 2026",
+      "sub": "Cupom CORRIDA26 · 10% OFF",
+      "altHome": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026",
+      "altCard": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026"
+    },
+    "longa-estadia": {
+      "eyebrow": "Fique mais",
+      "name": "Pacote Longa Estadia",
+      "sub": "A partir de 05 diárias · transporte ao Paraguai e almoço",
+      "altHome": "Buffet de almoço do restaurante Aipim Gastronomia — Pacote Longa Estadia da Pousada Cataratas em Foz do Iguaçu",
+      "altCard": "Buffet de almoço do restaurante Aipim Gastronomia — Pacote Longa Estadia da Pousada Cataratas em Foz do Iguaçu"
+    }
   }
 }

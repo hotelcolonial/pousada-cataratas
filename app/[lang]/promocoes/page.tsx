@@ -5,7 +5,8 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
-import { PROMO_SAZONAL, promoSlot, PROMO_BTN_BG } from "@/lib/promos";
+import { promosAtivas, promoTexto } from "@/lib/promos";
+import PromoCard from "@/components/promo/PromoCard";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -31,8 +32,6 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  // Slot sazonal da grelha: promo de temporada ou promo perene (ver lib/promos.ts).
-  const slotTxt = PROMO_SAZONAL.ativa ? dict.promoSazonal : dict.promoPerene;
   return (
     <>
       <JsonLd data={breadcrumbLd(loc, [{ name: dict.nav.inicio, path: "/" }, { name: dict.nav.promocoes, path: "/promocoes" }])} />
@@ -95,50 +94,18 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
       </section>
 
       {/* GRID 3 PROMOÇÕES */}
+      {/* GRELHA DE PROMOÇÕES — a lista vive em lib/promos.ts */}
       <section id="ofertas" className="pr-cards" style={{ scrollMarginTop: "90px" }}>
-        <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesPiscinaGuardaSol} />
-          </div>
-          <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
-            <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card1Name}</h3>
-            <div style={{ fontSize: "14px", color: "#7A8694", margin: "14px 0 24px" }}>{dict.promocoesList.card1Sub}</div>
-            <a href={localePath(lang, "/promocao/morador")} style={{ marginTop: "auto", display: "inline-block", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
-          </div>
-        </div>
-
-        <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src={promoSlot.imgCard} alt={slotTxt.altCard} />
-          </div>
-          <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
-            <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{slotTxt.name}</h3>
-            <div style={{ fontSize: "14px", color: "#7A8694", margin: "14px 0 24px" }}>{slotTxt.sub}</div>
-            <a href={localePath(lang, "/promocao/" + promoSlot.slug)} style={{ marginTop: "auto", display: "inline-block", background: PROMO_BTN_BG[promoSlot.cor], color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
-          </div>
-        </div>
-
-        <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesPiscinaLazer} />
-          </div>
-          <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
-            <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card3Name}</h3>
-            <div style={{ fontSize: "14px", color: "#7A8694", margin: "14px 0 24px" }}>{dict.promocoesList.card3Sub}</div>
-            <a href={localePath(lang, "/promocao/day-use")} style={{ marginTop: "auto", display: "inline-block", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
-          </div>
-        </div>
-
-        <div style={{ background: "#FFFFFF", boxShadow: "0 18px 44px -28px rgba(20,33,51,.4)", display: "flex", flexDirection: "column" }}>
-          <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden", background: "#143C7A" }}>
-            <SlotImg src="/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.promocoesMaratona} />
-          </div>
-          <div style={{ padding: "38px 30px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", flex: 1 }}>
-            <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.08, color: "#143C7A", margin: 0 }}>{dict.promocoesList.card4Name}</h3>
-            <div style={{ fontSize: "14px", color: "#7A8694", margin: "14px 0 24px" }}>{dict.promocoesList.card4Sub}</div>
-            <a href={localePath(lang, "/promocao/maratona-2026")} style={{ marginTop: "auto", display: "inline-block", background: "#C79A6A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "14px 28px" }}>{dict.promocoesList.cardCta}</a>
-          </div>
-        </div>
+        {promosAtivas().map((p) => (
+          <PromoCard
+            key={p.slug}
+            promo={p}
+            texto={promoTexto(dict, p)}
+            cta={dict.promocoesList.cardCta}
+            lang={lang}
+            className="pr-card"
+          />
+        ))}
       </section>
 
       {/* ============ LOCALIZAÇÃO ============ */}

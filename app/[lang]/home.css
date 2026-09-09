@@ -57,6 +57,24 @@
   .pc-nav-d a{padding:6px 0;margin:0 14px;border-radius:0;color:rgba(255,255,255,.72);text-decoration:none;font-size:12px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:color .15s}
   .pc-nav-d a:hover{background:transparent;color:#FFFFFF}
   .pc-h2{color:#143C7A}
+  /* Ofertas em destaque — primeira secção depois do hero. Mesmas margens
+     largas do resto da home (.pc-relax/.pc-rg): 1 coluna em telemóvel, 2 em
+     tablet e 3 em desktop, que é o número de promos com `destaque`. */
+  .pc-ofertas{max-width:1280px;margin:0 auto;padding:80px 22px 88px}
+  .pc-ofertas-head{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .pc-ofertas-h{font-size:38px}
+  .pc-ofertas-grid{display:grid;grid-template-columns:1fr;gap:30px;margin-top:52px}
+  /* Link discreto para a página completa: dourado, com a seta a deslizar. */
+  .pc-ofertas-todas{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border:1px solid #C79A6A;color:#C79A6A;background:transparent;text-decoration:none;font-size:12px;letter-spacing:.22em;text-transform:uppercase;transition:background .18s,color .18s}
+  .pc-ofertas-todas svg{transition:transform .18s}
+  .pc-ofertas-todas:hover{background:#C79A6A;color:#FFFFFF}
+  .pc-ofertas-todas:hover svg{transform:translateX(4px)}
+  @media(min-width:640px){.pc-ofertas-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){
+    .pc-ofertas{padding:110px 40px 120px}
+    .pc-ofertas-h{font-size:56px}
+    .pc-ofertas-grid{grid-template-columns:repeat(3,1fr);gap:34px;margin-top:64px}
+  }
   .pc-relax{max-width:1280px;margin:0 auto;padding:96px 30px;display:grid;grid-template-columns:1fr;gap:54px}
   .pc-relax-img{position:relative;width:100%;aspect-ratio:3/4;background:#143C7A;overflow:hidden}
   .pc-relax-stat{position:absolute;left:-30px;bottom:-30px;width:150px;height:150px;background:#C79A6A;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}

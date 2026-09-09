@@ -1,5 +1,13 @@
 import type { LocaleContent } from "./types";
 import { MARATONA_2026_BOOKING_URL } from "@/lib/booking";
+import type { ProdutoDetail } from "@/lib/data";
+
+// Nested arrays only carry the translatable TEXT fields (src comes from the pt
+// base through the element-wise merge). The strict base type needs the cast.
+const photos = (alts: string[]) =>
+  alts.map((alt) => ({ alt })) as unknown as ProdutoDetail["galeria"];
+const textos = (valores: string[]) =>
+  valores.map((texto) => ({ texto })) as unknown as ProdutoDetail["beneficios"];
 
 // English (first draft) translation overrides. Keys match the pt base in
 // lib/data.ts (id/slug/label/name/href). Only translatable text fields are
@@ -448,91 +456,122 @@ export const en: LocaleContent = {
     ],
   },
 
-  // ============================ Detalle Promoção ============================
-  promocoes: {
-    "longa-estadia": {
-      name: "Long stay package",
-      sub: "From 5 nights",
-      validity: "Valid for stays of 5 nights or more",
-      desc: "Stay more days and pay less. Ideal for those who want to explore Foz do Iguaçu at a leisurely pace, enjoying every attraction without rushing and with the comfort of the guesthouse as a base.",
-      desc2: "The more nights, the better the rate. Talk to our team and put together the perfect stay for your trip.",
-      conditions: [
-        "Breakfast included",
-        "Free Wi-Fi throughout the guesthouse",
-        "Private parking",
-        "Best rate guaranteed",
-      ],
-    },
-    "morador": {
-      name: "Resident rate",
-      sub: "For residents of Foz and region",
-      validity: "Upon proof of address",
-      desc: "A special deal for those who live in Foz do Iguaçu and the region and want to enjoy a getaway close to home, with all the facilities and the warm service of the guesthouse.",
-      desc2: "Present your proof of address when booking and get 25% off the rate, exclusive for residents of Foz do Iguaçu and the region. 1 child up to 5 years old is free.",
-      conditions: [
-        "Breakfast included",
-        "Free Wi-Fi throughout the guesthouse",
-        "Private parking",
-        "Proof of address",
-      ],
-    },
-    "antecipada": {
-      name: "Early booking",
-      sub: "By booking in advance",
-      validity: "Bookings made 30 days in advance",
-      desc: "Plan your trip in advance and save. Those who book ahead secure the best rate and the peace of mind of having everything ready for the trip.",
-      desc2: "Book at least 30 days in advance and enjoy the exclusive discount.",
-      conditions: [
-        "Breakfast included",
-        "Free Wi-Fi throughout the guesthouse",
-        "Private parking",
-        "Flexible cancellation",
-      ],
-    },
-  },
 
-  // ============================ Detalle Produto ============================
   produtos: {
     "longa-estadia": {
-      name: "Long stay package",
-      desc1: "Stay more days and pay less. Ideal for those who want to explore Foz do Iguaçu at a leisurely pace, enjoying every attraction without rushing and with the comfort of the guesthouse as a base to visit the Falls, the Bird Park and the surroundings.",
-      desc2: "From 5 nights you get up to 15% off. The nightly rate already includes breakfast, free Wi-Fi and private parking — the more nights, the better the rate.",
+      name: "Long Stay Package",
+      fotoAlt: "Lunch buffet at the Aipim Gastronomia restaurant, included in the Long Stay Package at Pousada Cataratas in Foz do Iguaçu",
+      hook: "More days in Foz, less spending",
+      destaque: { valor: "05", label: "From", nota: "nights or more" },
+      beneficios: textos([
+        "Transfer to Paraguay, round trip",
+        "Lunch at the Aipim Gastronomia restaurant",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Pool and leisure areas at your leisure",
+      ]),
+      desc: "Stay more days in Foz do Iguaçu and enjoy the city at a leisurely pace: the longer you stay, the further it goes.",
+      obs: "Drinks not included · Restaurant 1.3 km from Pousada Cataratas",
+      galeria: photos([
+        "Pool with sun loungers and a parasol at Pousada Cataratas in Foz do Iguaçu",
+        "Outdoor area with iron tables and chairs and a blue planter at Pousada Cataratas in Foz do Iguaçu",
+      ]),
     },
     "morador": {
-      name: "Resident rate",
-      desc1: "A special deal for residents of the Foz do Iguaçu region and surroundings. Enjoy the guesthouse as your retreat close to home, with all the facilities and the usual comfort.",
-      desc2: "Residents of Foz do Iguaçu and the region get 25% off the nightly rate upon proof of address. 1 child up to 5 years old is free. Breakfast, free Wi-Fi and parking included.",
+      name: "Resident Rate",
+      fotoAlt: "Pool with a parasol at Pousada Cataratas in Foz do Iguaçu, on the Resident Rate",
+      hook: "The guesthouse right around the corner",
+      destaque: { valor: "25%", label: "Discount of", nota: "off the nightly rate, for residents of Foz and region" },
+      beneficios: textos([
+        "Just show proof of address",
+        "1 child up to 5 years old stays free",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Pool and leisure areas at your leisure",
+      ]),
+      desc: "A break close to home, with all the facilities and the usual service — no long trip required.",
+      obs: "Proof of address in Foz do Iguaçu or the region, shown at check-in",
     },
     "antecipada": {
       name: "Early booking",
-      desc1: "Plan your trip in advance and pay less. By booking with plenty of time, you secure the best rate and the peace of mind to organize every detail of the trip.",
-      desc2: "By booking in advance, you get 12% off the nightly rate. The deal includes breakfast, free Wi-Fi and private parking.",
+      fotoAlt: "Palm-lined facade of Pousada Cataratas in Foz do Iguaçu",
+      hook: "Book ahead, pay less",
+      destaque: { valor: "12%", label: "Discount of", nota: "booking 30 days in advance" },
+      beneficios: textos([
+        "Bookings made 30 days in advance",
+        "Flexible cancellation",
+        "Best rate guaranteed",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+      ]),
+      desc: "Plan the trip with room to spare and lock in the best rate, sorted long before you pack.",
     },
     "day-use": {
       name: "Day Use",
-      desc1: "Enjoy the facilities of Pousada Cataratas for a day, without needing to stay overnight. Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
-      desc2: "Day Use costs R$ 90 per person and gives access to the guesthouse's leisure areas during the day, from 9 am to 6 pm. 1 child up to 5 years old is free. From 3 paying guests, a room is included. Check availability with our team.",
+      fotoAlt: "Pool at Pousada Cataratas in Foz do Iguaçu, open to Day Use guests",
+      hook: "A whole day at the guesthouse, without staying over",
+      destaque: { valor: "R$ 90", label: "Per person", nota: "from 9 am to 6 pm" },
+      beneficios: textos([
+        "Access to the pool and leisure areas",
+        "From 9 am to 6 pm",
+        "1 child up to 5 years old stays free",
+        "From 3 paying guests, a room is included",
+        "Private parking",
+        "Free Wi-Fi throughout the guesthouse",
+      ]),
+      desc: "Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
+      obs: "Subject to availability · Check with our team before coming",
     },
     "maratona-2026": {
       name: "Foz International Marathon 2026",
       fotoAlt: "Room at Pousada Cataratas in Foz do Iguaçu, your base for the Foz do Iguaçu International Marathon 2026",
-      desc1: "Your base for the Foz do Iguaçu International Marathon 2026. In the heart of Foz, close to everything and away from the noise: the ideal starting point for your best race. 100m from Avenida das Cataratas, with free on-site parking.",
-      desc2: "Breakfast from 4 am on race day and, booking 2 nights, late check-out until 2 pm. Use the coupon **CORRIDA26** and get 10% OFF your stay. Limited spots for race week.",
+      hook: "Your base for the best race of the year",
+      destaque: { valor: "10%", label: "OFF with the coupon", nota: "CORRIDA26" },
+      beneficios: textos([
+        "Breakfast from 4 am on race day",
+        "Late check-out until 2 pm when booking 2 nights",
+        "100 m from Avenida das Cataratas",
+        "Free on-site parking",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+      ]),
+      desc: "In the heart of Foz, close to everything and away from the noise: the ideal starting point for your best race.",
+      obs: "Limited spots for race week",
     },
     "setembro-encantador": {
       name: "Enchanting September",
       fotoAlt: "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
-      desc1: "September is the month to breathe out in Foz do Iguaçu: milder days, the region at its greenest and the city without the high-season rush. Stay with us and get two tickets to Zoopark, plus 10% off your nightly rate.",
-      desc2: "The two Zoopark tickets are on us, with no minimum stay: they apply to any booking made between 1 and 30 September 2026. The rate already includes breakfast, free Wi-Fi and free parking. Talk to our team and secure your booking.",
+      hook: "September is the best month to discover Foz",
+      destaque: { valor: "02", label: "Free Zoopark tickets", nota: "+ 10% off the nightly rate" },
+      beneficios: textos([
+        "2 Zoopark tickets, on us",
+        "10% off the nightly rate",
+        "No minimum stay, from 1 to 30 September",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Free parking",
+      ]),
+      desc: "Milder days, the region at its greenest and the city without the high-season rush.",
     },
     "agosto-encantador": {
-      name: "Agosto Encantador",
-      fotoAlt: "Children feeding goats at the Zoopark in Foz do Iguaçu — Agosto Encantador offer at Pousada Cataratas",
-      desc1: "A special promotion to make your August unforgettable in Foz do Iguaçu. Stay with us and get two tickets to Zoopark, one of the most enchanting outings in the region.",
-      desc2: "Enjoy the comfort of the guesthouse and experience nature up close, with two tickets to Zoopark included in your stay. Talk to our team and secure your booking.",
+      name: "Enchanting August",
+      fotoAlt: "Children feeding goats at the Zoopark in Foz do Iguaçu — Enchanting August offer at Pousada Cataratas",
+      hook: "An unforgettable August in Foz",
+      destaque: { valor: "02", label: "Zoopark tickets", nota: "included in your stay" },
+      beneficios: textos([
+        "2 Zoopark tickets, on us",
+        "Breakfast included",
+        "Free Wi-Fi throughout the guesthouse",
+        "Private parking",
+        "Pool and leisure areas at your leisure",
+        "An outing for the whole family",
+      ]),
+      desc: "Experience nature up close on one of the most enchanting outings in the region.",
     },
   },
-
   produtoRelated: {
     "quarto-duplo": { name: "Double Room" },
     "quarto-triplo": { name: "Triple Room" },
