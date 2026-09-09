@@ -680,56 +680,10 @@ export const atracaoSteps: Record<string, string[]> = {
   ],
 };
 
-// ============ DETALLE: PROMOÇÃO (Promocao.dc.html) — indexado por slug ============
-
-export type PromocaoDetail = {
-  name: string;
-  sub: string;
-  discount: string;
-  validity: string;
-  img: string;
-  heroSlot: string;
-  desc: string;
-  desc2: string;
-  conditions: string[];
-};
-
-// Mapa por slug. Valores/textos sin cambios respecto al export.
-export const promocaoDetails: Record<string, PromocaoDetail> = {
-  "longa-estadia": {
-    name: "Pacote longa estadia",
-    sub: "A partir de 5 diárias",
-    discount: "15%",
-    validity: "Válido para estadias de 5 noites ou mais",
-    img: "/images/pexels/pexels-164595-w1600.jpg",
-    heroSlot: "promo-hero-1",
-    desc: "Fique mais dias e pague menos. Ideal para quem quer explorar Foz do Iguaçu com calma, aproveitando cada atração sem pressa e com o conforto da pousada como base.",
-    desc2: "Quanto mais noites, melhor a tarifa. Fale com a nossa equipe e monte a estadia perfeita para a sua viagem.",
-    conditions: ["Café da manhã incluso", "Wi-Fi grátis em toda a pousada", "Estacionamento privativo", "Melhor tarifa garantida"],
-  },
-  "morador": {
-    name: "Tarifa morador",
-    sub: "Para moradores de Foz e região",
-    discount: "25%",
-    validity: "Mediante comprovante de endereço",
-    img: "/images/pexels/pexels-271624-w1600.jpg",
-    heroSlot: "promo-hero-2",
-    desc: "Condição especial para quem é de Foz do Iguaçu e região e quer aproveitar um descanso pertinho de casa, com toda a estrutura e o atendimento caloroso da pousada.",
-    desc2: "Apresente o comprovante de endereço na reserva e garanta 25% de desconto na diária, exclusivo para moradores de Foz do Iguaçu e região. 1 criança de até 5 anos tem cortesia.",
-    conditions: ["Café da manhã incluso", "Wi-Fi grátis em toda a pousada", "Estacionamento privativo", "Comprovante de endereço"],
-  },
-  "antecipada": {
-    name: "Reserva antecipada",
-    sub: "Reservando com antecedência",
-    discount: "12%",
-    validity: "Reservas feitas com 30 dias de antecedência",
-    img: "/images/pexels/pexels-261102-w1600.jpg",
-    heroSlot: "promo-hero-3",
-    desc: "Planeje sua viagem com antecedência e economize. Quem reserva antes garante a melhor tarifa e a tranquilidade de já ter tudo pronto para a viagem.",
-    desc2: "Reserve com pelo menos 30 dias de antecedência e aproveite o desconto exclusivo.",
-    conditions: ["Café da manhã incluso", "Wi-Fi grátis em toda a pousada", "Estacionamento privativo", "Cancelamento flexível"],
-  },
-};
+// As URLs antigas /promocoes/<slug>. Mostram a mesma página que /promocao/<slug>
+// (mesma plantilla, mesmos dados de `produtoDetails`); esta lista existe só para
+// continuarem a ser geradas exatamente as que já estavam publicadas.
+export const PROMOCOES_SLUG_LEGADO = ["longa-estadia", "morador", "antecipada"];
 
 // ============ DETALLE: PRODUTO (Produto.dc.html) — indexado por slug ============
 // Enlazado desde el listado Promoções ("Reservar"). Usa el mismo ?promo= que a
@@ -738,12 +692,28 @@ export const promocaoDetails: Record<string, PromocaoDetail> = {
 export type ProdutoDetail = {
   name: string;
   banner: string;
+  /** A imagem protagonista da promoção, ao lado do destaque. */
   foto: string;
   // Alt/título SEO específico de la foto (opcional). Si no se define, se usa el
   // texto genérico dict.alt.produtoFoto.
   fotoAlt?: string;
-  desc1: string;
-  desc2: string;
+  /** Gancho de uma linha, por baixo do nome no banner. */
+  hook: string;
+  // O DADO QUE VENDE A PROMOÇÃO, em corpo grande: o número (ou preço, ou
+  // cupão), o rótulo por cima e a ressalva por baixo. É a primeira coisa que
+  // se lê depois do banner, por isso deve caber em poucos caracteres.
+  destaque: { valor: string; label: string; nota?: string };
+  // O que está incluso, um por card com ícone linear. O merge de arrays é
+  // elemento a elemento: es/en só precisam de repetir os `texto`.
+  beneficios: { icone: BeneficioIcone; texto: string }[];
+  /** Uma frase, não mais: o peso visual está nos benefícios. */
+  desc: string;
+  // Letra miúda por baixo dos botões (opcional): ressalvas do tipo "bebidas
+  // não inclusas". Separar itens com " · ".
+  obs?: string;
+  // Fotos extra por baixo do bloco principal (opcional). O merge de arrays é
+  // elemento a elemento, por isso es/en só precisam de repetir os `alt`.
+  galeria?: { src: string; alt: string }[];
   // Mensaje de WhatsApp específico de esta oferta (opcional, siempre en PT).
   // Si no se define, el botón usa el mensaje genérico (WHATSAPP_HREF).
   waMessage?: string;
@@ -753,35 +723,106 @@ export type ProdutoDetail = {
   booking?: { checkin?: string; checkout?: string; promoCode?: string };
 };
 
+// Ícones lineares dos benefícios. O desenho de cada um está em
+// components/promo/BeneficioIcone.tsx — acrescentar aqui obriga a desenhá-lo lá.
+export type BeneficioIcone =
+  | "cafe"
+  | "wifi"
+  | "estacionamento"
+  | "piscina"
+  | "transporte"
+  | "refeicao"
+  | "ingresso"
+  | "desconto"
+  | "calendario"
+  | "relogio"
+  | "documento"
+  | "crianca"
+  | "quarto"
+  | "local"
+  | "cancelamento";
+
 export const produtoDetails: Record<string, ProdutoDetail> = {
   "longa-estadia": {
-    name: "Pacote longa estadia",
-    banner: "/images/real/home/jardim-piscina-pousada-cataratas-foz-do-iguacu.webp",
-    foto: "/images/real/quartos/quarto-quadruplo-vista-ampla-pousada-cataratas-foz-do-iguacu.webp",
-    desc1: "Fique mais dias e pague menos. Ideal para quem quer explorar Foz do Iguaçu com calma, aproveitando cada atração sem pressa e com o conforto da pousada como base para conhecer as Cataratas, o Parque das Aves e os arredores.",
-    desc2: "A partir de 5 diárias você garante até 15% de desconto. A diária já inclui café da manhã, Wi-Fi grátis e estacionamento privativo — quanto mais noites, melhor a tarifa.",
+    name: "Pacote Longa Estadia",
+    // O banner é a área externa da pousada (fica por baixo do véu azul e do
+    // título); a foto protagonista é o buffet do restaurante — o almoço é o
+    // que a promoção tem de mais apetecível.
+    banner: "/images/real/promocoes/area-externa-mesas-cadeiras-jardim-pousada-cataratas-foz-do-iguacu.webp",
+    foto: "/images/real/promocoes/restaurante-aipim-gastronomia-buffet-almoco-pousada-cataratas-foz-do-iguacu.webp",
+    fotoAlt: "Buffet de almoço do restaurante Aipim Gastronomia, incluso no Pacote Longa Estadia da Pousada Cataratas em Foz do Iguaçu",
+    hook: "Mais dias em Foz, menos gastos",
+    destaque: { valor: "05", label: "A partir de", nota: "diárias ou mais" },
+    beneficios: [
+      { icone: "transporte", texto: "Transporte ao Paraguai, ida e volta" },
+      { icone: "refeicao", texto: "Almoço no restaurante Aipim Gastronomia" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+      { icone: "estacionamento", texto: "Estacionamento privativo" },
+      { icone: "piscina", texto: "Piscina e áreas de lazer à vontade" },
+    ],
+    desc: "Fique mais dias em Foz do Iguaçu e aproveite a cidade sem pressa: quanto mais tempo você fica, mais a estadia rende.",
+    obs: "Bebidas não inclusas · Restaurante a 1,3 km da Pousada Cataratas",
+    waMessage: "Olá, vim do site e tenho interesse no Pacote Longa Estadia",
+    galeria: [
+      { src: "/images/real/promocoes/piscina-espreguicadeiras-guarda-sol-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina com espreguiçadeiras e guarda-sol da Pousada Cataratas em Foz do Iguaçu" },
+      { src: "/images/real/promocoes/terraco-mesas-ferro-vaso-azul-pousada-cataratas-foz-do-iguacu.webp", alt: "Área externa com mesas e cadeiras de ferro e vaso azul na Pousada Cataratas em Foz do Iguaçu" },
+    ],
   },
   "morador": {
-    name: "Tarifa morador",
+    name: "Tarifa Morador",
     banner: "/images/real/home/piscina-lazer-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp",
-    desc1: "Condição especial para moradores da região de Foz do Iguaçu e arredores. Aproveite a pousada como seu refúgio perto de casa, com toda a estrutura e o conforto de sempre.",
-    desc2: "Moradores de Foz do Iguaçu e região têm 25% de desconto na diária mediante comprovante de endereço. 1 criança de até 5 anos tem cortesia. Café da manhã, Wi-Fi grátis e estacionamento inclusos.",
+    fotoAlt: "Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu, na Tarifa Morador",
+    hook: "A pousada pertinho de casa",
+    destaque: { valor: "25%", label: "Desconto de", nota: "na diária, para moradores de Foz e região" },
+    beneficios: [
+      { icone: "documento", texto: "Basta apresentar comprovante de endereço" },
+      { icone: "crianca", texto: "1 criança de até 5 anos não paga" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+      { icone: "estacionamento", texto: "Estacionamento privativo" },
+      { icone: "piscina", texto: "Piscina e áreas de lazer à vontade" },
+    ],
+    desc: "Um descanso perto de casa, com toda a estrutura e o atendimento de sempre — sem precisar viajar para longe.",
+    obs: "Comprovante de endereço de Foz do Iguaçu ou região, apresentado no check-in",
+    waMessage: "Olá, vim do site e tenho interesse na Tarifa Morador",
   },
   "antecipada": {
     name: "Reserva antecipada",
     banner: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/fachada-palmeiras-pousada-cataratas-foz-do-iguacu.webp",
-    desc1: "Planeje sua viagem com antecedência e pague menos. Reservando com bastante folga você garante a melhor tarifa e tranquilidade para organizar cada detalhe do passeio.",
-    desc2: "Reservando com antecedência você ganha 12% de desconto na diária. A condição inclui café da manhã, Wi-Fi grátis e estacionamento privativo.",
+    fotoAlt: "Fachada com palmeiras da Pousada Cataratas em Foz do Iguaçu",
+    hook: "Quem se antecipa, paga menos",
+    destaque: { valor: "12%", label: "Desconto de", nota: "reservando com 30 dias de antecedência" },
+    beneficios: [
+      { icone: "calendario", texto: "Reservas feitas com 30 dias de antecedência" },
+      { icone: "cancelamento", texto: "Cancelamento flexível" },
+      { icone: "desconto", texto: "Melhor tarifa garantida" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+      { icone: "estacionamento", texto: "Estacionamento privativo" },
+    ],
+    desc: "Planeje a viagem com folga e garanta a melhor tarifa, com tudo resolvido bem antes de arrumar as malas.",
+    waMessage: "Olá, vim do site e tenho interesse na Reserva antecipada",
   },
-  // ——— Promos nuevas (contenido placeholder; ajustar textos definitivos) ———
   "day-use": {
     name: "Day Use",
     banner: "/images/real/home/area-piscina-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp",
-    desc1: "Aproveite a estrutura da Pousada Cataratas por um dia, sem precisar se hospedar. Perfeito para quem está de passagem por Foz do Iguaçu e quer relaxar entre um passeio e outro.",
-    desc2: "O Day Use custa R$ 90 por pessoa e dá acesso às áreas de lazer da pousada durante o dia, das 9h às 18h. 1 criança de até 5 anos tem cortesia. A partir de 3 pagantes, incluímos um apartamento. Consulte a disponibilidade com a nossa equipe.",
+    fotoAlt: "Piscina da Pousada Cataratas em Foz do Iguaçu, aberta aos hóspedes do Day Use",
+    hook: "Um dia inteiro de pousada, sem se hospedar",
+    destaque: { valor: "R$ 90", label: "Por pessoa", nota: "das 9h às 18h" },
+    beneficios: [
+      { icone: "piscina", texto: "Acesso à piscina e às áreas de lazer" },
+      { icone: "relogio", texto: "Das 9h às 18h" },
+      { icone: "crianca", texto: "1 criança de até 5 anos não paga" },
+      { icone: "quarto", texto: "A partir de 3 pagantes, um apartamento incluso" },
+      { icone: "estacionamento", texto: "Estacionamento privativo" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+    ],
+    desc: "Perfeito para quem está de passagem por Foz do Iguaçu e quer relaxar entre um passeio e outro.",
+    obs: "Sujeito à disponibilidade · Consulte a nossa equipe antes de vir",
     waMessage: "Olá, vim do site e tenho interesse no Day Use",
   },
   "maratona-2026": {
@@ -789,8 +830,18 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     banner: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Quarto da Pousada Cataratas em Foz do Iguaçu, sua base para a Maratona Internacional de Foz do Iguaçu 2026",
-    desc1: "Sua base para a Maratona Internacional de Foz do Iguaçu 2026. No coração de Foz, perto de tudo e longe do barulho: o ponto de partida ideal para a sua melhor prova. A 100m da Avenida das Cataratas, com estacionamento gratuito no local.",
-    desc2: "Café da manhã a partir das 04h no dia da corrida e, reservando 02 noites, late check-out até às 14h. Use o cupom **CORRIDA26** e garanta 10% OFF na sua hospedagem. Vagas limitadas para a semana da prova.",
+    hook: "Sua base para a melhor prova do ano",
+    destaque: { valor: "10%", label: "OFF com o cupom", nota: "CORRIDA26" },
+    beneficios: [
+      { icone: "relogio", texto: "Café da manhã a partir das 04h no dia da prova" },
+      { icone: "calendario", texto: "Late check-out até às 14h reservando 02 noites" },
+      { icone: "local", texto: "A 100 m da Avenida das Cataratas" },
+      { icone: "estacionamento", texto: "Estacionamento gratuito no local" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+    ],
+    desc: "No coração de Foz, perto de tudo e longe do barulho: o ponto de partida ideal para a sua melhor prova.",
+    obs: "Vagas limitadas para a semana da prova",
     waMessage: "Olá, vim do site e tenho interesse na promoção da Maratona de Foz 2026",
     booking: MARATONA_2026_OFFER,
   },
@@ -799,8 +850,17 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
-    desc1: "Setembro é o mês de respirar fundo em Foz do Iguaçu: dias mais leves, o verde da região no ponto e a cidade sem a correria da alta temporada. Hospede-se com a gente e ganhe dois ingressos para o Zoopark, além de 10% de desconto na diária.",
-    desc2: "Os dois ingressos ao Zoopark são cortesia, sem estadia mínima: valem para qualquer reserva feita entre 01 e 30 de setembro de 2026. A diária já inclui café da manhã, Wi-Fi grátis e estacionamento gratuito. Fale com a nossa equipe e garanta a sua reserva.",
+    hook: "Setembro é o melhor mês para conhecer Foz",
+    destaque: { valor: "02", label: "Ingressos grátis ao Zoopark", nota: "+ 10% de desconto na diária" },
+    beneficios: [
+      { icone: "ingresso", texto: "02 ingressos ao Zoopark, cortesia" },
+      { icone: "desconto", texto: "10% de desconto na diária" },
+      { icone: "calendario", texto: "Sem estadia mínima, de 01 a 30 de setembro" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+      { icone: "estacionamento", texto: "Estacionamento gratuito" },
+    ],
+    desc: "Dias mais leves, o verde da região no ponto e a cidade sem a correria da alta temporada.",
     waMessage: "Olá, vim do site e tenho interesse na promoção Setembro Encantador",
   },
   "agosto-encantador": {
@@ -808,8 +868,18 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
     foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Crianças alimentando cabras no Zoopark em Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas",
-    desc1: "Uma promoção especial para tornar o seu agosto inesquecível em Foz do Iguaçu. Hospede-se com a gente e ganhe dois ingressos para o Zoopark, um dos passeios mais encantadores da região.",
-    desc2: "Aproveite o conforto da pousada e viva a natureza de perto, com dois ingressos ao Zoopark inclusos na sua estadia. Fale com a nossa equipe e garanta a sua reserva.",
+    hook: "Um agosto inesquecível em Foz",
+    destaque: { valor: "02", label: "Ingressos ao Zoopark", nota: "inclusos na sua estadia" },
+    beneficios: [
+      { icone: "ingresso", texto: "02 ingressos ao Zoopark, cortesia" },
+      { icone: "cafe", texto: "Café da manhã incluso" },
+      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
+      { icone: "estacionamento", texto: "Estacionamento privativo" },
+      { icone: "piscina", texto: "Piscina e áreas de lazer à vontade" },
+      { icone: "crianca", texto: "Passeio para toda a família" },
+    ],
+    desc: "Viva a natureza de perto num dos passeios mais encantadores da região.",
+    waMessage: "Olá, vim do site e tenho interesse na promoção Agosto Encantador",
   },
 };
 
@@ -1175,11 +1245,6 @@ export function getAtracaoDoItems(lang: Locale): Record<string, string[]> {
 }
 export function getAtracaoSteps(lang: Locale): Record<string, string[]> {
   return pickText({ pt: atracaoSteps, es: esText.atracaoSteps, en: enText.atracaoSteps }, lang);
-}
-
-// ---- Detalle Promoção (getPromocoes) ----
-export function getPromocoes(lang: Locale): Record<string, PromocaoDetail> {
-  return mergeRecord<PromocaoDetail, Partial<PromocaoDetail>>(promocaoDetails, T("promocoes"), lang);
 }
 
 // ---- Detalle Produto (getProdutos) + relacionados ----

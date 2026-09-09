@@ -9,11 +9,17 @@
   .pr-paras{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
   .pr-resv-links a{display:block;font-size:16px;color:#FFFFFF;text-decoration:none;padding:2px 0;transition:opacity .2s}
   .pr-resv-links a:hover{opacity:.7}
-  .pr-cards{max-width:1280px;margin:0 auto;padding:0 22px 100px;display:grid;grid-template-columns:1fr;gap:30px}
+  /* A grelha era um grid de 4 colunas fixas. Com uma promoção a mais (5) a
+     última linha ficava incompleta e encostada à esquerda; em flex-wrap com
+     justify-content:center a linha órfã fica centrada. Os cards mantêm a
+     mesma largura de sempre (1/4 da fila, menos as goteiras). */
+  .pr-cards{max-width:1280px;margin:0 auto;padding:0 22px 100px;display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
+  .pr-card{flex:1 1 100%;min-width:0}
   @media(min-width:960px){
     .pr-sec{grid-template-columns:2.1fr 1fr!important;gap:60px!important;padding:120px 40px!important}
     .pr-paras{grid-template-columns:1fr 1fr!important;gap:42px!important}
-    .pr-cards{grid-template-columns:repeat(4,1fr)!important;gap:24px!important;padding:0 40px 130px!important}
+    .pr-cards{gap:24px!important;padding:0 40px 130px!important}
+    .pr-card{flex:0 1 calc(25% - 18px)!important}
     .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
     .pc-footd-grid{grid-template-columns:1fr 1fr 1fr!important}
   }

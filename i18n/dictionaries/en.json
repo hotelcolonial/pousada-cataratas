@@ -97,6 +97,9 @@
     "mapaTitle": "Pousada Cataratas map"
   },
   "home": {
+    "ofertasEyebrow": "Special offers",
+    "ofertasTitle": "Make the most of our offers",
+    "ofertasVerTodas": "See all offers",
     "heroEyebrow": "COMFORT AND WARMTH · CLOSE TO THE MAIN ATTRACTIONS",
     "heroTitleA": "Your perfect stay",
     "heroTitleB": "in Foz do Iguaçu",
@@ -122,12 +125,6 @@
     "promoHA": "Check out our",
     "promoHB": "Deals",
     "promoP": "By booking directly with us, you get special rates, breakfast included and the convenience of being close to everything Foz do Iguaçu has to offer.",
-    "promoItem1Eyebrow": "Deal",
-    "promoItem1Name": "Resident Rate",
-    "promoItem2Eyebrow": "Enjoy",
-    "promoItem2Name": "Enchanting August",
-    "promoItem3Eyebrow": "Make the most of",
-    "promoItem3Name": "Day Use",
     "verMais": "See more",
     "feat1Title": "Breakfast",
     "feat1Desc": "Fresh fruit, homemade breads and typical regional flavors served every morning with a garden view.",
@@ -250,6 +247,7 @@
     "cidade": "Foz do Iguaçu"
   },
   "promocaoProduct": {
+    "inclusoEyebrow": "Everything that comes with it",
     "falarWhatsapp": "Chat on WhatsApp",
     "reservarAgora": "Book now",
     "relTitle": "You might also like",
@@ -302,14 +300,6 @@
     "link1": "Terms and conditions",
     "link2": "Rates and cancellation",
     "link3": "All offers",
-    "card1Name": "Resident Rate",
-    "card1Sub": "For residents of Foz and region · 25% off",
-    "card2Name": "Enchanting August",
-    "card2Sub": "With two Zoopark tickets",
-    "card3Name": "Day Use",
-    "card3Sub": "Enjoy the guesthouse for a day · R$ 90",
-    "card4Name": "Foz Marathon 2026",
-    "card4Sub": "Coupon CORRIDA26 · 10% off",
     "cardCta": "Book"
   },
   "meta": {
@@ -357,18 +347,48 @@
     "manageStatusDenied": "Current status: non-essential cookies rejected.",
     "manageSaved": "Preference saved."
   },
-  "promoSazonal": {
-    "eyebrow": "Enjoy",
-    "name": "Enchanting September",
-    "sub": "2 free Zoopark tickets · 10% OFF",
-    "altHome": "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
-    "altCard": "Boy petting a goat at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas"
-  },
-  "promoPerene": {
-    "eyebrow": "Plan ahead",
-    "name": "Early booking",
-    "sub": "Booking in advance · 12% OFF",
-    "altHome": "Facade of Pousada Cataratas seen from the street in Foz do Iguaçu",
-    "altCard": "Palm-lined facade of Pousada Cataratas in Foz do Iguaçu"
+  "promos": {
+    "morador": {
+      "eyebrow": "Deal",
+      "name": "Resident Rate",
+      "sub": "For residents of Foz and region · 25% OFF",
+      "altHome": "Entrance of Pousada Cataratas in Foz do Iguaçu",
+      "altCard": "Pool with a parasol at Pousada Cataratas in Foz do Iguaçu"
+    },
+    "sazonal": {
+      "eyebrow": "Enjoy",
+      "name": "Enchanting September",
+      "sub": "2 free Zoopark tickets · 10% OFF",
+      "altHome": "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
+      "altCard": "Boy petting a goat at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas"
+    },
+    "perene": {
+      "eyebrow": "Plan ahead",
+      "name": "Early booking",
+      "sub": "Booking in advance · 12% OFF",
+      "altHome": "Facade of Pousada Cataratas seen from the street in Foz do Iguaçu",
+      "altCard": "Palm-lined facade of Pousada Cataratas in Foz do Iguaçu"
+    },
+    "day-use": {
+      "eyebrow": "Make the most of",
+      "name": "Day Use",
+      "sub": "Enjoy the guesthouse for a day · R$ 90",
+      "altHome": "Breakfast at Pousada Cataratas in Foz do Iguaçu",
+      "altCard": "Pool and leisure area at Pousada Cataratas in Foz do Iguaçu"
+    },
+    "maratona-2026": {
+      "eyebrow": "Get ready",
+      "name": "Foz Marathon 2026",
+      "sub": "Coupon CORRIDA26 · 10% OFF",
+      "altHome": "Facade of Pousada Cataratas in Foz do Iguaçu, base for the Foz do Iguaçu International Marathon 2026",
+      "altCard": "Facade of Pousada Cataratas in Foz do Iguaçu, base for the Foz do Iguaçu International Marathon 2026"
+    },
+    "longa-estadia": {
+      "eyebrow": "Stay longer",
+      "name": "Long Stay Package",
+      "sub": "From 05 nights · transfer to Paraguay and lunch",
+      "altHome": "Lunch buffet at the Aipim Gastronomia restaurant — Long Stay Package at Pousada Cataratas in Foz do Iguaçu",
+      "altCard": "Lunch buffet at the Aipim Gastronomia restaurant — Long Stay Package at Pousada Cataratas in Foz do Iguaçu"
+    }
   }
 }

@@ -1,11 +1,13 @@
 import type { LocaleContent } from "./types";
-import type { ArtigoBlock, QuartoDetail } from "@/lib/data";
+import type { ArtigoBlock, ProdutoDetail, QuartoDetail } from "@/lib/data";
 
 // Helpers de casteo: los arrays anidados (photos, body) solo aportan los campos
 // de TEXTO traducibles (el resto —src/img/type— sale de la base pt vía merge
 // element-wise). El tipo estricto de la base exige el casteo.
 const photos = (alts: string[]) =>
   alts.map((alt) => ({ alt })) as unknown as QuartoDetail["photos"];
+const textos = (valores: string[]) =>
+  valores.map((texto) => ({ texto })) as unknown as ProdutoDetail["beneficios"];
 
 type BodyDraft = { text?: string; items?: string[]; caption?: string; title?: string; btn?: string };
 const body = (blocks: BodyDraft[]) => blocks as unknown as ArtigoBlock[];
@@ -475,91 +477,122 @@ export const es: LocaleContent = {
     ],
   },
 
-  // ============================ Detalle Promoção ============================
-  promocoes: {
-    "longa-estadia": {
-      name: "Paquete larga estancia",
-      sub: "A partir de 5 noches",
-      validity: "Válido para estancias de 5 noches o más",
-      desc: "Quédate más días y paga menos. Ideal para quienes quieren explorar Foz de Iguazú con calma, aprovechando cada atracción sin prisa y con la comodidad de la posada como base.",
-      desc2: "Cuantas más noches, mejor la tarifa. Habla con nuestro equipo y organiza la estancia perfecta para tu viaje.",
-      conditions: [
-        "Desayuno incluido",
-        "Wi-Fi gratis en toda la posada",
-        "Estacionamiento privado",
-        "Mejor tarifa garantizada",
-      ],
-    },
-    morador: {
-      name: "Tarifa residente",
-      sub: "Para residentes de Foz y región",
-      validity: "Mediante comprobante de domicilio",
-      desc: "Condición especial para quienes son de Foz de Iguazú y región y quieren disfrutar de un descanso cerca de casa, con toda la estructura y la atención cálida de la posada.",
-      desc2: "Presenta el comprobante de domicilio en la reserva y obtén un 25% de descuento en la tarifa, exclusivo para residentes de Foz de Iguazú y región. 1 niño de hasta 5 años es cortesía.",
-      conditions: [
-        "Desayuno incluido",
-        "Wi-Fi gratis en toda la posada",
-        "Estacionamiento privado",
-        "Comprobante de domicilio",
-      ],
-    },
-    antecipada: {
-      name: "Reserva anticipada",
-      sub: "Reservando con antelación",
-      validity: "Reservas hechas con 30 días de antelación",
-      desc: "Planifica tu viaje con antelación y ahorra. Quien reserva antes garantiza la mejor tarifa y la tranquilidad de tenerlo todo listo para el viaje.",
-      desc2: "Reserva con al menos 30 días de antelación y aprovecha el descuento exclusivo.",
-      conditions: [
-        "Desayuno incluido",
-        "Wi-Fi gratis en toda la posada",
-        "Estacionamiento privado",
-        "Cancelación flexible",
-      ],
-    },
-  },
 
-  // ============================ Detalle Produto ============================
   produtos: {
     "longa-estadia": {
-      name: "Paquete larga estancia",
-      desc1: "Quédate más días y paga menos. Ideal para quienes quieren explorar Foz de Iguazú con calma, aprovechando cada atracción sin prisa y con la comodidad de la posada como base para conocer las Cataratas, el Parque das Aves y los alrededores.",
-      desc2: "A partir de 5 noches garantizas hasta un 15% de descuento. La tarifa ya incluye desayuno, Wi-Fi gratis y estacionamiento privado — cuantas más noches, mejor la tarifa.",
+      name: "Paquete Larga Estancia",
+      fotoAlt: "Bufé de almuerzo del restaurante Aipim Gastronomia, incluido en el Paquete Larga Estancia de la Pousada Cataratas en Foz de Iguazú",
+      hook: "Más días en Foz, menos gastos",
+      destaque: { valor: "05", label: "A partir de", nota: "noches o más" },
+      beneficios: textos([
+        "Transporte a Paraguay, ida y vuelta",
+        "Almuerzo en el restaurante Aipim Gastronomia",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+        "Estacionamiento privado",
+        "Piscina y áreas de ocio a tu gusto",
+      ]),
+      desc: "Quédate más días en Foz de Iguazú y disfruta de la ciudad sin prisa: cuanto más tiempo te quedas, más rinde la estadía.",
+      obs: "Bebidas no incluidas · Restaurante a 1,3 km de la Pousada Cataratas",
+      galeria: photos([
+        "Piscina con tumbonas y sombrilla de la Pousada Cataratas en Foz de Iguazú",
+        "Área externa con mesas y sillas de hierro y maceta azul en la Pousada Cataratas en Foz de Iguazú",
+      ]),
     },
-    morador: {
-      name: "Tarifa residente",
-      desc1: "Condición especial para residentes de la región de Foz de Iguazú y alrededores. Aprovecha la posada como tu refugio cerca de casa, con toda la estructura y la comodidad de siempre.",
-      desc2: "Los residentes de Foz de Iguazú y región tienen un 25% de descuento en la tarifa mediante comprobante de domicilio. 1 niño de hasta 5 años es cortesía. Desayuno, Wi-Fi gratis y estacionamiento incluidos.",
+    "morador": {
+      name: "Tarifa Residente",
+      fotoAlt: "Piscina con sombrilla de la Pousada Cataratas en Foz de Iguazú, en la Tarifa Residente",
+      hook: "La posada bien cerca de casa",
+      destaque: { valor: "25%", label: "Descuento de", nota: "en la tarifa, para residentes de Foz y región" },
+      beneficios: textos([
+        "Basta presentar comprobante de domicilio",
+        "1 niño de hasta 5 años no paga",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+        "Estacionamiento privado",
+        "Piscina y áreas de ocio a tu gusto",
+      ]),
+      desc: "Un descanso cerca de casa, con toda la estructura y la atención de siempre — sin necesidad de viajar lejos.",
+      obs: "Comprobante de domicilio de Foz de Iguazú o región, presentado en el check-in",
     },
-    antecipada: {
+    "antecipada": {
       name: "Reserva anticipada",
-      desc1: "Planifica tu viaje con antelación y paga menos. Reservando con bastante margen garantizas la mejor tarifa y tranquilidad para organizar cada detalle del paseo.",
-      desc2: "Reservando con antelación ganas un 12% de descuento en la tarifa. La condición incluye desayuno, Wi-Fi gratis y estacionamiento privado.",
+      fotoAlt: "Fachada con palmeras de la Pousada Cataratas en Foz de Iguazú",
+      hook: "Quien se anticipa, paga menos",
+      destaque: { valor: "12%", label: "Descuento de", nota: "reservando con 30 días de antelación" },
+      beneficios: textos([
+        "Reservas hechas con 30 días de antelación",
+        "Cancelación flexible",
+        "Mejor tarifa garantizada",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+        "Estacionamiento privado",
+      ]),
+      desc: "Planifica el viaje con margen y garantiza la mejor tarifa, con todo resuelto mucho antes de hacer las maletas.",
     },
     "day-use": {
       name: "Day Use",
-      desc1: "Aprovecha la estructura de la Pousada Cataratas por un día, sin necesidad de alojarte. Perfecto para quienes están de paso por Foz de Iguazú y quieren relajarse entre un paseo y otro.",
-      desc2: "El Day Use cuesta R$ 90 por persona y da acceso a las áreas de ocio de la posada durante el día, de 9h a 18h. 1 niño de hasta 5 años es cortesía. A partir de 3 pagantes, incluimos un apartamento. Consulta la disponibilidad con nuestro equipo.",
+      fotoAlt: "Piscina de la Pousada Cataratas en Foz de Iguazú, abierta a los huéspedes del Day Use",
+      hook: "Un día entero de posada, sin alojarte",
+      destaque: { valor: "R$ 90", label: "Por persona", nota: "de 9h a 18h" },
+      beneficios: textos([
+        "Acceso a la piscina y a las áreas de ocio",
+        "De 9h a 18h",
+        "1 niño de hasta 5 años no paga",
+        "A partir de 3 pagantes, un apartamento incluido",
+        "Estacionamiento privado",
+        "Wi-Fi gratis en toda la posada",
+      ]),
+      desc: "Perfecto para quienes están de paso por Foz de Iguazú y quieren relajarse entre un paseo y otro.",
+      obs: "Sujeto a disponibilidad · Consulta con nuestro equipo antes de venir",
     },
     "maratona-2026": {
       name: "Maratón Internacional de Foz 2026",
       fotoAlt: "Habitación de la Pousada Cataratas en Foz de Iguazú, tu base para el Maratón Internacional de Foz de Iguazú 2026",
-      desc1: "Tu base para el Maratón Internacional de Foz de Iguazú 2026. En el corazón de Foz, cerca de todo y lejos del ruido: el punto de partida ideal para tu mejor carrera. A 100m de la Avenida das Cataratas, con estacionamiento gratuito en el lugar.",
-      desc2: "Desayuno a partir de las 04h el día de la carrera y, reservando 02 noches, late check-out hasta las 14h. Usa el cupón **CORRIDA26** y obtén un 10% OFF en tu hospedaje. Cupos limitados para la semana de la prueba.",
+      hook: "Tu base para la mejor carrera del año",
+      destaque: { valor: "10%", label: "OFF con el cupón", nota: "CORRIDA26" },
+      beneficios: textos([
+        "Desayuno a partir de las 04h el día de la carrera",
+        "Late check-out hasta las 14h reservando 02 noches",
+        "A 100 m de la Avenida das Cataratas",
+        "Estacionamiento gratis en el lugar",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+      ]),
+      desc: "En el corazón de Foz, cerca de todo y lejos del ruido: el punto de partida ideal para tu mejor carrera.",
+      obs: "Cupos limitados para la semana de la prueba",
     },
     "setembro-encantador": {
       name: "Septiembre Encantador",
       fotoAlt: "Niños con animales en el Zoopark de Foz de Iguazú — promoción Septiembre Encantador de la Pousada Cataratas",
-      desc1: "Septiembre es el mes de respirar hondo en Foz de Iguazú: días más templados, el verde de la región en su punto y la ciudad sin el ajetreo de la temporada alta. Alójate con nosotros y gana dos entradas al Zoopark, además de un 10% de descuento en la tarifa.",
-      desc2: "Las dos entradas al Zoopark son cortesía, sin estadía mínima: valen para cualquier reserva hecha entre el 01 y el 30 de septiembre de 2026. La tarifa ya incluye desayuno, Wi-Fi gratis y estacionamiento gratis. Habla con nuestro equipo y garantiza tu reserva.",
+      hook: "Septiembre es el mejor mes para conocer Foz",
+      destaque: { valor: "02", label: "Entradas gratis al Zoopark", nota: "+ 10% de descuento en la tarifa" },
+      beneficios: textos([
+        "02 entradas al Zoopark, cortesía",
+        "10% de descuento en la tarifa",
+        "Sin estadía mínima, del 01 al 30 de septiembre",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+        "Estacionamiento gratis",
+      ]),
+      desc: "Días más templados, el verde de la región en su punto y la ciudad sin el ajetreo de la temporada alta.",
     },
     "agosto-encantador": {
       name: "Agosto Encantador",
-      fotoAlt: "Niños alimentando cabras en el Zoopark de Foz de Iguazú — promoción Agosto Encantador de Pousada Cataratas",
-      desc1: "Una promoción especial para hacer tu agosto inolvidable en Foz de Iguazú. Alójate con nosotros y gana dos entradas para el Zoopark, uno de los paseos más encantadores de la región.",
-      desc2: "Aprovecha la comodidad de la posada y vive la naturaleza de cerca, con dos entradas al Zoopark incluidas en tu estancia. Habla con nuestro equipo y garantiza tu reserva.",
+      fotoAlt: "Niños alimentando cabras en el Zoopark de Foz de Iguazú — promoción Agosto Encantador de la Pousada Cataratas",
+      hook: "Un agosto inolvidable en Foz",
+      destaque: { valor: "02", label: "Entradas al Zoopark", nota: "incluidas en tu estadía" },
+      beneficios: textos([
+        "02 entradas al Zoopark, cortesía",
+        "Desayuno incluido",
+        "Wi-Fi gratis en toda la posada",
+        "Estacionamiento privado",
+        "Piscina y áreas de ocio a tu gusto",
+        "Un paseo para toda la familia",
+      ]),
+      desc: "Vive la naturaleza de cerca en uno de los paseos más encantadores de la región.",
     },
   },
-
   produtoRelated: {
     "quarto-duplo": { name: "Habitación Doble" },
     "quarto-triplo": { name: "Habitación Triple" },

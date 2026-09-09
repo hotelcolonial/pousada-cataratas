@@ -14,14 +14,13 @@ import type {
   IconItem,
   QuartoAround,
   AtracaoDetail,
-  PromocaoDetail,
   ProdutoDetail,
   ProdutoRelated,
   ArtigoDetail,
 } from "@/lib/data";
 
 // Override de texto por elemento: solo los campos traducibles (el resto sale de
-// la base pt). Para arrays anidados (photos, specs, conditions, body) el merge es
+// la base pt). Para arrays anidados (photos, specs, beneficios, body) el merge es
 // elemento por elemento, así que basta con dar los campos de texto de cada índice
 // (mismo orden y longitud que la base pt).
 type ByKey<T> = Record<string, Partial<T>>;
@@ -54,8 +53,7 @@ export type LocaleContent = {
   atracoes: ByKey<AtracaoDetail>; // clave: slug — specs[] element-wise ({label,value})
   atracaoDoItems: Record<string, string[]>; // clave: slug — array completo por slug
   atracaoSteps: Record<string, string[]>; // clave: slug — array completo por slug
-  // Detalle Promoção / Produto
-  promocoes: ByKey<PromocaoDetail>; // clave: slug — conditions[] array completo
+  // Detalle Promoção (una sola plantilla, ver components/promo/PromoDetalhe)
   produtos: ByKey<ProdutoDetail>; // clave: slug
   produtoRelated: ByKey<ProdutoRelated>; // clave: quartoSlug — {name}
   // Detalle Artigo (blog)

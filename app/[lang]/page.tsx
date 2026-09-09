@@ -11,7 +11,8 @@ import { getDictionary } from "@/i18n/getDictionary";
 import { format } from "@/i18n/format";
 import { pageMeta } from "@/i18n/seo";
 import { BOOKING_BASE } from "@/lib/booking";
-import { PROMO_SAZONAL, promoSlot, PROMO_BTN_BG } from "@/lib/promos";
+import { promosAtivas, promosDestaque, promoTexto, PROMO_BTN_BG } from "@/lib/promos";
+import PromoCard from "@/components/promo/PromoCard";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -77,8 +78,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
   const dict = await getDictionary(lang);
-  // Slot sazonal da home: promo de temporada ou promo perene (ver lib/promos.ts).
-  const slotTxt = PROMO_SAZONAL.ativa ? dict.promoSazonal : dict.promoPerene;
   const rgCards = getRgCards(loc);
   return (
     <div
@@ -139,6 +138,42 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
 
         <BookingBar />
+      </section>
+
+      {/* ============ OFERTAS EM DESTAQUE ============ */}
+      {/* Primeira coisa depois do hero: as promoções marcadas com `destaque`
+          em lib/promos.ts, no mesmo card usado na grelha de /promocoes. */}
+      <section className="pc-ofertas">
+        <div className="pc-ofertas-head">
+          <span style={{ fontFamily: "var(--font-hnc), sans-serif", fontSize: "12px", letterSpacing: ".32em", textTransform: "uppercase", color: "#C79A6A" }}>
+            {dict.home.ofertasEyebrow}
+          </span>
+          <h2 className="pc-ofertas-h" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "50px", lineHeight: 1.04, letterSpacing: "-.01em", color: "#143C7A", margin: "16px 0 0" }}>
+            {dict.home.ofertasTitle}
+          </h2>
+          <div style={{ width: "54px", height: "1px", background: "#C79A6A", margin: "26px auto 0" }} />
+        </div>
+
+        <div className="pc-ofertas-grid">
+          {promosDestaque().map((p) => (
+            <PromoCard
+              key={p.slug}
+              promo={p}
+              texto={promoTexto(dict, p)}
+              cta={dict.promocoesList.cardCta}
+              lang={lang}
+            />
+          ))}
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "52px" }}>
+          <a href={localePath(lang, "/promocoes")} className="pc-ofertas-todas">
+            {dict.home.ofertasVerTodas}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
 
       {/* ============ RECONHECIMENTO (TRIPADVISOR) ============ */}
@@ -247,42 +282,24 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </div>
 
           <div className="pc-promo-right pc-promo-list">
-            <div className="pc-promo-item">
-              <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/entrada-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeEntrada} />
-              </div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
-                <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem1Eyebrow}</span>
-                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem1Name}</span>
-              </div>
-              <a href={localePath(lang, "/promocao/morador")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
-            </div>
-
-            <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />
-
-            <div className="pc-promo-item">
-              <div className="pc-promo-thumb">
-                <SlotImg src={promoSlot.imgHome} alt={slotTxt.altHome} />
-              </div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
-                <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{slotTxt.eyebrow}</span>
-                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{slotTxt.name}</span>
-              </div>
-              <a href={localePath(lang, "/promocao/" + promoSlot.slug)} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: PROMO_BTN_BG[promoSlot.cor], whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
-            </div>
-
-            <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />
-
-            <div className="pc-promo-item">
-              <div className="pc-promo-thumb">
-                <SlotImg src="/images/real/home/cafe-da-manha-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeCafe} />
-              </div>
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
-                <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{dict.home.promoItem3Eyebrow}</span>
-                <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{dict.home.promoItem3Name}</span>
-              </div>
-              <a href={localePath(lang, "/promocao/day-use")} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: "#143C7A", whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
-            </div>
+            {promosAtivas().map((p, i) => {
+              const t = promoTexto(dict, p);
+              return (
+                <div key={p.slug}>
+                  {i > 0 && <div style={{ height: "1px", background: "rgba(20,60,122,.1)" }} />}
+                  <div className="pc-promo-item">
+                    <div className="pc-promo-thumb">
+                      <SlotImg src={p.imgHome} alt={t.altHome} />
+                    </div>
+                    <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "5px", minWidth: 0 }}>
+                      <span style={{ fontSize: "11px", letterSpacing: ".2em", textTransform: "uppercase", color: "#9AA3AD" }}>{t.eyebrow}</span>
+                      <span className="pc-promo-name" style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "26px", lineHeight: 1.05, letterSpacing: "-.01em", color: "#143C7A" }}>{t.name}</span>
+                    </div>
+                    <a href={localePath(lang, "/promocao/" + p.slug)} className="pc-promo-btn" style={{ flex: "none", alignSelf: "center", minWidth: "78px", textAlign: "center", padding: "9px 16px", fontSize: "13px", fontWeight: 600, letterSpacing: ".04em", color: "#FFFFFF", background: PROMO_BTN_BG[p.cor], whiteSpace: "nowrap", textDecoration: "none" }}>{dict.home.verMais}</a>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
