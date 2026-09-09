@@ -118,7 +118,17 @@ export default async function Artigo({ params }: { params: Promise<{ lang: strin
                   <div key={i} style={{ background: "#C79A6A", color: "#FFFFFF", padding: "38px 34px", marginTop: "48px" }}>
                     <h3 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "30px", lineHeight: 1.12, color: "#FFFFFF", margin: 0 }}>{b.title}</h3>
                     <p style={{ fontSize: "15px", lineHeight: 1.7, color: "rgba(255,255,255,.9)", margin: "14px 0 0" }}>{b.text}</p>
-                    <a href={b.href} target="_blank" rel="noopener noreferrer" className="ar-cta" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", height: "54px", padding: "0 34px", marginTop: "26px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}>{b.btn}</a>
+                    {/* href interno (começa por "/") leva o prefixo do idioma e
+                        abre na mesma aba; externo (o motor de reservas) abre noutra. */}
+                    <a
+                      href={b.href.startsWith("/") ? localePath(lang, b.href) : b.href}
+                      target={b.href.startsWith("/") ? undefined : "_blank"}
+                      rel={b.href.startsWith("/") ? undefined : "noopener noreferrer"}
+                      className="ar-cta"
+                      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", height: "54px", padding: "0 34px", marginTop: "26px", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".2em", textTransform: "uppercase", transition: "filter .15s ease" }}
+                    >
+                      {b.btn}
+                    </a>
                   </div>
                 );
               if (b.type === "figure")

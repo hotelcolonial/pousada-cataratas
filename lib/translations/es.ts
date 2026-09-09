@@ -185,6 +185,11 @@ export const es: LocaleContent = {
 
   // ============================ Blog (listado) ============================
   blogPosts: {
+    "bl-6": {
+      cat: "Gastronomía",
+      title: "Aipim Gastronomia en Foz de Iguazú: el restaurante que vale la pena sumar a tu ruta",
+      excerpt: "Aipim Gastronomia es un restaurante en Foz de Iguazú que combina sabores locales y un ambiente acogedor. ¡Vale la pena sumarlo a tu ruta!",
+    },
     "bl-5": {
       cat: "Eventos",
       title: "Maratón Internacional de Foz de Iguazú 2026: guía completa de la prueba y dónde alojarse",
@@ -218,6 +223,7 @@ export const es: LocaleContent = {
   },
 
   blogCategories: {
+    "Gastronomia": { name: "Gastronomía" },
     "Eventos": { name: "Eventos" },
     "Roteiros": { name: "Rutas" },
     "Dicas de viagem": { name: "Consejos de viaje" },
@@ -226,6 +232,7 @@ export const es: LocaleContent = {
   },
 
   blogRecent: {
+    "bl-rec-6": { title: "Aipim Gastronomia: el restaurante para sumar a tu ruta" },
     "bl-rec-5": { title: "Maratón Internacional de Foz de Iguazú 2026: guía completa" },
     "bl-rec-1": { title: "Qué hacer en Foz de Iguazú en 3 días" },
     "bl-rec-2": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
@@ -486,14 +493,14 @@ export const es: LocaleContent = {
       destaque: { valor: "05", label: "A partir de", nota: "noches o más" },
       beneficios: textos([
         "Transporte a Paraguay, ida y vuelta",
-        "Almuerzo en el restaurante Aipim Gastronomia",
+        "Almuerzo de cortesía en Aipim Gastronomia para todos los huéspedes de la reserva",
         "Desayuno incluido",
         "Wi-Fi gratis en toda la posada",
         "Estacionamiento privado",
         "Piscina y áreas de ocio a tu gusto",
       ]),
       desc: "Quédate más días en Foz de Iguazú y disfruta de la ciudad sin prisa: cuanto más tiempo te quedas, más rinde la estadía.",
-      obs: "Bebidas no incluidas · Restaurante a 1,3 km de la Pousada Cataratas",
+      obs: "La cortesía del almuerzo se concede una única vez por reserva · Bebidas no incluidas · Restaurante a 1,3 km de la Pousada Cataratas",
       galeria: photos([
         "Piscina con tumbonas y sombrilla de la Pousada Cataratas en Foz de Iguazú",
         "Área externa con mesas y sillas de hierro y maceta azul en la Pousada Cataratas en Foz de Iguazú",
@@ -602,6 +609,43 @@ export const es: LocaleContent = {
 
   // ============================ Detalle Artigo (blog) ============================
   artigos: {
+    "restaurante-em-foz-do-iguacu-aipim-gastronomia": {
+      category: "Gastronomía",
+      title: "Aipim Gastronomia en Foz de Iguazú: el restaurante que vale la pena sumar a tu ruta",
+      date: "9 de septiembre de 2026",
+      author: "Equipo Pousada Cataratas",
+      readTime: "3 min de lectura",
+      body: body([
+        { text: "Llegas a Foz de Iguazú después de un día en las Cataratas, con hambre y sin ganas de perder tiempo buscando dónde comer. Ahí es donde Aipim Gastronomia by Chef Lopes aparece como una parada segura. Considerado uno de los restaurantes en Foz de Iguazú que más gusta a quienes visitan la ciudad, Aipim está en la Avenida das Cataratas, justo en la ruta de quien ya anda recorriendo los principales atractivos de la región." },
+        { text: "Qué hay en el plato: bufé con sabores brasileños y mucho más" },
+        { text: "El bufé de Aipim reúne platos brasileños clásicos junto a opciones internacionales, pensado para gustarle a grupos con paladares distintos. Familia con niños, pareja de viaje, grupo de amigos: todos encuentran algo para repetir. El cuidado del Chef Lopes con la variedad y la preparación de los platos es lo que diferencia el lugar de un bufé común." },
+        { text: "Por qué Aipim funciona tan bien para quien está de paso" },
+        { items: [
+          "Ubicación estratégica en la Avenida das Cataratas, fácil de encajar en la ruta",
+          "Bufé variado que atiende a vegetarianos, niños y a quien come de todo",
+          "Ambiente acogedor, sin esa prisa de restaurante lleno e impersonal",
+          "Chef con trayectoria consolidada y una propuesta clara de valorar el sabor de verdad",
+        ] },
+        { text: "Bufé de Aipim Gastronomia by Chef Lopes, en la Avenida das Cataratas, en Foz de Iguazú." },
+        { text: "¿Vale la pena parar en Aipim aunque no lo hayas planeado?" },
+        { text: "Sí, y quien fue una vez suele volver al día siguiente. El ambiente es distendido, la atención tiene ese modo brasileño de recibir bien, y sales satisfecho sin gastar una fortuna. Para quien se aloja en la Pousada Cataratas, Aipim queda a pocos minutos y es una opción natural para el almuerzo después de una mañana intensa en el Parque Nacional." },
+        { text: "¿Y si el almuerzo en Aipim viniera de cortesía en tu reserva?" },
+        { text: "Imagina terminar la mañana en las Cataratas, volver a la posada, darte un baño e ir a almorzar a Aipim Gastronomia sin sacar dinero del bolsillo. Es exactamente lo que ofrece el Paquete Larga Estancia de la Pousada Cataratas. Quien reserva 5 noches o más recibe 1 almuerzo de cortesía en Aipim Gastronomia para todos los huéspedes de la reserva." },
+        { text: "Y hay más: el paquete también incluye transporte de ida y vuelta a Paraguay, lo que ya resuelve dos clásicos de la ruta de quien visita Foz de Iguazú. Menos logística, más aprovechamiento." },
+        { text: "Qué incluye y qué conviene saber antes de ir" },
+        { items: [
+          "1 almuerzo de cortesía en Aipim Gastronomia para todos los huéspedes de la misma reserva",
+          "La cortesía se concede una única vez por reserva",
+          "Las bebidas no están incluidas en el almuerzo de cortesía",
+          "Transporte de ida y vuelta a Paraguay también incluido en el paquete",
+          "Válido para reservas de 5 noches o más en la Pousada Cataratas",
+        ] },
+        { text: "Más días en Foz, más experiencias y menos gastos por el camino" },
+        { text: "Foz de Iguazú tiene mucho más para ofrecer que una ida rápida a las Cataratas. Quedarte más días permite encajar Itaipú, la Av. das Cataratas, la frontera con Argentina, una tarde en Paraguay y, claro, sentarte con calma en un buen restaurante en Foz de Iguazú sin esa carrera de quien siempre corre al próximo punto. El paquete de la Pousada Cataratas fue pensado justamente para eso: animarte a bajar el ritmo y aprovechar la ciudad de verdad, sin que el presupuesto pese tanto al final del viaje." },
+        { text: "Si todavía estás decidiendo cuántas noches reservar, aquí va un consejo de quien conoce el destino: 5 noches es el mínimo cómodo para salir de Foz con la sensación de haber visto lo que había para ver. Y saliendo con un almuerzo en Aipim ya garantizado, la cuenta cierra bastante mejor." },
+        { title: "Almuerzo en Aipim por cuenta de la casa", text: "El Paquete Larga Estancia da 1 almuerzo de cortesía en Aipim Gastronomia para todos los huéspedes de la reserva, más transporte de ida y vuelta a Paraguay. Válido a partir de 5 noches en la Pousada Cataratas.", btn: "Ver el Paquete Larga Estancia" },
+      ]),
+    },
     "maratona-internacional-de-foz-do-iguacu-2026": {
       category: "Eventos",
       title: "Maratón Internacional de Foz de Iguazú 2026: guía completa de la prueba y dónde alojarse",
@@ -816,6 +860,7 @@ export const es: LocaleContent = {
   artigoTags: ["Cataratas", "Rutas", "Transporte", "Alojamiento", "Atracciones", "Gastronomía", "Maratón", "Foz de Iguazú"],
 
   artigoCategories: {
+    "Gastronomia": { name: "Gastronomía" },
     "Eventos": { name: "Eventos" },
     "Roteiros": { name: "Rutas" },
     "Dicas de viagem": { name: "Consejos de viaje" },
@@ -824,6 +869,7 @@ export const es: LocaleContent = {
   },
 
   artigoRecent: {
+    "restaurante-em-foz-do-iguacu-aipim-gastronomia": { title: "Aipim Gastronomia: el restaurante para sumar a tu ruta" },
     "maratona-internacional-de-foz-do-iguacu-2026": { title: "Maratón Internacional de Foz de Iguazú 2026: guía completa" },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "Qué hacer en Foz de Iguazú en 3 días" },
     "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
@@ -832,6 +878,7 @@ export const es: LocaleContent = {
   },
 
   artigoRelated: {
+    "/blog/restaurante-em-foz-do-iguacu-aipim-gastronomia": { title: "Aipim Gastronomia: el restaurante para sumar a tu ruta" },
     "/blog/maratona-internacional-de-foz-do-iguacu-2026": { title: "Maratón Internacional de Foz de Iguazú 2026: guía completa" },
     "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "Qué hacer en Foz de Iguazú en 3 días" },
     "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "Cómo llegar a las Cataratas del Iguazú saliendo de la posada" },
