@@ -296,6 +296,7 @@ export type BlogPost = {
 
 // posts — grid de artigos do Blog. Valores sin cambios.
 export const blogPosts: BlogPost[] = [
+  { id: "bl-6", cat: "Gastronomia", read: "3 min", date: "9 Set 2026", href: "Artigo.dc.html?post=restaurante-em-foz-do-iguacu-aipim-gastronomia", title: "Aipim Gastronomia em Foz do Iguaçu: o restaurante que vale incluir no seu roteiro", excerpt: "O Aipim Gastronomia é um restaurante em Foz do Iguaçu que combina sabores locais e ambiente aconchegante. Vale incluir no seu roteiro!", img: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp", ph: "Foto — Buffet do restaurante Aipim Gastronomia em Foz do Iguaçu" },
   { id: "bl-5", cat: "Eventos", read: "6 min", date: "18 Ago 2026", href: "Artigo.dc.html?post=maratona-internacional-de-foz-do-iguacu-2026", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo da prova e onde ficar", excerpt: "A 16ª Maratona Internacional de Foz do Iguaçu acontece em 27 de setembro de 2026, da Itaipu às Cataratas. Veja percursos, horários, inscrições e onde se hospedar a 100 m da Avenida das Cataratas.", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", ph: "Foto — Largada da Maratona Internacional de Foz do Iguaçu" },
   { id: "bl-1", cat: "Roteiros", read: "4 min", date: "7 Jul 2026", href: "Artigo.dc.html?post=o-que-fazer-em-foz-do-iguacu-em-3-dias", title: "O que fazer em Foz do Iguaçu em 3 dias: roteiro completo para aproveitar cada hora", excerpt: "Roteiro de 3 dias em Foz do Iguaçu com as melhores atrações, dicas locais e tudo que você precisa saber para aproveitar cada hora.", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", ph: "Foto — Roteiro 3 dias em Foz" },
   { id: "bl-2", cat: "Dicas de viagem", read: "4 min", date: "7 Jul 2026", href: "Artigo.dc.html?post=como-chegar-as-cataratas-do-iguacu-saindo-da-pousada", title: "Como chegar às Cataratas do Iguaçu saindo da pousada: guia prático para não perder tempo", excerpt: "Saindo da pousada, chegar às Cataratas do Iguaçu é mais fácil do que parece. Veja as melhores opções de transporte e economize tempo.", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", ph: "Foto — Como chegar às Cataratas" },
@@ -306,6 +307,7 @@ export const blogPosts: BlogPost[] = [
 export type BlogCategory = { name: string; count: number };
 
 export const blogCategories: BlogCategory[] = [
+  { name: "Gastronomia", count: 1 },
   { name: "Eventos", count: 1 },
   { name: "Roteiros", count: 1 },
   { name: "Dicas de viagem", count: 1 },
@@ -316,6 +318,7 @@ export const blogCategories: BlogCategory[] = [
 export type BlogRecent = { id: string; title: string; date: string; img: string; slug: string };
 
 export const blogRecent: BlogRecent[] = [
+  { id: "bl-rec-6", title: "Aipim Gastronomia: o restaurante para incluir no roteiro", date: "9 Set 2026", img: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp", slug: "restaurante-em-foz-do-iguacu-aipim-gastronomia" },
   { id: "bl-rec-5", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", slug: "maratona-internacional-de-foz-do-iguacu-2026" },
   { id: "bl-rec-1", title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", slug: "o-que-fazer-em-foz-do-iguacu-em-3-dias" },
   { id: "bl-rec-2", title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", slug: "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada" },
@@ -755,14 +758,14 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     destaque: { valor: "05", label: "A partir de", nota: "diárias ou mais" },
     beneficios: [
       { icone: "transporte", texto: "Transporte ao Paraguai, ida e volta" },
-      { icone: "refeicao", texto: "Almoço no restaurante Aipim Gastronomia" },
+      { icone: "refeicao", texto: "Almoço de cortesia no Aipim Gastronomia para todos os hóspedes da reserva" },
       { icone: "cafe", texto: "Café da manhã incluso" },
       { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
       { icone: "estacionamento", texto: "Estacionamento privativo" },
       { icone: "piscina", texto: "Piscina e áreas de lazer à vontade" },
     ],
     desc: "Fique mais dias em Foz do Iguaçu e aproveite a cidade sem pressa: quanto mais tempo você fica, mais a estadia rende.",
-    obs: "Bebidas não inclusas · Restaurante a 1,3 km da Pousada Cataratas",
+    obs: "A cortesia do almoço é concedida uma única vez por reserva · Bebidas não inclusas · Restaurante a 1,3 km da Pousada Cataratas",
     waMessage: "Olá, vim do site e tenho interesse no Pacote Longa Estadia",
     galeria: [
       { src: "/images/real/promocoes/piscina-espreguicadeiras-guarda-sol-pousada-cataratas-foz-do-iguacu.webp", alt: "Piscina com espreguiçadeiras e guarda-sol da Pousada Cataratas em Foz do Iguaçu" },
@@ -922,6 +925,44 @@ export type ArtigoDetail = {
 };
 
 export const artigoDetails: Record<string, ArtigoDetail> = {
+  "restaurante-em-foz-do-iguacu-aipim-gastronomia": {
+    category: "Gastronomia",
+    title: "Aipim Gastronomia em Foz do Iguaçu: o restaurante que vale incluir no seu roteiro",
+    cover: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp",
+    date: "9 de Setembro, 2026",
+    author: "Equipe Pousada Cataratas",
+    readTime: "3 min de leitura",
+    body: [
+      { type: "p", text: "Você chega em Foz do Iguaçu depois de um dia nas Cataratas, com fome e sem vontade de perder tempo procurando onde comer. É aí que o Aipim Gastronomia by Chef Lopes aparece como uma parada certeira. Considerado um dos restaurantes em Foz do Iguaçu que mais agrada quem visita a cidade, o Aipim fica na Avenida das Cataratas, bem na rota de quem já está explorando os principais atrativos da região." },
+      { type: "h2", text: "O que tem no prato: buffet com sabores brasileiros e muito mais" },
+      { type: "p", text: "O buffet do Aipim reúne pratos brasileiros clássicos ao lado de opções internacionais, pensado para agradar grupos com gostos variados. Família com criança, casal em viagem de lazer, grupo de amigos: todo mundo encontra algo que vale repetir. O cuidado do Chef Lopes com a variedade e o preparo dos pratos é o que diferencia o lugar de um buffet comum." },
+      { type: "h3", text: "Por que o Aipim funciona tão bem para quem está de passagem" },
+      { type: "list", items: [
+        "Localização estratégica na Avenida das Cataratas, fácil de encaixar no roteiro",
+        "Buffet variado que atende vegetarianos, crianças e quem come de tudo",
+        "Ambiente aconchegante, sem aquela pressa de restaurante cheio e impessoal",
+        "Chef com trajetória consolidada e proposta clara de valorizar o sabor de verdade",
+      ] },
+      { type: "figure", img: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp", caption: "Buffet do Aipim Gastronomia by Chef Lopes, na Avenida das Cataratas, em Foz do Iguaçu." },
+      { type: "h2", text: "Vale a pena parar no Aipim mesmo sem ter planejado?" },
+      { type: "p", text: "Sim, e quem foi uma vez costuma voltar no dia seguinte. O ambiente é descontraído, o atendimento tem aquele jeito brasileiro de receber bem, e você sai satisfeito sem gastar uma fortuna. Para quem está hospedado perto das Cataratas, como na Pousada Cataratas, o Aipim fica a poucos minutos e é uma opção natural para o almoço depois de uma manhã intensa no Parque Nacional." },
+      { type: "h2", text: "E se o almoço no Aipim viesse de cortesia na sua reserva?" },
+      { type: "p", text: "Imagine terminar a manhã nas Cataratas, voltar para a pousada, tomar um banho e ir almoçar no Aipim Gastronomia sem tirar dinheiro do bolso. É exatamente isso que o Pacote Longa Estadia da Pousada Cataratas oferece. Quem reserva 5 noites ou mais ganha 1 almoço de cortesia no Aipim Gastronomia para todos os hóspedes da reserva." },
+      { type: "p", text: "E tem mais: o pacote também inclui transfer de ida e volta ao Paraguai, o que já resolve dois itens clássicos do roteiro de quem visita Foz do Iguaçu. Menos logística, mais aproveitamento." },
+      { type: "h3", text: "O que está incluso e o que vale saber antes de ir" },
+      { type: "list", items: [
+        "1 almoço de cortesia no Aipim Gastronomia para todos os hóspedes da mesma reserva",
+        "A cortesia é concedida uma única vez por reserva",
+        "Bebidas não estão inclusas no almoço cortesia",
+        "Transfer de ida e volta ao Paraguai também incluído no pacote",
+        "Válido para reservas de 5 noites ou mais na Pousada Cataratas",
+      ] },
+      { type: "h2", text: "Mais dias em Foz, mais experiências e menos gastos no caminho" },
+      { type: "p", text: "Foz do Iguaçu tem muito mais para oferecer do que uma ida rápida às Cataratas. Ficar mais dias permite encaixar a Itaipu, a Av. das Cataratas, a fronteira com a Argentina, uma tarde no Paraguai e, claro, sentar com calma em um bom restaurante em Foz do Iguaçu sem aquela correria de quem está sempre correndo para o próximo ponto. O pacote da Pousada Cataratas foi pensado justamente para isso: incentivar você a desacelerar e aproveitar a cidade de verdade, sem que o orçamento pese tanto no final da viagem." },
+      { type: "p", text: "Se você ainda está decidindo quantas noites reservar, aqui vai uma dica de quem conhece o destino: 5 noites é o mínimo confortável para sair de Foz com a sensação de que viu o que havia para ver. E saindo com um almoço no Aipim já garantido, a conta fecha bem melhor." },
+      { type: "cta", title: "Almoço no Aipim por conta da casa", text: "O Pacote Longa Estadia dá 1 almoço de cortesia no Aipim Gastronomia para todos os hóspedes da reserva, mais transfer de ida e volta ao Paraguai. Válido a partir de 5 noites na Pousada Cataratas.", btn: "Ver o Pacote Longa Estadia", href: "/promocao/longa-estadia" },
+    ],
+  },
   "maratona-internacional-de-foz-do-iguacu-2026": {
     category: "Eventos",
     title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo da prova e onde ficar",
@@ -1142,6 +1183,7 @@ export const artigoDetails: Record<string, ArtigoDetail> = {
 export const artigoTags: string[] = ["Cataratas", "Roteiros", "Transporte", "Hospedagem", "Atrações", "Gastronomia", "Maratona", "Foz do Iguaçu"];
 
 export const artigoCategories: { name: string; count: number }[] = [
+  { name: "Gastronomia", count: 1 },
   { name: "Eventos", count: 1 },
   { name: "Roteiros", count: 1 },
   { name: "Dicas de viagem", count: 1 },
@@ -1150,6 +1192,7 @@ export const artigoCategories: { name: string; count: number }[] = [
 ];
 
 export const artigoRecent: { title: string; date: string; img: string; slug: string }[] = [
+  { title: "Aipim Gastronomia: o restaurante para incluir no roteiro", date: "9 Set 2026", img: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp", slug: "restaurante-em-foz-do-iguacu-aipim-gastronomia" },
   { title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp", slug: "maratona-internacional-de-foz-do-iguacu-2026" },
   { title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp", slug: "o-que-fazer-em-foz-do-iguacu-em-3-dias" },
   { title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp", slug: "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada" },
@@ -1159,6 +1202,7 @@ export const artigoRecent: { title: string; date: string; img: string; slug: str
 
 // related: se filtra o post atual na página e mostra até 3.
 export const artigoRelated: { href: string; title: string; date: string; img: string }[] = [
+  { href: "/blog/restaurante-em-foz-do-iguacu-aipim-gastronomia", title: "Aipim Gastronomia: o restaurante para incluir no roteiro", date: "9 Set 2026", img: "/images/blog/aipim-gastronomia-restaurante-em-foz-do-iguacu.webp" },
   { href: "/blog/maratona-internacional-de-foz-do-iguacu-2026", title: "Maratona Internacional de Foz do Iguaçu 2026: guia completo", date: "18 Ago 2026", img: "/images/blog/maratona-internacional-foz-do-iguacu-2026-largada-corredores.webp" },
   { href: "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias", title: "O que fazer em Foz do Iguaçu em 3 dias", date: "7 Jul 2026", img: "/images/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias-roteiro-completo.webp" },
   { href: "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada", title: "Como chegar às Cataratas do Iguaçu saindo da pousada", date: "7 Jul 2026", img: "/images/blog/como-chegar-cataratas-iguacu-saindo-pousada.webp" },

@@ -1,6 +1,6 @@
 import type { LocaleContent } from "./types";
 import { MARATONA_2026_BOOKING_URL } from "@/lib/booking";
-import type { ProdutoDetail } from "@/lib/data";
+import type { ArtigoBlock, ProdutoDetail } from "@/lib/data";
 
 // Nested arrays only carry the translatable TEXT fields (src comes from the pt
 // base through the element-wise merge). The strict base type needs the cast.
@@ -8,6 +8,8 @@ const photos = (alts: string[]) =>
   alts.map((alt) => ({ alt })) as unknown as ProdutoDetail["galeria"];
 const textos = (valores: string[]) =>
   valores.map((texto) => ({ texto })) as unknown as ProdutoDetail["beneficios"];
+type BodyDraft = { text?: string; items?: string[]; caption?: string; title?: string; btn?: string };
+const body = (blocks: BodyDraft[]) => blocks as unknown as ArtigoBlock[];
 
 // English (first draft) translation overrides. Keys match the pt base in
 // lib/data.ts (id/slug/label/name/href). Only translatable text fields are
@@ -164,6 +166,11 @@ export const en: LocaleContent = {
 
   // ============================ Blog (listado) ============================
   blogPosts: {
+    "bl-6": {
+      cat: "Food & drink",
+      title: "Aipim Gastronomia in Foz do Iguaçu: the restaurant worth adding to your itinerary",
+      excerpt: "Aipim Gastronomia is a restaurant in Foz do Iguaçu that combines local flavours with a welcoming setting. Worth adding to your itinerary!",
+    },
     "bl-5": {
       cat: "Events",
       title: "Foz do Iguaçu International Marathon 2026: full race guide and where to stay",
@@ -197,6 +204,7 @@ export const en: LocaleContent = {
   },
 
   blogCategories: {
+    "Gastronomia": { name: "Food & drink" },
     "Eventos": { name: "Events" },
     "Roteiros": { name: "Itineraries" },
     "Dicas de viagem": { name: "Travel tips" },
@@ -205,6 +213,7 @@ export const en: LocaleContent = {
   },
 
   blogRecent: {
+    "bl-rec-6": { title: "Aipim Gastronomia: the restaurant to add to your itinerary" },
     "bl-rec-5": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "bl-rec-1": { title: "What to do in Foz do Iguaçu in 3 days" },
     "bl-rec-2": { title: "How to get to Iguaçu Falls from the guesthouse" },
@@ -465,14 +474,14 @@ export const en: LocaleContent = {
       destaque: { valor: "05", label: "From", nota: "nights or more" },
       beneficios: textos([
         "Transfer to Paraguay, round trip",
-        "Lunch at the Aipim Gastronomia restaurant",
+        "Complimentary lunch at Aipim Gastronomia for every guest on the booking",
         "Breakfast included",
         "Free Wi-Fi throughout the guesthouse",
         "Private parking",
         "Pool and leisure areas at your leisure",
       ]),
       desc: "Stay more days in Foz do Iguaçu and enjoy the city at a leisurely pace: the longer you stay, the further it goes.",
-      obs: "Drinks not included · Restaurant 1.3 km from Pousada Cataratas",
+      obs: "The complimentary lunch applies once per booking · Drinks not included · Restaurant 1.3 km from Pousada Cataratas",
       galeria: photos([
         "Pool with sun loungers and a parasol at Pousada Cataratas in Foz do Iguaçu",
         "Outdoor area with iron tables and chairs and a blue planter at Pousada Cataratas in Foz do Iguaçu",
@@ -581,6 +590,43 @@ export const en: LocaleContent = {
 
   // ============================ Detalle Artigo ============================
   artigos: {
+    "restaurante-em-foz-do-iguacu-aipim-gastronomia": {
+      category: "Food & drink",
+      title: "Aipim Gastronomia in Foz do Iguaçu: the restaurant worth adding to your itinerary",
+      date: "9 September 2026",
+      author: "Pousada Cataratas Team",
+      readTime: "3 min read",
+      body: body([
+        { text: "You arrive in Foz do Iguaçu after a day at the Falls, hungry and in no mood to waste time looking for somewhere to eat. That is where Aipim Gastronomia by Chef Lopes comes in as a sure bet. Considered one of the restaurants in Foz do Iguaçu that most appeals to visitors, Aipim sits on Avenida das Cataratas, right on the route of anyone already exploring the region's main attractions." },
+        { text: "What's on the plate: a buffet of Brazilian flavours and much more" },
+        { text: "The Aipim buffet brings together classic Brazilian dishes alongside international options, designed to please groups with different tastes. A family with children, a couple on a leisure trip, a group of friends: everyone finds something worth going back for. Chef Lopes's care with the variety and the preparation is what sets the place apart from an ordinary buffet." },
+        { text: "Why Aipim works so well for those passing through" },
+        { items: [
+          "A strategic spot on Avenida das Cataratas, easy to fit into the itinerary",
+          "A varied buffet that caters to vegetarians, children and those who eat everything",
+          "A welcoming setting, without the rush of a crowded, impersonal restaurant",
+          "A chef with an established career and a clear commitment to real flavour",
+        ] },
+        { text: "The buffet at Aipim Gastronomia by Chef Lopes, on Avenida das Cataratas in Foz do Iguaçu." },
+        { text: "Is Aipim worth a stop even if you hadn't planned one?" },
+        { text: "Yes — and those who go once tend to come back the next day. The setting is relaxed, the service has that Brazilian way of making you feel welcome, and you leave satisfied without spending a fortune. For guests staying at Pousada Cataratas, Aipim is a few minutes away and a natural choice for lunch after an intense morning at the National Park." },
+        { text: "What if lunch at Aipim came free with your booking?" },
+        { text: "Picture finishing the morning at the Falls, heading back to the guesthouse, taking a shower and going for lunch at Aipim Gastronomia without reaching for your wallet. That is exactly what the Long Stay Package at Pousada Cataratas offers. Book 5 nights or more and every guest on the booking gets 1 complimentary lunch at Aipim Gastronomia." },
+        { text: "And there's more: the package also includes a round-trip transfer to Paraguay, which already ticks off two classics from any Foz do Iguaçu itinerary. Less logistics, more of the trip." },
+        { text: "What's included and what to know before you go" },
+        { items: [
+          "1 complimentary lunch at Aipim Gastronomia for every guest on the same booking",
+          "The courtesy applies once per booking",
+          "Drinks are not included in the complimentary lunch",
+          "A round-trip transfer to Paraguay is also included in the package",
+          "Valid for bookings of 5 nights or more at Pousada Cataratas",
+        ] },
+        { text: "More days in Foz, more to see and less spent along the way" },
+        { text: "Foz do Iguaçu has far more to offer than a quick trip to the Falls. Staying longer lets you fit in Itaipu, Av. das Cataratas, the Argentine border, an afternoon in Paraguay and, of course, sitting down unhurried at a good restaurant in Foz do Iguaçu instead of always racing to the next stop. The Pousada Cataratas package was designed for exactly that: to encourage you to slow down and enjoy the city properly, without the budget weighing so heavily at the end of the trip." },
+        { text: "If you are still deciding how many nights to book, here is a tip from people who know the destination: 5 nights is the comfortable minimum to leave Foz feeling you saw what there was to see. And leaving with a lunch at Aipim already covered, the maths works out rather better." },
+        { title: "Lunch at Aipim on the house", text: "The Long Stay Package includes 1 complimentary lunch at Aipim Gastronomia for every guest on the booking, plus a round-trip transfer to Paraguay. Valid from 5 nights at Pousada Cataratas.", btn: "See the Long Stay Package" },
+      ]),
+    },
     "maratona-internacional-de-foz-do-iguacu-2026": {
       category: "Events",
       title: "Foz do Iguaçu International Marathon 2026: full race guide and where to stay",
@@ -795,6 +841,7 @@ export const en: LocaleContent = {
   artigoTags: ["Falls", "Itineraries", "Transport", "Lodging", "Attractions", "Dining", "Marathon", "Foz do Iguaçu"],
 
   artigoCategories: {
+    "Gastronomia": { name: "Food & drink" },
     "Eventos": { name: "Events" },
     "Roteiros": { name: "Itineraries" },
     "Dicas de viagem": { name: "Travel tips" },
@@ -803,6 +850,7 @@ export const en: LocaleContent = {
   },
 
   artigoRecent: {
+    "restaurante-em-foz-do-iguacu-aipim-gastronomia": { title: "Aipim Gastronomia: the restaurant to add to your itinerary" },
     "maratona-internacional-de-foz-do-iguacu-2026": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
     "como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
@@ -811,6 +859,7 @@ export const en: LocaleContent = {
   },
 
   artigoRelated: {
+    "/blog/restaurante-em-foz-do-iguacu-aipim-gastronomia": { title: "Aipim Gastronomia: the restaurant to add to your itinerary" },
     "/blog/maratona-internacional-de-foz-do-iguacu-2026": { title: "Foz do Iguaçu International Marathon 2026: full guide" },
     "/blog/o-que-fazer-em-foz-do-iguacu-em-3-dias": { title: "What to do in Foz do Iguaçu in 3 days" },
     "/blog/como-chegar-as-cataratas-do-iguacu-saindo-da-pousada": { title: "How to get to Iguaçu Falls from the guesthouse" },
