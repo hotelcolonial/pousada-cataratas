@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { BOOKING_BASE } from "@/lib/booking";
+import { RESERVA_DIRETA_10_BOOKING_URL } from "@/lib/booking";
 import { PROMO_POPUP } from "@/lib/promos";
 
 // Pop-up promocional de la Home. Imagen localizada (pt/es/en), con título/alt
-// SEO semántico. Al hacer click lleva al motor de reservas. Se muestra SIEMPRE
+// SEO semántico. Al hacer click lleva al motor de reservas con el cupón
+// CATARATAS10 ya aplicado (RESERVA_DIRETA_10_BOOKING_URL). Se muestra SIEMPRE
 // que se carga la Home (primera visita y cada refresh).
 //
 // El interruptor y la ruta de la imagen viven en lib/promos.ts (PROMO_POPUP),
@@ -20,17 +21,17 @@ type Promo = { src: string; alt: string; close: string };
 const PROMO: Record<string, Promo> = {
   pt: {
     src: `${BASE}-pt.webp`,
-    alt: "Promoção de agosto: hospede-se na Pousada Cataratas em Foz do Iguaçu e ganhe 2 entradas grátis ao Zoopark",
+    alt: "Reserve direto e ganhe 10% OFF na Pousada Cataratas em Foz do Iguaçu com o cupom CATARATAS10",
     close: "Fechar",
   },
   es: {
     src: `${BASE}-es.webp`,
-    alt: "Promoción de agosto: hospédate en Pousada Cataratas en Foz de Iguazú y gana 2 entradas gratis al Zoopark",
+    alt: "Reserva directo y gana 10% OFF en Pousada Cataratas en Foz de Iguazú con el cupón CATARATAS10",
     close: "Cerrar",
   },
   en: {
     src: `${BASE}-en.webp`,
-    alt: "August offer: stay at Pousada Cataratas in Foz do Iguaçu and get 2 free Zoopark tickets",
+    alt: "Book direct and get 10% OFF at Pousada Cataratas in Foz do Iguaçu with coupon CATARATAS10",
     close: "Close",
   },
 };
@@ -81,7 +82,7 @@ export default function PromoPopup() {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{ position: "relative", width: "min(560px, 92vw, 82vh)" }}
+        style={{ position: "relative", width: "min(640px, 92vw, 97vh)" }}
       >
         <button
           type="button"
@@ -107,7 +108,7 @@ export default function PromoPopup() {
           ×
         </button>
         <a
-          href={BOOKING_BASE}
+          href={RESERVA_DIRETA_10_BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
           onClick={close}
@@ -119,7 +120,7 @@ export default function PromoPopup() {
             alt={promo.alt}
             title={promo.alt}
             width={1080}
-            height={1080}
+            height={911}
             style={{
               display: "block",
               width: "100%",

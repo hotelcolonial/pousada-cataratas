@@ -47,3 +47,7 @@ export const MARATONA_2026_OFFER: BookingOffer = {
 };
 
 export const MARATONA_2026_BOOKING_URL = buildOfferBookingUrl(MARATONA_2026_OFFER);
+
+// Reserva direta com 10% OFF (cupom CATARATAS10). Sem datas: o hóspede escolhe
+// no motor e o cupom já vai aplicado. Usado pelo pop-up da home.
+export const RESERVA_DIRETA_10_BOOKING_URL = buildOfferBookingUrl({ promoCode: "CATARATAS10" });

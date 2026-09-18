@@ -143,15 +143,15 @@ export const PROMO_BTN_BG: Record<Promo["cor"], string> = {
   dark: "#143C7A",
 };
 
-// Pop-up da home. A arte tem o mês impresso na própria imagem ("hospede-se em
-// agosto"), numa versão por idioma (…-pt.webp / -es.webp / -en.webp). O parque
-// continua a ser o Zoopark, mas o mês não: por isso fica desligado até haver a
-// arte de setembro — mostrar a de agosto seria anunciar uma promoção acabada.
+// Pop-up da home. Arte "Reserve direto e ganhe 10% OFF" (cupom CATARATAS10),
+// numa versão por idioma (…-pt.webp / -es.webp / -en.webp). Não tem mês nem
+// parque impressos, por isso não caduca sozinha: fica ligado enquanto o cupom
+// valer no motor.
 //
-// 👉 PARA LIGAR: gerar as três imagens, apontar "base" para o prefixo comum
-//    (sem o -pt/-es/-en.webp) e pôr ativo: true. Os textos alternativos e o
-//    botão de fechar estão em components/home/PromoPopup.tsx.
+// 👉 PARA TROCAR A ARTE: gerar as três imagens, apontar "base" para o prefixo
+//    comum (sem o -pt/-es/-en.webp) e ajustar os textos alternativos, o link e
+//    as medidas em components/home/PromoPopup.tsx. Para desligar: ativo: false.
 export const PROMO_POPUP = {
-  ativo: false,
-  base: "/images/real/home/promo-agosto-zoopark-entradas-gratis-pousada-cataratas-foz-do-iguacu",
+  ativo: true,
+  base: "/images/real/home/promo-reserve-direto-10-off-cupom-cataratas10-pousada-cataratas-foz-do-iguacu",
 } as const;
