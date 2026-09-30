@@ -16,6 +16,7 @@ const staticPaths = [
   "/quartos",
   "/galeria",
   "/promocoes",
+  "/grupos",
   "/atracoes",
   "/blog",
   "/politica-de-privacidade",

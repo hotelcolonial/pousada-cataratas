@@ -14,6 +14,14 @@ const nextConfig = {
         destination: "/pt",
         statusCode: 301,
       },
+      // Maratona Internacional de Foz 2026 (27/09/2026): a promoção saiu do site
+      // depois da prova (o post do blog continua). 301 para a lista de promoções,
+      // no mesmo idioma, para não deixar 404 nos links já indexados/compartilhados.
+      {
+        source: "/:lang(pt|es|en)/promocao/maratona-2026",
+        destination: "/:lang/promocoes",
+        statusCode: 301,
+      },
     ];
   },
 };

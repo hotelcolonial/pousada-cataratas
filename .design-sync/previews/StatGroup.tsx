@@ -3,7 +3,7 @@ import { Stat, StatGroup } from "@pousada-cataratas/design-system";
 /** Os números da pousada, como aparecem na secção A Estrutura. */
 export const Numeros = () => (
   <StatGroup>
-    <Stat value="28" label="Quartos" />
+    <Stat value="27" label="Apartamentos" />
     <Stat value="24h" label="Recepção" />
     <Stat value="4.8" label="Avaliação" />
     <Stat value="1" label="Piscina" />
@@ -26,7 +26,7 @@ export const Tres = () => (
 export const Estreito = () => (
   <div style={{ width: 320 }}>
     <StatGroup>
-      <Stat value="28" label="Quartos" />
+      <Stat value="27" label="Apartamentos" />
       <Stat value="24h" label="Recepção" />
       <Stat value="4.8" label="Avaliação" />
       <Stat value="1" label="Piscina" />

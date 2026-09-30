@@ -553,22 +553,6 @@ export const es: LocaleContent = {
       desc: "Perfecto para quienes están de paso por Foz de Iguazú y quieren relajarse entre un paseo y otro.",
       obs: "Sujeto a disponibilidad · Consulta con nuestro equipo antes de venir",
     },
-    "maratona-2026": {
-      name: "Maratón Internacional de Foz 2026",
-      fotoAlt: "Habitación de la Pousada Cataratas en Foz de Iguazú, tu base para el Maratón Internacional de Foz de Iguazú 2026",
-      hook: "Tu base para la mejor carrera del año",
-      destaque: { valor: "10%", label: "OFF con el cupón", nota: "CORRIDA26" },
-      beneficios: textos([
-        "Desayuno a partir de las 04h el día de la carrera",
-        "Late check-out hasta las 14h reservando 02 noches",
-        "A 100 m de la Avenida das Cataratas",
-        "Estacionamiento gratis en el lugar",
-        "Desayuno incluido",
-        "Wi-Fi gratis en toda la posada",
-      ]),
-      desc: "En el corazón de Foz, cerca de todo y lejos del ruido: el punto de partida ideal para tu mejor carrera.",
-      obs: "Cupos limitados para la semana de la prueba",
-    },
     "setembro-encantador": {
       name: "Septiembre Encantador",
       fotoAlt: "Niños con animales en el Zoopark de Foz de Iguazú — promoción Septiembre Encantador de la Pousada Cataratas",
@@ -683,7 +667,7 @@ export const es: LocaleContent = {
         { items: [
           "Desayuno servido a partir de las 04h el día de la prueba: largas alimentado, sin depender de una barrita y de la suerte.",
           "Late check-out hasta las 14h para quien reserva 2 noches: alcanza para correr, volver, ducharte con calma y descansar.",
-          "Estacionamiento privado gratuito en el lugar, sin cargos sorpresa en el checkout.",
+          "Estacionamiento privado gratuito, sin cargos sorpresa en el checkout.",
           "Piscina para soltar las piernas después de la carrera, mucho mejor que cualquier hielo improvisado.",
           "Habitaciones de doble a quíntuple, ideales para asesorías deportivas, grupos de entrenamiento y familias que viajan juntas.",
           "Wi-Fi gratis, aire acondicionado, caja fuerte, recepción 24h y lavandería (con costo aparte) para el uniforme de entrenamiento.",
@@ -703,7 +687,7 @@ export const es: LocaleContent = {
         { text: "Entrenaste meses por los 42 kilómetros. No dejes que los últimos 3 hasta la largada te arruinen la prueba." },
         { text: "Asegurá tu lugar antes de que la ciudad se llene" },
         { text: "Todos los años pasa lo mismo: se agotan las inscripciones y enseguida desaparece el alojamiento bien ubicado. Quien reserva temprano elige la habitación que quiere, paga la mejor tarifa y llega a Foz de Iguazú con una preocupación menos. Escribinos por WhatsApp si querés coordinar el horario del desayuno, una habitación para todo el grupo o cualquier detalle de tu rutina de competencia: ya recibimos a muchos corredores y sabemos exactamente qué hace la diferencia." },
-        { title: "Reservá con el cupón CORRIDA26", text: "10% de descuento en la semana del Maratón Internacional de Foz de Iguazú 2026, con desayuno a partir de las 04h el día de la prueba, late check-out hasta las 14h y estacionamiento gratuito. A 100 m de la Avenida das Cataratas.", btn: "Reservar del 25 al 29/09" },
+        { title: "Mira las promociones de la Pousada Cataratas", text: "El maratón de 2026 ya pasó, pero Foz de Iguazú te sigue esperando. Revisa las ofertas vigentes y reserva directo con nosotros.", btn: "Ver promociones" },
       ]),
     },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": {

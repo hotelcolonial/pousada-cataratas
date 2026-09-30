@@ -104,15 +104,6 @@ export const PROMOS: Promo[] = [
     destaque: false,
   },
   {
-    key: "maratona-2026",
-    slug: "maratona-2026",
-    imgHome: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
-    imgCard: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
-    cor: "accent",
-    ativa: true,
-    destaque: false,
-  },
-  {
     key: "longa-estadia",
     slug: "longa-estadia",
     // O buffet do Aipim Gastronomia nos dois lugares: o almoço no restaurante é

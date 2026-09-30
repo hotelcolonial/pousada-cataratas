@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export interface StatProps {
-  /** O número em destaque. Curto — "28", "24h", "4.8". */
+  /** O número em destaque. Curto — "27", "24h", "4.8". */
   value?: ReactNode;
   /** Rótulo por baixo, em versais espaçadas. */
   label?: ReactNode;
@@ -10,14 +10,14 @@ export interface StatProps {
 }
 
 /**
- * Um número da pousada com o seu rótulo — "28 / Quartos", "24h / Recepção".
+ * Um número da pousada com o seu rótulo — "27 / Apartamentos", "24h / Recepção".
  *
  * O valor usa a sem-serifa em Light 300 a 40px: é o único sítio onde o peso
  * fino aparece em corpo grande, e é o que dá o ar de ficha técnica. O rótulo é
  * deliberadamente pequeno (9px) e muito espaçado, para não competir.
  *
  * @example
- * <Stat value="28" label="Quartos" />
+ * <Stat value="27" label="Apartamentos" />
  */
 export function Stat({ value, label, className }: StatProps) {
   const cls = ["pcds-stat", className].filter(Boolean).join(" ");
@@ -49,7 +49,7 @@ export interface StatGroupProps {
  *
  * @example
  * <StatGroup>
- *   <Stat value="28" label="Quartos" />
+ *   <Stat value="27" label="Apartamentos" />
  *   <Stat value="24h" label="Recepção" />
  *   <Stat value="4.8" label="Avaliação" />
  *   <Stat value="1" label="Piscina" />

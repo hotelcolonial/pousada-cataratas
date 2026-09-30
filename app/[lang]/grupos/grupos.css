@@ -1,0 +1,57 @@
+/* ============================================================================
+   grupos.css — página Grupos. Mismas medidas, colores y breakpoints que
+   promocoes.css (contenedor 1280, goteras 22/40px, corte en 960px).
+   ============================================================================ */
+  ::selection{background:#F0871F;color:#FFFFFF}
+  a{color:inherit}
+  .gr-h2{font-size:40px}
+  .gr-inner{max-width:1280px;margin:0 auto}
+
+  /* Intro: texto + foto */
+  .gr-intro{max-width:1280px;margin:0 auto;padding:80px 22px;display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+  .gr-intro-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#143C7A}
+
+  /* Botones — mismo estilo que los CTA del site (uppercase, .22em, sin radio) */
+  .gr-btn{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:1px solid transparent;text-align:center;transition:background .2s,color .2s,border-color .2s}
+  .gr-btn-blue{background:#143C7A;color:#FFFFFF}
+  .gr-btn-blue:hover{background:#0F2F61}
+  .gr-btn-gold{background:#C79A6A;color:#FFFFFF}
+  .gr-btn-gold:hover{background:#FFFFFF;color:#143C7A}
+  .gr-btn-ghost{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.6)}
+  .gr-btn-ghost:hover{background:#FFFFFF;color:#143C7A;border-color:#FFFFFF}
+
+  /* Para quem é */
+  .gr-publico-wrap{background:#F4F6F8;padding:80px 22px}
+  .gr-publico{display:grid;grid-template-columns:1fr;gap:18px;margin-top:44px}
+  .gr-card{background:#FFFFFF;border:1px solid rgba(20,60,122,.08);padding:32px 26px}
+
+  /* Por que escolher */
+  .gr-motivos-wrap{max-width:1280px;margin:0 auto;padding:80px 22px;display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+  .gr-motivos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:28px 40px}
+  .gr-motivo{display:flex;align-items:center;gap:18px;padding-bottom:24px;border-bottom:1px solid rgba(20,60,122,.1)}
+
+  /* Como funciona */
+  .gr-passos-wrap{max-width:1280px;margin:0 auto;padding:0 22px 90px}
+  .gr-passos{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:40px}
+  .gr-passo{border-top:1px solid rgba(20,60,122,.14);padding-top:28px}
+
+  /* CTA */
+  .gr-cta{background:#143C7A;padding:80px 22px}
+  .gr-cta-btns{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+
+  @media(min-width:640px){
+    .gr-publico{grid-template-columns:1fr 1fr!important}
+    .gr-motivos{grid-template-columns:1fr 1fr!important}
+    .gr-cta-btns{flex-direction:row!important;justify-content:center!important}
+  }
+  @media(min-width:960px){
+    .gr-h2{font-size:52px}
+    .gr-intro{grid-template-columns:1.1fr 1fr!important;gap:70px!important;padding:120px 40px!important}
+    .gr-publico-wrap{padding:110px 40px!important}
+    .gr-publico{grid-template-columns:repeat(5,1fr)!important;gap:20px!important;margin-top:56px!important}
+    .gr-motivos-wrap{grid-template-columns:1fr 1.6fr!important;gap:70px!important;padding:120px 40px!important}
+    .gr-passos-wrap{padding:0 40px 120px!important}
+    .gr-passos{grid-template-columns:repeat(3,1fr)!important;gap:40px!important;margin-top:60px!important}
+    .gr-cta{padding:110px 40px!important}
+    .pc-mapstrip{grid-template-columns:2.7fr 1fr 1fr!important;min-height:300px!important}
+  }

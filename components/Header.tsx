@@ -14,6 +14,7 @@ const links = [
   { key: "quartos", label: "Acomodações", href: "/quartos" },
   { key: "galeria", label: "Galeria", href: "/galeria" },
   { key: "promocoes", label: "Promoções", href: "/promocoes" },
+  { key: "grupos", label: "Grupos", href: "/grupos" },
   { key: "atracoes", label: "Atrações", href: "/atracoes" },
   { key: "blog", label: "Blog", href: "/blog" },
 ];
@@ -46,11 +47,13 @@ export default function Header() {
           ? "galeria"
           : rest.startsWith("/promocoes")
             ? "promocoes"
-            : rest.startsWith("/atracoes")
-              ? "atracoes"
-              : rest.startsWith("/blog")
-                ? "blog"
-                : "inicio";
+            : rest.startsWith("/grupos")
+              ? "grupos"
+              : rest.startsWith("/atracoes")
+                ? "atracoes"
+                : rest.startsWith("/blog")
+                  ? "blog"
+                  : "inicio";
 
   const reserveHref = BOOKING_BASE;
   const waHref = WHATSAPP_HREF;

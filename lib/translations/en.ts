@@ -1,5 +1,4 @@
 import type { LocaleContent } from "./types";
-import { MARATONA_2026_BOOKING_URL } from "@/lib/booking";
 import type { ArtigoBlock, ProdutoDetail } from "@/lib/data";
 
 // Nested arrays only carry the translatable TEXT fields (src comes from the pt
@@ -534,22 +533,6 @@ export const en: LocaleContent = {
       desc: "Perfect for those passing through Foz do Iguaçu who want to relax between one outing and another.",
       obs: "Subject to availability · Check with our team before coming",
     },
-    "maratona-2026": {
-      name: "Foz International Marathon 2026",
-      fotoAlt: "Room at Pousada Cataratas in Foz do Iguaçu, your base for the Foz do Iguaçu International Marathon 2026",
-      hook: "Your base for the best race of the year",
-      destaque: { valor: "10%", label: "OFF with the coupon", nota: "CORRIDA26" },
-      beneficios: textos([
-        "Breakfast from 4 am on race day",
-        "Late check-out until 2 pm when booking 2 nights",
-        "100 m from Avenida das Cataratas",
-        "Free on-site parking",
-        "Breakfast included",
-        "Free Wi-Fi throughout the guesthouse",
-      ]),
-      desc: "In the heart of Foz, close to everything and away from the noise: the ideal starting point for your best race.",
-      obs: "Limited spots for race week",
-    },
     "setembro-encantador": {
       name: "Enchanting September",
       fotoAlt: "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
@@ -664,7 +647,7 @@ export const en: LocaleContent = {
         { type: "list", items: [
           "Breakfast served from 4 am on race day — you start fuelled, not relying on an energy bar and good luck.",
           "Late check-out until 2 pm for two-night stays: time to race, come back, shower without rushing and rest.",
-          "Free private parking on site, with no surprise fee at check-out.",
+          "Free private parking, with no surprise fee at check-out.",
           "A pool to loosen your legs after the race, far better than any improvised ice bath.",
           "Rooms from double to quintuple, ideal for running teams, training groups and families travelling together.",
           "Free Wi-Fi, air conditioning, a safe, 24-hour reception and laundry (extra charge) for your training kit.",
@@ -684,7 +667,7 @@ export const en: LocaleContent = {
         { type: "quote", text: "You trained for months for those 42 kilometres. Do not let the last 3 to the start line ruin your race." },
         { type: "h2", text: "Book your room before the city fills up" },
         { type: "p", text: "It is the same story every year: entries sell out, and well-located rooms disappear right after. Booking early means picking the room you want, paying the best rate and arriving in Foz do Iguaçu with one less thing on your mind. Message our team on WhatsApp to arrange breakfast timing, a room for the whole group or any detail of your race routine — we have hosted plenty of runners and we know exactly what makes the difference." },
-        { type: "cta", title: "Book with the coupon CORRIDA26", text: "10% off during Foz do Iguaçu International Marathon 2026 week, with breakfast from 4 am on race day, late check-out until 2 pm and free parking. 100 m from Avenida das Cataratas.", btn: "Book Sept 25 to 29", href: MARATONA_2026_BOOKING_URL },
+        { type: "cta", title: "See Pousada Cataratas' current offers", text: "The 2026 marathon is over, but Foz do Iguaçu is still waiting for you. Check out our current offers and book direct with us.", btn: "See offers", href: "/promocoes" },
       ],
     },
     "o-que-fazer-em-foz-do-iguacu-em-3-dias": {

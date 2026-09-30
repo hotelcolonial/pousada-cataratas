@@ -92,6 +92,9 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
               <a href="#" className="pcf-link">
                 {f.linkReservar}
               </a>
+              <a href={localePath(lang, "/grupos")} className="pcf-link">
+                {f.linkGrupos}
+              </a>
               <a href={localePath(lang, "/blog")} className="pcf-link">
                 {f.linkBlog}
               </a>

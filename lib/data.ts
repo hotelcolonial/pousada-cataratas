@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Locale } from "@/i18n/config";
 import { mergeRecord, mergeList, pickText } from "./merge";
-import { MARATONA_2026_OFFER, MARATONA_2026_BOOKING_URL } from "./booking";
 import { es as esText } from "./translations/es";
 import { en as enText } from "./translations/en";
 
@@ -828,26 +827,6 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     obs: "Sujeito à disponibilidade · Consulte a nossa equipe antes de vir",
     waMessage: "Olá, vim do site e tenho interesse no Day Use",
   },
-  "maratona-2026": {
-    name: "Maratona Internacional de Foz 2026",
-    banner: "/images/real/home/fachada-frontal-pousada-cataratas-foz-do-iguacu.webp",
-    foto: "/images/real/quartos/quarto-duplo-pousada-cataratas-foz-do-iguacu.webp",
-    fotoAlt: "Quarto da Pousada Cataratas em Foz do Iguaçu, sua base para a Maratona Internacional de Foz do Iguaçu 2026",
-    hook: "Sua base para a melhor prova do ano",
-    destaque: { valor: "10%", label: "OFF com o cupom", nota: "CORRIDA26" },
-    beneficios: [
-      { icone: "relogio", texto: "Café da manhã a partir das 04h no dia da prova" },
-      { icone: "calendario", texto: "Late check-out até às 14h reservando 02 noites" },
-      { icone: "local", texto: "A 100 m da Avenida das Cataratas" },
-      { icone: "estacionamento", texto: "Estacionamento gratuito no local" },
-      { icone: "cafe", texto: "Café da manhã incluso" },
-      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
-    ],
-    desc: "No coração de Foz, perto de tudo e longe do barulho: o ponto de partida ideal para a sua melhor prova.",
-    obs: "Vagas limitadas para a semana da prova",
-    waMessage: "Olá, vim do site e tenho interesse na promoção da Maratona de Foz 2026",
-    booking: MARATONA_2026_OFFER,
-  },
   "setembro-encantador": {
     name: "Setembro Encantador",
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
@@ -1001,7 +980,7 @@ export const artigoDetails: Record<string, ArtigoDetail> = {
       { type: "list", items: [
         "Café da manhã servido a partir das 04h no dia da prova — você larga alimentado, sem depender de barrinha e sorte.",
         "Late check-out até às 14h para quem reserva 2 noites: dá tempo de correr, voltar, tomar banho com calma e descansar.",
-        "Estacionamento privativo gratuito no local, sem taxa surpresa no checkout.",
+        "Estacionamento privativo gratuito, sem taxa surpresa no checkout.",
         "Piscina para soltar as pernas depois da prova, muito melhor que qualquer gelo improvisado.",
         "Quartos de duplo a quíntuplo, ideais para assessorias esportivas, grupos de treino e famílias que viajam juntas.",
         "Wi-Fi grátis, ar-condicionado, cofre, recepção 24h e lavanderia (com custo à parte) para o uniforme de treino.",
@@ -1021,7 +1000,7 @@ export const artigoDetails: Record<string, ArtigoDetail> = {
       { type: "quote", text: "Você treinou meses pelos 42 quilômetros. Não deixe que os últimos 3 até a largada estraguem a sua prova." },
       { type: "h2", text: "Garanta a sua vaga antes que a cidade lote" },
       { type: "p", text: "Todo ano é a mesma história: as inscrições esgotam, e logo depois some a hospedagem bem localizada. Quem reserva cedo escolhe o quarto que quer, paga a melhor tarifa e chega em Foz do Iguaçu com uma preocupação a menos na cabeça. Fale com a nossa equipe pelo WhatsApp se quiser combinar horário de café, quarto para o grupo todo ou qualquer detalhe da sua rotina de prova — a gente já recebeu muitos corredores e sabe exatamente o que faz diferença." },
-      { type: "cta", title: "Reserve com o cupom CORRIDA26", text: "10% de desconto na semana da Maratona Internacional de Foz do Iguaçu 2026, com café da manhã a partir das 04h no dia da prova, late check-out até às 14h e estacionamento gratuito. A 100 m da Avenida das Cataratas.", btn: "Reservar de 25 a 29/09", href: MARATONA_2026_BOOKING_URL },
+      { type: "cta", title: "Veja as promoções da Pousada Cataratas", text: "A maratona de 2026 já passou, mas Foz do Iguaçu continua esperando por você. Confira as ofertas atuais e reserve direto com a gente.", btn: "Ver promoções", href: "/promocoes" },
     ],
   },
   "o-que-fazer-em-foz-do-iguacu-em-3-dias": {

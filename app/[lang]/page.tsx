@@ -304,6 +304,22 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
+      {/* ============ GRUPOS ============ */}
+      <section style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 30px 100px" }}>
+        <div className="pc-grupos">
+          <SlotImg src="/images/real/home/piscina-guarda-sois-sombra-pousada-cataratas-foz-do-iguacu.webp" alt={dict.alts.homeGrupos} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,rgba(20,33,51,.86) 0%,rgba(20,33,51,.62) 60%,rgba(20,33,51,.74) 100%)" }} />
+          <div className="pc-grupos-in">
+            <div>
+              <span style={{ fontSize: "12px", letterSpacing: ".32em", textTransform: "uppercase", color: "rgba(255,255,255,.62)" }}>{dict.home.gruposEyebrow}</span>
+              <h2 style={{ fontFamily: "var(--font-gilda), Georgia, serif", fontWeight: 500, fontSize: "40px", lineHeight: 1.05, color: "#FFFFFF", margin: "12px 0 0" }}>{dict.home.gruposTitle}</h2>
+              <p style={{ fontSize: "15px", lineHeight: 1.6, color: "#C7D0DA", margin: "10px 0 0", maxWidth: "560px" }}>{dict.home.gruposP}</p>
+            </div>
+            <a href={localePath(lang, "/grupos")} style={{ flex: "none", display: "inline-block", background: "#143C7A", color: "#FFFFFF", textDecoration: "none", fontSize: "12px", letterSpacing: ".22em", textTransform: "uppercase", padding: "15px 26px" }}>{dict.home.gruposCta}</a>
+          </div>
+        </div>
+      </section>
+
       {/* ============ FEATURE 2-CARDS ============ */}
       <section style={{ maxWidth: "1180px", margin: "0 auto", padding: "8px 70px 40px" }}>
         <div className="pc-feat2">
@@ -340,7 +356,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
             <div className="pc-str-stat">
               <div>
-                <div className="pc-str-num">28</div>
+                <div className="pc-str-num">27</div>
                 <div className="pc-str-lab">{dict.home.strStatQuartos}</div>
               </div>
               <div>

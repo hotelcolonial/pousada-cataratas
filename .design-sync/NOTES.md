@@ -85,7 +85,7 @@ Ficam aqui porque são o tipo de coisa que volta a entrar sem se dar por ela:
 - **A Gilda Display depende da rede** no momento em que o cartão renderiza. Num
   ambiente sem saída para `fonts.googleapis.com` os títulos caem para Georgia e
   as capturas parecem erradas sem que nada esteja partido.
-- **As previews contêm dados reais da pousada** (28 quartos, 4.8, 418
+- **As previews contêm dados reais da pousada** (27 apartamentos, 4.8, 418
   avaliações, nomes das promoções). Se esses números mudarem no site, as previews
   ficam desactualizadas — não quebram, mas mentem. Os do site vivem em
   `lib/tripadvisor.ts`.

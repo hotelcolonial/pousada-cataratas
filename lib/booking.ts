@@ -19,7 +19,7 @@ export const buildBookingUrl = (
 ) => `${BOOKING_BASE}?endDate=${checkout}&rooms[]=a${guests}&startDate=${checkin}`;
 
 // Link do motor para uma oferta específica: datas sugeridas da promoção e/ou
-// cupom já aplicado (ex.: Maratona 2026 -> CORRIDA26). Todos os campos são
+// cupom já aplicado. Todos os campos são
 // opcionais; sem nenhum deles devolve o BOOKING_BASE puro.
 export type BookingOffer = {
   checkin?: string;
@@ -36,17 +36,6 @@ export function buildOfferBookingUrl({ checkin, checkout, guests, promoCode }: B
   if (promoCode) params.push(`promoCode=${encodeURIComponent(promoCode)}`);
   return params.length ? `${BOOKING_BASE}?${params.join("&")}` : BOOKING_BASE;
 }
-
-// Maratona Internacional de Foz do Iguaçu 2026 (prova em 27/09): semana da prova
-// com o cupom da promoção. Fuente única para el botón de /promocao/maratona-2026
-// y el CTA del artículo del blog.
-export const MARATONA_2026_OFFER: BookingOffer = {
-  checkin: "2026-09-25",
-  checkout: "2026-09-29",
-  promoCode: "CORRIDA26",
-};
-
-export const MARATONA_2026_BOOKING_URL = buildOfferBookingUrl(MARATONA_2026_OFFER);
 
 // Reserva direta com 10% OFF (cupom CATARATAS10). Sem datas: o hóspede escolhe
 // no motor e o cupom já vai aplicado. Usado pelo pop-up da home.

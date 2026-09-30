@@ -5,7 +5,8 @@
     "galeria": "Galeria",
     "promocoes": "Promoções",
     "atracoes": "Atrações",
-    "blog": "Blog"
+    "blog": "Blog",
+    "grupos": "Grupos"
   },
   "header": {
     "pousadaLogoAlt": "Pousada Cataratas",
@@ -37,7 +38,8 @@
     "linkFacebook": "Facebook",
     "copyright": "© 2026 Pousada Cataratas · Foz do Iguaçu, PR",
     "tagline": "O melhor companheiro para o seu descanso.",
-    "ariaWhatsapp": "WhatsApp"
+    "ariaWhatsapp": "WhatsApp",
+    "linkGrupos": "Grupos"
   },
   "booking": {
     "mesShort": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
@@ -129,8 +131,8 @@
     "feat1Title": "Café da Manhã",
     "feat1Desc": "Frutas frescas, pães caseiros e sabores típicos da região servidos todas as manhãs com vista para o jardim.",
     "feat2Title": "Estacionamento",
-    "feat2Desc": "Vaga de carro gratuita e segura dentro da pousada, para você deixar o veículo tranquilo enquanto aproveita Foz do Iguaçu.",
-    "strStatQuartos": "Quartos",
+    "feat2Desc": "Estacionamento gratuito para veículos. Ambiente seguro enquanto aproveita Foz do Iguaçu.",
+    "strStatQuartos": "Apartamentos",
     "strStatRecepcao": "Recepção",
     "strStatAvaliacao": "Avaliação",
     "strStatPiscina": "Piscina",
@@ -172,7 +174,11 @@
     "newsCard3Desc": "Eletrônicos e novidades do outro lado da fronteira, a poucos quilômetros.",
     "newsSite": "pousadacataratas.com.br",
     "newsCard4Date": "Brasil · Argentina · Paraguai",
-    "newsCard4Title": "Marco das Três Fronteiras"
+    "newsCard4Title": "Marco das Três Fronteiras",
+    "gruposEyebrow": "Grupos e excursões",
+    "gruposTitle": "Viajando em grupo?",
+    "gruposP": "Excursões, equipes esportivas, empresas e agências: receba uma proposta personalizada para o seu grupo.",
+    "gruposCta": "Solicitar proposta"
   },
   "quartosList": {
     "bannerTitle": "Acomodações",
@@ -302,6 +308,55 @@
     "link3": "Todas as promoções",
     "cardCta": "Reservar"
   },
+  "grupos": {
+    "bannerTitle": "Hospedagem para grupos em Foz do Iguaçu",
+    "eyebrow": "Grupos e excursões",
+    "title": "Uma proposta feita para o seu grupo",
+    "intro": "Seja uma excursão, um grupo de amigos, uma equipe esportiva ou uma viagem corporativa, a Pousada Cataratas recebe o seu grupo com conforto e atendimento próximo. Fale com a nossa equipe comercial e receba uma proposta personalizada de acordo com as necessidades do seu grupo.",
+    "publicoEyebrow": "Grupos que recebemos",
+    "publicoTitle": "Para quem é",
+    "publico": [
+      "Agências e operadoras de turismo",
+      "Excursões",
+      "Grupos esportivos e eventos",
+      "Empresas e viagens corporativas",
+      "Famílias e grupos de amigos"
+    ],
+    "motivosEyebrow": "Vantagens",
+    "motivosTitle": "Por que escolher a Pousada Cataratas",
+    "motivos": [
+      "27 apartamentos",
+      "Café da manhã incluso",
+      "Estacionamento gratuito para veículos",
+      "Localização estratégica em Foz do Iguaçu",
+      "Atendimento comercial dedicado",
+      "Tarifas especiais para grupos"
+    ],
+    "passosEyebrow": "Passo a passo",
+    "passosTitle": "Como funciona",
+    "passos": [
+      {
+        "title": "Conte para nós sobre o seu grupo",
+        "desc": "Datas, número de pessoas e apartamentos."
+      },
+      {
+        "title": "Nossa equipe comercial prepara uma proposta personalizada",
+        "desc": "Uma proposta pensada para as necessidades do seu grupo."
+      },
+      {
+        "title": "Confirme e garanta a hospedagem do grupo",
+        "desc": "Com a proposta aprovada, a hospedagem do seu grupo fica garantida."
+      }
+    ],
+    "ctaEyebrow": "Fale com o comercial",
+    "ctaTitle": "Vamos montar a proposta do seu grupo?",
+    "ctaP": "Ligue para a nossa equipe comercial ou envie um e-mail com os dados do seu grupo.",
+    "ctaTelLabel": "Central comercial",
+    "ctaLigar": "Ligar para o comercial",
+    "ctaEmail": "Enviar e-mail",
+    "emailSubject": "Proposta para grupo",
+    "emailBody": "Olá! Gostaria de uma proposta para hospedagem de grupo.\n\nDatas:\nNúmero de pessoas:\nNúmero de apartamentos:"
+  },
   "meta": {
     "titleSuffix": " | Pousada Cataratas",
     "titleQuartos": "Acomodações | Pousada Cataratas",
@@ -315,7 +370,9 @@
     "descGaleria": "Galeria de fotos da Pousada Cataratas em Foz do Iguaçu: quartos, piscina, área de lazer e a fachada da pousada, no coração da cidade e perto dos principais pontos turísticos.",
     "descAtracoes": "As melhores atrações de Foz do Iguaçu a partir da Pousada Cataratas: Cataratas do Iguaçu, Parque das Aves, Itaipu, Marco das Três Fronteiras e muito mais.",
     "descBlog": "Dicas de viagem, roteiros e tudo sobre Foz do Iguaçu no blog da Pousada Cataratas: aproveite melhor a sua estadia no coração da cidade, perto de tudo.",
-    "descPromocoes": "Promoções e tarifas especiais da Pousada Cataratas em Foz do Iguaçu: reserve direto e economize, com café da manhã incluso."
+    "descPromocoes": "Promoções e tarifas especiais da Pousada Cataratas em Foz do Iguaçu: reserve direto e economize, com café da manhã incluso.",
+    "titleGrupos": "Hospedagem para Grupos em Foz do Iguaçu | Pousada Cataratas",
+    "descGrupos": "Hospedagem para excursões, grupos esportivos, empresas e agências em Foz do Iguaçu. Fale com o comercial e receba uma proposta personalizada."
   },
   "cookies": {
     "bannerTitle": "Nós usamos cookies",
@@ -370,7 +427,10 @@
     "promocoesBanner": "Área da piscina da Pousada Cataratas em Foz do Iguaçu",
     "promocoesJardimPiscina": "Jardim e piscina da Pousada Cataratas em Foz do Iguaçu",
     "promocoesFachadaFrontal": "Fachada frontal da Pousada Cataratas em Foz do Iguaçu",
-    "quartosBanner": "Quartos da Pousada Cataratas em Foz do Iguaçu"
+    "quartosBanner": "Quartos da Pousada Cataratas em Foz do Iguaçu",
+    "gruposBanner": "Fachada da Pousada Cataratas vista da rua, em Foz do Iguaçu",
+    "gruposIntro": "Área de convivência ao lado da piscina da Pousada Cataratas em Foz do Iguaçu",
+    "homeGrupos": "Piscina com espreguiçadeiras e guarda-sóis da Pousada Cataratas em Foz do Iguaçu"
   },
   "promos": {
     "morador": {
@@ -400,13 +460,6 @@
       "sub": "Aproveite a pousada por um dia · R$ 90",
       "altHome": "Café da manhã da Pousada Cataratas em Foz do Iguaçu",
       "altCard": "Piscina e área de lazer da Pousada Cataratas em Foz do Iguaçu"
-    },
-    "maratona-2026": {
-      "eyebrow": "Prepare-se",
-      "name": "Maratona de Foz 2026",
-      "sub": "Cupom CORRIDA26 · 10% OFF",
-      "altHome": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026",
-      "altCard": "Fachada da Pousada Cataratas em Foz do Iguaçu, base para a Maratona Internacional de Foz do Iguaçu 2026"
     },
     "longa-estadia": {
       "eyebrow": "Fique mais",

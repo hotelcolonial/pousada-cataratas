@@ -5,7 +5,8 @@
     "galeria": "Gallery",
     "promocoes": "Offers",
     "atracoes": "Attractions",
-    "blog": "Blog"
+    "blog": "Blog",
+    "grupos": "Groups"
   },
   "header": {
     "pousadaLogoAlt": "Pousada Cataratas",
@@ -37,7 +38,8 @@
     "linkFacebook": "Facebook",
     "copyright": "© 2026 Pousada Cataratas · Foz do Iguaçu, PR",
     "tagline": "The best companion for your rest.",
-    "ariaWhatsapp": "WhatsApp"
+    "ariaWhatsapp": "WhatsApp",
+    "linkGrupos": "Groups"
   },
   "booking": {
     "mesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -129,8 +131,8 @@
     "feat1Title": "Breakfast",
     "feat1Desc": "Fresh fruit, homemade breads and typical regional flavors served every morning with a garden view.",
     "feat2Title": "Parking",
-    "feat2Desc": "Free, secure car parking inside the guesthouse, so you can leave your vehicle at ease while you enjoy Foz do Iguaçu.",
-    "strStatQuartos": "Rooms",
+    "feat2Desc": "Free parking for vehicles. A safe environment while you enjoy Foz do Iguaçu.",
+    "strStatQuartos": "Apartments",
     "strStatRecepcao": "Front desk",
     "strStatAvaliacao": "Rating",
     "strStatPiscina": "Pool",
@@ -172,7 +174,11 @@
     "newsCard3Desc": "Electronics and new arrivals across the border, just a few kilometers away.",
     "newsSite": "pousadacataratas.com.br",
     "newsCard4Date": "Brazil · Argentina · Paraguay",
-    "newsCard4Title": "Landmark of the Three Borders"
+    "newsCard4Title": "Landmark of the Three Borders",
+    "gruposEyebrow": "Groups & tours",
+    "gruposTitle": "Traveling as a group?",
+    "gruposP": "Tour groups, sports teams, companies and agencies: get a tailored proposal for your group.",
+    "gruposCta": "Request a proposal"
   },
   "quartosList": {
     "bannerTitle": "Rooms",
@@ -302,6 +308,60 @@
     "link3": "All offers",
     "cardCta": "Book"
   },
+  "alts": {
+    "gruposBanner": "Street view of the Pousada Cataratas facade in Foz do Iguaçu",
+    "gruposIntro": "Lounge area by the pool at Pousada Cataratas in Foz do Iguaçu",
+    "homeGrupos": "Pool with loungers and umbrellas at Pousada Cataratas in Foz do Iguaçu"
+  },
+  "grupos": {
+    "bannerTitle": "Group accommodation in Foz do Iguaçu",
+    "eyebrow": "Groups & tours",
+    "title": "A proposal made for your group",
+    "intro": "Whether it's a tour group, a group of friends, a sports team or a corporate trip, Pousada Cataratas welcomes your group with comfort and personal service. Talk to our sales team and get a tailored proposal based on your group's needs.",
+    "publicoEyebrow": "Groups we host",
+    "publicoTitle": "Who it's for",
+    "publico": [
+      "Travel agencies and tour operators",
+      "Tour groups",
+      "Sports groups and events",
+      "Companies and corporate travel",
+      "Families and groups of friends"
+    ],
+    "motivosEyebrow": "Advantages",
+    "motivosTitle": "Why choose Pousada Cataratas",
+    "motivos": [
+      "27 apartments",
+      "Breakfast included",
+      "Free parking for vehicles",
+      "Strategic location in Foz do Iguaçu",
+      "Dedicated sales team",
+      "Special group rates"
+    ],
+    "passosEyebrow": "Step by step",
+    "passosTitle": "How it works",
+    "passos": [
+      {
+        "title": "Tell us about your group",
+        "desc": "Dates, number of guests and apartments."
+      },
+      {
+        "title": "Our sales team prepares a tailored proposal",
+        "desc": "A proposal designed around your group's needs."
+      },
+      {
+        "title": "Confirm and secure your group's stay",
+        "desc": "Once the proposal is approved, your group's stay is guaranteed."
+      }
+    ],
+    "ctaEyebrow": "Talk to our sales team",
+    "ctaTitle": "Shall we put together your group's proposal?",
+    "ctaP": "Call our sales team or send an email with your group's details.",
+    "ctaTelLabel": "Sales line",
+    "ctaLigar": "Call our sales team",
+    "ctaEmail": "Send an email",
+    "emailSubject": "Group proposal",
+    "emailBody": "Hello! I would like a proposal for group accommodation.\n\nDates:\nNumber of guests:\nNumber of apartments:"
+  },
   "meta": {
     "titleSuffix": " | Pousada Cataratas",
     "titleQuartos": "Rooms | Pousada Cataratas",
@@ -315,7 +375,9 @@
     "descGaleria": "Photo gallery of Pousada Cataratas in Foz do Iguaçu: rooms, pool, leisure area and the guesthouse facade, in the heart of the city and close to the main tourist spots.",
     "descAtracoes": "The best attractions in Foz do Iguaçu from Pousada Cataratas: Iguaçu Falls, Bird Park, Itaipu, the Triple Frontier Landmark and much more.",
     "descBlog": "Travel tips, itineraries and everything about Foz do Iguaçu on the Pousada Cataratas blog: make the most of your stay in the heart of the city, close to it all.",
-    "descPromocoes": "Special offers and rates at Pousada Cataratas in Foz do Iguaçu: book direct and save, with breakfast included."
+    "descPromocoes": "Special offers and rates at Pousada Cataratas in Foz do Iguaçu: book direct and save, with breakfast included.",
+    "titleGrupos": "Group Accommodation in Foz do Iguaçu | Pousada Cataratas",
+    "descGrupos": "Accommodation for tour groups, sports teams, companies and travel agencies in Foz do Iguaçu. Contact our sales team and get a tailored proposal."
   },
   "cookies": {
     "bannerTitle": "We use cookies",
@@ -375,13 +437,6 @@
       "sub": "Enjoy the guesthouse for a day · R$ 90",
       "altHome": "Breakfast at Pousada Cataratas in Foz do Iguaçu",
       "altCard": "Pool and leisure area at Pousada Cataratas in Foz do Iguaçu"
-    },
-    "maratona-2026": {
-      "eyebrow": "Get ready",
-      "name": "Foz Marathon 2026",
-      "sub": "Coupon CORRIDA26 · 10% OFF",
-      "altHome": "Facade of Pousada Cataratas in Foz do Iguaçu, base for the Foz do Iguaçu International Marathon 2026",
-      "altCard": "Facade of Pousada Cataratas in Foz do Iguaçu, base for the Foz do Iguaçu International Marathon 2026"
     },
     "longa-estadia": {
       "eyebrow": "Stay longer",
