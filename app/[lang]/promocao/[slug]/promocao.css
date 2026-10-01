@@ -22,11 +22,22 @@
   .pp-destaque-nota{font-size:14px;line-height:1.5;color:rgba(255,255,255,.82);margin:16px 0 0;max-width:290px}
   /* filete dourado curto por cima da nota */
   .pp-destaque-nota::before{content:"";display:block;width:38px;height:1px;background:rgba(199,154,106,.9);margin:0 auto 16px}
+  /* Vários destaques na mesma caixa (ex.: Outubro Kids): um por baixo do outro */
+  .pp-destaque-item{display:flex;flex-direction:column;align-items:center}
+  .pp-destaque-item .pp-destaque-nota{font-size:16px;color:#FFFFFF}
+  .pp-destaque-item-sep{margin-top:26px;padding-top:26px;border-top:1px solid rgba(255,255,255,.16);width:100%}
+  /* Link dentro da descrição (ex.: "Espaço Kids" → secção da home) */
+  /* Aviso de promoção encerrada (depois do `fim`) */
+  .pp-encerrada{max-width:760px;margin:40px auto 0;padding:30px 26px;border:1px solid rgba(199,154,106,.6);background:#FBFAF8;text-align:center;display:flex;flex-direction:column;align-items:center}
+  .pp-encerrada .pp-resv{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:0 34px}
+  .pp-cta-link{color:#143C7A;text-decoration:underline;text-decoration-color:#C79A6A;text-underline-offset:3px}
+  .pp-cta-link:hover{color:#C79A6A}
 
   /* ---------- BENEFÍCIOS ---------- */
   .pp-benef{background:#FBFAF8;margin-top:56px;padding:62px 22px}
   .pp-benef-h{font-size:30px}
-  .pp-benef-grid{max-width:1240px;margin:40px auto 0;display:grid;grid-template-columns:1fr;gap:16px}
+  .pp-benef-grid{max-width:1240px;margin:40px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+  .pp-benef-card{flex:1 1 100%;min-width:0}
   .pp-benef-card{display:flex;align-items:center;gap:16px;background:#FFFFFF;border:1px solid rgba(20,60,122,.09);padding:22px 22px;transition:border-color .18s,box-shadow .18s,transform .18s}
   .pp-benef-card:hover{border-color:rgba(199,154,106,.55);box-shadow:0 16px 34px -26px rgba(20,33,51,.5);transform:translateY(-2px)}
 
@@ -44,7 +55,7 @@
   .pp-rel-grid{display:grid;grid-template-columns:1fr;gap:26px}
 
   @media(min-width:640px){
-    .pp-benef-grid{grid-template-columns:1fr 1fr!important}
+    .pp-benef-card{flex:0 1 calc(50% - 8px)!important}
     .pp-cta-botoes{grid-template-columns:1fr 1fr!important}
     .pp-galeria{grid-template-columns:1fr 1fr!important}
     .pp-rel-grid{grid-template-columns:1fr 1fr!important}
@@ -63,7 +74,8 @@
 
     .pp-benef{margin-top:96px!important;padding:96px 40px!important}
     .pp-benef-h{font-size:42px!important}
-    .pp-benef-grid{grid-template-columns:repeat(3,1fr)!important;gap:20px!important;margin-top:54px!important}
+    .pp-benef-grid{gap:20px!important;margin-top:54px!important}
+    .pp-benef-card{flex:0 1 calc(33.333% - 14px)!important}
     .pp-benef-card{padding:26px 24px!important}
 
     .pp-cta{padding:96px 40px 8px!important}

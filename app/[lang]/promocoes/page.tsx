@@ -6,8 +6,13 @@ import { pageMeta } from "@/i18n/seo";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { promosAtivas, promoTexto } from "@/lib/promos";
+import { getProdutos } from "@/lib/data";
 import PromoCard from "@/components/promo/PromoCard";
 import type { Metadata } from "next";
+
+// As promoções com prazo (`fim` em lib/promos.ts) saem sozinhas: a página
+// regenera-se de hora a hora para refletir a vigência.
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -31,6 +36,7 @@ function SlotImg({ src, alt = "" }: { src: string; alt?: string }) {
 export default async function Promocoes({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
+  const produtos = getProdutos(loc);
   const dict = await getDictionary(lang);
   return (
     <>
@@ -101,6 +107,7 @@ export default async function Promocoes({ params }: { params: Promise<{ lang: st
             key={p.slug}
             promo={p}
             texto={promoTexto(dict, p)}
+            destaque={produtos[p.slug]?.destaque}
             cta={dict.promocoesList.cardCta}
             lang={lang}
             className="pr-card"

@@ -266,7 +266,10 @@
     "inclusoTitle": "Qué incluye",
     "descontoLabel": "Descuento de hasta",
     "reservarAgora": "Reservar ahora",
-    "falarWhatsapp": "Hablar por WhatsApp"
+    "falarWhatsapp": "Hablar por WhatsApp",
+    "encerradaTitle": "Esta promoción ha finalizado",
+    "encerradaP": "Mira las promociones disponibles en este momento y reserva directo con nosotros.",
+    "encerradaBtn": "Ver promociones"
   },
   "blogList": {
     "bannerTitle": "Blog",
@@ -436,35 +439,35 @@
     "morador": {
       "eyebrow": "Promoción",
       "name": "Tarifa Residente",
-      "sub": "Para residentes de Foz y región · 25% OFF",
+      "sub": "Basta presentar un comprobante de domicilio",
       "altHome": "Entrada de la Pousada Cataratas en Foz de Iguazú",
       "altCard": "Piscina con sombrilla de la Pousada Cataratas en Foz de Iguazú"
     },
     "sazonal": {
       "eyebrow": "Disfruta",
-      "name": "Septiembre Encantador",
-      "sub": "02 entradas al Zoopark gratis · 10% OFF",
-      "altHome": "Niños con animales en el Zoopark de Foz de Iguazú — promoción Septiembre Encantador de la Pousada Cataratas",
-      "altCard": "Niño acariciando una cabra en el Zoopark de Foz de Iguazú — promoción Septiembre Encantador de la Pousada Cataratas"
+      "name": "Octubre Kids",
+      "sub": "+ 10% de descuento en la tarifa · 01 al 31 de octubre",
+      "altHome": "Niños con animales en el ZooPark de Foz de Iguazú — promoción Octubre Kids de la Pousada Cataratas",
+      "altCard": "Niño acariciando una cabra en el ZooPark de Foz de Iguazú — promoción Octubre Kids de la Pousada Cataratas"
     },
     "perene": {
       "eyebrow": "Planifica",
       "name": "Reserva anticipada",
-      "sub": "Reservando con antelación · 12% OFF",
+      "sub": "Cancelación flexible · Mejor tarifa garantizada",
       "altHome": "Fachada de la Pousada Cataratas vista desde la calle en Foz de Iguazú",
       "altCard": "Fachada con palmeras de la Pousada Cataratas en Foz de Iguazú"
     },
     "day-use": {
       "eyebrow": "Aprovecha",
       "name": "Day Use",
-      "sub": "Disfruta la posada por un día · R$ 90",
+      "sub": "Acceso a la piscina y a las áreas de ocio",
       "altHome": "Desayuno de la Pousada Cataratas en Foz de Iguazú",
       "altCard": "Piscina y área de ocio de la Pousada Cataratas en Foz de Iguazú"
     },
     "longa-estadia": {
       "eyebrow": "Quédate más",
       "name": "Paquete Larga Estancia",
-      "sub": "A partir de 05 noches · transporte a Paraguay y almuerzo",
+      "sub": "Traslado a Paraguay y almuerzo incluidos",
       "altHome": "Bufé de almuerzo del restaurante Aipim Gastronomia — Paquete Larga Estancia de la Pousada Cataratas en Foz de Iguazú",
       "altCard": "Bufé de almuerzo del restaurante Aipim Gastronomia — Paquete Larga Estancia de la Pousada Cataratas en Foz de Iguazú"
     }

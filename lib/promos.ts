@@ -12,6 +12,9 @@ import type { Dictionary } from "@/i18n/getDictionary";
 // 👉 DESLIGAR UMA PROMO: `ativa: false` — sai dos três sítios de uma vez. A
 //    página de detalhe /promocao/<slug> continua a existir, só deixa de ser
 //    anunciada.
+// 👉 PROMO COM PRAZO: `fim: "AAAA-MM-DD"` (último dia da vigência, inclusive,
+//    hora de Brasília). No dia seguinte sai sozinha da home e de /promocoes —
+//    as duas páginas regeneram-se de hora a hora (`revalidate`).
 // 👉 MUDAR QUAIS APARECEM NO TOPO DA HOME: mexer no `destaque`. São 3 cards
 //    numa linha, por isso convém manter exatamente três com `destaque: true`.
 // 👉 PROMO NOVA: acrescentar uma entrada aqui + o bloco de textos com a mesma
@@ -36,35 +39,43 @@ export type Promo = {
   ativa: boolean;
   /** Entra na secção de ofertas do topo da home? */
   destaque: boolean;
+  /** Último dia da vigência (AAAA-MM-DD, inclusive). Sem isto, não caduca. */
+  fim?: string;
 };
 
+/** Ainda dentro da vigência? Conta até ao fim do dia `fim` em Brasília (UTC-3). */
+export function vigente(p: { fim?: string }, agora: Date = new Date()): boolean {
+  if (!p.fim) return true;
+  return agora.getTime() < new Date(`${p.fim}T23:59:59.999-03:00`).getTime();
+}
+
 // ---------------------------- SLOT SAZONAL ----------------------------
-// Um lugar da lista roda a cada temporada: foi "Agosto Encantador", agora é
-// "Setembro Encantador", amanhã será outra.
+// Um lugar da lista roda a cada temporada: foi "Agosto Encantador", depois
+// "Setembro Encantador", agora é "Outubro Kids".
 //
-// 👉 QUANDO SETEMBRO ACABAR: pôr `ativa: false` aqui. O lugar passa a mostrar a
-//    promo perene (Reserva antecipada) sem tocar em mais nenhum ficheiro.
-// 👉 TROCAR POR UMA PROMO NOVA: mudar o `slug` e as imagens em `atual`, e os
-//    textos em `promos.sazonal` nos três dicionários.
+// 👉 QUANDO OUTUBRO ACABAR não é preciso fazer nada: depois de `fim` o lugar
+//    passa sozinho a mostrar a promo perene (Reserva antecipada). Para tirá-la
+//    antes do prazo: `ativa: false`.
+// 👉 TROCAR POR UMA PROMO NOVA: mudar o `slug`, as imagens e o `fim` em
+//    `atual`, e os textos em `promos.sazonal` nos três dicionários.
 export const PROMO_SAZONAL = {
   /** Interruptor único da promo de temporada. */
   ativa: true,
 
-  /** Vigência, só para documentação — não é lida por nenhum componente. */
-  vigencia: "01/09/2026 a 30/09/2026",
-
-  /** O que se mostra enquanto `ativa` for true. */
+  /** O que se mostra enquanto `ativa` for true e a vigência não tiver acabado. */
   atual: {
     key: "sazonal",
-    slug: "setembro-encantador",
-    // Fotos reais do Zoopark. O nome do ficheiro diz "agosto-encantador" porque
-    // foram tiradas para a promo de agosto — o parque é o mesmo, mudou só o mês.
+    slug: "outubro-kids",
+    // Estadias de 01/10 a 31/10/2026.
+    fim: "2026-10-31",
+    // Provisórias: fotos reais do ZooPark (tiradas para a promo de agosto,
+    // daí o nome do ficheiro) até haver arte própria do Outubro Kids.
     imgHome: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
     imgCard: "/images/real/home/zoopark-menino-cabra-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
     cor: "accent",
   },
 
-  /** O que ocupa o lugar quando `ativa` for false. */
+  /** O que ocupa o lugar quando `ativa` for false ou a vigência acabar. */
   perene: {
     key: "perene",
     slug: "antecipada",
@@ -74,12 +85,13 @@ export const PROMO_SAZONAL = {
   },
 } as const;
 
-/** O slot sazonal já resolvido pelo interruptor. */
-const slotSazonal = PROMO_SAZONAL.ativa ? PROMO_SAZONAL.atual : PROMO_SAZONAL.perene;
+/** O slot sazonal resolvido no momento do pedido (interruptor + vigência). */
+const slotSazonal = () =>
+  PROMO_SAZONAL.ativa && vigente(PROMO_SAZONAL.atual) ? PROMO_SAZONAL.atual : PROMO_SAZONAL.perene;
 
 // ------------------------------ A LISTA ------------------------------
 // A ordem daqui é a ordem em que aparecem na home e na grelha.
-export const PROMOS: Promo[] = [
+const promos = (): Promo[] => [
   {
     key: "morador",
     slug: "morador",
@@ -90,7 +102,7 @@ export const PROMOS: Promo[] = [
     destaque: true,
   },
   {
-    ...slotSazonal,
+    ...slotSazonal(),
     ativa: true,
     destaque: true,
   },
@@ -118,10 +130,22 @@ export const PROMOS: Promo[] = [
 ];
 
 /** As promoções anunciadas, por ordem. */
-export const promosAtivas = (): Promo[] => PROMOS.filter((p) => p.ativa);
+export const promosAtivas = (): Promo[] => promos().filter((p) => p.ativa && vigente(p));
 
 /** As que abrem a home, na secção de ofertas por baixo do hero. */
-export const promosDestaque = (): Promo[] => PROMOS.filter((p) => p.ativa && p.destaque);
+export const promosDestaque = (): Promo[] => promos().filter((p) => p.ativa && p.destaque && vigente(p));
+
+/** Data de fim (AAAA-MM-DD) da promo com este slug, se tiver prazo. */
+export function fimDaPromo(slug: string): string | undefined {
+  const comPrazo: { slug: string; fim?: string }[] = [PROMO_SAZONAL.atual, ...promos()];
+  return comPrazo.find((p) => p.slug === slug && p.fim)?.fim;
+}
+
+/** A promo deste slug já passou do `fim`? (Página de detalhe: aviso + noindex.) */
+export function promoEncerrada(slug: string, agora: Date = new Date()): boolean {
+  const fim = fimDaPromo(slug);
+  return !!fim && !vigente({ fim }, agora);
+}
 
 /** Junta a promo aos seus textos no idioma pedido. */
 export function promoTexto(dict: Dictionary, p: Promo) {

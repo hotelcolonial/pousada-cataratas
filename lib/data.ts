@@ -704,12 +704,17 @@ export type ProdutoDetail = {
   // O DADO QUE VENDE A PROMOÇÃO, em corpo grande: o número (ou preço, ou
   // cupão), o rótulo por cima e a ressalva por baixo. É a primeira coisa que
   // se lê depois do banner, por isso deve caber em poucos caracteres.
-  destaque: { valor: string; label: string; nota?: string };
+  // Uma promo com DOIS benefícios principais (ex.: Outubro Kids) passa uma
+  // lista: cada um sai em corpo grande, um por baixo do outro, na mesma caixa.
+  destaque: Destaque | Destaque[];
   // O que está incluso, um por card com ícone linear. O merge de arrays é
   // elemento a elemento: es/en só precisam de repetir os `texto`.
   beneficios: { icone: BeneficioIcone; texto: string }[];
   /** Uma frase, não mais: o peso visual está nos benefícios. */
   desc: string;
+  // Trecho de `desc` que vira link (opcional), p.ex. "Espaço Kids" → a secção
+  // da home. `href` é uma rota interna sem idioma, com âncora se for preciso.
+  descLink?: { texto: string; href: string };
   // Letra miúda por baixo dos botões (opcional): ressalvas do tipo "bebidas
   // não inclusas". Separar itens com " · ".
   obs?: string;
@@ -724,6 +729,8 @@ export type ProdutoDetail = {
   // abre el motor sin parámetros.
   booking?: { checkin?: string; checkout?: string; promoCode?: string };
 };
+
+export type Destaque = { valor: string; label?: string; nota?: string };
 
 // Ícones lineares dos benefícios. O desenho de cada um está em
 // components/promo/BeneficioIcone.tsx — acrescentar aqui obriga a desenhá-lo lá.
@@ -777,7 +784,7 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     foto: "/images/real/home/piscina-guarda-sol-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Piscina com guarda-sol da Pousada Cataratas em Foz do Iguaçu, na Tarifa Morador",
     hook: "A pousada pertinho de casa",
-    destaque: { valor: "25%", label: "Desconto de", nota: "na diária, para moradores de Foz e região" },
+    destaque: { valor: "25%", nota: "OFF para moradores de Foz e região" },
     beneficios: [
       { icone: "documento", texto: "Basta apresentar comprovante de endereço" },
       { icone: "crianca", texto: "1 criança de até 5 anos não paga" },
@@ -796,7 +803,7 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     foto: "/images/real/home/fachada-palmeiras-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Fachada com palmeiras da Pousada Cataratas em Foz do Iguaçu",
     hook: "Quem se antecipa, paga menos",
-    destaque: { valor: "12%", label: "Desconto de", nota: "reservando com 30 dias de antecedência" },
+    destaque: { valor: "12%", nota: "OFF reservando com 30 dias de antecedência" },
     beneficios: [
       { icone: "calendario", texto: "Reservas feitas com 30 dias de antecedência" },
       { icone: "cancelamento", texto: "Cancelamento flexível" },
@@ -814,7 +821,7 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     foto: "/images/real/home/piscina-pousada-cataratas-foz-do-iguacu.webp",
     fotoAlt: "Piscina da Pousada Cataratas em Foz do Iguaçu, aberta aos hóspedes do Day Use",
     hook: "Um dia inteiro de pousada, sem se hospedar",
-    destaque: { valor: "R$ 90", label: "Por pessoa", nota: "das 9h às 18h" },
+    destaque: { valor: "R$ 90", nota: "por pessoa, das 9h às 18h" },
     beneficios: [
       { icone: "piscina", texto: "Acesso à piscina e às áreas de lazer" },
       { icone: "relogio", texto: "Das 9h às 18h" },
@@ -827,41 +834,29 @@ export const produtoDetails: Record<string, ProdutoDetail> = {
     obs: "Sujeito à disponibilidade · Consulte a nossa equipe antes de vir",
     waMessage: "Olá, vim do site e tenho interesse no Day Use",
   },
-  "setembro-encantador": {
-    name: "Setembro Encantador",
+  "outubro-kids": {
+    name: "Outubro Kids",
+    // Provisórias até haver fotos próprias da promo.
     banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
-    foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
-    fotoAlt: "Crianças com animais no Zoopark em Foz do Iguaçu — promoção Setembro Encantador da Pousada Cataratas",
-    hook: "Setembro é o melhor mês para conhecer Foz",
-    destaque: { valor: "02", label: "Ingressos grátis ao Zoopark", nota: "+ 10% de desconto na diária" },
+    foto: "/images/real/home/brinquedoteca-espaco-kids-pousada-cataratas-foz-do-iguacu.webp",
+    fotoAlt: "Brinquedoteca do Espaço Kids da Pousada Cataratas em Foz do Iguaçu — promoção Outubro Kids",
+    hook: "Outubro é mês de diversão em família",
+    destaque: [
+      { valor: "02", nota: "crianças de até 05 anos como cortesia" },
+      { valor: "02", nota: "ingressos cortesia para o ZooPark" },
+    ],
     beneficios: [
-      { icone: "ingresso", texto: "02 ingressos ao Zoopark, cortesia" },
+      { icone: "crianca", texto: "02 crianças de até 05 anos como cortesia" },
+      { icone: "ingresso", texto: "02 ingressos cortesia para o ZooPark" },
       { icone: "desconto", texto: "10% de desconto na diária" },
-      { icone: "calendario", texto: "Sem estadia mínima, de 01 a 30 de setembro" },
+      { icone: "calendario", texto: "Sem estadia mínima, de 01 a 31 de outubro" },
       { icone: "cafe", texto: "Café da manhã incluso" },
       { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
       { icone: "estacionamento", texto: "Estacionamento gratuito" },
     ],
-    desc: "Dias mais leves, o verde da região no ponto e a cidade sem a correria da alta temporada.",
-    waMessage: "Olá, vim do site e tenho interesse na promoção Setembro Encantador",
-  },
-  "agosto-encantador": {
-    name: "Agosto Encantador",
-    banner: "/images/real/home/area-externa-pousada-cataratas-foz-do-iguacu.webp",
-    foto: "/images/real/home/zoopark-criancas-animais-agosto-encantador-pousada-cataratas-foz-do-iguacu.webp",
-    fotoAlt: "Crianças alimentando cabras no Zoopark em Foz do Iguaçu — promoção Agosto Encantador da Pousada Cataratas",
-    hook: "Um agosto inesquecível em Foz",
-    destaque: { valor: "02", label: "Ingressos ao Zoopark", nota: "inclusos na sua estadia" },
-    beneficios: [
-      { icone: "ingresso", texto: "02 ingressos ao Zoopark, cortesia" },
-      { icone: "cafe", texto: "Café da manhã incluso" },
-      { icone: "wifi", texto: "Wi-Fi grátis em toda a pousada" },
-      { icone: "estacionamento", texto: "Estacionamento privativo" },
-      { icone: "piscina", texto: "Piscina e áreas de lazer à vontade" },
-      { icone: "crianca", texto: "Passeio para toda a família" },
-    ],
-    desc: "Viva a natureza de perto num dos passeios mais encantadores da região.",
-    waMessage: "Olá, vim do site e tenho interesse na promoção Agosto Encantador",
+    desc: "Um passeio no ZooPark e, na volta, o Espaço Kids da pousada: brinquedoteca e atividades para a criançada se divertir durante toda a estadia.",
+    descLink: { texto: "Espaço Kids", href: "/#espaco-kids" },
+    waMessage: "Olá, vim do site e tenho interesse na promoção Outubro Kids",
   },
 };
 

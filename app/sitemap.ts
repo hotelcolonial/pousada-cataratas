@@ -8,6 +8,10 @@ import {
   PROMOCOES_SLUG_LEGADO,
   produtoDetails,
 } from "@/lib/data";
+import { promoEncerrada } from "@/lib/promos";
+
+// Regenera de hora a hora para tirar as promos que passaram do `fim`.
+export const revalidate = 3600;
 
 // Rutas fijas (sin prefijo de idioma). Los slugs de las rutas dinámicas son
 // iguales en los tres idiomas (Fase 1), así que solo cambia el prefijo.
@@ -28,7 +32,9 @@ function allPaths(): string[] {
   Object.keys(atracaoDetails).forEach((s) => paths.push(`/atracoes/${s}`));
   Object.keys(artigoDetails).forEach((s) => paths.push(`/blog/${s}`));
   PROMOCOES_SLUG_LEGADO.forEach((s) => paths.push(`/promocoes/${s}`));
-  Object.keys(produtoDetails).forEach((s) => paths.push(`/promocao/${s}`));
+  Object.keys(produtoDetails)
+    .filter((s) => !promoEncerrada(s))
+    .forEach((s) => paths.push(`/promocao/${s}`));
   return paths;
 }
 

@@ -266,7 +266,10 @@
     "inclusoTitle": "What's included",
     "descontoLabel": "Discount of up to",
     "reservarAgora": "Book now",
-    "falarWhatsapp": "Chat on WhatsApp"
+    "falarWhatsapp": "Chat on WhatsApp",
+    "encerradaTitle": "This offer has ended",
+    "encerradaP": "Check out the offers available right now and book direct with us.",
+    "encerradaBtn": "See offers"
   },
   "blogList": {
     "bannerTitle": "Blog",
@@ -413,35 +416,35 @@
     "morador": {
       "eyebrow": "Deal",
       "name": "Resident Rate",
-      "sub": "For residents of Foz and region · 25% OFF",
+      "sub": "Just show proof of address",
       "altHome": "Entrance of Pousada Cataratas in Foz do Iguaçu",
       "altCard": "Pool with a parasol at Pousada Cataratas in Foz do Iguaçu"
     },
     "sazonal": {
       "eyebrow": "Enjoy",
-      "name": "Enchanting September",
-      "sub": "2 free Zoopark tickets · 10% OFF",
-      "altHome": "Children with animals at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas",
-      "altCard": "Boy petting a goat at the Zoopark in Foz do Iguaçu — Enchanting September offer at Pousada Cataratas"
+      "name": "October Kids",
+      "sub": "+ 10% off the nightly rate · 1 to 31 October",
+      "altHome": "Children with animals at ZooPark in Foz do Iguaçu — October Kids offer at Pousada Cataratas",
+      "altCard": "Boy petting a goat at ZooPark in Foz do Iguaçu — October Kids offer at Pousada Cataratas"
     },
     "perene": {
       "eyebrow": "Plan ahead",
       "name": "Early booking",
-      "sub": "Booking in advance · 12% OFF",
+      "sub": "Flexible cancellation · Best rate guaranteed",
       "altHome": "Facade of Pousada Cataratas seen from the street in Foz do Iguaçu",
       "altCard": "Palm-lined facade of Pousada Cataratas in Foz do Iguaçu"
     },
     "day-use": {
       "eyebrow": "Make the most of",
       "name": "Day Use",
-      "sub": "Enjoy the guesthouse for a day · R$ 90",
+      "sub": "Access to the pool and leisure areas",
       "altHome": "Breakfast at Pousada Cataratas in Foz do Iguaçu",
       "altCard": "Pool and leisure area at Pousada Cataratas in Foz do Iguaçu"
     },
     "longa-estadia": {
       "eyebrow": "Stay longer",
       "name": "Long Stay Package",
-      "sub": "From 05 nights · transfer to Paraguay and lunch",
+      "sub": "Transfer to Paraguay and lunch included",
       "altHome": "Lunch buffet at the Aipim Gastronomia restaurant — Long Stay Package at Pousada Cataratas in Foz do Iguaçu",
       "altCard": "Lunch buffet at the Aipim Gastronomia restaurant — Long Stay Package at Pousada Cataratas in Foz do Iguaçu"
     }

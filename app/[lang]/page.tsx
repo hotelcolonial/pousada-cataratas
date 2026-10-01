@@ -5,7 +5,7 @@ import PromoPopup from "@/components/home/PromoPopup";
 import Testimonials from "@/components/home/Testimonials";
 import Reconhecimento from "@/components/home/Reconhecimento";
 import ContatoStrip from "@/components/ContatoStrip";
-import { getRgCards, getTesti, tagAccent, tagDark } from "@/lib/data";
+import { getProdutos, getRgCards, getTesti, tagAccent, tagDark } from "@/lib/data";
 import { isLocale, localePath } from "@/i18n/config";
 import { getDictionary } from "@/i18n/getDictionary";
 import { format } from "@/i18n/format";
@@ -14,6 +14,10 @@ import { BOOKING_BASE } from "@/lib/booking";
 import { promosAtivas, promosDestaque, promoTexto, PROMO_BTN_BG } from "@/lib/promos";
 import PromoCard from "@/components/promo/PromoCard";
 import type { Metadata } from "next";
+
+// As promoções com prazo (`fim` em lib/promos.ts) saem sozinhas: a página
+// regenera-se de hora a hora para refletir a vigência.
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -77,6 +81,7 @@ const KIDS_ICONS: React.ReactNode[] = [
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const loc = isLocale(lang) ? lang : "pt";
+  const produtos = getProdutos(loc);
   const dict = await getDictionary(lang);
   const rgCards = getRgCards(loc);
   return (
@@ -160,6 +165,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               key={p.slug}
               promo={p}
               texto={promoTexto(dict, p)}
+              destaque={produtos[p.slug]?.destaque}
               cta={dict.promocoesList.cardCta}
               lang={lang}
             />
